@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[映日]]></title>
-  <subtitle><![CDATA[生命从来不喧哗]]></subtitle>
+  <title><![CDATA[Hello World]]></title>
+  <subtitle><![CDATA[nothing is impossible]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-12T10:09:35.255Z</updated>
+  <updated>2015-12-12T12:08:08.764Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,12 +19,18 @@
     <link href="http://chuiliu.github.io/2015/12/12/my-first-article/"/>
     <id>http://chuiliu.github.io/2015/12/12/my-first-article/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2015-12-12T10:09:35.255Z</updated>
-    <content type="html"><![CDATA[<p>##how to learn</p>
+    <updated>2015-12-12T12:08:08.764Z</updated>
+    <content type="html"><![CDATA[<h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
+<li>核心层：提供告诉干线和不同区域的最优传送路径</li>
+<li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略<a id="more"></a></li>
+<li>接入层：MAC层过滤，IP地址绑定</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>##how to learn</p>
-]]>
+    <![CDATA[<h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
+<li>核心层：提供告诉干线和不同区域的最优传送路径</li>
+<li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略]]>
+    
     </summary>
     
       <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
