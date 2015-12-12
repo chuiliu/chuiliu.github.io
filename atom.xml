@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[映日]]></title>
-  
+  <subtitle><![CDATA[生命从来不喧哗]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-12T07:31:26.456Z</updated>
+  <updated>2015-12-12T10:09:35.255Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,10 +19,12 @@
     <link href="http://chuiliu.github.io/2015/12/12/my-first-article/"/>
     <id>http://chuiliu.github.io/2015/12/12/my-first-article/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2015-12-12T07:31:26.456Z</updated>
-    <content type="html"></content>
+    <updated>2015-12-12T10:09:35.255Z</updated>
+    <content type="html"><![CDATA[<p>##how to learn</p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>##how to learn</p>
+]]>
     </summary>
     
       <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
