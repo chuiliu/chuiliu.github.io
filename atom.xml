@@ -4,7 +4,7 @@
   <subtitle><![CDATA[nothing is impossible]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-12T12:08:08.764Z</updated>
+  <updated>2015-12-12T13:57:41.904Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://chuiliu.github.io/2015/12/12/my-first-article/"/>
     <id>http://chuiliu.github.io/2015/12/12/my-first-article/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2015-12-12T12:08:08.764Z</updated>
+    <updated>2015-12-12T13:57:41.904Z</updated>
     <content type="html"><![CDATA[<h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
 <li>核心层：提供告诉干线和不同区域的最优传送路径</li>
 <li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略<a id="more"></a></li>
