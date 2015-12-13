@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/about/index.html</loc>
+    <lastmod>2015-12-13T02:29:33.971Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2015/12/12/my-first-article/</loc>
     <lastmod>2015-12-12T13:57:41.904Z</lastmod>
   </url>
