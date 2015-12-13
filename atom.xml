@@ -4,7 +4,7 @@
   <subtitle><![CDATA[nothing is impossible]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-12T13:57:41.904Z</updated>
+  <updated>2015-12-13T03:07:36.659Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[one]]></title>
+    <link href="http://chuiliu.github.io/2015/12/13/one/"/>
+    <id>http://chuiliu.github.io/2015/12/13/one/</id>
+    <published>2015-12-13T03:07:36.000Z</published>
+    <updated>2015-12-13T03:07:36.659Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sunday]]></title>
+    <link href="http://chuiliu.github.io/2015/12/13/Sunday/"/>
+    <id>http://chuiliu.github.io/2015/12/13/Sunday/</id>
+    <published>2015-12-13T03:06:58.000Z</published>
+    <updated>2015-12-13T03:06:58.709Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[my first article]]></title>
