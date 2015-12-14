@@ -189,17 +189,31 @@ body {
 }
 .article-date,
 .article-category-link,
-.archive-year,
-.widget-title {
+.archive-year {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: #6f5a69;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
   text-shadow: 0 1px #fff;
   font-weight: bold;
+}
+.widget-title {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9f8d86;
+  margin-bottom: 1em;
+  line-height: 1em;
+  text-shadow: 0 1px #fff;
+  font-weight: bold;
+}
+.widget-title:before {
+  content: "\f0c9";
+  font-family: FontAwesome;
+  padding-right: 8px;
 }
 .article-inner,
 .archive-article-inner {
@@ -207,8 +221,9 @@ body {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border-top: 3px solid #6f5a69;
 }
 .article-entry h1,
 .widget h1 {
@@ -237,7 +252,7 @@ body {
 }
 .article-entry hr,
 .widget hr {
-  border: 1px dashed #ddd;
+  border: 1px solid #ddd;
 }
 .article-entry strong,
 .widget strong {
@@ -309,7 +324,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 300px;
+  height: 150px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -391,7 +406,7 @@ body {
 .main-nav-link {
   float: left;
   color: #fff;
-  opacity: 0.6;
+  opacity: 1;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
   -webkit-transition: opacity 0.2s;
@@ -403,15 +418,15 @@ body {
 }
 .nav-icon:hover,
 .main-nav-link:hover {
-  opacity: 1;
+  opacity: 0.6;
 }
 .nav-icon {
   font-family: FontAwesome;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
-  padding: 20px 15px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  padding: 20px 15px 20px 1px;
   position: relative;
   cursor: pointer;
 }
@@ -441,6 +456,16 @@ body {
 }
 #nav-rss-link:before {
   content: "\f09e";
+}
+#nav-github-link:before {
+  content: "\f092";
+}
+#nav-weibo-link:before {
+  content: "\f18a";
+}
+#nav-zhihu-link:before {
+  content: "知";
+  font-weight: bold;
 }
 #nav-search-btn:before {
   content: "\f002";
@@ -507,10 +532,13 @@ body {
   color: #777;
 }
 .article {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 .article-inner {
   overflow: hidden;
+}
+.article-meta {
+  margin: 20px 20px 0 20px;
 }
 .article-meta:before,
 .article-meta:after {
@@ -523,6 +551,11 @@ body {
 .article-date {
   float: left;
 }
+.article-date:before {
+  content: "\f133";
+  font-family: FontAwesome;
+  padding-right: 8px;
+}
 .article-category {
   float: left;
   line-height: 1em;
@@ -531,7 +564,7 @@ body {
   margin-left: 8px;
 }
 .article-category:before {
-  content: "\2022";
+  content: "\007C";
 }
 .article-category-link {
   margin: 0 12px 1em;
@@ -541,7 +574,7 @@ body {
 }
 .article-title {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   color: #555;
   line-height: 1.1em;
@@ -551,11 +584,26 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #9f8d86;
 }
 .article-entry {
   color: #555;
   padding: 0 20px;
+/* 修改blockquote的样式
+  blockquote
+    font-family: font-serif
+    font-size: 1.4em
+    margin: line-height 20px
+    text-align: center
+    footer
+      font-size: font-size
+      margin: line-height 0
+      font-family: font-sans
+      cite
+        &:before
+          content: "—"
+          padding: 0 0.5em
+  */
 }
 .article-entry:before,
 .article-entry:after {
@@ -588,7 +636,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #258fb8;
+  color: #4094c7;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -624,20 +672,30 @@ a.article-title:hover {
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
 }
+.article-entry p code,
+.article-entry li code {
+  color: #bf1d1d;
+}
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.6em 20px;
-  text-align: center;
+  font-size: 14px;
+  border-left: 0.3em solid #aa9da5;
+  color: #777;
+  background: #f5f5f5;
+  margin: 0.65em 0 0.65em 0;
+  padding-left: 1%;
+  line-height: 1.6em;
 }
 .article-entry blockquote footer {
-  font-size: 14px;
+  background: #f5f5f5;
+  padding: 0;
   margin: 1.6em 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 80%;
+  line-height: 1em;
 }
-.article-entry blockquote footer cite:before {
-  content: "—";
-  padding: 0 0.5em;
+.article-entry blockquote cite {
+  font-style: italic;
+  padding-left: 0.5em;
 }
 .article-entry .pullquote {
   text-align: left;
@@ -677,21 +735,24 @@ a.article-title:hover {
   margin-top: 0;
 }
 .article-more-link a {
-  display: inline-block;
+  display: block;
+  width: 57px;
   line-height: 1em;
   padding: 6px 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  background: #eee;
-  color: #999;
+  margin: 0 auto;
+  border: 1px solid #9f8d86;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #fff;
+  color: #9f8d86;
   text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #258fb8;
+  background: #9f8d86;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #1e7293;
+  text-shadow: 0 1px #836f68;
 }
 .article-footer {
   font-size: 0.85em;
@@ -718,15 +779,30 @@ a.article-title:hover {
 .article-tag-list-item {
   float: left;
   margin-right: 10px;
+  padding: 1px 5px;
+  background: #9f8d86;
+  border: 1px solid #9f8d86;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.article-tag-list-item:hover {
+  color: #9f8d86;
+  background: #fff;
+  border: 1px solid #9f8d86;
+}
+.article-tag-list-item a {
+  color: #fff;
 }
 .article-tag-list-link:before {
-  content: "#";
+  content: "\f0c1";
+  font-family: FontAwesome;
+  padding-right: 1px;
 }
 .article-comment-link {
   float: right;
 }
 .article-comment-link:before {
-  content: "\f075";
+  content: "\f0e6";
   font-family: FontAwesome;
   padding-right: 8px;
 }
@@ -736,7 +812,7 @@ a.article-title:hover {
   margin-left: 20px;
 }
 .article-share-link:before {
-  content: "\f064";
+  content: "\f045";
   font-family: FontAwesome;
   padding-right: 6px;
 }
@@ -753,7 +829,7 @@ a.article-title:hover {
 }
 @media screen and (min-width: 768px) {
   #article-nav {
-    margin: 50px 0;
+    margin: 30px 0;
   }
   #article-nav:before {
     width: 8px;
@@ -774,11 +850,11 @@ a.article-title:hover {
 .article-nav-link-wrap {
   text-decoration: none;
   text-shadow: 0 1px #fff;
-  color: #999;
+  color: #4094c7;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
   display: block;
 }
@@ -808,7 +884,7 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ddd;
+  color: #999;
   line-height: 1em;
   font-weight: bold;
 }
@@ -955,13 +1031,13 @@ a.article-title:hover {
   border: 1px solid #ddd;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  margin: 50px 0;
+  margin: 30px 0;
 }
 #comments a {
-  color: #258fb8;
+  color: #4094c7;
 }
 .archives-wrap {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 .archives:before,
 .archives:after {
@@ -1014,7 +1090,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #4094c7;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1028,15 +1104,9 @@ a.article-title:hover {
   display: block;
 }
 #page-nav {
-  margin: 50px auto;
-  background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  margin: 30px auto;
   text-align: center;
-  color: #999;
+  color: #9f8d86;
   overflow: hidden;
 }
 #page-nav:before,
@@ -1054,11 +1124,13 @@ a.article-title:hover {
   height: 2ex;
 }
 #page-nav a {
-  color: #999;
+  color: #9f8d86;
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #999;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #9f8d86;
   color: #fff;
 }
 #page-nav .prev {
@@ -1089,7 +1161,7 @@ a.article-title:hover {
   color: #999;
 }
 #footer a {
-  color: #258fb8;
+  color: #4094c7;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1101,7 +1173,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #2d2d2d;
+  background: #0c1021;
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
@@ -1172,7 +1244,7 @@ a.article-title:hover {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #2d2d2d;
+  background: #0c1021;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1198,7 +1270,7 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #2d2d2d;
+  background: #0c1021;
   color: #999;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
@@ -1207,7 +1279,7 @@ a.article-title:hover {
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #4094c7;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1301,12 +1373,12 @@ pre .javascript .function {
   }
 }
 .widget-wrap {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  background: #ddd;
+  background: #fff;
   -webkit-box-shadow: 0 -1px 4px #ccc inset;
   box-shadow: 0 -1px 4px #ccc inset;
   border: 1px solid #ccc;
@@ -1315,7 +1387,7 @@ pre .javascript .function {
   border-radius: 3px;
 }
 .widget a {
-  color: #258fb8;
+  color: #4094c7;
   text-decoration: none;
 }
 .widget a:hover {
