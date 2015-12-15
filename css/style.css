@@ -183,8 +183,13 @@ body {
   #main {
     display: inline;
     float: left;
-    width: 73.3333333333333%;
+    width: 77.5%;
     margin: 0 0.8333333333333%;
+  }
+}
+@media screen and (min-width: 768px) {
+  #main {
+    float: right;
   }
 }
 .article-date,
@@ -203,17 +208,13 @@ body {
 .widget-title {
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   color: #9f8d86;
   margin-bottom: 1em;
   line-height: 1em;
   text-shadow: 0 1px #fff;
   font-weight: bold;
-}
-.widget-title:before {
-  content: "\f0c9";
-  font-family: FontAwesome;
-  padding-right: 8px;
 }
 .article-inner,
 .archive-article-inner {
@@ -324,7 +325,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 150px;
+  height: 120px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -372,11 +373,11 @@ body {
 }
 #header-title {
   text-align: center;
-  height: 40px;
+  height: 30px;
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: -20px;
+  margin-top: -15px;
 }
 #logo,
 #subtitle {
@@ -386,8 +387,8 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 30px;
   letter-spacing: 2px;
 }
 #subtitle {
@@ -559,12 +560,13 @@ body {
 .article-category {
   float: left;
   line-height: 1em;
-  color: #ccc;
+  color: #6f5a69;
   text-shadow: 0 1px #fff;
   margin-left: 8px;
 }
 .article-category:before {
-  content: "\007C";
+  content: "\f02c";
+  font-family: FontAwesome;
 }
 .article-category-link {
   margin: 0 12px 1em;
@@ -1119,17 +1121,21 @@ a.article-title:hover {
 }
 #page-nav a,
 #page-nav span {
-  padding: 10px 20px;
+  padding: 6px 14px;
+  margin: 0 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   line-height: 1;
   height: 2ex;
 }
 #page-nav a {
   color: #9f8d86;
+  border: 1px solid #9f8d86;
   text-decoration: none;
 }
 #page-nav a:hover {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   background: #9f8d86;
   color: #fff;
 }
@@ -1368,7 +1374,7 @@ pre .javascript .function {
   #sidebar {
     display: inline;
     float: left;
-    width: 23.3333333333333%;
+    width: 19.1666666666667%;
     margin: 0 0.8333333333333%;
   }
 }
