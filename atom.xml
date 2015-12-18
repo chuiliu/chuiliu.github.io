@@ -4,7 +4,7 @@
   <subtitle><![CDATA[生命从来不喧哗]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-18T03:16:47.545Z</updated>
+  <updated>2015-12-18T05:33:33.355Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hexo]]></title>
+    <title><![CDATA[Hexo：修改landscape主题]]></title>
     <link href="http://chuiliu.github.io/2015/12/16/about-hexo/"/>
     <id>http://chuiliu.github.io/2015/12/16/about-hexo/</id>
     <published>2015-12-16T15:46:56.000Z</published>
-    <updated>2015-12-18T03:16:47.545Z</updated>
+    <updated>2015-12-18T05:33:33.355Z</updated>
     <content type="html"><![CDATA[<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
 <li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
 <li>设置组件的样式，复制生成的代码</li>
@@ -39,12 +39,12 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Hexo:为博客添加多说评论框]]></title>
+    <title><![CDATA[Hexo：为博客添加多说评论框]]></title>
     <link href="http://chuiliu.github.io/2015/12/14/about-hexo-1/"/>
     <id>http://chuiliu.github.io/2015/12/14/about-hexo-1/</id>
     <published>2015-12-14T13:05:38.000Z</published>
-    <updated>2015-12-18T03:08:15.850Z</updated>
-    <content type="html"><![CDATA[<p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>,为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>，具体步骤如下:</p>
+    <updated>2015-12-18T05:33:47.488Z</updated>
+    <content type="html"><![CDATA[<p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>,为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>，我使用的是官方landscape主题，具体步骤如下:</p>
 <ol>
 <li>在<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>官网注册账号</li>
 <li>选择<strong>我要安装</strong>创建站点</li>

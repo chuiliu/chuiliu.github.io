@@ -615,6 +615,9 @@ a.article-title:hover {
   line-height: 1.8em;
   margin: 1.8em 0;
 }
+.article-entry li p {
+  margin: 0 0;
+}
 .article-entry h1,
 .article-entry h2,
 .article-entry h3,
@@ -1177,7 +1180,7 @@ a.article-title:hover {
 .article-entry pre,
 .article-entry .highlight {
   background: #272822;
-  margin: 0 -20px;
+  margin: 10px -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
