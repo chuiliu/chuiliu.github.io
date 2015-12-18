@@ -208,7 +208,6 @@ body {
 .widget-title {
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: 2px;
   color: #9f8d86;
   margin-bottom: 1em;
@@ -219,12 +218,8 @@ body {
 .article-inner,
 .archive-article-inner {
   background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  border-top: 3px solid #6f5a69;
 }
 .article-entry h1,
 .widget h1 {
@@ -253,7 +248,7 @@ body {
 }
 .article-entry hr,
 .widget hr {
-  border: 1px solid #ddd;
+  border: 1px dotted #ddd;
 }
 .article-entry strong,
 .widget strong {
@@ -299,7 +294,7 @@ body {
 .article-entry dl,
 .widget dl {
   margin: 0 20px;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 .article-entry ul ul,
 .widget ul ul,
@@ -365,7 +360,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("images/banner.jpg") center #000;
+  background: url("banner-url") center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -617,8 +612,8 @@ a.article-title:hover {
 }
 .article-entry p,
 .article-entry table {
-  line-height: 1.6em;
-  margin: 1.6em 0;
+  line-height: 1.8em;
+  margin: 1.8em 0;
 }
 .article-entry h1,
 .article-entry h2,
@@ -643,12 +638,13 @@ a.article-title:hover {
 }
 .article-entry a:hover {
   text-decoration: underline;
+  opacity: 0.9;
 }
 .article-entry ul,
 .article-entry ol,
 .article-entry dl {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
 }
 .article-entry img,
 .article-entry video {
@@ -686,12 +682,12 @@ a.article-title:hover {
   background: #f5f5f5;
   margin: 0.65em 0 0.65em 0;
   padding-left: 1%;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 .article-entry blockquote footer {
   background: #f5f5f5;
   padding: 0;
-  margin: 1.6em 0;
+  margin: 1.8em 0;
   font-size: 80%;
   line-height: 1em;
 }
@@ -758,9 +754,9 @@ a.article-title:hover {
 }
 .article-footer {
   font-size: 0.85em;
-  line-height: 1.6em;
+  line-height: 1.8em;
   border-top: 1px solid #ddd;
-  padding-top: 1.6em;
+  padding-top: 1.8em;
   margin: 0 20px 20px;
 }
 .article-footer:before,
@@ -895,7 +891,7 @@ a.article-title:hover {
 }
 .article-nav-title {
   font-size: 0.85em;
-  line-height: 1.6em;
+  line-height: 1.8em;
   margin-top: 0.5em;
 }
 .article-share-box {
@@ -1089,7 +1085,7 @@ a.article-title:hover {
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 .archive-article-title:hover {
   color: #4094c7;
@@ -1174,20 +1170,20 @@ a.article-title:hover {
   text-decoration: underline;
 }
 #footer-info {
-  line-height: 1.6em;
+  line-height: 1.8em;
   font-size: 0.85em;
 }
 .article-entry pre,
 .article-entry .highlight {
   background: #0c1021;
-  margin: 0 -20px;
+  margin: 5px -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
-  line-height: 22.400000000000002px;
+  line-height: 25.2px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1243,7 +1239,7 @@ a.article-title:hover {
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 22.400000000000002px;
+  height: 25.2px;
 }
 .article-entry .gist {
   margin: 0 -20px;
@@ -1385,19 +1381,16 @@ pre .javascript .function {
   color: #777;
   text-shadow: 0 1px #fff;
   background: #fff;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   padding: 15px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
 }
 .widget a {
   color: #4094c7;
   text-decoration: none;
 }
 .widget a:hover {
-  text-decoration: underline;
+  color: #9f8d86;
+  font-size: 1.2em;
 }
 .widget ul ul,
 .widget ol ul,
@@ -1412,9 +1405,8 @@ pre .javascript .function {
   list-style: disc;
 }
 .widget {
-  line-height: 1.6em;
+  line-height: 1.8em;
   word-wrap: break-word;
-  font-size: 0.9em;
 }
 .widget ul,
 .widget ol {

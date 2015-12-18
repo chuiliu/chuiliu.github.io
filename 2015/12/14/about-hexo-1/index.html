@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>映日</title>
+  <title>Hexo:为博客添加多说评论框 | 映日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="映日">
-<meta property="og:url" content="http://chuiliu.github.io/index.html">
+  <meta name="description" content="Hexo默认使用的评论框是国外比较流行的Disqus,为方便使用我们可以把评论框替换成国内比较流行的多说，具体步骤如下:
+
+在多说官网注册账号
+选择我要安装创建站点
+在_config.yml中添加多说配置（二级域名就是创建站点时填写的多说域名）：
+1duoshuo_shortname: 多说二级域名
+
+修改themes\landscape\layout\_partial\article.ejs将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo:为博客添加多说评论框">
+<meta property="og:url" content="http://chuiliu.github.io/2015/12/14/about-hexo-1/index.html">
 <meta property="og:site_name" content="映日">
-<meta property="og:description">
+<meta property="og:description" content="Hexo默认使用的评论框是国外比较流行的Disqus,为方便使用我们可以把评论框替换成国内比较流行的多说，具体步骤如下:
+
+在多说官网注册账号
+选择我要安装创建站点
+在_config.yml中添加多说配置（二级域名就是创建站点时填写的多说域名）：
+1duoshuo_shortname: 多说二级域名
+
+修改themes\landscape\layout\_partial\article.ejs将">
+<meta property="og:updated_time" content="2015-12-18T03:08:15.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="映日">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Hexo:为博客添加多说评论框">
+<meta name="twitter:description" content="Hexo默认使用的评论框是国外比较流行的Disqus,为方便使用我们可以把评论框替换成国内比较流行的多说，具体步骤如下:
+
+在多说官网注册账号
+选择我要安装创建站点
+在_config.yml中添加多说配置（二级域名就是创建站点时填写的多说域名）：
+1duoshuo_shortname: 多说二级域名
+
+修改themes\landscape\layout\_partial\article.ejs将">
   
     <link rel="alternative" href="/atom.xml" title="映日" type="application/atom+xml">
   
@@ -68,67 +90,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-about-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2015/12/16/about-hexo/" class="article-date">
-  <time datetime="2015-12-16T15:46:56.000Z" itemprop="datePublished">2015-12-16 23:46</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/16/about-hexo/">Hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
-<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
-<li>设置组件的样式，复制生成的代码</li>
-<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
-<li>在<code>theme/landscape/_config.yml</code> 中添加如下代码：<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widges:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2015/12/16/about-hexo/" data-id="ciiadefln000giomf9o4pg81x" class="article-share-link">分享</a>
-      
-        <a href="http://chuiliu.github.io/2015/12/16/about-hexo/#disqus_thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
 <article id="post-about-hexo-1" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -150,8 +112,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo:为博客添加多说评论框</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo:为博客添加多说评论框
     </h1>
   
 
@@ -185,186 +147,52 @@
     </footer>
   </div>
   
-</article>
+    <!-- 上一篇，下一篇 -->
 
-
-
+<nav id="article-nav">
   
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-plants" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2015/12/13/plants/" class="article-date">
-  <time datetime="2015-12-13T03:07:36.000Z" itemprop="datePublished">2015-12-13 11:07</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/植物/">植物</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
+    <a href="/2015/12/16/about-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/13/plants/">植物</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u5047_u8FDE_u7FD8"><a href="#u5047_u8FDE_u7FD8" class="headerlink" title="假连翘"></a>假连翘</h2><ul>
-<li>中文名：假连翘</li>
-<li>学名：Duranta repens Linn.</li>
-<li>科名：马鞭草科</li>
-<li>基本习性：常绿灌木</li>
-</ul>
-<hr>
-<h2 id="u706B_u7130_u6728"><a href="#u706B_u7130_u6728" class="headerlink" title="火焰木"></a>火焰木</h2><ul>
-<li>中文名：火焰木</li>
-<li>学名：Spathodea campanulata Beauv.</li>
-<li>科名：紫葳科</li>
-<li>基本习性：常绿乔木
+          Hexo
         
-          <p class="article-more-link">
-            <a href="/2015/12/13/plants/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2015/12/13/plants/" data-id="ciiadefkc0002iomfp1yaz7ao" class="article-share-link">分享</a>
-      
-        <a href="http://chuiliu.github.io/2015/12/13/plants/#disqus_thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/植物/">植物</a></li></ul>
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/13/plants/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">植物</div>
+    </a>
+  
+</nav>
 
-    </footer>
-  </div>
   
 </article>
 
 
 
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-Sunday" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2015/12/13/Sunday/" class="article-date">
-  <time datetime="2015-12-13T03:06:58.000Z" itemprop="datePublished">2015-12-13 11:06</time>
-</a>
-      
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/13/Sunday/">代码片段</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>javascript</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> user = <span class="string">''</span>;</span><br><span class="line">    Person = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.getUser = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	    <span class="keyword">return</span> user;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.setUser = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2015/12/13/Sunday/" data-id="ciiadefmi000riomfw2ds430d" class="article-share-link">分享</a>
-      
-        <a href="http://chuiliu.github.io/2015/12/13/Sunday/#disqus_thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-about-hexo-1" data-title="Hexo:为博客添加多说评论框" data-url="http://chuiliu.github.io/2015/12/14/about-hexo-1/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
 
 
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-my-first-article" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2015/12/12/my-first-article/" class="article-date">
-  <time datetime="2015-12-12T07:27:33.000Z" itemprop="datePublished">2015-12-12 15:27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/learn/">learn</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/12/my-first-article/">Markdown</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="how"><a href="#how" class="headerlink" title="how"></a>how</h1><h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
-<li>核心层：提供告诉干线和不同区域的最优传送路径</li>
-<li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略
-        
-          <p class="article-more-link">
-            <a href="/2015/12/12/my-first-article/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2015/12/12/my-first-article/" data-id="ciiadefl80009iomfrijq3hdw" class="article-share-link">分享</a>
-      
-        <a href="http://chuiliu.github.io/2015/12/12/my-first-article/#disqus_thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-    </nav>
-  
 </section>
         
           <aside id="sidebar">
