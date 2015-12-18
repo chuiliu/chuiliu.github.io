@@ -9,7 +9,11 @@
 在 新浪开放平台 选择需要添加的微博组件
 设置组件的样式，复制生成的代码
 在theme/landscape/layout/_widget/下新建weibo.ejs 文件，文件内容为上一步所复制的代码
-在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo">
+在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo
+
+
+添加回顶部功能
+在themes/landscape/layout/_p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo：修改landscape主题">
 <meta property="og:url" content="http://chuiliu.github.io/2015/12/16/about-hexo/index.html">
@@ -18,15 +22,23 @@
 在 新浪开放平台 选择需要添加的微博组件
 设置组件的样式，复制生成的代码
 在theme/landscape/layout/_widget/下新建weibo.ejs 文件，文件内容为上一步所复制的代码
-在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo">
-<meta property="og:updated_time" content="2015-12-18T05:33:33.355Z">
+在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo
+
+
+添加回顶部功能
+在themes/landscape/layout/_p">
+<meta property="og:updated_time" content="2015-12-18T13:40:27.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo：修改landscape主题">
 <meta name="twitter:description" content="添加新浪微博组件
 在 新浪开放平台 选择需要添加的微博组件
 设置组件的样式，复制生成的代码
 在theme/landscape/layout/_widget/下新建weibo.ejs 文件，文件内容为上一步所复制的代码
-在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo">
+在theme/landscape/_config.yml 中添加如下代码：12widges:- weibo
+
+
+添加回顶部功能
+在themes/landscape/layout/_p">
   
     <link rel="alternative" href="/atom.xml" title="映日" type="application/atom+xml">
   
@@ -48,10 +60,6 @@
       <h1 id="logo-wrap">
         <a href="/" id="logo">映日</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">生命从来不喧哗</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -119,13 +127,25 @@
 <li>在<code>theme/landscape/_config.yml</code> 中添加如下代码：<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widges:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2><ol>
+<li><p>在<code>themes/landscape/layout/_partial/</code> 下新建 <code>totop.ejs</code> ，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 回顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"to-top"</span> <span class="attribute">style</span>=<span class="value">"position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;"</span>&gt;</span>TOP<span class="tag">&lt;/<span class="title">span</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>themes/landscape/source/js/</code> 下新建<code>totop.js</code>，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">window</span>).scrollTop() &gt; <span class="number">200</span>)&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"5px"</span>&#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"-50px"</span>&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"#to-top"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">'body,html'</span>).animate(&#123;</span><br><span class="line">            scrollTop:<span class="number">0</span></span><br><span class="line">        &#125;,<span class="number">300</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>themes/landscape/layout/_partial/after_footer.ejs</code>最后添加如下代码：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="preprocessor">%</span>- partial<span class="comment">('totop')</span> <span class="preprocessor">%</span>&gt;</span><br><span class="line">&lt;<span class="preprocessor">%</span>- js<span class="comment">('js/totop')</span> <span class="preprocessor">%</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2015/12/16/about-hexo/" data-id="ciiboa53r000g5smf480ygonv" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2015/12/16/about-hexo/" data-id="ciibolnnh000gpwmfpxd43xwk" class="article-share-link">分享</a>
       
-        <a href="http://chuiliu.github.io/2015/12/16/about-hexo/#disqus_thread" class="article-comment-link">评论</a>
+
+        <a href="http://chuiliu.github.io/2015/12/16/about-hexo/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-hexo">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -309,9 +329,8 @@
 
 <!-- 回顶部 -->
 <!-- 回顶部 -->
-<div id="to-top" style="position:fixed;bottom:50px;right:0;z-index:999"> 
-  <span style="background:#333;border-radius:3px;display:block;height:40px;width:50px;margin-bottom:5px;">回顶部</span>
-  
+<div id="to-top" style="position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"> 
+  <span style="color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;">TOP</span>  
 </div>
 <script src="/js/totop.js" type="text/javascript"></script>
 
