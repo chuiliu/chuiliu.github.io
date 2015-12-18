@@ -360,7 +360,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("banner-url") center #000;
+  background: url("images/banner.jpg") center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -675,6 +675,7 @@ a.article-title:hover {
   color: #bf1d1d;
 }
 .article-entry blockquote {
+  padding: 1px 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
   border-left: 0.3em solid #aa9da5;
@@ -1175,8 +1176,8 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #0c1021;
-  margin: 5px -20px;
+  background: #272822;
+  margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
@@ -1246,7 +1247,7 @@ a.article-title:hover {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #0c1021;
+  background: #272822;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1272,7 +1273,7 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #0c1021;
+  background: #272822;
   color: #999;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
