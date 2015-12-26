@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[映日]]></title>
-  
+  <subtitle><![CDATA[growing like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-18T13:40:27.169Z</updated>
+  <updated>2015-12-26T13:23:48.025Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,9 +15,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Express 4.x 安装]]></title>
+    <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
+    <id>http://chuiliu.github.io/2015/12/26/Express/</id>
+    <published>2015-12-26T11:41:34.000Z</published>
+    <updated>2015-12-26T13:23:48.025Z</updated>
+    <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的<strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
+<ul>
+<li><p>全局安装最新版的Express</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要注意的是，安装到这一步后，当你直接在命令行执行<strong>express</strong>命令时会报以下错误：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">C:</span>\Users\Administrator&gt;express -V</span><br><span class="line"><span class="string">'express'</span>不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure>
+<p>这是因为<strong>4.x</strong>版本的Express已经把命令行工具 <a href="https://github.com/expressjs/generator" target="_blank" rel="external">express-generator</a> 独立出来，因此还需要全局安装<code>express-generator</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>到这里全局安装就完成了，我们可以查看当前Express的版本</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">express</span> -V</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建Express应用，并切换到该目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express <span class="built_in">test</span>Express &amp;&amp; <span class="built_in">cd</span> <span class="built_in">test</span>Express</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这时候会生成Express项目的结构<br><img src="./img/express.png" alt=""></p>
+<ul>
+<li><p>接下来安装express以及所需的module</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动应用</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这时候在浏览器访问 <strong><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></strong> ，如看到下图则表示安装成功</p>
+</li>
+</ul>
+<p><img src="./img/express1.png" alt=""></p>
+<p>参考<a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
+<ul>
+<li><code>Express 4.x</code>与<code>Express 3.x</code> 差别较大，如果需要安装<code>Express 3.x</code>，则可以指定版本安装<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator@<span class="number">3</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的<strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
+<ul>
+<li><p>全局安装最新版的Express</p>
+<figure class="highlight s]]>
+    </summary>
+    
+      <category term="Express" scheme="http://chuiliu.github.io/tags/Express/"/>
+    
+      <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
+    
+      <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
+    
+      <category term="Express" scheme="http://chuiliu.github.io/categories/Node-js/Express/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hexo：修改landscape主题]]></title>
-    <link href="http://chuiliu.github.io/2015/12/16/about-hexo/"/>
-    <id>http://chuiliu.github.io/2015/12/16/about-hexo/</id>
+    <link href="http://chuiliu.github.io/2015/12/16/about-hexo-3/"/>
+    <id>http://chuiliu.github.io/2015/12/16/about-hexo-3/</id>
     <published>2015-12-16T15:46:56.000Z</published>
     <updated>2015-12-18T13:40:27.169Z</updated>
     <content type="html"><![CDATA[<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
@@ -51,8 +109,8 @@
   
   <entry>
     <title><![CDATA[Hexo：为博客添加多说评论框]]></title>
-    <link href="http://chuiliu.github.io/2015/12/14/about-hexo-1/"/>
-    <id>http://chuiliu.github.io/2015/12/14/about-hexo-1/</id>
+    <link href="http://chuiliu.github.io/2015/12/14/about-hexo-2/"/>
+    <id>http://chuiliu.github.io/2015/12/14/about-hexo-2/</id>
     <published>2015-12-14T13:05:38.000Z</published>
     <updated>2015-12-18T15:12:35.848Z</updated>
     <content type="html"><![CDATA[<p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>,为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>，我使用的是官方landscape主题，具体步骤如下:</p>
@@ -135,8 +193,8 @@
   
   <entry>
     <title><![CDATA[代码片段]]></title>
-    <link href="http://chuiliu.github.io/2015/12/13/Sunday/"/>
-    <id>http://chuiliu.github.io/2015/12/13/Sunday/</id>
+    <link href="http://chuiliu.github.io/2015/12/13/about-hexo-1/"/>
+    <id>http://chuiliu.github.io/2015/12/13/about-hexo-1/</id>
     <published>2015-12-13T03:06:58.000Z</published>
     <updated>2015-12-15T11:13:03.705Z</updated>
     <content type="html"><![CDATA[<p><strong>javascript</strong></p>
@@ -155,11 +213,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Markdown]]></title>
+    <title><![CDATA[Markdown语法]]></title>
     <link href="http://chuiliu.github.io/2015/12/12/my-first-article/"/>
     <id>http://chuiliu.github.io/2015/12/12/my-first-article/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2015-12-18T04:34:25.932Z</updated>
+    <updated>2015-12-26T13:16:57.011Z</updated>
     <content type="html"><![CDATA[<h1 id="how"><a href="#how" class="headerlink" title="how"></a>how</h1><h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
 <li>核心层：提供告诉干线和不同区域的最优传送路径</li>
 <li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略<a id="more"></a></li>
