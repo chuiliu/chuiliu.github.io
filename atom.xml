@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[映日]]></title>
-  <subtitle><![CDATA[growing like a tree]]></subtitle>
+  <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-26T13:23:48.025Z</updated>
+  <updated>2015-12-26T13:30:48.316Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,15 +19,16 @@
     <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
     <id>http://chuiliu.github.io/2015/12/26/Express/</id>
     <published>2015-12-26T11:41:34.000Z</published>
-    <updated>2015-12-26T13:23:48.025Z</updated>
-    <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的<strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
+    <updated>2015-12-26T13:30:48.316Z</updated>
+    <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
 <ul>
 <li><p>全局安装最新版的Express</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>需要注意的是，安装到这一步后，当你直接在命令行执行<strong>express</strong>命令时会报以下错误：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">C:</span>\Users\Administrator&gt;express -V</span><br><span class="line"><span class="string">'express'</span>不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure>
-<p>这是因为<strong>4.x</strong>版本的Express已经把命令行工具 <a href="https://github.com/expressjs/generator" target="_blank" rel="external">express-generator</a> 独立出来，因此还需要全局安装<code>express-generator</code></p>
+</li>
+<li><p>这是因为<strong>4.x</strong>版本的Express已经把命令行工具 <a href="https://github.com/expressjs/generator" target="_blank" rel="external">express-generator</a> 独立出来，因此还需要全局安装<code>express-generator</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>到这里全局安装就完成了，我们可以查看当前Express的版本</p>
@@ -56,10 +57,10 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的<strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
+    <![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
 <ul>
 <li><p>全局安装最新版的Express</p>
-<figure class="highlight s]]>
+<figure class="highlight ]]>
     </summary>
     
       <category term="Express" scheme="http://chuiliu.github.io/tags/Express/"/>
@@ -214,10 +215,10 @@
   
   <entry>
     <title><![CDATA[Markdown语法]]></title>
-    <link href="http://chuiliu.github.io/2015/12/12/my-first-article/"/>
-    <id>http://chuiliu.github.io/2015/12/12/my-first-article/</id>
+    <link href="http://chuiliu.github.io/2015/12/12/markdown/"/>
+    <id>http://chuiliu.github.io/2015/12/12/markdown/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2015-12-26T13:16:57.011Z</updated>
+    <updated>2015-12-26T13:33:42.441Z</updated>
     <content type="html"><![CDATA[<h1 id="how"><a href="#how" class="headerlink" title="how"></a>how</h1><h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
 <li>核心层：提供告诉干线和不同区域的最优传送路径</li>
 <li>汇聚层：将网络业务连接到接入层，并实施与安全、流量负载和路由相关的策略<a id="more"></a></li>
@@ -286,8 +287,7 @@
 console.log(say);
 </code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> say = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(say);</span><br></pre></td></tr></table></figure>
 <h2 id="u5206_u5272_u7EBF"><a href="#u5206_u5272_u7EBF" class="headerlink" title="分割线"></a>分割线</h2><h6 id="u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF"><a href="#u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF" class="headerlink" title="另起一行，连续输入三个星号（<em>*</em>）即可创建分割线"></a>另起一行，连续输入三个星号（<em>*</em>）即可创建分割线</h6><hr>
-<p>###end</p>
-]]></content>
+<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3>]]></content>
     <summary type="html">
     <![CDATA[<h1 id="how"><a href="#how" class="headerlink" title="how"></a>how</h1><h2 id="how_to_learn"><a href="#how_to_learn" class="headerlink" title="how to learn"></a>how to learn</h2><ul>
 <li>核心层：提供告诉干线和不同区域的最优传送路径</li>

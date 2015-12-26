@@ -1,4 +1,5 @@
 # chuiliu.github.io
-基于Hexo的静态blog
+基于GitHub Pages和Hexo搭建的静态blog
 
+个人博客，写写记记
 [chuiliu.github.io](http://chuiliu.github.io)
