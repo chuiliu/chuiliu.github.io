@@ -4,7 +4,7 @@
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-04-03T04:34:14.174Z</updated>
+  <updated>2016-04-03T04:46:30.557Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/"/>
     <id>http://chuiliu.github.io/2016/04/03/Ubuntu-1/</id>
     <published>2016-04-03T02:56:41.000Z</published>
-    <updated>2016-04-03T04:34:14.174Z</updated>
+    <updated>2016-04-03T04:46:30.557Z</updated>
     <content type="html"><![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
 <p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
 <p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
@@ -34,7 +34,9 @@
     
       <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
     
-      <category term="Ubuntu" scheme="http://chuiliu.github.io/categories/Ubuntu/"/>
+      <category term="Linux" scheme="http://chuiliu.github.io/categories/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://chuiliu.github.io/categories/Linux/Ubuntu/"/>
     
   </entry>
   
