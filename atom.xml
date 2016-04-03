@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[映日]]></title>
+  <title><![CDATA[Salix babylonica]]></title>
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-26T13:30:48.316Z</updated>
+  <updated>2016-04-03T04:34:14.174Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,11 +15,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Ubuntu修改root密码]]></title>
+    <link href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/"/>
+    <id>http://chuiliu.github.io/2016/04/03/Ubuntu-1/</id>
+    <published>2016-04-03T02:56:41.000Z</published>
+    <updated>2016-04-03T04:34:14.174Z</updated>
+    <content type="html"><![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
+<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
+<p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
+<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
+<]]>
+    </summary>
+    
+      <category term="Ubuntu" scheme="http://chuiliu.github.io/tags/Ubuntu/"/>
+    
+      <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
+    
+      <category term="Ubuntu" scheme="http://chuiliu.github.io/categories/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Express 4.x 安装]]></title>
     <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
     <id>http://chuiliu.github.io/2015/12/26/Express/</id>
     <published>2015-12-26T11:41:34.000Z</published>
-    <updated>2015-12-26T13:30:48.316Z</updated>
+    <updated>2015-12-26T13:47:29.980Z</updated>
     <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
 <ul>
 <li><p>全局安装最新版的Express</p>
@@ -50,7 +74,7 @@
 </li>
 </ul>
 <p><img src="./img/express1.png" alt=""></p>
-<p>参考<a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
+<p>参考 <a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
 <ul>
 <li><code>Express 4.x</code>与<code>Express 3.x</code> 差别较大，如果需要安装<code>Express 3.x</code>，则可以指定版本安装<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator@<span class="number">3</span></span></span><br></pre></td></tr></table></figure>
 </li>
@@ -197,7 +221,7 @@
     <link href="http://chuiliu.github.io/2015/12/13/about-hexo-1/"/>
     <id>http://chuiliu.github.io/2015/12/13/about-hexo-1/</id>
     <published>2015-12-13T03:06:58.000Z</published>
-    <updated>2015-12-15T11:13:03.705Z</updated>
+    <updated>2016-04-03T03:01:35.339Z</updated>
     <content type="html"><![CDATA[<p><strong>javascript</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> user = <span class="string">''</span>;</span><br><span class="line">    Person = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.getUser = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	    <span class="keyword">return</span> user;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.setUser = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
