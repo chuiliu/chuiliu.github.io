@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2015/12/12/markdown/</loc>
+    <lastmod>2016-04-04T11:15:29.164Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/about/index.html</loc>
-    <lastmod>2016-04-04T07:22:57.217Z</lastmod>
+    <lastmod>2016-04-04T11:13:49.370Z</lastmod>
   </url>
   
   <url>
@@ -24,11 +29,6 @@
   <url>
     <loc>http://chuiliu.github.io/README.html</loc>
     <lastmod>2015-12-26T13:41:55.859Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2015/12/12/markdown/</loc>
-    <lastmod>2015-12-26T13:33:42.441Z</lastmod>
   </url>
   
   <url>
