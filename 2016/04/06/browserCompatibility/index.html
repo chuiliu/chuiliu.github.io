@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/4 | Salix babylonica</title>
+  <title>Javascript浏览器兼容 | Salix babylonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Salix babylonica">
-<meta property="og:url" content="http://chuiliu.github.io/archives/2016/04/index.html">
+  <meta name="description" content="Firefox 定义日期new Date()兼容问题今天改bug时遇到一个问题，在火狐浏览器中，通过var date = new Date(&amp;#39;2016-04-06 12:45:11&amp;#39;);这个方式定义的Date对象是无效的，出现Date {Invalid Date}错误，而在谷歌浏览器中不存在这样的问题。查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript浏览器兼容">
+<meta property="og:url" content="http://chuiliu.github.io/2016/04/06/browserCompatibility/index.html">
 <meta property="og:site_name" content="Salix babylonica">
-<meta property="og:description">
+<meta property="og:description" content="Firefox 定义日期new Date()兼容问题今天改bug时遇到一个问题，在火狐浏览器中，通过var date = new Date(&amp;#39;2016-04-06 12:45:11&amp;#39;);这个方式定义的Date对象是无效的，出现Date {Invalid Date}错误，而在谷歌浏览器中不存在这样的问题。查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：">
+<meta property="og:image" content="http://chuiliu.github.io/./img/20160406/2016-04-06_211017.png">
+<meta property="og:updated_time" content="2016-04-06T13:46:02.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salix babylonica">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Javascript浏览器兼容">
+<meta name="twitter:description" content="Firefox 定义日期new Date()兼容问题今天改bug时遇到一个问题，在火狐浏览器中，通过var date = new Date(&amp;#39;2016-04-06 12:45:11&amp;#39;);这个方式定义的Date对象是无效的，出现Date {Invalid Date}错误，而在谷歌浏览器中不存在这样的问题。查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：">
   
     <link rel="alternative" href="/atom.xml" title="Salix babylonica" type="application/atom+xml">
   
@@ -68,59 +70,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-browserCompatibility" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
 
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/06/browserCompatibility/" class="archive-article-date">
-  <time datetime="2016-04-06T12:17:49.000Z" itemprop="datePublished">4月 6日</time>
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/06/browserCompatibility/" class="article-date">
+  <time datetime="2016-04-06T12:17:49.000Z" itemprop="datePublished">2016-04-6 20:17:49</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/06/browserCompatibility/">Javascript浏览器兼容</a>
+    <h1 class="article-title" itemprop="name">
+      Javascript浏览器兼容
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/03/Ubuntu-1/" class="archive-article-date">
-  <time datetime="2016-04-03T02:56:41.000Z" itemprop="datePublished">4月 3日</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/03/Ubuntu-1/">Ubuntu修改root密码</a>
-    </h1>
-  
+        <ul>
+<li><h2 id="Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898"><a href="#Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898" class="headerlink" title="Firefox 定义日期new Date()兼容问题"></a>Firefox 定义日期new Date()兼容问题</h2><p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure>
+<p>Firefox中测试结果：<br><img src="./img/20160406/2016-04-06_211017.png" alt=""><br>因此问题解决方案如下：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016/04/06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/06/browserCompatibility/" data-id="cimotwefg000icsmft87qul0b" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/06/browserCompatibility/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-browserCompatibility"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
+
+    </footer>
   </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/03/Ubuntu-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Ubuntu修改root密码</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-browserCompatibility" data-title="Javascript浏览器兼容" data-url="http://chuiliu.github.io/2016/04/06/browserCompatibility/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
 </section>
         
           <aside id="sidebar">
