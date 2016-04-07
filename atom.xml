@@ -4,7 +4,7 @@
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-04-06T13:46:02.517Z</updated>
+  <updated>2016-04-06T15:50:20.316Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,11 +15,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Javascript浏览器兼容]]></title>
+    <title><![CDATA[My Collections]]></title>
+    <link href="http://chuiliu.github.io/2016/04/06/collection/"/>
+    <id>http://chuiliu.github.io/2016/04/06/collection/</id>
+    <published>2016-04-06T14:55:54.000Z</published>
+    <updated>2016-04-06T15:50:20.316Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    <![CDATA[我的收藏夹]]>
+    
+    </summary>
+    
+      <category term="test" scheme="http://chuiliu.github.io/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Javascript 浏览器兼容]]></title>
     <link href="http://chuiliu.github.io/2016/04/06/browserCompatibility/"/>
     <id>http://chuiliu.github.io/2016/04/06/browserCompatibility/</id>
     <published>2016-04-06T12:17:49.000Z</published>
-    <updated>2016-04-06T13:46:02.517Z</updated>
+    <updated>2016-04-06T15:50:36.828Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><h2 id="Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898"><a href="#Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898" class="headerlink" title="Firefox 定义日期new Date()兼容问题"></a>Firefox 定义日期new Date()兼容问题</h2><p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure>
@@ -70,11 +86,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[sublime Text配置]]></title>
+    <title><![CDATA[sublime Text 配置]]></title>
     <link href="http://chuiliu.github.io/2016/01/26/sublimeSetting/"/>
     <id>http://chuiliu.github.io/2016/01/26/sublimeSetting/</id>
     <published>2016-01-26T02:32:17.000Z</published>
-    <updated>2016-04-06T13:57:23.188Z</updated>
+    <updated>2016-04-06T14:13:28.015Z</updated>
     <content type="html"><![CDATA[<h3 id="u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User"><a href="#u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User" class="headerlink" title="记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User"></a>记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User</h3><ul>
 <li><p>在新窗口中打开文件夹</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"open_files_in_new_window"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -101,7 +117,7 @@
     
       <category term="sublime Text" scheme="http://chuiliu.github.io/tags/sublime-Text/"/>
     
-      <category term="sublime Text" scheme="http://chuiliu.github.io/categories/sublime-Text/"/>
+      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -258,11 +274,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[植物]]></title>
+    <title><![CDATA[植物志]]></title>
     <link href="http://chuiliu.github.io/2015/12/13/plants/"/>
     <id>http://chuiliu.github.io/2015/12/13/plants/</id>
     <published>2015-12-13T03:07:36.000Z</published>
-    <updated>2015-12-14T02:26:40.281Z</updated>
+    <updated>2016-04-06T16:12:21.286Z</updated>
     <content type="html"><![CDATA[<h2 id="u5047_u8FDE_u7FD8"><a href="#u5047_u8FDE_u7FD8" class="headerlink" title="假连翘"></a>假连翘</h2><ul>
 <li>中文名：假连翘</li>
 <li>学名：Duranta repens Linn.</li>
@@ -335,7 +351,7 @@
     <link href="http://chuiliu.github.io/2015/12/12/markdown/"/>
     <id>http://chuiliu.github.io/2015/12/12/markdown/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2016-04-04T11:15:29.164Z</updated>
+    <updated>2016-04-06T13:26:40.347Z</updated>
     <content type="html"><![CDATA[<h1 id="test__3A_just_for_learning"><a href="#test__3A_just_for_learning" class="headerlink" title="test : just for learning"></a>test : just for learning</h1><h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 一级标题</span></span><br><span class="line"><span class="preprocessor">##  二级标题</span></span><br><span class="line"><span class="preprocessor">### 三级标题</span></span><br><span class="line"><span class="preprocessor">#### 四级标题</span></span><br><span class="line"><span class="preprocessor">##### 五级标题</span></span><br><span class="line"><span class="preprocessor">###### 六级标题</span></span><br></pre></td></tr></table></figure>
 <h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6><a id="more"></a>
 <h2 id="u5217_u8868"><a href="#u5217_u8868" class="headerlink" title="列表"></a>列表</h2><h6 id="u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4"><a href="#u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4" class="headerlink" title="无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4."></a>无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4.</h6><h6 id="u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C"><a href="#u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C" class="headerlink" title="符号和文字间需要加上一个字符的空格"></a>符号和文字间需要加上一个字符的空格</h6><h4 id="u65E0_u5E8F_u5217_u8868"><a href="#u65E0_u5E8F_u5217_u8868" class="headerlink" title="无序列表"></a>无序列表</h4><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> 香蕉</span><br><span class="line"></span>-<span class="ruby"> 哈密瓜</span><br><span class="line"></span>-<span class="ruby"> 葡萄</span></span><br></pre></td></tr></table></figure>
