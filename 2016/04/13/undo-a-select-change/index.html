@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: learn | Salix babylonica</title>
+  <title>如何撤销下拉框选中的值 | Salix babylonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Salix babylonica">
-<meta property="og:url" content="http://chuiliu.github.io/categories/learn/index.html">
+  <meta name="description" content="昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。
+解决这个问题可以jQuery提供的 $.data() 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。
+Example：123456&amp;lt;sel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何撤销下拉框选中的值">
+<meta property="og:url" content="http://chuiliu.github.io/2016/04/13/undo-a-select-change/index.html">
 <meta property="og:site_name" content="Salix babylonica">
-<meta property="og:description">
+<meta property="og:description" content="昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。
+解决这个问题可以jQuery提供的 $.data() 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。
+Example：123456&amp;lt;sel">
+<meta property="og:updated_time" content="2016-04-13T14:52:07.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salix babylonica">
-<meta name="twitter:description">
+<meta name="twitter:title" content="如何撤销下拉框选中的值">
+<meta name="twitter:description" content="昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。
+解决这个问题可以jQuery提供的 $.data() 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。
+Example：123456&amp;lt;sel">
   
     <link rel="alternative" href="/atom.xml" title="Salix babylonica" type="application/atom+xml">
   
@@ -70,69 +77,113 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-undo-a-select-change" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
 
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/about-space/" class="archive-article-date">
-  <time datetime="2016-01-25T03:17:53.000Z" itemprop="datePublished">1月 25日</time>
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/13/undo-a-select-change/" class="article-date">
+  <time datetime="2016-04-13T13:25:50.000Z" itemprop="datePublished">2016-04-13 21:25:50</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/about-space/">关于换行</a>
+    <h1 class="article-title" itemprop="name">
+      如何撤销下拉框选中的值
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/12/markdown/" class="archive-article-date">
-  <time datetime="2015-12-12T07:27:33.000Z" itemprop="datePublished">12月 12日</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/12/markdown/">Markdown语法</a>
-    </h1>
-  
+        <p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
+<p>解决这个问题可以jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
+<p>Example：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">"template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template1"</span>&gt;</span>模板一<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template2"</span>&gt;</span>模板二<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template3"</span>&gt;</span>模板三<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#template'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> selected = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> text = $.trim($(<span class="string">'#target'</span>).text());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(text) &#123;</span><br><span class="line">        <span class="keyword">if</span>(confirm(<span class="string">'是否覆盖已有模板？'</span>)) &#123;</span><br><span class="line">            $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">'#template'</span>).val($.data(<span class="keyword">this</span>, <span class="string">'current'</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">    &#125;</span><br><span class="line">    $.data(<span class="keyword">this</span>, <span class="string">'current'</span>, $(<span class="keyword">this</span>).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
+<p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
+<hr>
+<p>参考：<a href="http://stackoverflow.com/questions/3963855/jquery-how-to-undo-a-select-change" target="_blank" rel="external">jQuery how to undo a select change</a></p>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#template').change(function() {
+        var selected = $(this).val();
+        var text = $.trim($('#target').text());
 
-    </header>
+        if(text) {
+            if(confirm('是否覆盖已有模板？')) {
+                $('#target').text(selected);
+            } else {
+                $('#template').val($.data(this, 'current'));
+            }
+        } else {
+            $('#target').text(selected);
+        }
+        $.data(this, 'current', $(this).val());
+    });
+</script>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/13/undo-a-select-change/" data-id="cimywftoo0005lsmf7i4tvhlg" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-undo-a-select-change"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
   </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/06/collection/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">My Collections</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-undo-a-select-change" data-title="如何撤销下拉框选中的值" data-url="http://chuiliu.github.io/2016/04/13/undo-a-select-change/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
 </section>
         
           <aside id="sidebar">
