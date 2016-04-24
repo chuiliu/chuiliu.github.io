@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Express | Salix babylonica</title>
+  <title>空格的 ASCII 码 | Salix babylonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Salix babylonica">
-<meta property="og:url" content="http://chuiliu.github.io/tags/Express/index.html">
+  <meta name="description" content="今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用java.lang.String.trim()方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有&amp;amp;nbsp;。
+最后发现，空格对应的ASCII竟然有两个，一个是最常见的 0x20(十进制32)，另一个是 0xA0(十进制160)，Java中String的trim()方法只能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="空格的 ASCII 码">
+<meta property="og:url" content="http://chuiliu.github.io/2016/04/24/about-space-1/index.html">
 <meta property="og:site_name" content="Salix babylonica">
-<meta property="og:description">
+<meta property="og:description" content="今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用java.lang.String.trim()方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有&amp;amp;nbsp;。
+最后发现，空格对应的ASCII竟然有两个，一个是最常见的 0x20(十进制32)，另一个是 0xA0(十进制160)，Java中String的trim()方法只能">
+<meta property="og:updated_time" content="2016-04-24T15:01:30.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salix babylonica">
-<meta name="twitter:description">
+<meta name="twitter:title" content="空格的 ASCII 码">
+<meta name="twitter:description" content="今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用java.lang.String.trim()方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有&amp;amp;nbsp;。
+最后发现，空格对应的ASCII竟然有两个，一个是最常见的 0x20(十进制32)，另一个是 0xA0(十进制160)，Java中String的trim()方法只能">
   
     <link rel="alternative" href="/atom.xml" title="Salix babylonica" type="application/atom+xml">
   
@@ -70,40 +74,91 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-about-space-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
 
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/26/Express/" class="archive-article-date">
-  <time datetime="2015-12-26T11:41:34.000Z" itemprop="datePublished">12月 26日</time>
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/24/about-space-1/" class="article-date">
+  <time datetime="2016-04-24T13:42:58.000Z" itemprop="datePublished">2016-04-24 21:42:58</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/26/Express/">Express 4.x 安装</a>
+    <h1 class="article-title" itemprop="name">
+      空格的 ASCII 码
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
+<p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
+<p>解决方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String newStr = str.replaceAll(<span class="string">"[\\s\\u00A0]+$"</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure></p>
+<p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/24/about-space-1/" data-id="cineml11t001bykmffzi9cg6w" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/24/about-space-1/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-space-1"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
+
+    </footer>
   </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/13/undo-a-select-change/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">如何撤销下拉框选中的值</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-about-space-1" data-title="空格的 ASCII 码" data-url="http://chuiliu.github.io/2016/04/24/about-space-1/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
 </section>
         
           <aside id="sidebar">
