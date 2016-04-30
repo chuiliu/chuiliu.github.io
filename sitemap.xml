@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/24/about-space-1/</loc>
-    <lastmod>2016-04-24T15:01:30.521Z</lastmod>
+    <loc>http://chuiliu.github.io/stop_and_go/index.html</loc>
+    <lastmod>2016-04-30T02:43:18.135Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/essays/index.html</loc>
-    <lastmod>2016-04-24T14:52:11.561Z</lastmod>
+    <loc>http://chuiliu.github.io/2016/04/30/sublime-keyboard-shortcuts/</loc>
+    <lastmod>2016-04-30T02:34:00.219Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/01/26/sublime-settings/</loc>
+    <lastmod>2016-04-30T01:01:21.530Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/README.html</loc>
+    <lastmod>2016-04-25T05:14:00.381Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/24/about-space-2/</loc>
+    <lastmod>2016-04-24T15:01:30.521Z</lastmod>
   </url>
   
   <url>
@@ -17,7 +32,7 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/browserCompatibility/</loc>
+    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
     <lastmod>2016-04-13T15:41:10.608Z</lastmod>
   </url>
   
@@ -42,22 +57,7 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/essays/index-1.html</loc>
-    <lastmod>2016-04-06T15:40:54.280Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/essays/test.html</loc>
-    <lastmod>2016-04-06T14:38:05.355Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/01/26/sublimeSetting/</loc>
-    <lastmod>2016-04-06T14:13:28.015Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/01/25/about-space/</loc>
+    <loc>http://chuiliu.github.io/2016/01/25/about-space-1/</loc>
     <lastmod>2016-04-06T14:03:00.784Z</lastmod>
   </url>
   
@@ -74,11 +74,6 @@
   <url>
     <loc>http://chuiliu.github.io/2015/12/26/Express/</loc>
     <lastmod>2015-12-26T13:47:29.980Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/README.html</loc>
-    <lastmod>2015-12-26T13:41:55.859Z</lastmod>
   </url>
   
   <url>
