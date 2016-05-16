@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
+    <lastmod>2016-05-16T08:34:24.157Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
+    <lastmod>2016-05-16T08:33:30.632Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2015/12/12/markdown/</loc>
     <lastmod>2016-05-16T08:26:21.795Z</lastmod>
   </url>
@@ -32,6 +42,11 @@
   </url>
   
   <url>
+    <loc>http://chuiliu.github.io/2016/02/24/nodejs-querystring/</loc>
+    <lastmod>2016-05-16T08:18:56.970Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</loc>
     <lastmod>2016-05-16T08:00:14.138Z</lastmod>
   </url>
@@ -42,18 +57,8 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/05/12/about-git/</loc>
-    <lastmod>2016-05-14T02:55:28.835Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/05/13/about-bower/</loc>
     <lastmod>2016-05-13T14:40:47.743Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/02/24/nodejs-querystring/</loc>
-    <lastmod>2016-05-13T12:38:22.568Z</lastmod>
   </url>
   
   <url>
@@ -109,11 +114,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/24/about-space-2/</loc>
     <lastmod>2016-04-24T15:01:30.521Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
-    <lastmod>2016-04-24T07:04:40.155Z</lastmod>
   </url>
   
   <url>
