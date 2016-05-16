@@ -106,12 +106,12 @@
       
         <!-- - ## Firefox 定义日期new Date()兼容问题 -->
 <p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/2016-04-06_211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016/04/06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/2016-04-06_211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/06/browser-compatibility/" data-id="cio9r7mlj001th0mfhv6co1fl" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/04/06/browser-compatibility/" data-id="cio9sl8cp001tc0mfrbqac8xc" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -195,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/06/about-git/" data-id="cio9r7mn8002nh0mflnptllst" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/04/06/about-git/" data-id="cio9sl8ei002nc0mfb5x8x42q" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -261,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/03/Ubuntu-1/" data-id="cio9r7mnt002vh0mf8y70u5nd" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/04/03/Ubuntu-1/" data-id="cio9sl8es002vc0mffr6ty6s6" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -351,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/02/24/nodejs-querystring/" data-id="cio9r7mkk001fh0mfdeawf713" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/02/24/nodejs-querystring/" data-id="cio9sl8bx001fc0mfxzv0xmy8" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -432,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/01/26/sublime-settings/" data-id="cio9r7mhs000ch0mf0t7q1mtp" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/01/26/sublime-settings/" data-id="cio9sl89x000cc0mfrpj4ybgl" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">

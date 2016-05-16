@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
+    <lastmod>2016-05-16T09:12:07.528Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/about/index.html</loc>
+    <lastmod>2016-05-16T08:48:24.323Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
     <lastmod>2016-05-16T08:34:24.157Z</lastmod>
   </url>
@@ -49,11 +59,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</loc>
     <lastmod>2016-05-16T08:00:14.138Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
-    <lastmod>2016-05-16T07:58:53.497Z</lastmod>
   </url>
   
   <url>
@@ -119,11 +124,6 @@
   <url>
     <loc>http://chuiliu.github.io/2015/12/13/about-hexo-1/</loc>
     <lastmod>2016-04-13T15:39:11.456Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/about/index.html</loc>
-    <lastmod>2016-04-06T15:56:51.162Z</lastmod>
   </url>
   
   <url>
