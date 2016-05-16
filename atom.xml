@@ -4,7 +4,7 @@
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-04-30T02:34:00.219Z</updated>
+  <updated>2016-05-16T08:00:26.275Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,43 +15,124 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[去除 inline-block 之间的空白间隔]]></title>
+    <link href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/"/>
+    <id>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</id>
+    <published>2016-05-16T02:25:12.000Z</published>
+    <updated>2016-05-16T08:00:26.275Z</updated>
+    <content type="html"><![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#container &#123;</span><br><span class="line">    background: #bbada0;</span><br><span class="line">    width: 215px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">#container .cell &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 25px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    zoom: 1;</span><br><span class="line">    *display: inline;</span><br><span class="line">    background: #cdc1b4;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516QQ%E6%88%AA%E5%9B%BE20160516125546.png?
+watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/dissolve/75/gravity/SouthEast/dx/20/dy/10" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
+<ul>
+<li><p>移除空白字符，全部写在同一行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改变换行的位置</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置父元素的font-size为0，再为每个inline-block对象设置font-size的值</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#bbada0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">215px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最终效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516145701.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML<]]>
+    </summary>
+    
+      <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[包管理工具 Bower]]></title>
+    <link href="http://chuiliu.github.io/2016/05/13/about-bower/"/>
+    <id>http://chuiliu.github.io/2016/05/13/about-bower/</id>
+    <published>2016-05-13T08:24:48.000Z</published>
+    <updated>2016-05-13T14:40:47.743Z</updated>
+    <content type="html"><![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上面提到的问题。<br>安装bower非常简单，前提是必须安装了Node.js和npm<br>检查是否安装Node.js<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
+<p>检查是否安装npm<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure></p>
+<p>安装bower<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> bower</span></span><br></pre></td></tr></table></figure></p>
+<p>安装完毕后，可以通过以下命令查看bower是否安装成功<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>-v</span><br></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>init</span><br></pre></td></tr></table></figure></p>
+<p>初始化后会生成bower的配置文件bower.json，在配置文件中dependencies字段填写要安装的库的名称和版本，比如jquery:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"learnBower"</span></span>,</span><br><span class="line">  "<span class="attribute">homepage</span>": <span class="value"><span class="string">"https://github.com/chuiliu/learning"</span></span>,</span><br><span class="line">  "<span class="attribute">authors</span>": <span class="value">[</span><br><span class="line">    <span class="string">"chuiliu &lt;zhengchuiliu@foxmail.com&gt;"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">moduleType</span>": <span class="value">[]</span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"MIT"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">ignore</span>": <span class="value">[</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">jquery</span>": <span class="value"><span class="string">"latests"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>安装最新版的jquery，jquery将会被下载到<code>./bower_components</code>目录下<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install</span><br></pre></td></tr></table></figure></p>
+<p>安装bootstrap，<code>--save</code>可以将bootstrap写入bower.json配置文件中<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install <span class="keyword">bootstrap </span>--save</span><br></pre></td></tr></table></figure></p>
+<p>查看已经安装的库<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>E:\learn\learnBower&gt;bower list<br>bower check-new     Checking for new versions of the project dependencies…<br>learnBower E:\learn\learnBower<br>├─┬ bootstrap#3.3.6 (latest is 4.0.0-alpha.2)<br>│ └── jquery#2.2.3 (latest is 3.0.0-beta1)<br>└── jquery#2.2.3</p>
+</blockquote>
+<p>查看库的信息<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="preprocessor">info</span> <span class="keyword">bootstrap</span></span><br></pre></td></tr></table></figure></p>
+<p>更新jquery到最新版<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update jquery</span><br></pre></td></tr></table></figure></p>
+<p>删除库，如果删除了有被其它库依赖的库，bower会给出提示<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>uninstall jquery</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上]]>
+    </summary>
+    
+      <category term="bower" scheme="http://chuiliu.github.io/tags/bower/"/>
+    
+      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git 命令]]></title>
+    <link href="http://chuiliu.github.io/2016/05/12/about-git/"/>
+    <id>http://chuiliu.github.io/2016/05/12/about-git/</id>
+    <published>2016-05-12T02:23:54.000Z</published>
+    <updated>2016-05-14T02:55:28.835Z</updated>
+    <content type="html"><![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
+<ul>
+<li><p><strong>配置</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>常用</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看当前仓库的状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看提交日志</span></span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>add</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加当前目录下所有文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">// 添加文件</span></span><br><span class="line">git add [filename]</span><br><span class="line"><span class="comment">// 删除和移动的文件也能提交到暂存区</span></span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>commit</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提交到仓库</span></span><br><span class="line">git commit -m <span class="string">"descriptions"</span></span><br><span class="line">git commit [filename] -m <span class="string">"descriptions"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>分支</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建分支</span></span><br><span class="line">git branch [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建并切换到分支</span></span><br><span class="line">git checkout -b [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换到分支</span></span><br><span class="line">git checkout [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交分支</span></span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并分支</span></span><br><span class="line">git merge [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除分支</span></span><br><span class="line">git branch -d [branchName]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>remote</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接到远程仓库</span></span><br><span class="line">git remote add origin git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推送到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程仓库更新到本地</span></span><br><span class="line">git pull git<span class="annotation">@github</span>.com:chuiliu/test.git [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从远程仓库克隆</span></span><br><span class="line">git clone git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
+<ul>
+<li><p><strong>配置</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"]]>
+    </summary>
+    
+      <category term="git" scheme="http://chuiliu.github.io/tags/git/"/>
+    
+      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[sublime Text 3 常用快捷键]]></title>
     <link href="http://chuiliu.github.io/2016/04/30/sublime-keyboard-shortcuts/"/>
     <id>http://chuiliu.github.io/2016/04/30/sublime-keyboard-shortcuts/</id>
     <published>2016-04-30T01:03:59.000Z</published>
-    <updated>2016-04-30T02:34:00.219Z</updated>
-    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><ul>
-<li><strong>ctrl + d</strong> 选择相同的单词，连续按继续选择</li>
-<li><strong>alt + F3</strong> 选择整个文档中相同的单词</li>
-<li><strong>ctrl + g</strong> 输入行号，跳到某一行</li>
-</ul>
-<ul>
-<li><strong>ctrl + l</strong> 选择一行，连续按继续选择</li>
-<li><strong>ctrl + shift + ← / →</strong> 向左/向右选择文本</li>
-<li><strong>ctrl + shift + ↑ / ↓</strong> 向上/向下移动行</li>
-<li><strong>ctrl + shift + k</strong> 删除一行</li>
-<li><strong>ctrl + enter</strong> 在当前行下插入一行</li>
-<li><strong>ctrl + shift + enter</strong> 在当前行上插入一行</li>
-</ul>
-<ul>
-<li><strong>ctrl + shift + d</strong> 向下复制</li>
-<li><strong>ctrl + shift + v</strong> 粘贴，并按当前文本格式化</li>
-<li><strong>ctrl + x</strong> 剪切一行</li>
-<li><strong>ctrl + k + k</strong> ctrl+k后再按一次k，删除从光标处至行末的文本</li>
-<li><strong>ctrl + p</strong> 搜索项目中的文件</li>
-</ul>
-<ul>
-<li><strong>alt + .</strong> 闭合html标签</li>
-<li><strong>ctrl + /</strong> 单行注释</li>
-<li><strong>ctrl + shift + /</strong> 多行注释</li>
-</ul>
-<ul>
-<li><strong>ctrl + pagedown</strong> 切换到左边的标签页</li>
-<li><strong>ctrl + pageup</strong> 切换到右边的标签页</li>
-<li><strong>ctrl + w </strong> 关闭当前文件</li>
-<li><strong>ctrl + shift + t</strong> 恢复上一个关闭的标签</li>
-<li><strong>alt + shift + 2</strong> 分两屏</li>
-</ul>
+    <updated>2016-05-13T13:38:27.299Z</updated>
+    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ctrl + d     <span class="comment"># 选择相同的单词，连续按继续选择</span></span><br><span class="line">alt + F3     <span class="comment"># 选择整个文档中相同的单词</span></span><br><span class="line">ctrl + g     <span class="comment"># 输入行号，跳到某一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + l                 <span class="comment"># 选择一行，连续按继续选择</span></span><br><span class="line">ctrl + shift + ← / →     <span class="comment"># 向左/向右选择文本</span></span><br><span class="line">ctrl + shift + ↑ / ↓     <span class="comment"># 向上/向下移动行</span></span><br><span class="line">ctrl + shift + k         <span class="comment"># 删除一行</span></span><br><span class="line">ctrl + enter             <span class="comment"># 在当前行下插入一行</span></span><br><span class="line">ctrl + shift + enter     <span class="comment"># 在当前行上插入一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + shift + d     <span class="comment"># 向下复制</span></span><br><span class="line">ctrl + shift + v     <span class="comment"># 粘贴，并按当前文本格式化</span></span><br><span class="line">ctrl + x             <span class="comment"># 剪切一行</span></span><br><span class="line">ctrl + k + k         <span class="comment"># ctrl+k后再按一次k，删除从光标处至行末的文本</span></span><br><span class="line">ctrl + p             <span class="comment"># 搜索项目中的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alt + .              <span class="comment"># 闭合html标签</span></span><br><span class="line">ctrl + /             <span class="comment"># 单行注释</span></span><br><span class="line">ctrl + shift + /     <span class="comment"># 多行注释</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + pagedown      <span class="comment"># 切换到左边的标签页</span></span><br><span class="line">ctrl + pageup        <span class="comment"># 切换到右边的标签页</span></span><br><span class="line">ctrl + w             <span class="comment"># 关闭当前文件</span></span><br><span class="line">ctrl + shift + t     <span class="comment"># 恢复上一个关闭的标签</span></span><br><span class="line">alt + shift + <span class="number">2</span>      <span class="comment"># 分两屏</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_T]]>
@@ -91,11 +172,11 @@
     <link href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/"/>
     <id>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</id>
     <published>2016-04-13T13:25:50.000Z</published>
-    <updated>2016-04-13T15:37:55.283Z</updated>
+    <updated>2016-05-16T08:00:14.138Z</updated>
     <content type="html"><![CDATA[<p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
 <p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
 <p>Example：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">"template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template1"</span>&gt;</span>模板一<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template2"</span>&gt;</span>模板二<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template3"</span>&gt;</span>模板三<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#template'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> selected = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> text = $.trim($(<span class="string">'#target'</span>).text());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(text) &#123;</span><br><span class="line">        <span class="keyword">if</span>(confirm(<span class="string">'是否覆盖已有模板？'</span>)) &#123;</span><br><span class="line">            $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">'#template'</span>).val($.data(<span class="keyword">this</span>, <span class="string">'current'</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    $.data(<span class="keyword">this</span>, <span class="string">'current'</span>, $(<span class="keyword">this</span>).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#template'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> selected = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> text = $.trim($(<span class="string">'#target'</span>).text());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(text) &#123;</span><br><span class="line">        <span class="keyword">if</span>(confirm(<span class="string">'是否覆盖已有模板？'</span>)) &#123;</span><br><span class="line">            $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">'#template'</span>).val($.data(<span class="keyword">this</span>, <span class="string">'current'</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $.data(<span class="keyword">this</span>, <span class="string">'current'</span>, $(<span class="keyword">this</span>).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
 <p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
 <hr>
@@ -128,7 +209,9 @@
     
       <category term="jQuery" scheme="http://chuiliu.github.io/tags/jQuery/"/>
     
-      <category term="Javascript" scheme="http://chuiliu.github.io/categories/Javascript/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
     
   </entry>
   
@@ -149,22 +232,18 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Javascript 浏览器兼容]]></title>
+    <title><![CDATA[Firefox 定义日期 new Date() 兼容问题]]></title>
     <link href="http://chuiliu.github.io/2016/04/06/browser-compatibility/"/>
     <id>http://chuiliu.github.io/2016/04/06/browser-compatibility/</id>
     <published>2016-04-06T12:17:49.000Z</published>
-    <updated>2016-04-13T15:41:10.608Z</updated>
-    <content type="html"><![CDATA[<ul>
-<li><h2 id="Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898"><a href="#Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898" class="headerlink" title="Firefox 定义日期new Date()兼容问题"></a>Firefox 定义日期new Date()兼容问题</h2><p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure>
-<p>Firefox中测试结果：<br><img src="./img/20160406/2016-04-06_211017.png" alt=""><br>因此问题解决方案如下：</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016/04/06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+    <updated>2016-05-16T07:58:53.497Z</updated>
+    <content type="html"><![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
+<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/2016-04-06_211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016/04/06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<ul>
-<li><h2 id="Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_28_29_u517C_u5BB9_u95EE_u9898"><a href="#Firefox__u5B9A_u4E49_u65E5_u671Fnew_Date_]]>
+    <![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
+<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<]]>
     </summary>
     
       <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
@@ -202,6 +281,51 @@
       <category term="Linux" scheme="http://chuiliu.github.io/categories/Linux/"/>
     
       <category term="Ubuntu" scheme="http://chuiliu.github.io/categories/Linux/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Node.js笔录：Query String]]></title>
+    <link href="http://chuiliu.github.io/2016/02/24/nodejs-querystring/"/>
+    <id>http://chuiliu.github.io/2016/02/24/nodejs-querystring/</id>
+    <published>2016-02-24T06:15:26.000Z</published>
+    <updated>2016-05-13T12:38:22.568Z</updated>
+    <content type="html"><![CDATA[<p>用到，做个笔记</p>
+<p>querystring模块提供了有关查询字符串的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querystring.stringify(obj, [sep], [eq])</span><br><span class="line">querystring.parse(str, [sep], [eq], [options])</span><br><span class="line">querystring.escape</span><br><span class="line">querystring.unescape</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;username:<span class="string">'zheng'</span>, password:<span class="string">'123456'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.stringify(obj));</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<blockquote>
+<p>username=zheng&amp;password=123456</p>
+</blockquote>
+</li>
+<li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'username=zheng&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str1));</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str2));</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<blockquote>
+<p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
+</blockquote>
+</li>
+<li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
+</li>
+<li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'username=用户名&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">escape</span> = querystring.escape(str);</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">unescape</span> = querystring.unescape(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">unescape</span>);</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<blockquote>
+<p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>用到，做个笔记</p>
+<p>querystring模块提供了有关查询字符串的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span cl]]>
+    </summary>
+    
+      <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
+    
+      <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
     
   </entry>
   
@@ -270,7 +394,7 @@
     <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
     <id>http://chuiliu.github.io/2015/12/26/Express/</id>
     <published>2015-12-26T11:41:34.000Z</published>
-    <updated>2015-12-26T13:47:29.980Z</updated>
+    <updated>2016-05-13T11:07:11.963Z</updated>
     <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
 <ul>
 <li><p>全局安装最新版的Express</p>
@@ -289,7 +413,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express <span class="built_in">test</span>Express &amp;&amp; <span class="built_in">cd</span> <span class="built_in">test</span>Express</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>这时候会生成Express项目的结构<br><img src="./img/express.png" alt=""></p>
+<p>这时候会生成Express项目的结构<br><img src="http://o743aqnrb.bkt.clouddn.com/image/express.png" alt=""></p>
 <ul>
 <li><p>接下来安装express以及所需的module</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
@@ -300,7 +424,7 @@
 <li><p>这时候在浏览器访问 <strong><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></strong> ，如看到下图则表示安装成功</p>
 </li>
 </ul>
-<p><img src="./img/express1.png" alt=""></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/image/express1.png" alt=""></p>
 <p>参考 <a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
 <ul>
 <li><code>Express 4.x</code>与<code>Express 3.x</code> 差别较大，如果需要安装<code>Express 3.x</code>，则可以指定版本安装<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator@<span class="number">3</span></span></span><br></pre></td></tr></table></figure>
@@ -388,58 +512,6 @@
       <category term="Hexo" scheme="http://chuiliu.github.io/tags/Hexo/"/>
     
       <category term="Hexo" scheme="http://chuiliu.github.io/categories/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[植物志]]></title>
-    <link href="http://chuiliu.github.io/2015/12/13/plants/"/>
-    <id>http://chuiliu.github.io/2015/12/13/plants/</id>
-    <published>2015-12-13T03:07:36.000Z</published>
-    <updated>2016-04-06T16:12:21.286Z</updated>
-    <content type="html"><![CDATA[<h2 id="u5047_u8FDE_u7FD8"><a href="#u5047_u8FDE_u7FD8" class="headerlink" title="假连翘"></a>假连翘</h2><ul>
-<li>中文名：假连翘</li>
-<li>学名：Duranta repens Linn.</li>
-<li>科名：马鞭草科</li>
-<li>基本习性：常绿灌木</li>
-</ul>
-<hr>
-<h2 id="u706B_u7130_u6728"><a href="#u706B_u7130_u6728" class="headerlink" title="火焰木"></a>火焰木</h2><ul>
-<li>中文名：火焰木</li>
-<li>学名：Spathodea campanulata Beauv.</li>
-<li>科名：紫葳科</li>
-<li>基本习性：常绿乔木<a id="more"></a>
-</li>
-</ul>
-<hr>
-<h2 id="u5E0C_u8309_u8389"><a href="#u5E0C_u8309_u8389" class="headerlink" title="希茉莉"></a>希茉莉</h2><ul>
-<li>中文名：希茉莉</li>
-<li>学 名：Hamelia patens Jacq.</li>
-<li>科 名：茜草科</li>
-<li>基本习性：半落叶藤状灌木</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="u5047_u8FDE_u7FD8"><a href="#u5047_u8FDE_u7FD8" class="headerlink" title="假连翘"></a>假连翘</h2><ul>
-<li>中文名：假连翘</li>
-<li>学名：Duranta repens Linn.</li>
-<li>科名：马鞭草科</li>
-<li>基本习性：常绿灌木</li>
-</ul>
-<hr>
-<h2 id="u706B_u7130_u6728"><a href="#u706B_u7130_u6728" class="headerlink" title="火焰木"></a>火焰木</h2><ul>
-<li>中文名：火焰木</li>
-<li>学名：Spathodea campanulata Beauv.</li>
-<li>科名：紫葳科</li>
-<li>基本习性：常绿乔木]]>
-    
-    </summary>
-    
-      <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
     
   </entry>
   
@@ -573,6 +645,52 @@ console.log(say);
     <summary type="html">
     <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
     </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[茜草科]]></title>
+    <link href="http://chuiliu.github.io/1900/12/13/plants-Rubiaceae-%E8%8C%9C%E8%8D%89%E7%A7%91/"/>
+    <id>http://chuiliu.github.io/1900/12/13/plants-Rubiaceae-茜草科/</id>
+    <published>1900-12-13T03:07:36.000Z</published>
+    <updated>2016-05-02T11:52:38.684Z</updated>
+    <content type="html"><![CDATA[<p><strong><a href="http://frps.eflora.cn/frps/RUBIACEAE" target="_blank" rel="external">茜草科</a></strong></p>
+<ul>
+<li><strong>希茉莉 <em>Hamelia patens Jacq.</em></strong></li>
+<li>半落叶藤状灌木</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong><a href="http://frps.eflora.cn/frps/RUBIACEAE" target="_blank" rel="external">茜草科</a></strong></p>
+<ul>
+<li><strong>希茉莉 <em>Hamel]]>
+    </summary>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[玄参科]]></title>
+    <link href="http://chuiliu.github.io/1900/12/13/plants-Scrophulariaceae-%E7%8E%84%E5%8F%82%E7%A7%91/"/>
+    <id>http://chuiliu.github.io/1900/12/13/plants-Scrophulariaceae-玄参科/</id>
+    <published>1900-12-13T03:07:36.000Z</published>
+    <updated>2016-05-02T11:48:38.656Z</updated>
+    <content type="html"><![CDATA[<p>被子植物门 &gt; 双子叶植物纲 &gt; 合瓣花亚纲 &gt; 管状花目 &gt; <a href="http://frps.eflora.cn/frps/Scrophulariaceae" target="_blank" rel="external">玄参科</a></p>
+<ul>
+<li><strong><a href="http://frps.eflora.cn/frps/Scoparia%20dulcis" target="_blank" rel="external">野甘草</a> <em>Scoparia dulcis L.</em></strong></li>
+<li>小时候家门口很常见，好多年没见了好怀念，小时候觉得花好洁白好美</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>被子植物门 &gt; 双子叶植物纲 &gt; 合瓣花亚纲 &gt; 管状花目 &gt; <a href="http://frps.eflora.cn/frps/Scrophulariaceae" target="_blank" rel="external">玄参科</a><]]>
+    </summary>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
     
   </entry>
   
