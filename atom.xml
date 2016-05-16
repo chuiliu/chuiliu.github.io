@@ -4,7 +4,7 @@
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-05-16T08:00:26.275Z</updated>
+  <updated>2016-05-16T08:21:02.896Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,12 +19,11 @@
     <link href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/"/>
     <id>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</id>
     <published>2016-05-16T02:25:12.000Z</published>
-    <updated>2016-05-16T08:00:26.275Z</updated>
+    <updated>2016-05-16T08:21:02.896Z</updated>
     <content type="html"><![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
 <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#container &#123;</span><br><span class="line">    background: #bbada0;</span><br><span class="line">    width: 215px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">#container .cell &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 25px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    zoom: 1;</span><br><span class="line">    *display: inline;</span><br><span class="line">    background: #cdc1b4;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516QQ%E6%88%AA%E5%9B%BE20160516125546.png?
-watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/dissolve/75/gravity/SouthEast/dx/20/dy/10" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
+<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
 <ul>
 <li><p>移除空白字符，全部写在同一行</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -121,24 +120,6 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     </summary>
     
       <category term="git" scheme="http://chuiliu.github.io/tags/git/"/>
-    
-      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[sublime Text 3 常用快捷键]]></title>
-    <link href="http://chuiliu.github.io/2016/04/30/sublime-keyboard-shortcuts/"/>
-    <id>http://chuiliu.github.io/2016/04/30/sublime-keyboard-shortcuts/</id>
-    <published>2016-04-30T01:03:59.000Z</published>
-    <updated>2016-05-13T13:38:27.299Z</updated>
-    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ctrl + d     <span class="comment"># 选择相同的单词，连续按继续选择</span></span><br><span class="line">alt + F3     <span class="comment"># 选择整个文档中相同的单词</span></span><br><span class="line">ctrl + g     <span class="comment"># 输入行号，跳到某一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + l                 <span class="comment"># 选择一行，连续按继续选择</span></span><br><span class="line">ctrl + shift + ← / →     <span class="comment"># 向左/向右选择文本</span></span><br><span class="line">ctrl + shift + ↑ / ↓     <span class="comment"># 向上/向下移动行</span></span><br><span class="line">ctrl + shift + k         <span class="comment"># 删除一行</span></span><br><span class="line">ctrl + enter             <span class="comment"># 在当前行下插入一行</span></span><br><span class="line">ctrl + shift + enter     <span class="comment"># 在当前行上插入一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + shift + d     <span class="comment"># 向下复制</span></span><br><span class="line">ctrl + shift + v     <span class="comment"># 粘贴，并按当前文本格式化</span></span><br><span class="line">ctrl + x             <span class="comment"># 剪切一行</span></span><br><span class="line">ctrl + k + k         <span class="comment"># ctrl+k后再按一次k，删除从光标处至行末的文本</span></span><br><span class="line">ctrl + p             <span class="comment"># 搜索项目中的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alt + .              <span class="comment"># 闭合html标签</span></span><br><span class="line">ctrl + /             <span class="comment"># 单行注释</span></span><br><span class="line">ctrl + shift + /     <span class="comment"># 多行注释</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + pagedown      <span class="comment"># 切换到左边的标签页</span></span><br><span class="line">ctrl + pageup        <span class="comment"># 切换到右边的标签页</span></span><br><span class="line">ctrl + w             <span class="comment"># 关闭当前文件</span></span><br><span class="line">ctrl + shift + t     <span class="comment"># 恢复上一个关闭的标签</span></span><br><span class="line">alt + shift + <span class="number">2</span>      <span class="comment"># 分两屏</span></span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_T]]>
-    </summary>
-    
-      <category term="sublime Text" scheme="http://chuiliu.github.io/tags/sublime-Text/"/>
     
       <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
@@ -263,7 +244,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     <link href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/"/>
     <id>http://chuiliu.github.io/2016/04/03/Ubuntu-1/</id>
     <published>2016-04-03T02:56:41.000Z</published>
-    <updated>2016-04-03T04:46:30.557Z</updated>
+    <updated>2016-05-16T08:23:32.644Z</updated>
     <content type="html"><![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
 <p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
 <p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
@@ -276,11 +257,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     
       <category term="Ubuntu" scheme="http://chuiliu.github.io/tags/Ubuntu/"/>
     
-      <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
-    
       <category term="Linux" scheme="http://chuiliu.github.io/categories/Linux/"/>
-    
-      <category term="Ubuntu" scheme="http://chuiliu.github.io/categories/Linux/Ubuntu/"/>
     
   </entry>
   
@@ -330,12 +307,13 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
   </entry>
   
   <entry>
-    <title><![CDATA[sublime Text 配置]]></title>
+    <title><![CDATA[Sublime Text 常用快捷键与配置项]]></title>
     <link href="http://chuiliu.github.io/2016/01/26/sublime-settings/"/>
     <id>http://chuiliu.github.io/2016/01/26/sublime-settings/</id>
     <published>2016-01-26T02:32:17.000Z</published>
-    <updated>2016-04-30T01:01:21.530Z</updated>
-    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User"><a href="#u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User" class="headerlink" title="记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User"></a>记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User</h3><ul>
+    <updated>2016-05-16T08:20:13.187Z</updated>
+    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ctrl + d     <span class="comment"># 选择相同的单词，连续按继续选择</span></span><br><span class="line">alt + F3     <span class="comment"># 选择整个文档中相同的单词</span></span><br><span class="line">ctrl + g     <span class="comment"># 输入行号，跳到某一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + l                 <span class="comment"># 选择一行，连续按继续选择</span></span><br><span class="line">ctrl + shift + ← / →     <span class="comment"># 向左/向右选择文本</span></span><br><span class="line">ctrl + shift + ↑ / ↓     <span class="comment"># 向上/向下移动行</span></span><br><span class="line">ctrl + shift + k         <span class="comment"># 删除一行</span></span><br><span class="line">ctrl + enter             <span class="comment"># 在当前行下插入一行</span></span><br><span class="line">ctrl + shift + enter     <span class="comment"># 在当前行上插入一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + shift + d     <span class="comment"># 向下复制</span></span><br><span class="line">ctrl + shift + v     <span class="comment"># 粘贴，并按当前文本格式化</span></span><br><span class="line">ctrl + x             <span class="comment"># 剪切一行</span></span><br><span class="line">ctrl + k + k         <span class="comment"># ctrl+k后再按一次k，删除从光标处至行末的文本</span></span><br><span class="line">ctrl + p             <span class="comment"># 搜索项目中的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alt + .              <span class="comment"># 闭合html标签</span></span><br><span class="line">ctrl + /             <span class="comment"># 单行注释</span></span><br><span class="line">ctrl + shift + /     <span class="comment"># 多行注释</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + pagedown      <span class="comment"># 切换到左边的标签页</span></span><br><span class="line">ctrl + pageup        <span class="comment"># 切换到右边的标签页</span></span><br><span class="line">ctrl + w             <span class="comment"># 关闭当前文件</span></span><br><span class="line">ctrl + shift + t     <span class="comment"># 恢复上一个关闭的标签</span></span><br><span class="line">alt + shift + <span class="number">2</span>      <span class="comment"># 分两屏</span></span><br></pre></td></tr></table></figure>
+<h3 id="u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User"><a href="#u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User" class="headerlink" title="记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User"></a>记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User</h3><ul>
 <li><p>在新窗口中打开文件夹</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"open_files_in_new_window"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -354,7 +332,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-U]]>
+    <![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_T]]>
     </summary>
     
       <category term="sublime Text" scheme="http://chuiliu.github.io/tags/sublime-Text/"/>
@@ -368,7 +346,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     <link href="http://chuiliu.github.io/2016/01/25/about-space-1/"/>
     <id>http://chuiliu.github.io/2016/01/25/about-space-1/</id>
     <published>2016-01-25T03:17:53.000Z</published>
-    <updated>2016-04-06T14:03:00.784Z</updated>
+    <updated>2016-05-16T08:25:45.527Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>UNIX 行尾换行 \n</li>
 <li>Windows 行尾换行回车 \n\r</li>
@@ -385,7 +363,9 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
 <p>Unix/Mac系统下的文件在Windows里打开的话，所有文字会变成一行；而Windows里的文件在Uni]]>
     </summary>
     
-      <category term="learn" scheme="http://chuiliu.github.io/categories/learn/"/>
+      <category term="编码" scheme="http://chuiliu.github.io/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="其它" scheme="http://chuiliu.github.io/categories/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
@@ -394,7 +374,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
     <id>http://chuiliu.github.io/2015/12/26/Express/</id>
     <published>2015-12-26T11:41:34.000Z</published>
-    <updated>2016-05-13T11:07:11.963Z</updated>
+    <updated>2016-05-16T08:22:57.795Z</updated>
     <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
 <ul>
 <li><p>全局安装最新版的Express</p>
@@ -413,7 +393,8 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express <span class="built_in">test</span>Express &amp;&amp; <span class="built_in">cd</span> <span class="built_in">test</span>Express</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>这时候会生成Express项目的结构<br><img src="http://o743aqnrb.bkt.clouddn.com/image/express.png" alt=""></p>
+<p>这时候会生成Express项目的结构<br><img src="http://o743aqnrb.bkt.clouddn.com/image/express.png?
+watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/dissolve/75/gravity/SouthEast/dx/20/dy/10" alt=""></p>
 <ul>
 <li><p>接下来安装express以及所需的module</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
@@ -443,8 +424,6 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
       <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
     
       <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
-    
-      <category term="Express" scheme="http://chuiliu.github.io/categories/Node-js/Express/"/>
     
   </entry>
   
@@ -539,7 +518,7 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/300/fill/I0Y2RjRGNA==/d
     <link href="http://chuiliu.github.io/2015/12/12/markdown/"/>
     <id>http://chuiliu.github.io/2015/12/12/markdown/</id>
     <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2016-04-06T13:26:40.347Z</updated>
+    <updated>2016-05-16T08:26:21.795Z</updated>
     <content type="html"><![CDATA[<h1 id="test__3A_just_for_learning"><a href="#test__3A_just_for_learning" class="headerlink" title="test : just for learning"></a>test : just for learning</h1><h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 一级标题</span></span><br><span class="line"><span class="preprocessor">##  二级标题</span></span><br><span class="line"><span class="preprocessor">### 三级标题</span></span><br><span class="line"><span class="preprocessor">#### 四级标题</span></span><br><span class="line"><span class="preprocessor">##### 五级标题</span></span><br><span class="line"><span class="preprocessor">###### 六级标题</span></span><br></pre></td></tr></table></figure>
 <h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6><a id="more"></a>
 <h2 id="u5217_u8868"><a href="#u5217_u8868" class="headerlink" title="列表"></a>列表</h2><h6 id="u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4"><a href="#u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4" class="headerlink" title="无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4."></a>无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4.</h6><h6 id="u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C"><a href="#u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C" class="headerlink" title="符号和文字间需要加上一个字符的空格"></a>符号和文字间需要加上一个字符的空格</h6><h4 id="u65E0_u5E8F_u5217_u8868"><a href="#u65E0_u5E8F_u5217_u8868" class="headerlink" title="无序列表"></a>无序列表</h4><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> 香蕉</span><br><span class="line"></span>-<span class="ruby"> 哈密瓜</span><br><span class="line"></span>-<span class="ruby"> 葡萄</span></span><br></pre></td></tr></table></figure>
@@ -616,13 +595,9 @@ console.log(say);
     
     </summary>
     
-      <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
-    
       <category term="markdown" scheme="http://chuiliu.github.io/tags/markdown/"/>
     
-      <category term="test" scheme="http://chuiliu.github.io/tags/test/"/>
-    
-      <category term="learn" scheme="http://chuiliu.github.io/categories/learn/"/>
+      <category term="其它" scheme="http://chuiliu.github.io/categories/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
@@ -686,6 +661,34 @@ console.log(say);
 ]]></content>
     <summary type="html">
     <![CDATA[<p>被子植物门 &gt; 双子叶植物纲 &gt; 合瓣花亚纲 &gt; 管状花目 &gt; <a href="http://frps.eflora.cn/frps/Scrophulariaceae" target="_blank" rel="external">玄参科</a><]]>
+    </summary>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
+    
+      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[禾本科]]></title>
+    <link href="http://chuiliu.github.io/1900/12/13/plants-Gramineae-%E7%A6%BE%E6%9C%AC%E7%A7%91/"/>
+    <id>http://chuiliu.github.io/1900/12/13/plants-Gramineae-禾本科/</id>
+    <published>1900-12-13T03:07:36.000Z</published>
+    <updated>2016-04-30T13:43:09.493Z</updated>
+    <content type="html"><![CDATA[<p><strong>被子植物门 &gt; 单子叶植物纲 &gt; 禾本目 &gt; <a href="http://frps.eflora.cn/frps/GRAMINEAE" target="_blank" rel="external">禾本科</a></strong></p>
+<ul>
+<li><strong><a href="http://frps.eflora.cn/frps/Zoysia%20tenuifolia" target="_blank" rel="external">细叶结缕草</a> <em>Zoysia tenuifolia Willd. ex Trin.</em></strong></li>
+<li>天鹅绒草，台湾草</li>
+<li>多年生草本。</li>
+</ul>
+<ul>
+<li><strong><a href="http://frps.eflora.cn/frps/Cynodon%20dactylon" target="_blank" rel="external">狗牙根</a> <em>Cynodon dactylon (L.) Pers.</em></strong></li>
+<li>绊根草，爬根草</li>
+<li>常见杂草。</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>被子植物门 &gt; 单子叶植物纲 &gt; 禾本目 &gt; <a href="http://frps.eflora.cn/frps/GRAMINEAE" target="_blank" rel="external">禾本科</a></strong></p]]>
     </summary>
     
       <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
