@@ -320,7 +320,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 120px;
+  height: 105px;
   position: relative;
 }
 #header:before,
@@ -561,8 +561,9 @@ body {
   padding: 20px 20px 0;
 }
 .article-title {
+  font-family: microsoft yahei;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   color: #555;
   line-height: 1.1em;
@@ -576,7 +577,7 @@ a.article-title:hover {
 }
 .article-entry {
   color: #555;
-  padding: 0 20px;
+  padding: 20px 20px;
 /* 修改blockquote的样式
   blockquote
     font-family: font-serif
@@ -605,6 +606,7 @@ a.article-title:hover {
 .article-entry table {
   line-height: 1.8em;
   margin: 1.8em 0;
+  margin: 1em 0;
 }
 .article-entry li p {
   margin: 0 0;
@@ -637,7 +639,8 @@ a.article-title:hover {
 .article-entry ul,
 .article-entry ol,
 .article-entry dl {
-  margin-top: 1.8em;
+/*margin-top: line-height*/
+  margin-top: 1.1em;
   margin-bottom: 1.8em;
 }
 .article-entry img,
@@ -1036,6 +1039,9 @@ a.article-title:hover {
 .archives-wrap {
   margin: 30px 0;
 }
+.archives {
+  background: #fff;
+}
 .archives:before,
 .archives:after {
   content: "";
@@ -1074,7 +1080,8 @@ a.article-title:hover {
 }
 .archive-article-inner {
   padding: 10px;
-  margin-bottom: 15px;
+/*margin-bottom: 15px*/
+/*改背景后，去掉外边距*/
 }
 .archive-article-title {
   text-decoration: none;
@@ -1102,6 +1109,10 @@ a.article-title:hover {
 }
 #page-nav {
   margin: 30px auto;
+/*background: #fff*/
+/*box-shadow: 1px 2px 3px #ddd*/
+/*border: 1px solid color-theme*/
+/*border-radius: 3px*/
   text-align: center;
   color: #9f8d86;
   overflow: hidden;
@@ -1153,7 +1164,7 @@ a.article-title:hover {
   font-weight: bold;
 }
 #page-nav .space {
-  color: #ddd;
+  color: #9f8d86;
 }
 #footer {
   background: #262a30;
@@ -1174,15 +1185,18 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #272822;
-  margin: 10px -20px;
-  padding: 15px 20px;
-  border-style: solid;
-  border-color: #ddd;
-  border-width: 1px 0;
+  background: #fcf7ff;
+  margin: 5px -20px;
+/*margin: 0 article-padding * -0.1*/
+  padding: 10px 20px;
+/*border-style: solid*/
+/*border-color: color-border*/
+/*border-width: 1px 0*/
   overflow: auto;
-  color: #ccc;
-  line-height: 25.2px;
+  color: #666;
+  line-height: 24px;
+  font-size: 16px;
+/*font-weight: bold*/
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1238,14 +1252,14 @@ a.article-title:hover {
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 25.2px;
+  height: 24px;
 }
 .article-entry .gist {
   margin: 0 -20px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #272822;
+  background: #fcf7ff;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1271,7 +1285,7 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #272822;
+  background: #fcf7ff;
   color: #999;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
@@ -1302,7 +1316,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #f2777a;
+  color: #f0595d;
 }
 pre .number,
 pre .preprocessor,
@@ -1310,12 +1324,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f99157;
+  color: #f7742d;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #9c9;
+  color: #099e01;
 }
 pre .string,
 pre .value,
@@ -1323,10 +1337,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #9c9;
+  color: #099e01;
 }
 pre .css .hexcolor {
-  color: #6cc;
+  color: #2eb7b5;
 }
 pre .function,
 pre .python .decorator,
@@ -1336,11 +1350,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #69c;
+  color: #3982cd;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c9c;
+  color: #ac03aa;
 }
 @media screen and (max-width: 479px) {
   #mobile-nav {
@@ -1380,16 +1394,20 @@ pre .javascript .function {
   color: #777;
   text-shadow: 0 1px #fff;
   background: #fff;
+/*box-shadow: 0 -1px 4px color-widget-border inset*/
   border: 1px solid #eee;
   padding: 15px;
+/*border-radius: 3px*/
 }
 .widget a {
   color: #4094c7;
   text-decoration: none;
 }
 .widget a:hover {
+/*text-decoration: underline*/
+/*background: color-theme*/
   color: #9f8d86;
-  font-size: 1.2em;
+/*font-size: 1.2em*/
 }
 .widget ul ul,
 .widget ol ul,
