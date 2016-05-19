@@ -53,38 +53,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[包管理工具 Bower]]></title>
-    <link href="http://chuiliu.github.io/2016/05/13/about-bower/"/>
-    <id>http://chuiliu.github.io/2016/05/13/about-bower/</id>
-    <published>2016-05-13T08:24:48.000Z</published>
-    <updated>2016-05-13T14:40:47.743Z</updated>
-    <content type="html"><![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上面提到的问题。<br>安装bower非常简单，前提是必须安装了Node.js和npm<br>检查是否安装Node.js<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
-<p>检查是否安装npm<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure></p>
-<p>安装bower<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> bower</span></span><br></pre></td></tr></table></figure></p>
-<p>安装完毕后，可以通过以下命令查看bower是否安装成功<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>-v</span><br></pre></td></tr></table></figure></p>
-<p>初始化<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>init</span><br></pre></td></tr></table></figure></p>
-<p>初始化后会生成bower的配置文件bower.json，在配置文件中dependencies字段填写要安装的库的名称和版本，比如jquery:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"learnBower"</span></span>,</span><br><span class="line">  "<span class="attribute">homepage</span>": <span class="value"><span class="string">"https://github.com/chuiliu/learning"</span></span>,</span><br><span class="line">  "<span class="attribute">authors</span>": <span class="value">[</span><br><span class="line">    <span class="string">"chuiliu &lt;zhengchuiliu@foxmail.com&gt;"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">moduleType</span>": <span class="value">[]</span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"MIT"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">ignore</span>": <span class="value">[</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">jquery</span>": <span class="value"><span class="string">"latests"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>安装最新版的jquery，jquery将会被下载到<code>./bower_components</code>目录下<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install</span><br></pre></td></tr></table></figure></p>
-<p>安装bootstrap，<code>--save</code>可以将bootstrap写入bower.json配置文件中<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install <span class="keyword">bootstrap </span>--save</span><br></pre></td></tr></table></figure></p>
-<p>查看已经安装的库<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>E:\learn\learnBower&gt;bower list<br>bower check-new     Checking for new versions of the project dependencies…<br>learnBower E:\learn\learnBower<br>├─┬ bootstrap#3.3.6 (latest is 4.0.0-alpha.2)<br>│ └── jquery#2.2.3 (latest is 3.0.0-beta1)<br>└── jquery#2.2.3</p>
-</blockquote>
-<p>查看库的信息<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="preprocessor">info</span> <span class="keyword">bootstrap</span></span><br></pre></td></tr></table></figure></p>
-<p>更新jquery到最新版<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update jquery</span><br></pre></td></tr></table></figure></p>
-<p>删除库，如果删除了有被其它库依赖的库，bower会给出提示<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>uninstall jquery</span><br></pre></td></tr></table></figure></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上]]>
-    </summary>
-    
-      <category term="bower" scheme="http://chuiliu.github.io/tags/bower/"/>
-    
-      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[空格的 ASCII 码]]></title>
     <link href="http://chuiliu.github.io/2016/04/24/about-space-2/"/>
     <id>http://chuiliu.github.io/2016/04/24/about-space-2/</id>
@@ -156,12 +124,13 @@
   </entry>
   
   <entry>
-    <title><![CDATA[收藏夹[NULL]]]></title>
+    <title><![CDATA[收藏夹]]></title>
     <link href="http://chuiliu.github.io/2016/04/06/collection/"/>
     <id>http://chuiliu.github.io/2016/04/06/collection/</id>
     <published>2016-04-06T14:55:54.000Z</published>
-    <updated>2016-05-16T08:34:24.157Z</updated>
-    <content type="html"></content>
+    <updated>2016-05-19T06:34:25.657Z</updated>
+    <content type="html"><![CDATA[<p>null</p>
+]]></content>
     <summary type="html">
     <![CDATA[我的收藏夹]]>
     
@@ -258,6 +227,38 @@
       <category term="Ubuntu" scheme="http://chuiliu.github.io/tags/Ubuntu/"/>
     
       <category term="Linux" scheme="http://chuiliu.github.io/categories/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[包管理工具 Bower]]></title>
+    <link href="http://chuiliu.github.io/2016/03/13/about-bower/"/>
+    <id>http://chuiliu.github.io/2016/03/13/about-bower/</id>
+    <published>2016-03-13T08:24:48.000Z</published>
+    <updated>2016-05-19T06:40:25.837Z</updated>
+    <content type="html"><![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上面提到的问题。<br>安装bower非常简单，前提是必须安装了Node.js和npm<br>检查是否安装Node.js<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
+<p>检查是否安装npm<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure></p>
+<p>安装bower<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> bower</span></span><br></pre></td></tr></table></figure></p>
+<p>安装完毕后，可以通过以下命令查看bower是否安装成功<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>-v</span><br></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>init</span><br></pre></td></tr></table></figure></p>
+<p>初始化后会生成bower的配置文件bower.json，在配置文件中dependencies字段填写要安装的库的名称和版本，比如jquery:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"learnBower"</span></span>,</span><br><span class="line">  "<span class="attribute">homepage</span>": <span class="value"><span class="string">"https://github.com/chuiliu/learning"</span></span>,</span><br><span class="line">  "<span class="attribute">authors</span>": <span class="value">[</span><br><span class="line">    <span class="string">"chuiliu &lt;zhengchuiliu@foxmail.com&gt;"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">moduleType</span>": <span class="value">[]</span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"MIT"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">ignore</span>": <span class="value">[</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">jquery</span>": <span class="value"><span class="string">"latests"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>安装最新版的jquery，jquery将会被下载到<code>./bower_components</code>目录下<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install</span><br></pre></td></tr></table></figure></p>
+<p>安装bootstrap，<code>--save</code>可以将bootstrap写入bower.json配置文件中<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install <span class="keyword">bootstrap </span>--save</span><br></pre></td></tr></table></figure></p>
+<p>查看已经安装的库<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>E:\learn\learnBower&gt;bower list<br>bower check-new     Checking for new versions of the project dependencies…<br>learnBower E:\learn\learnBower<br>├─┬ bootstrap#3.3.6 (latest is 4.0.0-alpha.2)<br>│ └── jquery#2.2.3 (latest is 3.0.0-beta1)<br>└── jquery#2.2.3</p>
+</blockquote>
+<p>查看库的信息<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="preprocessor">info</span> <span class="keyword">bootstrap</span></span><br></pre></td></tr></table></figure></p>
+<p>更新jquery到最新版<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update jquery</span><br></pre></td></tr></table></figure></p>
+<p>删除库，如果删除了有被其它库依赖的库，bower会给出提示<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>uninstall jquery</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上]]>
+    </summary>
+    
+      <category term="bower" scheme="http://chuiliu.github.io/tags/bower/"/>
+    
+      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

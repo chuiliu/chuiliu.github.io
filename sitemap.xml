@@ -2,18 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
-    <lastmod>2016-05-16T09:12:07.528Z</lastmod>
+    <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
+    <lastmod>2016-05-19T06:40:25.837Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/about/index.html</loc>
-    <lastmod>2016-05-16T08:48:24.323Z</lastmod>
+    <loc>http://chuiliu.github.io/stop-and-go/index.html</loc>
+    <lastmod>2016-05-19T06:37:32.120Z</lastmod>
   </url>
   
   <url>
     <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
-    <lastmod>2016-05-16T08:34:24.157Z</lastmod>
+    <lastmod>2016-05-19T06:34:25.657Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/about/index.html</loc>
+    <lastmod>2016-05-19T03:31:31.450Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
+    <lastmod>2016-05-16T09:12:07.528Z</lastmod>
   </url>
   
   <url>
@@ -59,16 +69,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</loc>
     <lastmod>2016-05-16T08:00:14.138Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/05/13/about-bower/</loc>
-    <lastmod>2016-05-13T14:40:47.743Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/stop-and-go/index.html</loc>
-    <lastmod>2016-05-13T11:16:19.334Z</lastmod>
   </url>
   
   <url>
