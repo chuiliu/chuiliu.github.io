@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "microsoft yahei";
+}
+
+#container {
+    width: 400px;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: rgba(254,214,143,1);
+}
+
+.title {
+    position: relative;
+    top: 10px;
+    width: 180px;
+    height: 35px;
+    float: left;
+    padding-left: 20px;
+    font-size: 22px;
+    /*background: #ccc;*/
+}
+
+#result {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    left: 37.5%;
+    top: 30%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 5px;
+    background: rgba(248,164,17,0.6);
+}
+
+.hide {
+    display: none;
+}
+
+/*h2 {
+    margin-left: 150px;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+}*/
+
+#newGame {
+    width: 150px;
+    height: 50px;
+    margin: 10px auto;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: rgb(248,164,17);
+}
+
+#newGame:hover {
+    cursor: pointer;
+    color: rgb(254,214,143);
+}

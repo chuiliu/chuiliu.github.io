@@ -4,7 +4,7 @@
   <subtitle><![CDATA[living like a tree]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-06-16T07:18:30.454Z</updated>
+  <updated>2016-08-06T15:55:54.551Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,6 +13,105 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[MySQL 开启允许公网连接]]></title>
+    <link href="http://chuiliu.github.io/2016/08/06/mysql%E5%BC%80%E5%90%AF%E5%85%81%E8%AE%B8%E5%85%AC%E7%BD%91%E8%BF%9E%E6%8E%A5/"/>
+    <id>http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/</id>
+    <published>2016-08-06T15:08:45.000Z</published>
+    <updated>2016-08-06T15:55:54.551Z</updated>
+    <content type="html"><![CDATA[<p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
+<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class=]]>
+    </summary>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/categories/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[redis使用笔记]]></title>
+    <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chuiliu.github.io/2016/08/06/redis使用笔记/</id>
+    <published>2016-08-06T15:06:06.000Z</published>
+    <updated>2016-08-06T15:48:57.784Z</updated>
+    <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
+<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
+<p>连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
+<li><p>下载redis</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzf redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd redis-<span class="number">3.2</span><span class="number">.3</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>连接到服务器后，可以查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
+<p>操作<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key hello</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"hello"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果需要redis在以后台程序的方式运行，以下命令启动<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> &amp;</span><br></pre></td></tr></table></figure></p>
+<p>或者将<code>redis.conf</code>配置文件中的<code>daemonize</code>值修改为<code>yes</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近项目用到redis作为内存数据库，</p>
+<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</]]>
+    </summary>
+    
+      <category term="redis" scheme="http://chuiliu.github.io/tags/redis/"/>
+    
+      <category term="redis" scheme="http://chuiliu.github.io/categories/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[redis启动失败]]></title>
+    <link href="http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"/>
+    <id>http://chuiliu.github.io/2016/07/31/redis启动失败/</id>
+    <published>2016-07-31T11:39:12.000Z</published>
+    <updated>2016-07-31T12:13:20.936Z</updated>
+    <content type="html"><![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;redis-server</span><br><span class="line">[<span class="number">8468</span>] <span class="number">31</span> Jul <span class="number">18</span>:<span class="number">55</span>:<span class="number">29.453</span> <span class="comment">#</span></span><br><span class="line">The Windows <span class="property">version</span> <span class="keyword">of</span> Redis allocates a memory mapped heap <span class="keyword">for</span> sharing <span class="keyword">with</span></span><br><span class="line"><span class="keyword">the</span> forked process used <span class="keyword">for</span> persistence operations. In order <span class="keyword">to</span> share this</span><br><span class="line">memory, Windows allocates <span class="keyword">from</span> <span class="keyword">the</span> system paging <span class="type">file</span> a portion <span class="keyword">equal</span> <span class="keyword">to</span> <span class="keyword">the</span></span><br><span class="line">size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap. At this <span class="property">time</span> there <span class="keyword">is</span> insufficient contiguous free</span><br><span class="line"><span class="constant">space</span> available <span class="keyword">in</span> <span class="keyword">the</span> system paging <span class="type">file</span> <span class="keyword">for</span> this operation (Windows <span class="keyword">error</span></span><br><span class="line"><span class="number">0x5AF</span>). To work <span class="keyword">around</span> this you may either increase <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> system</span><br><span class="line">paging <span class="type">file</span>, <span class="keyword">or</span> decrease <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap <span class="keyword">with</span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line">Sometimes a reboot will defragment <span class="keyword">the</span> system paging <span class="type">file</span> sufficiently <span class="keyword">for</span></span><br><span class="line">this operation <span class="keyword">to</span> complete successfully.</span><br><span class="line"></span><br><span class="line">Please see <span class="keyword">the</span> documentation included <span class="keyword">with</span> <span class="keyword">the</span> binary distributions <span class="keyword">for</span> more</span><br><span class="line">details <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line"></span><br><span class="line">Redis can <span class="keyword">not</span> <span class="keyword">continue</span>. Exiting.</span><br></pre></td></tr></table></figure></p>
+<p>以上描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">C</span>:\Users\Administrator&gt;redis-server --maxheap <span class="number">1024000000</span></span><br><span class="line">                _._</span><br><span class="line">           _.-<span class="built_in">``</span>__ <span class="string">''</span>-._</span><br><span class="line">      _.-<span class="built_in">``</span>    <span class="built_in">`.  `</span>_.  <span class="string">''</span>-._           Redis <span class="number">2.8</span>.<span class="number">2402</span> (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</span><br><span class="line">  .-<span class="built_in">``</span> .-<span class="built_in">``</span><span class="built_in">`.  `</span><span class="built_in">``</span>\/    _.,_ <span class="string">''</span>-._</span><br><span class="line"> (    '      ,       .-<span class="built_in">`  | `</span>,    )     Running in stand alone mode</span><br><span class="line"> |<span class="built_in">`-._`</span>-...-<span class="built_in">` __...-.`</span><span class="built_in">`-._|'`</span> _.-'|     <span class="attribute">Port</span>: <span class="number">6379</span></span><br><span class="line"> |    <span class="built_in">`-._   `</span>._    /     _.-'    |     <span class="attribute">PID</span>: <span class="number">8296</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._  <span class="built_in">`-./  _.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |           <span class="attribute">http</span>:<span class="comment">//redis.io</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |</span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line">      `</span>-._    <span class="built_in">`-.__.-'    _.-'</span><br><span class="line">          `</span>-._        _.-'</span><br><span class="line">              `-.__.-'</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span ]]>
+    </summary>
+    
+      <category term="redis" scheme="http://chuiliu.github.io/tags/redis/"/>
+    
+      <category term="redis" scheme="http://chuiliu.github.io/categories/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[mysql笔记]]></title>
+    <link href="http://chuiliu.github.io/2016/07/31/mysql%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chuiliu.github.io/2016/07/31/mysql笔记/</id>
+    <published>2016-07-31T11:35:38.000Z</published>
+    <updated>2016-07-31T11:58:53.765Z</updated>
+    <content type="html"><![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
+<li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
+]]>
+    </summary>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/categories/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[CSS 相关浏览器兼容问题 [1]]]></title>
@@ -158,8 +257,8 @@
     <link href="http://chuiliu.github.io/2016/04/06/collection/"/>
     <id>http://chuiliu.github.io/2016/04/06/collection/</id>
     <published>2016-04-06T14:55:54.000Z</published>
-    <updated>2016-05-19T06:34:25.657Z</updated>
-    <content type="html"><![CDATA[<p>null</p>
+    <updated>2016-06-17T09:14:21.301Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.5idev.com/p-xhtml_html.shtml" target="_blank" rel="external">XHTML与HTML的区别</a><br><a href="http://javascript-puzzlers.herokuapp.com/" target="_blank" rel="external">do you really know JavaScript?</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[我的收藏夹]]>
@@ -459,21 +558,29 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/d
   </entry>
   
   <entry>
-    <title><![CDATA[Hexo：修改landscape主题]]></title>
+    <title><![CDATA[Hexo优化系列（landscape主题）]]></title>
     <link href="http://chuiliu.github.io/2015/12/16/about-hexo-3/"/>
     <id>http://chuiliu.github.io/2015/12/16/about-hexo-3/</id>
     <published>2015-12-16T15:46:56.000Z</published>
-    <updated>2015-12-18T13:40:27.169Z</updated>
-    <content type="html"><![CDATA[<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
-<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
-<li>设置组件的样式，复制生成的代码</li>
-<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
-<li>在<code>theme/landscape/_config.yml</code> 中添加如下代码：<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widges:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure>
+    <updated>2016-06-17T06:33:56.013Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li><h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3" class="headerlink" title="忽略目录或文件的渲染"></a>忽略目录或文件的渲染</h2>我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是<code>source</code>目录下的文件默认都会在执行<code>hexo deploy</code>命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：</li>
+</ul>
+<ul>
+<li><p>在根目录下<code>_config.yml</code>文件中添加以下配置，代表不渲染<code>source</code>目录下的README.md文件：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">skip_render</span>: <span class="string">README.md</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2><ol>
+<li><p>如果想配置不渲染多个文件，则可以这样配置：<br>其中，<code>demo/**</code>代表不渲染<code>source/demo/</code>下的所有目录和文件</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">    -<span class="ruby"> <span class="string">'README.md'</span></span><br><span class="line"></span>    -<span class="ruby"> <span class="string">'demo/**'</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>此外，配置中还可以使用正则来匹配：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">skip_render</span>: <span class="string">demo/*.html</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2></li>
+</ul>
+<ol>
 <li><p>在<code>themes/landscape/layout/_partial/</code> 下新建 <code>totop.ejs</code> ，代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 回顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"to-top"</span> <span class="attribute">style</span>=<span class="value">"position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;"</span>&gt;</span>TOP<span class="tag">&lt;/<span class="title">span</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 回顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"to-top"</span> <span class="attribute">style</span>=<span class="value">"position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;"</span>&gt;</span>TOP<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>themes/landscape/source/js/</code> 下新建<code>totop.js</code>，代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">window</span>).scrollTop() &gt; <span class="number">200</span>)&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"5px"</span>&#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"-50px"</span>&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"#to-top"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">'body,html'</span>).animate(&#123;</span><br><span class="line">            scrollTop:<span class="number">0</span></span><br><span class="line">        &#125;,<span class="number">300</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
@@ -482,9 +589,19 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/d
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="preprocessor">%</span>- partial<span class="comment">('totop')</span> <span class="preprocessor">%</span>&gt;</span><br><span class="line">&lt;<span class="preprocessor">%</span>- js<span class="comment">('js/totop')</span> <span class="preprocessor">%</span>&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<ul>
+<li><h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2></li>
+</ul>
+<ol>
+<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
+<li>设置组件的样式，复制生成的代码</li>
+<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
+<li>在<code>theme/landscape/_config.yml</code> 中添加如下代码：<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widges:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title]]>
+    <![CDATA[<ul>
+<li><h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E3]]>
     </summary>
     
       <category term="Hexo" scheme="http://chuiliu.github.io/tags/Hexo/"/>
@@ -541,162 +658,6 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/d
       <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
     
       <category term="test" scheme="http://chuiliu.github.io/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Markdown语法]]></title>
-    <link href="http://chuiliu.github.io/2015/12/12/markdown/"/>
-    <id>http://chuiliu.github.io/2015/12/12/markdown/</id>
-    <published>2015-12-12T07:27:33.000Z</published>
-    <updated>2016-05-16T08:26:21.795Z</updated>
-    <content type="html"><![CDATA[<h1 id="test__3A_just_for_learning"><a href="#test__3A_just_for_learning" class="headerlink" title="test : just for learning"></a>test : just for learning</h1><h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 一级标题</span></span><br><span class="line"><span class="preprocessor">##  二级标题</span></span><br><span class="line"><span class="preprocessor">### 三级标题</span></span><br><span class="line"><span class="preprocessor">#### 四级标题</span></span><br><span class="line"><span class="preprocessor">##### 五级标题</span></span><br><span class="line"><span class="preprocessor">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6><a id="more"></a>
-<h2 id="u5217_u8868"><a href="#u5217_u8868" class="headerlink" title="列表"></a>列表</h2><h6 id="u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4"><a href="#u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4" class="headerlink" title="无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4."></a>无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4.</h6><h6 id="u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C"><a href="#u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C" class="headerlink" title="符号和文字间需要加上一个字符的空格"></a>符号和文字间需要加上一个字符的空格</h6><h4 id="u65E0_u5E8F_u5217_u8868"><a href="#u65E0_u5E8F_u5217_u8868" class="headerlink" title="无序列表"></a>无序列表</h4><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> 香蕉</span><br><span class="line"></span>-<span class="ruby"> 哈密瓜</span><br><span class="line"></span>-<span class="ruby"> 葡萄</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>香蕉</li>
-<li>哈密瓜</li>
-<li>葡萄</li>
-</ul>
-<h4 id="u6709_u5E8F_u5217_u8868"><a href="#u6709_u5E8F_u5217_u8868" class="headerlink" title="有序列表"></a>有序列表</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 杨梅</span><br><span class="line"><span class="number">2.</span> 百香果</span><br><span class="line"><span class="number">3.</span> 榴莲</span><br></pre></td></tr></table></figure>
-<ol>
-<li>杨梅</li>
-<li>百香果</li>
-<li>榴莲</li>
-</ol>
-<h2 id="u5F15_u7528"><a href="#u5F15_u7528" class="headerlink" title="引用"></a>引用</h2><h6 id="u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528"><a href="#u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528" class="headerlink" title="在文本前加上 &gt; 即可表示引用"></a>在文本前加上 &gt; 即可表示引用</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; 一级</span><br><span class="line">&gt;&gt; 二级</span><br><span class="line"><span class="tag">&lt;<span class="title">blockquote</span>&gt;</span>三级引用<span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span></span><br><span class="line">&gt;&gt; 还是二级</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>一级</p>
-<blockquote>
-<p>二级</p>
-<p><blockquote>三级引用</blockquote><br>还是二级</p>
-</blockquote>
-</blockquote>
-<p>文章引用</p>
-<blockquote>
-<h3 id="u6843_u82B1_u6E90_u8BB0"><a href="#u6843_u82B1_u6E90_u8BB0" class="headerlink" title="桃花源记"></a>桃花源记</h3><h6 id="u9676_u6E0A_u660E"><a href="#u9676_u6E0A_u660E" class="headerlink" title="陶渊明"></a>陶渊明</h6><p>晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。<br>　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。<br>　　见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语云：“不足为外人道也。”(间隔 一作：隔绝)<br>　　既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，遂迷，不复得路。<br>　　南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终，后遂无问津者。</p>
-</blockquote>
-<h2 id="u8D85_u94FE_u63A5"><a href="#u8D85_u94FE_u63A5" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">百度一下，你就知道</span>](<span class="link_url">http://baidu.com</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="http://baidu.com" target="_blank" rel="external">百度一下，你就知道</a></p>
-<h2 id="u56FE_u7247"><a href="#u56FE_u7247" class="headerlink" title="图片"></a>图片</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">zhengchuiliu</span>](<span class="link_url">https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460" alt="zhengchuiliu"></p>
-<h2 id="u7C97_u4F53_u548C_u659C_u4F53"><a href="#u7C97_u4F53_u548C_u659C_u4F53" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><h6 id="u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C"><a href="#u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C" class="headerlink" title="用 ** 包裹需要加粗的文本"></a>用 ** 包裹需要加粗的文本</h6><h6 id="u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C"><a href="#u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C" class="headerlink" title="用 * 包裹需要斜体的文本"></a>用 * 包裹需要斜体的文本</h6><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">*</span><span class="keyword">*</span>这是粗体<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"><span class="keyword">*</span>这是斜体<span class="keyword">*</span></span><br></pre></td></tr></table></figure>
-<p><strong>这是粗体</strong><br><em>这是斜体</em></p>
-<h2 id="u8868_u683C"><a href="#u8868_u683C" class="headerlink" title="表格"></a>表格</h2><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">居中</span>|<span class="string">左对齐</span>|<span class="string">右对齐</span>|</span><br><span class="line">|<span class="string">:-----:</span>|<span class="string">-----</span>|<span class="string">-----:</span>|</span><br><span class="line">|<span class="string">Chinese</span>|<span class="string">English</span>|<span class="string">Math</span>|</span><br><span class="line">|<span class="string">Math</span>|<span class="string">Chinese</span>|<span class="string">Chinese</span>|</span><br><span class="line">|<span class="string">English</span>|<span class="string">Math</span>|<span class="string">English</span>|</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">居中</th>
-<th>左对齐</th>
-<th style="text-align:right">右对齐</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Chinese</td>
-<td>English</td>
-<td style="text-align:right">Math</td>
-</tr>
-<tr>
-<td style="text-align:center">Math</td>
-<td>Chinese</td>
-<td style="text-align:right">Chinese</td>
-</tr>
-<tr>
-<td style="text-align:center">English</td>
-<td>Math</td>
-<td style="text-align:right">English</td>
-</tr>
-</tbody>
-</table>
-<h2 id="u4EE3_u7801_u7247_u6BB5"><a href="#u4EE3_u7801_u7247_u6BB5" class="headerlink" title="代码片段"></a>代码片段</h2><h6 id="u5F15_u7528_u4E00_u5C0F_u6BB5_u884C_u5185_u4EE3_u7801_u7247_u6BB5_uFF0C_u53EA_u9700_u8981_u7528__60__u628A_u4EE3_u7801_u7247_u6BB5_u5305_u88F9_u8D77_u6765"><a href="#u5F15_u7528_u4E00_u5C0F_u6BB5_u884C_u5185_u4EE3_u7801_u7247_u6BB5_uFF0C_u53EA_u9700_u8981_u7528__60__u628A_u4EE3_u7801_u7247_u6BB5_u5305_u88F9_u8D77_u6765" class="headerlink" title="引用一小段行内代码片段，只需要用 ` 把代码片段包裹起来"></a>引用一小段行内代码片段，只需要用 ` 把代码片段包裹起来</h6><h6 id="u884C_u9996_u7A7A_u56DB_u4E2A_u7A7A_u683C_u6216tab_u53EF_u4EE5_u8868_u793A_u4EE3_u7801_u7247_u6BB5"><a href="#u884C_u9996_u7A7A_u56DB_u4E2A_u7A7A_u683C_u6216tab_u53EF_u4EE5_u8868_u793A_u4EE3_u7801_u7247_u6BB5" class="headerlink" title="行首空四个空格或tab可以表示代码片段"></a>行首空四个空格或tab可以表示代码片段</h6><h6 id="u4F7F_u7528_u4E09_u4E2A__60__u628A_u4EE3_u7801_u5305_u88F9_u8D77_u6765"><a href="#u4F7F_u7528_u4E09_u4E2A__60__u628A_u4EE3_u7801_u5305_u88F9_u8D77_u6765" class="headerlink" title="使用三个 ` 把代码包裹起来"></a>使用三个 ` 把代码包裹起来</h6><p>这是<code>javascript</code>代码</p>
-<pre><code>var say = &quot;Hello World&quot;;
-console.log(say);
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> say = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(say);</span><br></pre></td></tr></table></figure>
-<h2 id="u5206_u5272_u7EBF"><a href="#u5206_u5272_u7EBF" class="headerlink" title="分割线"></a>分割线</h2><h6 id="u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF"><a href="#u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF" class="headerlink" title="另起一行，连续输入三个星号（<em>*</em>）即可创建分割线"></a>另起一行，连续输入三个星号（<em>*</em>）即可创建分割线</h6><hr>
-<h2 id="markdown_u4E2D_u5982_u4F55_u8868_u793A_u7F29_u8FDB"><a href="#markdown_u4E2D_u5982_u4F55_u8868_u793A_u7F29_u8FDB" class="headerlink" title="markdown中如何表示缩进"></a>markdown中如何表示缩进</h2><ul>
-<li><code>&amp;ensp;</code>,<code>&amp;#8194;</code> 表示半角的空格</li>
-<li><code>&amp;emsp;</code>,<code>&amp;#8195;</code> 表示全角的空格</li>
-<li><code>&amp;nbsp;</code>,<code>&amp;#160;</code> 表示半角的空格，不断行</li>
-</ul>
-<h3 id="END_21"><a href="#END_21" class="headerlink" title="END!"></a>END!</h3>]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="test__3A_just_for_learning"><a href="#test__3A_just_for_learning" class="headerlink" title="test : just for learning"></a>test : just for learning</h1><h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 一级标题</span></span><br><span class="line"><span class="preprocessor">##  二级标题</span></span><br><span class="line"><span class="preprocessor">### 三级标题</span></span><br><span class="line"><span class="preprocessor">#### 四级标题</span></span><br><span class="line"><span class="preprocessor">##### 五级标题</span></span><br><span class="line"><span class="preprocessor">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6>]]>
-    
-    </summary>
-    
-      <category term="markdown" scheme="http://chuiliu.github.io/tags/markdown/"/>
-    
-      <category term="其它" scheme="http://chuiliu.github.io/categories/%E5%85%B6%E5%AE%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://chuiliu.github.io/2015/12/12/hello-world/"/>
-    <id>http://chuiliu.github.io/2015/12/12/hello-world/</id>
-    <published>2015-12-12T05:43:23.237Z</published>
-    <updated>2015-12-12T04:40:19.818Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[茜草科]]></title>
-    <link href="http://chuiliu.github.io/1900/12/13/plants-Rubiaceae-%E8%8C%9C%E8%8D%89%E7%A7%91/"/>
-    <id>http://chuiliu.github.io/1900/12/13/plants-Rubiaceae-茜草科/</id>
-    <published>1900-12-13T03:07:36.000Z</published>
-    <updated>2016-05-02T11:52:38.684Z</updated>
-    <content type="html"><![CDATA[<p><strong><a href="http://frps.eflora.cn/frps/RUBIACEAE" target="_blank" rel="external">茜草科</a></strong></p>
-<ul>
-<li><strong>希茉莉 <em>Hamelia patens Jacq.</em></strong></li>
-<li>半落叶藤状灌木</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><strong><a href="http://frps.eflora.cn/frps/RUBIACEAE" target="_blank" rel="external">茜草科</a></strong></p>
-<ul>
-<li><strong>希茉莉 <em>Hamel]]>
-    </summary>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[玄参科]]></title>
-    <link href="http://chuiliu.github.io/1900/12/13/plants-Scrophulariaceae-%E7%8E%84%E5%8F%82%E7%A7%91/"/>
-    <id>http://chuiliu.github.io/1900/12/13/plants-Scrophulariaceae-玄参科/</id>
-    <published>1900-12-13T03:07:36.000Z</published>
-    <updated>2016-05-02T11:48:38.656Z</updated>
-    <content type="html"><![CDATA[<p>被子植物门 &gt; 双子叶植物纲 &gt; 合瓣花亚纲 &gt; 管状花目 &gt; <a href="http://frps.eflora.cn/frps/Scrophulariaceae" target="_blank" rel="external">玄参科</a></p>
-<ul>
-<li><strong><a href="http://frps.eflora.cn/frps/Scoparia%20dulcis" target="_blank" rel="external">野甘草</a> <em>Scoparia dulcis L.</em></strong></li>
-<li>小时候家门口很常见，好多年没见了好怀念，小时候觉得花好洁白好美</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>被子植物门 &gt; 双子叶植物纲 &gt; 合瓣花亚纲 &gt; 管状花目 &gt; <a href="http://frps.eflora.cn/frps/Scrophulariaceae" target="_blank" rel="external">玄参科</a><]]>
-    </summary>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/tags/%E6%A4%8D%E7%89%A9/"/>
-    
-      <category term="植物" scheme="http://chuiliu.github.io/categories/%E6%A4%8D%E7%89%A9/"/>
     
   </entry>
   

@@ -2,6 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/08/06/mysql%E5%BC%80%E5%90%AF%E5%85%81%E8%AE%B8%E5%85%AC%E7%BD%91%E8%BF%9E%E6%8E%A5/</loc>
+    <lastmod>2016-08-06T15:55:54.551Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-08-06T15:48:57.784Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</loc>
+    <lastmod>2016-07-31T12:13:20.936Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/mysql%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-07-31T11:58:53.765Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
+    <lastmod>2016-06-17T09:14:21.301Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2015/12/16/about-hexo-3/</loc>
+    <lastmod>2016-06-17T06:33:56.013Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/meiya/index.html</loc>
+    <lastmod>2016-06-17T05:48:55.974Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/js/catchFruits.js</loc>
+    <lastmod>2016-06-17T05:41:34.072Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/css/style.css</loc>
+    <lastmod>2016-06-17T05:37:24.733Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/meiya/css/common.css</loc>
+    <lastmod>2016-06-16T16:37:09.858Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/meiya/js/index.js</loc>
+    <lastmod>2016-06-16T16:18:04.791Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/meiya/js/slide.js</loc>
+    <lastmod>2016-06-16T16:11:28.539Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
     <lastmod>2016-06-16T07:18:30.454Z</lastmod>
   </url>
@@ -12,13 +72,18 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
-    <lastmod>2016-05-19T06:40:25.837Z</lastmod>
+    <loc>http://chuiliu.github.io/demo/meiya/css/reset.css</loc>
+    <lastmod>2016-06-16T03:20:29.634Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/collection/</loc>
-    <lastmod>2016-05-19T06:34:25.657Z</lastmod>
+    <loc>http://chuiliu.github.io/demo/meiya/css/index.css</loc>
+    <lastmod>2016-06-15T01:23:42.397Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
+    <lastmod>2016-05-19T06:40:25.837Z</lastmod>
   </url>
   
   <url>
@@ -77,6 +142,11 @@
   </url>
   
   <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/index.html</loc>
+    <lastmod>2016-05-08T13:23:53.526Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/1900/12/13/plants-Compositae-%E8%8F%8A%E7%A7%91/</loc>
     <lastmod>2016-05-02T12:13:03.470Z</lastmod>
   </url>
@@ -117,6 +187,11 @@
   </url>
   
   <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/README.html</loc>
+    <lastmod>2016-04-26T11:28:55.383Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/README.html</loc>
     <lastmod>2016-04-25T05:14:00.381Z</lastmod>
   </url>
@@ -137,13 +212,13 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2015/12/16/about-hexo-3/</loc>
-    <lastmod>2015-12-18T13:40:27.169Z</lastmod>
+    <loc>http://chuiliu.github.io/2015/12/12/hello-world/</loc>
+    <lastmod>2015-12-12T04:40:19.818Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2015/12/12/hello-world/</loc>
-    <lastmod>2015-12-12T04:40:19.818Z</lastmod>
+    <loc>http://chuiliu.github.io/demo/meiya/js/jquery-1.11.1.min.js</loc>
+    <lastmod>2014-12-17T05:48:10.616Z</lastmod>
   </url>
   
 </urlset>

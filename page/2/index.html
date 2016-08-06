@@ -74,6 +74,301 @@
 
   
     <!-- 修改成中文：分享，评论 -->
+<article id="post-remove-inline-block-space" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/05/16/remove-inline-block-space/" class="article-date">
+  <time datetime="2016-05-16T02:25:12.000Z" itemprop="datePublished">2016-05-16 10:25:12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/CSS/">CSS</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/16/remove-inline-block-space/">去除 inline-block 之间的空白间隔</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#container &#123;</span><br><span class="line">    background: #bbada0;</span><br><span class="line">    width: 215px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">#container .cell &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 25px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    zoom: 1;</span><br><span class="line">    *display: inline;</span><br><span class="line">    background: #cdc1b4;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
+<ul>
+<li><p>移除空白字符，全部写在同一行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改变换行的位置</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span></span><br><span class="line">    cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置父元素的font-size为0，再为每个inline-block对象设置font-size的值</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#bbada0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">215px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最终效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516145701.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/" data-id="cirjceteh0012fcmfek5ccs4x" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-remove-inline-block-space"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-about-space-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/24/about-space-2/" class="article-date">
+  <time datetime="2016-04-24T13:42:58.000Z" itemprop="datePublished">2016-04-24 21:42:58</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/24/about-space-2/">空格的 ASCII 码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
+<p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
+<p>解决方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String newStr = str.replaceAll(<span class="string">"[\\s\\u00A0]+$"</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure></p>
+<p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/24/about-space-2/" data-id="cirjcetn5002wfcmfo1hkvlan" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/24/about-space-2/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-space-2"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-undo-a-select-change" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/13/undo-a-select-change/" class="article-date">
+  <time datetime="2016-04-13T13:25:50.000Z" itemprop="datePublished">2016-04-13 21:25:50</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/Javascript/">Javascript</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
+<p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
+<p>Example：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">"template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template1"</span>&gt;</span>模板一<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template2"</span>&gt;</span>模板二<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"template3"</span>&gt;</span>模板三<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#template'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> selected = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> text = $.trim($(<span class="string">'#target'</span>).text());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(text) &#123;</span><br><span class="line">        <span class="keyword">if</span>(confirm(<span class="string">'是否覆盖已有模板？'</span>)) &#123;</span><br><span class="line">            $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $(<span class="string">'#template'</span>).val($.data(<span class="keyword">this</span>, <span class="string">'current'</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">'#target'</span>).text(selected);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $.data(<span class="keyword">this</span>, <span class="string">'current'</span>, $(<span class="keyword">this</span>).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
+<p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
+<hr>
+<p>参考：<a href="http://stackoverflow.com/questions/3963855/jquery-how-to-undo-a-select-change" target="_blank" rel="external">jQuery how to undo a select change</a></p>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#template').change(function() {
+        var selected = $(this).val();
+        var text = $.trim($('#target').text());
+
+        if(text) {
+            if(confirm('是否覆盖已有模板？')) {
+                $('#target').text(selected);
+            } else {
+                $('#template').val($.data(this, 'current'));
+            }
+        } else {
+            $('#target').text(selected);
+        }
+        $.data(this, 'current', $(this).val());
+    });
+</script>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/13/undo-a-select-change/" data-id="cirjcetdg000pfcmf5yhwccip" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-undo-a-select-change"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-collection" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/04/06/collection/" class="article-date">
+  <time datetime="2016-04-06T14:55:54.000Z" itemprop="datePublished">2016-04-6 22:55:54</time>
+</a>
+      
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/06/collection/">收藏夹</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.5idev.com/p-xhtml_html.shtml" target="_blank" rel="external">XHTML与HTML的区别</a><br><a href="http://javascript-puzzlers.herokuapp.com/" target="_blank" rel="external">do you really know JavaScript?</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/04/06/collection/" data-id="cirjcetlp002nfcmf7cw6vo9f" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/04/06/collection/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-collection"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
 <article id="post-browser-compatibility" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -111,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/06/browser-compatibility/" data-id="cipi0tl5v00214smfnxf1m5ws" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/04/06/browser-compatibility/" data-id="cirjcetmc002qfcmfpzb7eu02" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -139,324 +434,6 @@
 
 
   
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-about-git" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/04/06/about-git/" class="article-date">
-  <time datetime="2016-04-06T02:23:54.000Z" itemprop="datePublished">2016-04-6 10:23:54</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/about-git/">git 命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
-<ul>
-<li><p><strong>配置</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>常用</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看当前仓库的状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看提交日志</span></span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加当前目录下所有文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">// 添加文件</span></span><br><span class="line">git add [filename]</span><br><span class="line"><span class="comment">// 删除和移动的文件也能提交到暂存区</span></span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>commit</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提交到仓库</span></span><br><span class="line">git commit -m <span class="string">"descriptions"</span></span><br><span class="line">git commit [filename] -m <span class="string">"descriptions"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建分支</span></span><br><span class="line">git branch [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建并切换到分支</span></span><br><span class="line">git checkout -b [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换到分支</span></span><br><span class="line">git checkout [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交分支</span></span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并分支</span></span><br><span class="line">git merge [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除分支</span></span><br><span class="line">git branch -d [branchName]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>remote</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接到远程仓库</span></span><br><span class="line">git remote add origin git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推送到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程仓库更新到本地</span></span><br><span class="line">git pull git<span class="annotation">@github</span>.com:chuiliu/test.git [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从远程仓库克隆</span></span><br><span class="line">git clone git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/06/about-git/" data-id="cipi0tla4002t4smfif43s8yt" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/04/06/about-git/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-git"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-Ubuntu-1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/04/03/Ubuntu-1/" class="article-date">
-  <time datetime="2016-04-03T02:56:41.000Z" itemprop="datePublished">2016-04-3 10:56:41</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/03/Ubuntu-1/">Ubuntu修改root密码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Ubuntu版本14.04.4 LTS</strong></p>
-<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
-<p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/03/Ubuntu-1/" data-id="cipi0tlb900314smf89rtfk03" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-Ubuntu-1"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-about-bower" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/03/13/about-bower/" class="article-date">
-  <time datetime="2016-03-13T08:24:48.000Z" itemprop="datePublished">2016-03-13 16:24:48</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/13/about-bower/">包管理工具 Bower</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上面提到的问题。<br>安装bower非常简单，前提是必须安装了Node.js和npm<br>检查是否安装Node.js<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
-<p>检查是否安装npm<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure></p>
-<p>安装bower<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> bower</span></span><br></pre></td></tr></table></figure></p>
-<p>安装完毕后，可以通过以下命令查看bower是否安装成功<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>-v</span><br></pre></td></tr></table></figure></p>
-<p>初始化<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>init</span><br></pre></td></tr></table></figure></p>
-<p>初始化后会生成bower的配置文件bower.json，在配置文件中dependencies字段填写要安装的库的名称和版本，比如jquery:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"learnBower"</span></span>,</span><br><span class="line">  "<span class="attribute">homepage</span>": <span class="value"><span class="string">"https://github.com/chuiliu/learning"</span></span>,</span><br><span class="line">  "<span class="attribute">authors</span>": <span class="value">[</span><br><span class="line">    <span class="string">"chuiliu &lt;zhengchuiliu@foxmail.com&gt;"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">moduleType</span>": <span class="value">[]</span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"MIT"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">ignore</span>": <span class="value">[</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">jquery</span>": <span class="value"><span class="string">"latests"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>安装最新版的jquery，jquery将会被下载到<code>./bower_components</code>目录下<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install</span><br></pre></td></tr></table></figure></p>
-<p>安装bootstrap，<code>--save</code>可以将bootstrap写入bower.json配置文件中<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install <span class="keyword">bootstrap </span>--save</span><br></pre></td></tr></table></figure></p>
-<p>查看已经安装的库<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>E:\learn\learnBower&gt;bower list<br>bower check-new     Checking for new versions of the project dependencies…<br>learnBower E:\learn\learnBower<br>├─┬ bootstrap#3.3.6 (latest is 4.0.0-alpha.2)<br>│ └── jquery#2.2.3 (latest is 3.0.0-beta1)<br>└── jquery#2.2.3</p>
-</blockquote>
-<p>查看库的信息<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="preprocessor">info</span> <span class="keyword">bootstrap</span></span><br></pre></td></tr></table></figure></p>
-<p>更新jquery到最新版<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update jquery</span><br></pre></td></tr></table></figure></p>
-<p>删除库，如果删除了有被其它库依赖的库，bower会给出提示<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>uninstall jquery</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/03/13/about-bower/" data-id="cipi0tlan002x4smf05cihw6m" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/03/13/about-bower/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-bower"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-nodejs-querystring" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/02/24/nodejs-querystring/" class="article-date">
-  <time datetime="2016-02-24T06:15:26.000Z" itemprop="datePublished">2016-02-24 14:15:26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/24/nodejs-querystring/">Node.js笔录：Query String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用到，做个笔记</p>
-<p>querystring模块提供了有关查询字符串的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querystring.stringify(obj, [sep], [eq])</span><br><span class="line">querystring.parse(str, [sep], [eq], [options])</span><br><span class="line">querystring.escape</span><br><span class="line">querystring.unescape</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;username:<span class="string">'zheng'</span>, password:<span class="string">'123456'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.stringify(obj));</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>username=zheng&amp;password=123456</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'username=zheng&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str1));</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str2));</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
-</li>
-<li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'username=用户名&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">escape</span> = querystring.escape(str);</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">unescape</span> = querystring.unescape(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">unescape</span>);</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/02/24/nodejs-querystring/" data-id="cipi0tl3j001n4smf5vivglh4" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/02/24/nodejs-querystring/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-nodejs-querystring"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
@@ -471,7 +448,7 @@
     
     <div class="widget">
       <h3 class="widget-title">分类</h3><hr>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/植物/">植物</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/植物/">植物</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -481,7 +458,7 @@
     
     <div class="widget tagcloud">
       <h3 class="widget-title">标签云</h3><hr>
-      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Node-js/" style="font-size: 13.33px;">Node.js</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 13.33px;">test</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/tags/植物/" style="font-size: 20px;">植物</a> <a href="/tags/浏览器兼容/" style="font-size: 13.33px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 13.33px;">编码</a>
+      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 13.33px;">Node.js</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 13.33px;">test</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/tags/植物/" style="font-size: 20px;">植物</a> <a href="/tags/浏览器兼容/" style="font-size: 13.33px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 13.33px;">编码</a>
     </div>
   </div>
 
@@ -491,7 +468,7 @@
     
     <div class="widget">
       <h3 class="widget-title">标签</h3><hr>
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/植物/">植物</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/植物/">植物</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -501,7 +478,7 @@
     
     <div class="widget">
       <h3 class="widget-title">归档</h3><hr>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -515,23 +492,23 @@
         <h3 class="widget-title">最新文章</h3><hr>
         
           <li>
+            <a href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/06/redis使用笔记/">redis使用笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/31/redis启动失败/">redis启动失败</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/31/mysql笔记/">mysql笔记</a>
+          </li>
+        
+          <li>
             <a href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/16/remove-inline-block-space/">去除 inline-block 之间的空白间隔</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/24/about-space-2/">空格的 ASCII 码</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/06/collection/">收藏夹</a>
           </li>
         
       </ul>
