@@ -144,12 +144,12 @@
     <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://chuiliu.github.io/2016/08/06/redis使用笔记/</id>
     <published>2016-08-06T15:06:06.000Z</published>
-    <updated>2016-09-26T15:53:34.538Z</updated>
+    <updated>2016-09-26T15:54:29.207Z</updated>
     <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
 <p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
-<li><p>下载redis</p>
+<li><p>下载Redis</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>解压</p>
@@ -170,9 +170,9 @@
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</]]>
     </summary>
     
-      <category term="redis" scheme="http://chuiliu.github.io/tags/redis/"/>
+      <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
     
-      <category term="redis" scheme="http://chuiliu.github.io/categories/redis/"/>
+      <category term="Redis" scheme="http://chuiliu.github.io/categories/Redis/"/>
     
   </entry>
   
