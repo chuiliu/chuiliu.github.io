@@ -74,6 +74,72 @@
 
   
     <!-- 修改成中文：分享，评论 -->
+<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/09/26/hello-world/" class="article-date">
+  <time datetime="2016-09-26T12:07:08.969Z" itemprop="datePublished">2016-09-26 20:07:08</time>
+</a>
+      
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/26/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/09/26/hello-world/" data-id="citk0n9yg002oggrl5wpje5wz" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/09/26/hello-world/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-hello-world"><!--评论--></a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
 <article id="post-mysql开启允许公网连接" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -105,12 +171,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
-<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="cirjcetk6002gfcmf30ytgicg" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="citk0n9y2002gggrlvwa92zbm" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -192,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/06/redis使用笔记/" data-id="cirjcetfj001dfcmfphrw2aoq" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/06/redis使用笔记/" data-id="citk0n9we001dggrl2ifsb9ut" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -259,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/07/31/redis启动失败/" data-id="cirjcetf60018fcmf6s7kfzcn" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/07/31/redis启动失败/" data-id="citk0n9w80018ggrleb3v38nm" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -326,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/07/31/mysql笔记/" data-id="cirjcetjq002bfcmf3k6tkf63" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/07/31/mysql笔记/" data-id="citk0n9xw002bggrl96mtsmwj" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -345,76 +411,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-浏览器兼容" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/06/14/浏览器兼容/" class="article-date">
-  <time datetime="2016-06-14T14:26:29.000Z" itemprop="datePublished">2016-06-14 22:26:29</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>左浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>右浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>chrome，firefox下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234454.png" alt=""><br>IE7下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234534.png" alt=""><br>解决：</p>
-<ol>
-<li>针对IE7为浮动元素设置负的margin-top值</li>
-<li>将浮动元素写到行内元素前面<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>左浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>右浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528"><a href="#u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528" class="headerlink" title="问题2：IE6、IE7下，给元素设置min-width不起作用"></a>问题2：IE6、IE7下，给元素设置min-width不起作用</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/06/14/浏览器兼容/" data-id="cirjcetc2000efcmfae243s2h" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/06/14/浏览器兼容/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-浏览器兼容"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
 
     </footer>
   </div>
@@ -468,7 +464,7 @@
     
     <div class="widget">
       <h3 class="widget-title">归档</h3><hr>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -480,6 +476,10 @@
 
       <ul>
         <h3 class="widget-title">最新文章</h3><hr>
+        
+          <li>
+            <a href="/2016/09/26/hello-world/">Hello World</a>
+          </li>
         
           <li>
             <a href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a>
@@ -495,10 +495,6 @@
         
           <li>
             <a href="/2016/07/31/mysql笔记/">mysql笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a>
           </li>
         
       </ul>

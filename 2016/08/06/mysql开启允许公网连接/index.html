@@ -6,18 +6,18 @@
   <title>MySQL 开启允许公网连接 | Salix babylonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="部署项目后，发现本地无法连接到MySQL远程数据库：原因一：MySQL没有允许公网访问查看是否公网访问：1netstat
-如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件my.cnf，将bind-address的值改为0.0.0.0">
+如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件/etc/mysql/my.cnf，将bind-address的值改为0.0.0.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 开启允许公网连接">
 <meta property="og:url" content="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/index.html">
 <meta property="og:site_name" content="Salix babylonica">
 <meta property="og:description" content="部署项目后，发现本地无法连接到MySQL远程数据库：原因一：MySQL没有允许公网访问查看是否公网访问：1netstat
-如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件my.cnf，将bind-address的值改为0.0.0.0">
-<meta property="og:updated_time" content="2016-08-06T15:55:54.551Z">
+如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件/etc/mysql/my.cnf，将bind-address的值改为0.0.0.0">
+<meta property="og:updated_time" content="2016-08-06T16:02:07.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 开启允许公网连接">
 <meta name="twitter:description" content="部署项目后，发现本地无法连接到MySQL远程数据库：原因一：MySQL没有允许公网访问查看是否公网访问：1netstat
-如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件my.cnf，将bind-address的值改为0.0.0.0">
+如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件/etc/mysql/my.cnf，将bind-address的值改为0.0.0.0">
   
     <link rel="alternative" href="/atom.xml" title="Salix babylonica" type="application/atom+xml">
   
@@ -106,12 +106,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
-<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="cirjcetk6002gfcmf30ytgicg" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="citk0n9y2002gggrlvwa92zbm" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -137,6 +137,15 @@
     <!-- 上一篇，下一篇 -->
 
 <nav id="article-nav">
+  
+    <a href="/2016/09/26/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
   
     <a href="/2016/08/06/redis使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
@@ -196,7 +205,7 @@
     
     <div class="widget">
       <h3 class="widget-title">归档</h3><hr>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1900/12/">十二月 1900</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -208,6 +217,10 @@
 
       <ul>
         <h3 class="widget-title">最新文章</h3><hr>
+        
+          <li>
+            <a href="/2016/09/26/hello-world/">Hello World</a>
+          </li>
         
           <li>
             <a href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a>
@@ -223,10 +236,6 @@
         
           <li>
             <a href="/2016/07/31/mysql笔记/">mysql笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a>
           </li>
         
       </ul>
