@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Salix babylonica]]></title>
-  <subtitle><![CDATA[living like a tree]]></subtitle>
+  <title><![CDATA[lonica]]></title>
+  <subtitle><![CDATA[stay alive]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2015-12-12T04:40:19.818Z</updated>
+  <updated>2016-08-06T16:02:07.931Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,28 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://chuiliu.github.io/2016/09/26/hello-world/"/>
-    <id>http://chuiliu.github.io/2016/09/26/hello-world/</id>
-    <published>2016-09-26T12:07:08.969Z</published>
-    <updated>2015-12-12T04:40:19.818Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[MySQL 开启允许公网连接]]></title>
@@ -118,7 +96,7 @@
     <link href="http://chuiliu.github.io/2016/07/31/mysql%E7%AC%94%E8%AE%B0/"/>
     <id>http://chuiliu.github.io/2016/07/31/mysql笔记/</id>
     <published>2016-07-31T11:35:38.000Z</published>
-    <updated>2016-07-31T11:58:53.765Z</updated>
+    <updated>2016-09-26T13:52:55.050Z</updated>
     <content type="html"><![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
 <li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -661,6 +639,25 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/d
       <category term="Hexo" scheme="http://chuiliu.github.io/tags/Hexo/"/>
     
       <category term="Hexo" scheme="http://chuiliu.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[代码片段]]></title>
+    <link href="http://chuiliu.github.io/2015/12/13/about-hexo-1/"/>
+    <id>http://chuiliu.github.io/2015/12/13/about-hexo-1/</id>
+    <published>2015-12-13T03:06:58.000Z</published>
+    <updated>2016-04-13T15:39:11.456Z</updated>
+    <content type="html"><![CDATA[<p><strong>javascript</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> user = <span class="string">''</span>;</span><br><span class="line">    Person = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.getUser = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	    <span class="keyword">return</span> user;</span><br><span class="line">    &#125;;</span><br><span class="line">    Person.prototype.setUser = <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">	    user = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>javascript</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><s]]>
+    </summary>
+    
+      <category term="learn" scheme="http://chuiliu.github.io/tags/learn/"/>
+    
+      <category term="test" scheme="http://chuiliu.github.io/tags/test/"/>
     
   </entry>
   

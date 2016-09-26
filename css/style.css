@@ -1185,7 +1185,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #fcf7ff;
+  background: #002240;
   margin: 5px -20px;
 /*margin: 0 article-padding * -0.1*/
   padding: 10px 20px;
@@ -1193,7 +1193,7 @@ a.article-title:hover {
 /*border-color: color-border*/
 /*border-width: 1px 0*/
   overflow: auto;
-  color: #666;
+  color: #ccc;
   line-height: 24px;
   font-size: 16px;
 /*font-weight: bold*/
@@ -1259,7 +1259,7 @@ a.article-title:hover {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #fcf7ff;
+  background: #002240;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1285,7 +1285,7 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #fcf7ff;
+  background: #002240;
   color: #999;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
@@ -1316,7 +1316,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #f0595d;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -1324,12 +1324,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f7742d;
+  color: #f99157;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #099e01;
+  color: #9c9;
 }
 pre .string,
 pre .value,
@@ -1337,10 +1337,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #099e01;
+  color: #9c9;
 }
 pre .css .hexcolor {
-  color: #2eb7b5;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -1350,11 +1350,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #3982cd;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #ac03aa;
+  color: #c9c;
 }
 @media screen and (max-width: 479px) {
   #mobile-nav {
