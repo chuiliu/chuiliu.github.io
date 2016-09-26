@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JHipster中使用Config Server | lonica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JHipster中使用Config ServerJHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在http://localhost:8761/#/config下查看各个微服务在JHipster Registry中的配置信息
+
+开发环境一般使用本地文件系统来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JHipster中使用Config Server">
+<meta property="og:url" content="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/index.html">
+<meta property="og:site_name" content="lonica">
+<meta property="og:description" content="JHipster中使用Config ServerJHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在http://localhost:8761/#/config下查看各个微服务在JHipster Registry中的配置信息
+
+开发环境一般使用本地文件系统来">
+<meta property="og:image" content="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png">
+<meta property="og:image" content="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png">
+<meta property="og:image" content="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png">
+<meta property="og:updated_time" content="2016-09-26T15:48:23.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JHipster中使用Config Server">
+<meta name="twitter:description" content="JHipster中使用Config ServerJHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在http://localhost:8761/#/config下查看各个微服务在JHipster Registry中的配置信息
+
+开发环境一般使用本地文件系统来">
+  
+    <link rel="alternative" href="/atom.xml" title="lonica" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lonica</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">stay alive</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">所有文章</a>
+        
+          <a class="main-nav-link" href="/stop-and-go">走走停停</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-github-link" class="nav-icon" href="https://github.com/chuiliu/" title="github"></a>
+        <a id="nav-zhihu-link" class="nav-icon" href="http://www.zhihu.com/people/ying-ri-liu/" title="知乎"></a>
+        <a id="nav-weibo-link" class="nav-icon" href="http://weibo.com/1908659341/" title="新浪微博"></a>
+        
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-JHipster中使用Config Server" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/08/31/JHipster中使用Config Server/" class="article-date">
+  <time datetime="2016-08-31T08:32:10.000Z" itemprop="datePublished">2016-08-31 16:32:10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JHipster中使用Config Server
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
+<ul>
+<li>开发环境一般使用本地文件系统来保存</li>
+<li>生产环境使用git仓库服务器上的配置</li>
+</ul>
+<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: native</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                native:</span><br><span class="line">                     <span class="comment"># 绝对路径配置：search-locations: file:///E:/config-repo</span></span><br><span class="line">                     search-locations: file:./central-config</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure></p>
+<p>以上配置项说明：</p>
+<ul>
+<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
+<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
+</ul>
+<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
+<p>例如：</p>
+<blockquote>
+<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
+</blockquote>
+<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">spring</span>:</span><br><span class="line">    <span class="attribute">cloud</span>:</span><br><span class="line">        <span class="attribute">config</span>:</span><br><span class="line">            <span class="attribute">name</span>: newFilename</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
+<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
+</ul>
+<p>测试users微服务：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mycompany.myapp.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.context.config.annotation.RefreshScope;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Administrator on 2016/8/30.</span><br><span class="line"> */</span></span><br><span class="line"><span class="annotation">@RestController</span></span><br><span class="line"><span class="annotation">@RequestMapping</span>(<span class="string">"/api"</span>)</span><br><span class="line"><span class="annotation">@Api</span>(value = <span class="string">"/api"</span>, description = <span class="string">"test"</span>, position = <span class="number">1</span>)</span><br><span class="line"><span class="comment">// 测试自动刷新配置</span></span><br><span class="line"><span class="annotation">@ConfigurationProperties</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testConfigResource</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.id:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.name:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.remark:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String remark;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_id"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testIntroduction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"id："</span> + id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_name"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"name："</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_remark"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testRemark</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"remark："</span> + remark;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目配置如下：</p>
+<ul>
+<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: users微服务项目下配置文件中的id值</span><br><span class="line">        name: users微服务项目下配置文件中的name值</span><br><span class="line">        remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: git</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: 本地文件系统配置文件中的id值</span><br><span class="line">        name: 本地文件系统配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: git远程仓库下配置文件中的id值</span><br><span class="line">        name: git远程仓库下配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
+<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
+<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/" data-id="citk82yuy003ppsrlncrkon6a" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-JHipster中使用Config Server"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/09/01/Maven添加外部依赖包/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Maven 添加本地依赖包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">JHipster 生成的 gateway 服务网关启动无法自动建表</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-JHipster中使用Config Server" data-title="JHipster中使用Config Server" data-url="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget">
+      <h3 class="widget-title">分类</h3><hr>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget tagcloud">
+      <h3 class="widget-title">标签云</h3><hr>
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/JHipster/" style="font-size: 15px;">JHipster</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 15px;">test</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/浏览器兼容/" style="font-size: 15px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 15px;">编码</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget">
+      <h3 class="widget-title">标签</h3><hr>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JHipster/">JHipster</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget">
+      <h3 class="widget-title">归档</h3><hr>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget">
+
+      <ul>
+        <h3 class="widget-title">最新文章</h3><hr>
+        
+          <li>
+            <a href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/31/JHipster中使用Config Server/">JHipster中使用Config Server</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/06/redis使用笔记/">Redis 使用笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="234" height="350" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=234&height=320&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=1908659341&verifier=7a6db67f&dpc=1"></iframe>
+  
+    
+  <div class="widget-wrap">
+    
+    <div class="widget">
+      <h3 class="widget-title">相关链接</h3><hr>
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 chuiliu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">所有文章</a>
+  
+    <a href="/stop-and-go" class="mobile-nav-link">走走停停</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+<!-- 回顶部 -->
+<!-- 回顶部 -->
+<div id="to-top" style="position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"> 
+  <span style="color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;">TOP</span>  
+</div>
+<script src="/js/totop.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

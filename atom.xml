@@ -4,7 +4,7 @@
   <subtitle><![CDATA[stay alive]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-09-26T14:54:22.277Z</updated>
+  <updated>2016-09-26T15:47:32.870Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,25 +15,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[jHipster 生成的 gateway 服务网关启动无法自动建表]]></title>
-    <link href="http://chuiliu.github.io/2016/08/28/jhipster%E7%94%9F%E6%88%90%E7%9A%84gateway%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%A1%A8/"/>
-    <id>http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/</id>
+    <title><![CDATA[Maven 添加本地依赖包]]></title>
+    <link href="http://chuiliu.github.io/2016/09/01/Maven%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%8C%85/"/>
+    <id>http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/</id>
+    <published>2016-09-01T05:48:53.000Z</published>
+    <updated>2016-09-26T15:47:32.870Z</updated>
+    <content type="html"><![CDATA[<p>在实际项目开发中，项目使用到的jar包不一定来自Maven远程仓库，也可能来自本地的jar包，这时候也可以配置<code>pom.xml</code>添加本地包的依赖，具体配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="title">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">systemPath</span>&gt;</span>$&#123;basedir&#125;/src/main/java/WEB-INF/lib/taobao-sdk-java-auto_1455552377940-20160505.jar<span class="tag">&lt;/<span class="title">systemPath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>在实际项目开发中，项目使用到的jar包不一定来自Maven远程仓库，也可能来自本地的jar包，这时候也可以配置<code>pom.xml</code>添加本地包的依赖，具体配置如下：</p>
+<figure class="highlight xml"><table><tr>]]>
+    </summary>
+    
+      <category term="Java" scheme="http://chuiliu.github.io/tags/Java/"/>
+    
+      <category term="Maven" scheme="http://chuiliu.github.io/tags/Maven/"/>
+    
+      <category term="Java" scheme="http://chuiliu.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JHipster中使用Config Server]]></title>
+    <link href="http://chuiliu.github.io/2016/08/31/JHipster%E4%B8%AD%E4%BD%BF%E7%94%A8Config%20Server/"/>
+    <id>http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/</id>
+    <published>2016-08-31T08:32:10.000Z</published>
+    <updated>2016-09-26T15:48:23.157Z</updated>
+    <content type="html"><![CDATA[<h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
+<ul>
+<li>开发环境一般使用本地文件系统来保存</li>
+<li>生产环境使用git仓库服务器上的配置</li>
+</ul>
+<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: native</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                native:</span><br><span class="line">                     <span class="comment"># 绝对路径配置：search-locations: file:///E:/config-repo</span></span><br><span class="line">                     search-locations: file:./central-config</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure></p>
+<p>以上配置项说明：</p>
+<ul>
+<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
+<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
+</ul>
+<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
+<p>例如：</p>
+<blockquote>
+<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
+</blockquote>
+<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">spring</span>:</span><br><span class="line">    <span class="attribute">cloud</span>:</span><br><span class="line">        <span class="attribute">config</span>:</span><br><span class="line">            <span class="attribute">name</span>: newFilename</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
+<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
+</ul>
+<p>测试users微服务：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mycompany.myapp.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.context.config.annotation.RefreshScope;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Administrator on 2016/8/30.</span><br><span class="line"> */</span></span><br><span class="line"><span class="annotation">@RestController</span></span><br><span class="line"><span class="annotation">@RequestMapping</span>(<span class="string">"/api"</span>)</span><br><span class="line"><span class="annotation">@Api</span>(value = <span class="string">"/api"</span>, description = <span class="string">"test"</span>, position = <span class="number">1</span>)</span><br><span class="line"><span class="comment">// 测试自动刷新配置</span></span><br><span class="line"><span class="annotation">@ConfigurationProperties</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testConfigResource</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.id:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.name:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.remark:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String remark;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_id"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testIntroduction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"id："</span> + id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_name"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"name："</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_remark"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testRemark</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"remark："</span> + remark;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目配置如下：</p>
+<ul>
+<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: users微服务项目下配置文件中的id值</span><br><span class="line">        name: users微服务项目下配置文件中的name值</span><br><span class="line">        remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: git</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: 本地文件系统配置文件中的id值</span><br><span class="line">        name: 本地文件系统配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: git远程仓库下配置文件中的id值</span><br><span class="line">        name: git远程仓库下配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
+<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
+<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Con]]>
+    </summary>
+    
+      <category term="JHipster" scheme="http://chuiliu.github.io/tags/JHipster/"/>
+    
+      <category term="Java" scheme="http://chuiliu.github.io/tags/Java/"/>
+    
+      <category term="Java" scheme="http://chuiliu.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JHipster 生成的 gateway 服务网关启动无法自动建表]]></title>
+    <link href="http://chuiliu.github.io/2016/08/28/JHipster%E7%94%9F%E6%88%90%E7%9A%84gateway%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%A1%A8/"/>
+    <id>http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/</id>
     <published>2016-08-28T03:46:12.000Z</published>
-    <updated>2016-09-26T14:54:22.277Z</updated>
-    <content type="html"><![CDATA[<p>在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：</p>
+    <updated>2016-09-26T15:42:49.456Z</updated>
+    <content type="html"><![CDATA[<p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
 <p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
 <p>这个错误是数据库版本导致的，在一个mysql数据表中同时使用了多个timesatmp类型的字段并且都设置了默认值时，低版本MySQL不支持多个CURRENT_TIMESTAMP默认值，MySQL5.6.5以上版本则允许。</p>
 <p>我是使用的数据库版本是MySQL5.1，重新安装为MySQL5.7后问题就解决了。</p>
 <p>参考：<a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla" target="_blank" rel="external">http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：</p>
-<p>Incorrect table definition; there can be only one TIMESTAMP column with C]]>
+    <![CDATA[<p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
+<p>Incorrect table definition; there can be only one TIMESTAMP column w]]>
     </summary>
     
-      <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
+      <category term="JHipster" scheme="http://chuiliu.github.io/tags/JHipster/"/>
     
-      <category term="jHipster" scheme="http://chuiliu.github.io/tags/jHipster/"/>
+      <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
     
       <category term="MySQL" scheme="http://chuiliu.github.io/categories/MySQL/"/>
     
@@ -59,14 +140,14 @@
   </entry>
   
   <entry>
-    <title><![CDATA[redis使用笔记]]></title>
+    <title><![CDATA[Redis 使用笔记]]></title>
     <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://chuiliu.github.io/2016/08/06/redis使用笔记/</id>
     <published>2016-08-06T15:06:06.000Z</published>
-    <updated>2016-08-06T15:48:57.784Z</updated>
+    <updated>2016-09-26T15:53:34.538Z</updated>
     <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
 <li><p>下载redis</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
@@ -78,7 +159,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd redis-<span class="number">3.2</span><span class="number">.3</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>通过redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <p>连接到服务器后，可以查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
 <p>操作<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key hello</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"hello"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <p>如果需要redis在以后台程序的方式运行，以下命令启动<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> &amp;</span><br></pre></td></tr></table></figure></p>
@@ -96,11 +177,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[redis启动失败]]></title>
+    <title><![CDATA[Redis 启动失败]]></title>
     <link href="http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"/>
     <id>http://chuiliu.github.io/2016/07/31/redis启动失败/</id>
     <published>2016-07-31T11:39:12.000Z</published>
-    <updated>2016-07-31T12:13:20.936Z</updated>
+    <updated>2016-09-26T15:52:12.534Z</updated>
     <content type="html"><![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;redis-server</span><br><span class="line">[<span class="number">8468</span>] <span class="number">31</span> Jul <span class="number">18</span>:<span class="number">55</span>:<span class="number">29.453</span> <span class="comment">#</span></span><br><span class="line">The Windows <span class="property">version</span> <span class="keyword">of</span> Redis allocates a memory mapped heap <span class="keyword">for</span> sharing <span class="keyword">with</span></span><br><span class="line"><span class="keyword">the</span> forked process used <span class="keyword">for</span> persistence operations. In order <span class="keyword">to</span> share this</span><br><span class="line">memory, Windows allocates <span class="keyword">from</span> <span class="keyword">the</span> system paging <span class="type">file</span> a portion <span class="keyword">equal</span> <span class="keyword">to</span> <span class="keyword">the</span></span><br><span class="line">size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap. At this <span class="property">time</span> there <span class="keyword">is</span> insufficient contiguous free</span><br><span class="line"><span class="constant">space</span> available <span class="keyword">in</span> <span class="keyword">the</span> system paging <span class="type">file</span> <span class="keyword">for</span> this operation (Windows <span class="keyword">error</span></span><br><span class="line"><span class="number">0x5AF</span>). To work <span class="keyword">around</span> this you may either increase <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> system</span><br><span class="line">paging <span class="type">file</span>, <span class="keyword">or</span> decrease <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap <span class="keyword">with</span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line">Sometimes a reboot will defragment <span class="keyword">the</span> system paging <span class="type">file</span> sufficiently <span class="keyword">for</span></span><br><span class="line">this operation <span class="keyword">to</span> complete successfully.</span><br><span class="line"></span><br><span class="line">Please see <span class="keyword">the</span> documentation included <span class="keyword">with</span> <span class="keyword">the</span> binary distributions <span class="keyword">for</span> more</span><br><span class="line">details <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line"></span><br><span class="line">Redis can <span class="keyword">not</span> <span class="keyword">continue</span>. Exiting.</span><br></pre></td></tr></table></figure></p>
 <p>以上描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
@@ -110,18 +191,18 @@
     <![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span ]]>
     </summary>
     
-      <category term="redis" scheme="http://chuiliu.github.io/tags/redis/"/>
+      <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
     
-      <category term="redis" scheme="http://chuiliu.github.io/categories/redis/"/>
+      <category term="Redis" scheme="http://chuiliu.github.io/categories/Redis/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[mysql笔记]]></title>
-    <link href="http://chuiliu.github.io/2016/07/31/mysql%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chuiliu.github.io/2016/07/31/mysql笔记/</id>
+    <title><![CDATA[MySQL 使用笔记]]></title>
+    <link href="http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chuiliu.github.io/2016/07/31/mysql使用笔记/</id>
     <published>2016-07-31T11:35:38.000Z</published>
-    <updated>2016-09-26T13:52:55.050Z</updated>
+    <updated>2016-09-26T15:27:56.823Z</updated>
     <content type="html"><![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
 <li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -322,11 +403,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[git 命令]]></title>
+    <title><![CDATA[git 常用命令详解]]></title>
     <link href="http://chuiliu.github.io/2016/04/06/about-git/"/>
     <id>http://chuiliu.github.io/2016/04/06/about-git/</id>
     <published>2016-04-06T02:23:54.000Z</published>
-    <updated>2016-05-16T08:33:30.632Z</updated>
+    <updated>2016-09-26T15:28:36.951Z</updated>
     <content type="html"><![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
 <ul>
 <li><p><strong>配置</strong></p>
@@ -579,91 +660,6 @@ watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/d
       <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
     
       <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo优化系列（landscape主题）]]></title>
-    <link href="http://chuiliu.github.io/2015/12/16/about-hexo-3/"/>
-    <id>http://chuiliu.github.io/2015/12/16/about-hexo-3/</id>
-    <published>2015-12-16T15:46:56.000Z</published>
-    <updated>2016-06-17T06:33:56.013Z</updated>
-    <content type="html"><![CDATA[<ul>
-<li><h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3" class="headerlink" title="忽略目录或文件的渲染"></a>忽略目录或文件的渲染</h2>我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是<code>source</code>目录下的文件默认都会在执行<code>hexo deploy</code>命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：</li>
-</ul>
-<ul>
-<li><p>在根目录下<code>_config.yml</code>文件中添加以下配置，代表不渲染<code>source</code>目录下的README.md文件：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">skip_render</span>: <span class="string">README.md</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想配置不渲染多个文件，则可以这样配置：<br>其中，<code>demo/**</code>代表不渲染<code>source/demo/</code>下的所有目录和文件</p>
-<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">    -<span class="ruby"> <span class="string">'README.md'</span></span><br><span class="line"></span>    -<span class="ruby"> <span class="string">'demo/**'</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>此外，配置中还可以使用正则来匹配：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">skip_render</span>: <span class="string">demo/*.html</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2></li>
-</ul>
-<ol>
-<li><p>在<code>themes/landscape/layout/_partial/</code> 下新建 <code>totop.ejs</code> ，代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 回顶部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"to-top"</span> <span class="attribute">style</span>=<span class="value">"position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;"</span>&gt;</span>TOP<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>themes/landscape/source/js/</code> 下新建<code>totop.js</code>，代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">window</span>).scrollTop() &gt; <span class="number">200</span>)&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"5px"</span>&#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $(<span class="string">"#to-top"</span>).stop().animate(&#123;right:<span class="string">"-50px"</span>&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"#to-top"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">'body,html'</span>).animate(&#123;</span><br><span class="line">            scrollTop:<span class="number">0</span></span><br><span class="line">        &#125;,<span class="number">300</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>themes/landscape/layout/_partial/after_footer.ejs</code>最后添加如下代码：</p>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="preprocessor">%</span>- partial<span class="comment">('totop')</span> <span class="preprocessor">%</span>&gt;</span><br><span class="line">&lt;<span class="preprocessor">%</span>- js<span class="comment">('js/totop')</span> <span class="preprocessor">%</span>&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li><h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2></li>
-</ul>
-<ol>
-<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
-<li>设置组件的样式，复制生成的代码</li>
-<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
-<li>在<code>theme/landscape/_config.yml</code> 中添加如下代码：<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widges:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<ul>
-<li><h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E3]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://chuiliu.github.io/tags/Hexo/"/>
-    
-      <category term="Hexo" scheme="http://chuiliu.github.io/categories/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo：为博客添加多说评论框]]></title>
-    <link href="http://chuiliu.github.io/2015/12/14/about-hexo-2/"/>
-    <id>http://chuiliu.github.io/2015/12/14/about-hexo-2/</id>
-    <published>2015-12-14T13:05:38.000Z</published>
-    <updated>2015-12-18T15:12:35.848Z</updated>
-    <content type="html"><![CDATA[<p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>,为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>，我使用的是官方landscape主题，具体步骤如下:</p>
-<ol>
-<li>在<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>官网注册账号</li>
-<li>选择<strong>我要安装</strong>创建站点</li>
-<li><p>在<code>_config.yml</code>中添加多说配置（二级域名就是创建站点时填写的<strong>多说域名</strong>）：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">duoshuo_shortname</span>: <span class="string">多说二级域名</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改<code>themes\landscape\layout\_partial\article.ejs</code><br>把</p>
-<figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="perl"> <span class="keyword">if</span> (!<span class="keyword">index</span> &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"disqus_thread"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="perl"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
-<p>替换成<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">%</span> <span class="attribute">if</span> (!<span class="attribute">index</span> &amp;&amp; <span class="attribute">post.comments</span> &amp;&amp; <span class="attribute">config.duoshuo_shortname</span>)&#123; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说评论框 start --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ds-thread"</span> <span class="attribute">data-thread-key</span>=<span class="value">"&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;"</span> <span class="attribute">data-title</span>=<span class="value">"&lt;%= post.title %&gt;"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说评论框 end --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> duoshuoQuery = &#123;short_name:<span class="string">'&lt;%= config.duoshuo_shortname %&gt;'</span>&#125;;</span><br><span class="line">      (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</span><br><span class="line">        ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</span><br><span class="line">        ds.charset = <span class="string">'UTF-8'</span>;</span><br><span class="line">        (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] </span><br><span class="line">         || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</span><br><span class="line">      &#125;)();</span><br><span class="line">      </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>把</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> (item.comment &amp;&amp; config.disqus_shortname)&#123; </span>%&gt;<span class="xml">  </span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"alignright"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.permalink </span>%&gt;<span class="xml"><span class="tag"><span class="value">#disqus_thread"</span> <span class="attribute">class</span>=<span class="value">"comment-link"</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">a</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  </span><br><span class="line"></span>&lt;%<span class="ruby"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
-<p>替换成</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> (item.comment &amp;&amp; config.duoshuo_shortname)&#123; </span>%&gt;<span class="xml">  </span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"alignright"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.permalink </span>%&gt;<span class="xml"><span class="tag"><span class="value">#disqus_thread"</span> <span class="attribute">class</span>=<span class="value">"comment-link"</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">a</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  </span><br><span class="line"></span>&lt;%<span class="ruby"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>,为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshu]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://chuiliu.github.io/tags/Hexo/"/>
-    
-      <category term="Hexo" scheme="http://chuiliu.github.io/categories/Hexo/"/>
     
   </entry>
   

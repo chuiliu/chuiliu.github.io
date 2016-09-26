@@ -74,13 +74,181 @@
 
   
     <!-- 修改成中文：分享，评论 -->
-<article id="post-jhipster生成的gateway服务网关微服务启动无法自动创建表" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-Maven添加外部依赖包" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
 
     <!-- 被我移动到里面 -->
     <div class="article-meta">
-      <a href="/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/" class="article-date">
+      <a href="/2016/09/01/Maven添加外部依赖包/" class="article-date">
+  <time datetime="2016-09-01T05:48:53.000Z" itemprop="datePublished">2016-09-1 13:48:53</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实际项目开发中，项目使用到的jar包不一定来自Maven远程仓库，也可能来自本地的jar包，这时候也可以配置<code>pom.xml</code>添加本地包的依赖，具体配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="title">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">systemPath</span>&gt;</span>$&#123;basedir&#125;/src/main/java/WEB-INF/lib/taobao-sdk-java-auto_1455552377940-20160505.jar<span class="tag">&lt;/<span class="title">systemPath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/" data-id="citk80vjc003fpsrlm8ajpkxd" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-Maven添加外部依赖包"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-JHipster中使用Config Server" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/08/31/JHipster中使用Config Server/" class="article-date">
+  <time datetime="2016-08-31T08:32:10.000Z" itemprop="datePublished">2016-08-31 16:32:10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/31/JHipster中使用Config Server/">JHipster中使用Config Server</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
+<ul>
+<li>开发环境一般使用本地文件系统来保存</li>
+<li>生产环境使用git仓库服务器上的配置</li>
+</ul>
+<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: native</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                native:</span><br><span class="line">                     <span class="comment"># 绝对路径配置：search-locations: file:///E:/config-repo</span></span><br><span class="line">                     search-locations: file:./central-config</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure></p>
+<p>以上配置项说明：</p>
+<ul>
+<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
+<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
+</ul>
+<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
+<p>例如：</p>
+<blockquote>
+<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
+</blockquote>
+<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">spring</span>:</span><br><span class="line">    <span class="attribute">cloud</span>:</span><br><span class="line">        <span class="attribute">config</span>:</span><br><span class="line">            <span class="attribute">name</span>: newFilename</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
+<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
+</ul>
+<p>测试users微服务：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mycompany.myapp.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.context.config.annotation.RefreshScope;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Administrator on 2016/8/30.</span><br><span class="line"> */</span></span><br><span class="line"><span class="annotation">@RestController</span></span><br><span class="line"><span class="annotation">@RequestMapping</span>(<span class="string">"/api"</span>)</span><br><span class="line"><span class="annotation">@Api</span>(value = <span class="string">"/api"</span>, description = <span class="string">"test"</span>, position = <span class="number">1</span>)</span><br><span class="line"><span class="comment">// 测试自动刷新配置</span></span><br><span class="line"><span class="annotation">@ConfigurationProperties</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testConfigResource</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.id:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.name:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.remark:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String remark;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_id"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testIntroduction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"id："</span> + id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_name"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"name："</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_remark"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testRemark</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"remark："</span> + remark;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目配置如下：</p>
+<ul>
+<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: users微服务项目下配置文件中的id值</span><br><span class="line">        name: users微服务项目下配置文件中的name值</span><br><span class="line">        remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: git</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: 本地文件系统配置文件中的id值</span><br><span class="line">        name: 本地文件系统配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: git远程仓库下配置文件中的id值</span><br><span class="line">        name: git远程仓库下配置文件中的name值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
+<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
+<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/" data-id="citk82yuy003ppsrlncrkon6a" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-JHipster中使用Config Server"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-JHipster生成的gateway服务网关微服务启动无法自动创建表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/" class="article-date">
   <time datetime="2016-08-28T03:46:12.000Z" itemprop="datePublished">2016-08-28 11:46:12</time>
 </a>
       
@@ -96,7 +264,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/">jHipster 生成的 gateway 服务网关启动无法自动建表</a>
+      <a class="article-title" href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a>
     </h1>
   
 
@@ -104,7 +272,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：</p>
+        <p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
 <p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
 <p>这个错误是数据库版本导致的，在一个mysql数据表中同时使用了多个timesatmp类型的字段并且都设置了默认值时，低版本MySQL不支持多个CURRENT_TIMESTAMP默认值，MySQL5.6.5以上版本则允许。</p>
 <p>我是使用的数据库版本是MySQL5.1，重新安装为MySQL5.7后问题就解决了。</p>
@@ -113,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/" data-id="citk65e5m0002twrlnf26oo0w" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/" data-id="citk84lu5003tpsrln39fptzq" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -128,10 +296,10 @@
           })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-jhipster生成的gateway服务网关微服务启动无法自动创建表"><!--评论--></a>
+        <a href="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-JHipster生成的gateway服务网关微服务启动无法自动创建表"><!--评论--></a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jHipster/">jHipster</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
 
     </footer>
   </div>
@@ -178,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="citk4eatn001qsgrl45zy0zb9" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" data-id="citk80vc9001lpsrlxevhbg4t" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -229,7 +397,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/06/redis使用笔记/">redis使用笔记</a>
+      <a class="article-title" href="/2016/08/06/redis使用笔记/">Redis 使用笔记</a>
     </h1>
   
 
@@ -239,7 +407,7 @@
       
         <p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
 <li><p>下载redis</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
@@ -251,7 +419,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd redis-<span class="number">3.2</span><span class="number">.3</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<p>通过redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <p>连接到服务器后，可以查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
 <p>操作<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key hello</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"hello"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <p>如果需要redis在以后台程序的方式运行，以下命令启动<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> &amp;</span><br></pre></td></tr></table></figure></p>
@@ -260,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/06/redis使用笔记/" data-id="citk4eat8001dsgrlgzcc09bd" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/06/redis使用笔记/" data-id="citk80vbr001dpsrlvowycizs" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -288,140 +456,6 @@
 
 
   
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-redis启动失败" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/07/31/redis启动失败/" class="article-date">
-  <time datetime="2016-07-31T11:39:12.000Z" itemprop="datePublished">2016-07-31 19:39:12</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/redis/">redis</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/31/redis启动失败/">redis启动失败</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;redis-server</span><br><span class="line">[<span class="number">8468</span>] <span class="number">31</span> Jul <span class="number">18</span>:<span class="number">55</span>:<span class="number">29.453</span> <span class="comment">#</span></span><br><span class="line">The Windows <span class="property">version</span> <span class="keyword">of</span> Redis allocates a memory mapped heap <span class="keyword">for</span> sharing <span class="keyword">with</span></span><br><span class="line"><span class="keyword">the</span> forked process used <span class="keyword">for</span> persistence operations. In order <span class="keyword">to</span> share this</span><br><span class="line">memory, Windows allocates <span class="keyword">from</span> <span class="keyword">the</span> system paging <span class="type">file</span> a portion <span class="keyword">equal</span> <span class="keyword">to</span> <span class="keyword">the</span></span><br><span class="line">size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap. At this <span class="property">time</span> there <span class="keyword">is</span> insufficient contiguous free</span><br><span class="line"><span class="constant">space</span> available <span class="keyword">in</span> <span class="keyword">the</span> system paging <span class="type">file</span> <span class="keyword">for</span> this operation (Windows <span class="keyword">error</span></span><br><span class="line"><span class="number">0x5AF</span>). To work <span class="keyword">around</span> this you may either increase <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> system</span><br><span class="line">paging <span class="type">file</span>, <span class="keyword">or</span> decrease <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap <span class="keyword">with</span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line">Sometimes a reboot will defragment <span class="keyword">the</span> system paging <span class="type">file</span> sufficiently <span class="keyword">for</span></span><br><span class="line">this operation <span class="keyword">to</span> complete successfully.</span><br><span class="line"></span><br><span class="line">Please see <span class="keyword">the</span> documentation included <span class="keyword">with</span> <span class="keyword">the</span> binary distributions <span class="keyword">for</span> more</span><br><span class="line">details <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line"></span><br><span class="line">Redis can <span class="keyword">not</span> <span class="keyword">continue</span>. Exiting.</span><br></pre></td></tr></table></figure></p>
-<p>以上描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">C</span>:\Users\Administrator&gt;redis-server --maxheap <span class="number">1024000000</span></span><br><span class="line">                _._</span><br><span class="line">           _.-<span class="built_in">``</span>__ <span class="string">''</span>-._</span><br><span class="line">      _.-<span class="built_in">``</span>    <span class="built_in">`.  `</span>_.  <span class="string">''</span>-._           Redis <span class="number">2.8</span>.<span class="number">2402</span> (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</span><br><span class="line">  .-<span class="built_in">``</span> .-<span class="built_in">``</span><span class="built_in">`.  `</span><span class="built_in">``</span>\/    _.,_ <span class="string">''</span>-._</span><br><span class="line"> (    '      ,       .-<span class="built_in">`  | `</span>,    )     Running in stand alone mode</span><br><span class="line"> |<span class="built_in">`-._`</span>-...-<span class="built_in">` __...-.`</span><span class="built_in">`-._|'`</span> _.-'|     <span class="attribute">Port</span>: <span class="number">6379</span></span><br><span class="line"> |    <span class="built_in">`-._   `</span>._    /     _.-'    |     <span class="attribute">PID</span>: <span class="number">8296</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._  <span class="built_in">`-./  _.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |           <span class="attribute">http</span>:<span class="comment">//redis.io</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |</span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line">      `</span>-._    <span class="built_in">`-.__.-'    _.-'</span><br><span class="line">          `</span>-._        _.-'</span><br><span class="line">              `-.__.-'</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/07/31/redis启动失败/" data-id="citk4eat30018sgrl8mejewf5" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/07/31/redis启动失败/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-redis启动失败"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-mysql笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/07/31/mysql笔记/" class="article-date">
-  <time datetime="2016-07-31T11:35:38.000Z" itemprop="datePublished">2016-07-31 19:35:38</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/31/mysql笔记/">mysql笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
-<li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/07/31/mysql笔记/" data-id="citk4eath001lsgrl063oz7d1" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/07/31/mysql笔记/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-mysql笔记"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
@@ -436,7 +470,7 @@
     
     <div class="widget">
       <h3 class="widget-title">分类</h3><hr>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -446,7 +480,7 @@
     
     <div class="widget tagcloud">
       <h3 class="widget-title">标签云</h3><hr>
-      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jHipster/" style="font-size: 10px;">jHipster</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 15px;">test</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/浏览器兼容/" style="font-size: 15px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 15px;">编码</a>
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/JHipster/" style="font-size: 15px;">JHipster</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 15px;">test</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/浏览器兼容/" style="font-size: 15px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 15px;">编码</a>
     </div>
   </div>
 
@@ -456,7 +490,7 @@
     
     <div class="widget">
       <h3 class="widget-title">标签</h3><hr>
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jHipster/">jHipster</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JHipster/">JHipster</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -466,7 +500,7 @@
     
     <div class="widget">
       <h3 class="widget-title">归档</h3><hr>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -480,7 +514,15 @@
         <h3 class="widget-title">最新文章</h3><hr>
         
           <li>
-            <a href="/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/">jHipster 生成的 gateway 服务网关启动无法自动建表</a>
+            <a href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/31/JHipster中使用Config Server/">JHipster中使用Config Server</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a>
           </li>
         
           <li>
@@ -488,15 +530,7 @@
           </li>
         
           <li>
-            <a href="/2016/08/06/redis使用笔记/">redis使用笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/31/redis启动失败/">redis启动失败</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/31/mysql笔记/">mysql笔记</a>
+            <a href="/2016/08/06/redis使用笔记/">Redis 使用笔记</a>
           </li>
         
       </ul>
