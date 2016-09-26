@@ -3,36 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git 命令 | lonica</title>
+  <title>jHipster 生成的 gateway 服务网关启动无法自动建表 | lonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善
-
-配置
-123// 配置用户信息git config --global user.name &quot;[name]&quot;git config --global user.email &quot;[email address]&quot;
-
-常用
-12345678// 初始化git仓库git init// 查看当前仓库的状态git status// 查看提交">
+  <meta name="description" content="在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：
+Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 命令">
-<meta property="og:url" content="http://chuiliu.github.io/2016/04/06/about-git/index.html">
+<meta property="og:title" content="jHipster 生成的 gateway 服务网关启动无法自动建表">
+<meta property="og:url" content="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/index.html">
 <meta property="og:site_name" content="lonica">
-<meta property="og:description" content="备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善
-
-配置
-123// 配置用户信息git config --global user.name &quot;[name]&quot;git config --global user.email &quot;[email address]&quot;
-
-常用
-12345678// 初始化git仓库git init// 查看当前仓库的状态git status// 查看提交">
-<meta property="og:updated_time" content="2016-05-16T08:33:30.632Z">
+<meta property="og:description" content="在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：
+Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TA">
+<meta property="og:updated_time" content="2016-09-26T14:54:22.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git 命令">
-<meta name="twitter:description" content="备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善
-
-配置
-123// 配置用户信息git config --global user.name &quot;[name]&quot;git config --global user.email &quot;[email address]&quot;
-
-常用
-12345678// 初始化git仓库git init// 查看当前仓库的状态git status// 查看提交">
+<meta name="twitter:title" content="jHipster 生成的 gateway 服务网关启动无法自动建表">
+<meta name="twitter:description" content="在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：
+Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TA">
   
     <link rel="alternative" href="/atom.xml" title="lonica" type="application/atom+xml">
   
@@ -90,18 +75,18 @@
 </header>
       <div class="outer">
         <section id="main"><!-- 修改成中文：分享，评论 -->
-<article id="post-about-git" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-jhipster生成的gateway服务网关微服务启动无法自动创建表" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
 
     <!-- 被我移动到里面 -->
     <div class="article-meta">
-      <a href="/2016/04/06/about-git/" class="article-date">
-  <time datetime="2016-04-06T02:23:54.000Z" itemprop="datePublished">2016-04-6 10:23:54</time>
+      <a href="/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/" class="article-date">
+  <time datetime="2016-08-28T03:46:12.000Z" itemprop="datePublished">2016-08-28 11:46:12</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
   </div>
 
     </div>
@@ -112,7 +97,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git 命令
+      jHipster 生成的 gateway 服务网关启动无法自动建表
     </h1>
   
 
@@ -120,32 +105,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
-<ul>
-<li><p><strong>配置</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>常用</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看当前仓库的状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看提交日志</span></span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加当前目录下所有文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">// 添加文件</span></span><br><span class="line">git add [filename]</span><br><span class="line"><span class="comment">// 删除和移动的文件也能提交到暂存区</span></span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>commit</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提交到仓库</span></span><br><span class="line">git commit -m <span class="string">"descriptions"</span></span><br><span class="line">git commit [filename] -m <span class="string">"descriptions"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建分支</span></span><br><span class="line">git branch [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建并切换到分支</span></span><br><span class="line">git checkout -b [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换到分支</span></span><br><span class="line">git checkout [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交分支</span></span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并分支</span></span><br><span class="line">git merge [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除分支</span></span><br><span class="line">git branch -d [branchName]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>remote</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接到远程仓库</span></span><br><span class="line">git remote add origin git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推送到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程仓库更新到本地</span></span><br><span class="line">git pull git<span class="annotation">@github</span>.com:chuiliu/test.git [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从远程仓库克隆</span></span><br><span class="line">git clone git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <p>在使用jhipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法注册用户和登录，具体报错信息如下：</p>
+<p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
+<p>这个错误是数据库版本导致的，在一个mysql数据表中同时使用了多个timesatmp类型的字段并且都设置了默认值时，低版本MySQL不支持多个CURRENT_TIMESTAMP默认值，MySQL5.6.5以上版本则允许。</p>
+<p>我是使用的数据库版本是MySQL5.1，重新安装为MySQL5.7后问题就解决了。</p>
+<p>参考：<a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla" target="_blank" rel="external">http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/04/06/about-git/" data-id="citk4eavh002ysgrlgxa2gjdy" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/" data-id="citk65e5m0002twrlnf26oo0w" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -160,10 +129,10 @@
           })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/04/06/about-git/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-about-git"><!--评论--></a>
+        <a href="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-jhipster生成的gateway服务网关微服务启动无法自动创建表"><!--评论--></a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jHipster/">jHipster</a></li></ul>
 
     </footer>
   </div>
@@ -172,19 +141,10 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/04/06/browser-compatibility/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Firefox 定义日期 new Date() 兼容问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/03/Ubuntu-1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/08/06/mysql开启允许公网连接/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Ubuntu修改root密码</div>
+      <div class="article-nav-title">MySQL 开启允许公网连接</div>
     </a>
   
 </nav>
@@ -195,7 +155,7 @@
 
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-about-git" data-title="git 命令" data-url="http://chuiliu.github.io/2016/04/06/about-git/"></div>
+    <div class="ds-thread" data-thread-key="post-jhipster生成的gateway服务网关微服务启动无法自动创建表" data-title="jHipster 生成的 gateway 服务网关启动无法自动建表" data-url="http://chuiliu.github.io/2016/08/28/jhipster生成的gateway服务网关微服务启动无法自动创建表/"></div>
     <!-- 多说评论框 end -->   
   </section>
 

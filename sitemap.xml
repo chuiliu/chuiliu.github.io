@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/about/index.html</loc>
+    <lastmod>2016-09-26T14:55:41.621Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/08/28/jhipster%E7%94%9F%E6%88%90%E7%9A%84gateway%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%A1%A8/</loc>
+    <lastmod>2016-09-26T14:54:22.277Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/07/31/mysql%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-09-26T13:52:55.050Z</lastmod>
   </url>
@@ -89,11 +99,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
     <lastmod>2016-05-19T06:40:25.837Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/about/index.html</loc>
-    <lastmod>2016-05-19T03:31:31.450Z</lastmod>
   </url>
   
   <url>
