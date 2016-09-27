@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Javascript | lonica</title>
+  <title>lonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="lonica">
-<meta property="og:url" content="http://chuiliu.github.io/categories/前端/Javascript/index.html">
+<meta property="og:url" content="http://chuiliu.github.io/page/6/index.html">
 <meta property="og:site_name" content="lonica">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -73,36 +73,86 @@
         <section id="main"><!-- 修改成中文：上一页，下一页 -->
 
   
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-git生成SSH公钥" class="article article-type-post" itemscope itemprop="blogPost">
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/undo-a-select-change/" class="archive-article-date">
-  <time datetime="2016-04-13T13:25:50.000Z" itemprop="datePublished">4月 13日</time>
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2015/10/25/git生成SSH公钥/" class="article-date">
+  <time datetime="2015-10-25T12:33:48.000Z" itemprop="datePublished">2015-10-25 20:33:48</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a>
+      <a class="article-title" href="/2015/10/25/git生成SSH公钥/">git 生成 SSH 公钥</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u5982_u4F55_u751F_u5B58SSH_u516C_u94A5"><a href="#u5982_u4F55_u751F_u5B58SSH_u516C_u94A5" class="headerlink" title="如何生存SSH公钥"></a>如何生存SSH公钥</h2><ol>
+<li>创建SSH Key<br>在用户目录下查看是否有<code>.ssh</code>文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，则证明公钥已经生成，否则需要我们手动生成。<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建SSH Key</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail<span class="variable">@example</span>.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个时候会看到<code>.ssh</code>下会生成私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>。</p>
+<ol>
+<li><p>github配置<br>在github上的设置页面中配置SSH keys，Title命名任意，将id_rsa.pub中的内容全选粘贴至Key文本框中即可。<br>github上Key是可以配置多个的，假如需要在不同的计算机上推送，则需要配置不同的Key。</p>
+</li>
+<li><p>测试SSH Key是否配置成功</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi chuiliu! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>出现以上则说明一切配置都OK。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2015/10/25/git生成SSH公钥/" data-id="citlmjnof0021t0rl7s9g5uc8" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2015/10/25/git生成SSH公钥/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-git生成SSH公钥"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
+
+
+
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    </nav>
   
 </section>
         

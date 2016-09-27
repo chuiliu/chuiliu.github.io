@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Javascript | lonica</title>
+  <title>Redis 使用笔记（二） | lonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lonica">
-<meta property="og:url" content="http://chuiliu.github.io/categories/前端/Javascript/index.html">
+  <meta name="description" content="Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：
+
+二进制安全的字符串
+列表（Lists），按顺序插入的字符串元素的集合
+集合（Sets），是不重复的并且无序的
+有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过sco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis 使用笔记（二）">
+<meta property="og:url" content="http://chuiliu.github.io/2016/09/27/redis使用笔记2/index.html">
 <meta property="og:site_name" content="lonica">
-<meta property="og:description">
+<meta property="og:description" content="Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：
+
+二进制安全的字符串
+列表（Lists），按顺序插入的字符串元素的集合
+集合（Sets），是不重复的并且无序的
+有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过sco">
+<meta property="og:updated_time" content="2016-09-27T15:23:24.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lonica">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Redis 使用笔记（二）">
+<meta name="twitter:description" content="Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：
+
+二进制安全的字符串
+列表（Lists），按顺序插入的字符串元素的集合
+集合（Sets），是不重复的并且无序的
+有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过sco">
   
     <link rel="alternative" href="/atom.xml" title="lonica" type="application/atom+xml">
   
@@ -70,40 +86,134 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-redis使用笔记2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
 
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/undo-a-select-change/" class="archive-article-date">
-  <time datetime="2016-04-13T13:25:50.000Z" itemprop="datePublished">4月 13日</time>
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/09/27/redis使用笔记2/" class="article-date">
+  <time datetime="2016-09-27T14:26:56.000Z" itemprop="datePublished">2016-09-27 22:26:56</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Redis/">Redis</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a>
+    <h1 class="article-title" itemprop="name">
+      Redis 使用笔记（二）
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（Sets），是不重复的并且无序的</li>
+<li>有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过score进行排序</li>
+<li>哈希（Hashes），由字段（field）及其关联的值（value）组成的映射</li>
+<li>Bit arrays</li>
+<li>HyperLogLogs</li>
+</ul>
+<p>可以使用<code>redis-cli</code>命令启动客户端，连接到redis服务器，来实践一下redis的使用：</p>
+<h2 id="u5B57_u7B26_u4E32_uFF08Strings_uFF09"><a href="#u5B57_u7B26_u4E32_uFF08Strings_uFF09" class="headerlink" title="字符串（Strings）"></a>字符串（Strings）</h2><p>在一条命令中同时查询或赋值多个键</p>
+<ul>
+<li>mset 返回数组</li>
+<li>mget </li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mset <span class="tag">a</span> <span class="number">1</span> <span class="tag">b</span> <span class="number">2</span> c <span class="number">3</span></span><br><span class="line">mget <span class="tag">a</span> <span class="tag">b</span> c</span><br></pre></td></tr></table></figure>
+<p>判断键是否存在</p>
+<ul>
+<li>exists 存在返回0，不存在返回1</li>
+</ul>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists <span class="literal">a</span></span><br></pre></td></tr></table></figure>
+<p>删除键</p>
+<ul>
+<li>del 存在则返回1，不存在返回0</li>
+</ul>
+<p>返回某个键的类型</p>
+<ul>
+<li>type 不存在则返回none</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="built_in">test</span>List</span><br></pre></td></tr></table></figure>
+<h2 id="u8BBE_u7F6E_u548C_u67E5_u8BE2_u8FC7_u671F_u65F6_u95F4_uFF08expires_uFF09"><a href="#u8BBE_u7F6E_u548C_u67E5_u8BE2_u8FC7_u671F_u65F6_u95F4_uFF08expires_uFF09" class="headerlink" title="设置和查询过期时间（expires）"></a>设置和查询过期时间（expires）</h2><ul>
+<li><p>expire </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key uuuuuuu</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; expire key <span class="number">5</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"uuuuuuu"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="function">get <span class="title">key</span></span><br><span class="line"><span class="params">(nil)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ttl 查询距离过期的剩余时间</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">set</span> <span class="tag">key</span> 100 <span class="tag">ex</span> 10</span><br><span class="line"><span class="tag">OK</span></span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) 6</span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) 2</span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) <span class="tag">-2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="u5217_u8868_uFF08Lists_uFF09"><a href="#u5217_u8868_uFF08Lists_uFF09" class="headerlink" title="列表（Lists）"></a>列表（Lists）</h2><ul>
+<li>lpush 从头部添加元素</li>
+<li>rpush 从尾部添加元素</li>
+<li>lrange 查询某个范围内的元素，索引从0开始，-1表示最后一个元素，-2表示倒数第二个元素，以此类推</li>
+<li>lpop 从头部移除元素</li>
+<li>rpop 从尾部移除元素</li>
+<li>ltrim 截取某个范围内的元素，并将结果赋值给该列表</li>
+</ul>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lpush testList b</span><br><span class="line">lpush testList a</span><br><span class="line">rpush testList c</span><br><span class="line"><span class="keyword">lrange</span> testList <span class="number">0</span> <span class="number">3</span></span><br><span class="line">lpop testList</span><br><span class="line">rpop testList</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" data-id="citlmjnne001dt0rlarxo4ae5" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-redis使用笔记2"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+
+    </footer>
   </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/01/Maven添加外部依赖包/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Maven 添加本地依赖包</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-redis使用笔记2" data-title="Redis 使用笔记（二）" data-url="http://chuiliu.github.io/2016/09/27/redis使用笔记2/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
 </section>
         
           <aside id="sidebar">

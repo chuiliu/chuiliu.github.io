@@ -4,7 +4,7 @@
   <subtitle><![CDATA[stay alive]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-09-26T15:47:32.870Z</updated>
+  <updated>2016-09-27T15:23:24.962Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,6 +13,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Redis 使用笔记（二）]]></title>
+    <link href="http://chuiliu.github.io/2016/09/27/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/"/>
+    <id>http://chuiliu.github.io/2016/09/27/redis使用笔记2/</id>
+    <published>2016-09-27T14:26:56.000Z</published>
+    <updated>2016-09-27T15:23:24.962Z</updated>
+    <content type="html"><![CDATA[<p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（Sets），是不重复的并且无序的</li>
+<li>有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过score进行排序</li>
+<li>哈希（Hashes），由字段（field）及其关联的值（value）组成的映射</li>
+<li>Bit arrays</li>
+<li>HyperLogLogs</li>
+</ul>
+<p>可以使用<code>redis-cli</code>命令启动客户端，连接到redis服务器，来实践一下redis的使用：</p>
+<h2 id="u5B57_u7B26_u4E32_uFF08Strings_uFF09"><a href="#u5B57_u7B26_u4E32_uFF08Strings_uFF09" class="headerlink" title="字符串（Strings）"></a>字符串（Strings）</h2><p>在一条命令中同时查询或赋值多个键</p>
+<ul>
+<li>mset 返回数组</li>
+<li>mget </li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mset <span class="tag">a</span> <span class="number">1</span> <span class="tag">b</span> <span class="number">2</span> c <span class="number">3</span></span><br><span class="line">mget <span class="tag">a</span> <span class="tag">b</span> c</span><br></pre></td></tr></table></figure>
+<p>判断键是否存在</p>
+<ul>
+<li>exists 存在返回0，不存在返回1</li>
+</ul>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists <span class="literal">a</span></span><br></pre></td></tr></table></figure>
+<p>删除键</p>
+<ul>
+<li>del 存在则返回1，不存在返回0</li>
+</ul>
+<p>返回某个键的类型</p>
+<ul>
+<li>type 不存在则返回none</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="built_in">test</span>List</span><br></pre></td></tr></table></figure>
+<h2 id="u8BBE_u7F6E_u548C_u67E5_u8BE2_u8FC7_u671F_u65F6_u95F4_uFF08expires_uFF09"><a href="#u8BBE_u7F6E_u548C_u67E5_u8BE2_u8FC7_u671F_u65F6_u95F4_uFF08expires_uFF09" class="headerlink" title="设置和查询过期时间（expires）"></a>设置和查询过期时间（expires）</h2><ul>
+<li><p>expire </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key uuuuuuu</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; expire key <span class="number">5</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"uuuuuuu"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="function">get <span class="title">key</span></span><br><span class="line"><span class="params">(nil)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ttl 查询距离过期的剩余时间</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">set</span> <span class="tag">key</span> 100 <span class="tag">ex</span> 10</span><br><span class="line"><span class="tag">OK</span></span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) 6</span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) 2</span><br><span class="line">127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span><span class="pseudo">:6379</span>&gt; <span class="tag">ttl</span> <span class="tag">key</span></span><br><span class="line">(<span class="tag">integer</span>) <span class="tag">-2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="u5217_u8868_uFF08Lists_uFF09"><a href="#u5217_u8868_uFF08Lists_uFF09" class="headerlink" title="列表（Lists）"></a>列表（Lists）</h2><ul>
+<li>lpush 从头部添加元素</li>
+<li>rpush 从尾部添加元素</li>
+<li>lrange 查询某个范围内的元素，索引从0开始，-1表示最后一个元素，-2表示倒数第二个元素，以此类推</li>
+<li>lpop 从头部移除元素</li>
+<li>rpop 从尾部移除元素</li>
+<li>ltrim 截取某个范围内的元素，并将结果赋值给该列表</li>
+</ul>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lpush testList b</span><br><span class="line">lpush testList a</span><br><span class="line">rpush testList c</span><br><span class="line"><span class="keyword">lrange</span> testList <span class="number">0</span> <span class="number">3</span></span><br><span class="line">lpop testList</span><br><span class="line">rpop testList</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（S]]>
+    </summary>
+    
+      <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
+    
+      <category term="Redis" scheme="http://chuiliu.github.io/categories/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Maven 添加本地依赖包]]></title>
@@ -36,11 +104,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[JHipster中使用Config Server]]></title>
+    <title><![CDATA[JHipster 中使用 Config Server]]></title>
     <link href="http://chuiliu.github.io/2016/08/31/JHipster%E4%B8%AD%E4%BD%BF%E7%94%A8Config%20Server/"/>
     <id>http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/</id>
     <published>2016-08-31T08:32:10.000Z</published>
-    <updated>2016-09-26T15:48:23.157Z</updated>
+    <updated>2016-09-26T15:57:15.356Z</updated>
     <content type="html"><![CDATA[<h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
 <ul>
 <li>开发环境一般使用本地文件系统来保存</li>
@@ -140,11 +208,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Redis 使用笔记]]></title>
-    <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chuiliu.github.io/2016/08/06/redis使用笔记/</id>
+    <title><![CDATA[Redis 使用笔记（一）]]></title>
+    <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B01/"/>
+    <id>http://chuiliu.github.io/2016/08/06/redis使用笔记1/</id>
     <published>2016-08-06T15:06:06.000Z</published>
-    <updated>2016-09-26T15:54:29.207Z</updated>
+    <updated>2016-09-27T14:53:46.295Z</updated>
     <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
 <p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
@@ -160,7 +228,7 @@
 </li>
 </ol>
 <p>通过redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到服务器后，可以查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
+<p>连接到服务器后，可以使用info命令查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
 <p>操作<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key hello</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"hello"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <p>如果需要redis在以后台程序的方式运行，以下命令启动<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> &amp;</span><br></pre></td></tr></table></figure></p>
 <p>或者将<code>redis.conf</code>配置文件中的<code>daemonize</code>值修改为<code>yes</code></p>
@@ -602,64 +670,6 @@
       <category term="编码" scheme="http://chuiliu.github.io/tags/%E7%BC%96%E7%A0%81/"/>
     
       <category term="其它" scheme="http://chuiliu.github.io/categories/%E5%85%B6%E5%AE%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Express 4.x 安装]]></title>
-    <link href="http://chuiliu.github.io/2015/12/26/Express/"/>
-    <id>http://chuiliu.github.io/2015/12/26/Express/</id>
-    <published>2015-12-26T11:41:34.000Z</published>
-    <updated>2016-05-16T08:22:57.795Z</updated>
-    <content type="html"><![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
-<ul>
-<li><p>全局安装最新版的Express</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>需要注意的是，安装到这一步后，当你直接在命令行执行<strong>express</strong>命令时会报以下错误：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">C:</span>\Users\Administrator&gt;express -V</span><br><span class="line"><span class="string">'express'</span>不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这是因为<strong>4.x</strong>版本的Express已经把命令行工具 <a href="https://github.com/expressjs/generator" target="_blank" rel="external">express-generator</a> 独立出来，因此还需要全局安装<code>express-generator</code></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>到这里全局安装就完成了，我们可以查看当前Express的版本</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">express</span> -V</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建Express应用，并切换到该目录下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express <span class="built_in">test</span>Express &amp;&amp; <span class="built_in">cd</span> <span class="built_in">test</span>Express</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这时候会生成Express项目的结构<br><img src="http://o743aqnrb.bkt.clouddn.com/image/express.png?
-watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/dissolve/75/gravity/SouthEast/dx/20/dy/10" alt=""></p>
-<ul>
-<li><p>接下来安装express以及所需的module</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动应用</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这时候在浏览器访问 <strong><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></strong> ，如看到下图则表示安装成功</p>
-</li>
-</ul>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/image/express1.png" alt=""></p>
-<p>参考 <a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
-<ul>
-<li><code>Express 4.x</code>与<code>Express 3.x</code> 差别较大，如果需要安装<code>Express 3.x</code>，则可以指定版本安装<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator@<span class="number">3</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
-<ul>
-<li><p>全局安装最新版的Express</p>
-<figure class="highlight ]]>
-    </summary>
-    
-      <category term="Express" scheme="http://chuiliu.github.io/tags/Express/"/>
-    
-      <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
-    
-      <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
     
   </entry>
   
