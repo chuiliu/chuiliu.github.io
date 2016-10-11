@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/3 | lonica</title>
+  <title>解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码 | lonica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lonica">
-<meta property="og:url" content="http://chuiliu.github.io/archives/2016/03/index.html">
+  <meta name="description" content="最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。
+经过一番尝试，找到了解决方法：
+
+在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：1git clone https://username:password@git.coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码">
+<meta property="og:url" content="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/index.html">
 <meta property="og:site_name" content="lonica">
-<meta property="og:description">
+<meta property="og:description" content="最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。
+经过一番尝试，找到了解决方法：
+
+在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：1git clone https://username:password@git.coding">
+<meta property="og:updated_time" content="2016-10-11T15:46:43.129Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lonica">
-<meta name="twitter:description">
+<meta name="twitter:title" content="解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码">
+<meta name="twitter:description" content="最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。
+经过一番尝试，找到了解决方法：
+
+在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：1git clone https://username:password@git.coding">
   
     <link rel="alternative" href="/atom.xml" title="lonica" type="application/atom+xml">
   
@@ -70,40 +80,100 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><!-- 修改成中文：上一页，下一页 -->
+        <section id="main"><!-- 修改成中文：分享，评论 -->
+<article id="post-解决GIT推送到远程分支每次都要重新输入用户名密码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
 
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/03/13/about-bower/" class="archive-article-date">
-  <time datetime="2016-03-13T08:24:48.000Z" itemprop="datePublished">3月 13日</time>
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" class="article-date">
+  <time datetime="2016-10-11T14:09:34.000Z" itemprop="datePublished">2016-10-11 22:09:34</time>
 </a>
       
+    </div>
+
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/13/about-bower/">包管理工具 Bower</a>
+    <h1 class="article-title" itemprop="name">
+      解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
+<p>经过一番尝试，找到了解决方法：</p>
+<ol>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://username:password@git.coding.net/username/Demo.git</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br></pre></td></tr></table></figure></p>
+<p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br><span class="line">    fetch = +refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/remotes/</span>origin<span class="comment">/*</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" data-id="ciu5lbzgh000h5orl2rqcmdfj" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-解决GIT推送到远程分支每次都要重新输入用户名密码"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
   </div>
+  
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          解决MySQL因max_allowed_packet的值设置过小而查询失败的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/27/redis使用笔记2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Redis 使用笔记（二）</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-解决GIT推送到远程分支每次都要重新输入用户名密码" data-title="解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码" data-url="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/"></div>
+    <!-- 多说评论框 end -->   
+  </section>
+
+
 </section>
         
           <aside id="sidebar">

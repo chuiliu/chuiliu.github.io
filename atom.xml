@@ -4,7 +4,7 @@
   <subtitle><![CDATA[stay alive]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-09-27T15:23:24.962Z</updated>
+  <updated>2016-10-11T15:37:29.142Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,6 +13,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[解决MySQL因max_allowed_packet的值设置过小而查询失败的问题]]></title>
+    <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/</id>
+    <published>2016-10-11T14:22:02.000Z</published>
+    <updated>2016-10-11T15:37:29.142Z</updated>
+    <content type="html"><![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
+<p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">global</span> max_allowed_packet = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span></span></span><br></pre></td></tr></table></figure></p>
+<p>重启数据库<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --<span class="keyword">help</span> | <span class="keyword">grep</span> my.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></p>
+<p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_allowed_packet = <span class="number">10</span>M</span><br></pre></td></tr></table></figure></p>
+<p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐方法的把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowe]]>
+    </summary>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码]]></title>
+    <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
+    <id>http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/</id>
+    <published>2016-10-11T14:09:34.000Z</published>
+    <updated>2016-10-11T15:46:43.129Z</updated>
+    <content type="html"><![CDATA[<p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
+<p>经过一番尝试，找到了解决方法：</p>
+<ol>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://username:password@git.coding.net/username/Demo.git</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br></pre></td></tr></table></figure></p>
+<p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br><span class="line">    fetch = +refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/remotes/</span>origin<span class="comment">/*</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
+<p>经过一番尝试，找到了解决方法：</p>
+<ol>
+<li>在克隆项目]]>
+    </summary>
+    
+      <category term="Git" scheme="http://chuiliu.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Redis 使用笔记（二）]]></title>
@@ -475,7 +523,7 @@
     <link href="http://chuiliu.github.io/2016/04/06/about-git/"/>
     <id>http://chuiliu.github.io/2016/04/06/about-git/</id>
     <published>2016-04-06T02:23:54.000Z</published>
-    <updated>2016-09-26T15:28:36.951Z</updated>
+    <updated>2016-10-11T14:16:12.766Z</updated>
     <content type="html"><![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
 <ul>
 <li><p><strong>配置</strong></p>
@@ -505,7 +553,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"]]>
     </summary>
     
-      <category term="git" scheme="http://chuiliu.github.io/tags/git/"/>
+      <category term="Git" scheme="http://chuiliu.github.io/tags/Git/"/>
     
       <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
@@ -607,69 +655,6 @@
       <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
     
       <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Sublime Text 常用快捷键与配置项]]></title>
-    <link href="http://chuiliu.github.io/2016/01/26/sublime-settings/"/>
-    <id>http://chuiliu.github.io/2016/01/26/sublime-settings/</id>
-    <published>2016-01-26T02:32:17.000Z</published>
-    <updated>2016-05-16T08:20:13.187Z</updated>
-    <content type="html"><![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ctrl + d     <span class="comment"># 选择相同的单词，连续按继续选择</span></span><br><span class="line">alt + F3     <span class="comment"># 选择整个文档中相同的单词</span></span><br><span class="line">ctrl + g     <span class="comment"># 输入行号，跳到某一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + l                 <span class="comment"># 选择一行，连续按继续选择</span></span><br><span class="line">ctrl + shift + ← / →     <span class="comment"># 向左/向右选择文本</span></span><br><span class="line">ctrl + shift + ↑ / ↓     <span class="comment"># 向上/向下移动行</span></span><br><span class="line">ctrl + shift + k         <span class="comment"># 删除一行</span></span><br><span class="line">ctrl + enter             <span class="comment"># 在当前行下插入一行</span></span><br><span class="line">ctrl + shift + enter     <span class="comment"># 在当前行上插入一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + shift + d     <span class="comment"># 向下复制</span></span><br><span class="line">ctrl + shift + v     <span class="comment"># 粘贴，并按当前文本格式化</span></span><br><span class="line">ctrl + x             <span class="comment"># 剪切一行</span></span><br><span class="line">ctrl + k + k         <span class="comment"># ctrl+k后再按一次k，删除从光标处至行末的文本</span></span><br><span class="line">ctrl + p             <span class="comment"># 搜索项目中的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alt + .              <span class="comment"># 闭合html标签</span></span><br><span class="line">ctrl + /             <span class="comment"># 单行注释</span></span><br><span class="line">ctrl + shift + /     <span class="comment"># 多行注释</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + pagedown      <span class="comment"># 切换到左边的标签页</span></span><br><span class="line">ctrl + pageup        <span class="comment"># 切换到右边的标签页</span></span><br><span class="line">ctrl + w             <span class="comment"># 关闭当前文件</span></span><br><span class="line">ctrl + shift + t     <span class="comment"># 恢复上一个关闭的标签</span></span><br><span class="line">alt + shift + <span class="number">2</span>      <span class="comment"># 分两屏</span></span><br></pre></td></tr></table></figure>
-<h3 id="u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User"><a href="#u8BB0_u5F55sublime_Text_u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u914D_u7F6E_u9879_uFF1APreferences__26gt_3B_Settings-User" class="headerlink" title="记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User"></a>记录sublime Text编辑器中一些常用的配置项：Preferences &gt; Settings-User</h3><ul>
-<li><p>在新窗口中打开文件夹</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"open_files_in_new_window"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按tab自动补全</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"auto_complete_commit_on_tab"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置unix换行</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"default_line_ending"</span>: <span class="string">"unix"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把tab转为空格</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"translate_tabs_to_spaces"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保存时自动删除空格</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"trim_trailing_white_space_on_save"</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_T]]>
-    </summary>
-    
-      <category term="sublime Text" scheme="http://chuiliu.github.io/tags/sublime-Text/"/>
-    
-      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[关于换行]]></title>
-    <link href="http://chuiliu.github.io/2016/01/25/about-space-1/"/>
-    <id>http://chuiliu.github.io/2016/01/25/about-space-1/</id>
-    <published>2016-01-25T03:17:53.000Z</published>
-    <updated>2016-05-16T08:25:45.527Z</updated>
-    <content type="html"><![CDATA[<ul>
-<li>UNIX 行尾换行 \n</li>
-<li>Windows 行尾换行回车 \n\r</li>
-<li>Mac 行尾回车 \r</li>
-</ul>
-<p>Unix/Mac系统下的文件在Windows里打开的话，所有文字会变成一行；而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<ul>
-<li>UNIX 行尾换行 \n</li>
-<li>Windows 行尾换行回车 \n\r</li>
-<li>Mac 行尾回车 \r</li>
-</ul>
-<p>Unix/Mac系统下的文件在Windows里打开的话，所有文字会变成一行；而Windows里的文件在Uni]]>
-    </summary>
-    
-      <category term="编码" scheme="http://chuiliu.github.io/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="其它" scheme="http://chuiliu.github.io/categories/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
