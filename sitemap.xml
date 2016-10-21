@@ -2,17 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
+    <lastmod>2016-10-21T16:57:16.634Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
+    <lastmod>2016-10-21T16:56:58.256Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/</loc>
+    <lastmod>2016-10-21T16:53:19.030Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-10-20T06:19:17.686Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</loc>
+    <lastmod>2016-10-19T16:02:24.169Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/02/%E4%BD%BF%E7%94%A8iconfont%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/</loc>
+    <lastmod>2016-10-19T15:59:34.895Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</loc>
+    <lastmod>2016-10-19T15:20:07.851Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/01/25/about-space-1/</loc>
+    <lastmod>2016-10-17T10:45:34.645Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/01/26/sublime-settings/</loc>
+    <lastmod>2016-10-17T08:56:07.068Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-10-17T06:59:28.152Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-10-17T06:57:10.293Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2016-10-11T15:46:43.129Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2016-10-11T15:37:29.142Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2015/10/25/git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
+    <loc>http://chuiliu.github.io/2015/10/25/Git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
     <lastmod>2016-10-11T14:34:52.321Z</lastmod>
   </url>
   
@@ -37,11 +87,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</loc>
-    <lastmod>2016-09-26T15:52:12.534Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/09/01/Maven%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%8C%85/</loc>
     <lastmod>2016-09-26T15:47:32.870Z</lastmod>
   </url>
@@ -49,11 +94,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/08/28/JHipster%E7%94%9F%E6%88%90%E7%9A%84gateway%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%A1%A8/</loc>
     <lastmod>2016-09-26T15:42:49.456Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-09-26T15:27:56.823Z</lastmod>
   </url>
   
   <url>
@@ -107,11 +147,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
-    <lastmod>2016-06-16T07:18:30.454Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/stop-and-go/index.html</loc>
     <lastmod>2016-06-16T07:14:55.635Z</lastmod>
   </url>
@@ -132,18 +167,8 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
-    <lastmod>2016-05-16T09:12:07.528Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2015/12/12/markdown/</loc>
     <lastmod>2016-05-16T08:26:21.795Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/01/25/about-space-1/</loc>
-    <lastmod>2016-05-16T08:25:45.527Z</lastmod>
   </url>
   
   <url>
@@ -154,16 +179,6 @@
   <url>
     <loc>http://chuiliu.github.io/2015/12/26/Express/</loc>
     <lastmod>2016-05-16T08:22:57.795Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</loc>
-    <lastmod>2016-05-16T08:21:02.896Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/01/26/sublime-settings/</loc>
-    <lastmod>2016-05-16T08:20:13.187Z</lastmod>
   </url>
   
   <url>

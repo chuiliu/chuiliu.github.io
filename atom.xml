@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[lonica]]></title>
-  <subtitle><![CDATA[stay alive]]></subtitle>
+  <subtitle><![CDATA[alive]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-10-11T15:37:29.142Z</updated>
+  <updated>2016-10-20T06:19:17.686Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,15 +15,90 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[总结篇：如何快速搭建静态资源服务器]]></title>
+    <link href="http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/</id>
+    <published>2016-10-19T13:29:30.000Z</published>
+    <updated>2016-10-20T06:19:17.686Z</updated>
+    <content type="html"><![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的吉他资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
+<h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>就是个不错的选择，只需要一行命令就可以快速启动。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">http</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在项目根目录执行：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http-server -a <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">8000</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/http-server.png" alt=""></p>
+<h2 id="u4F7F_u7528static-server"><a href="#u4F7F_u7528static-server" class="headerlink" title="使用static-server"></a>使用static-server</h2><p><code>static-server</code>很类似<code>http-server</code>，也是基于node，安装和使用方法很相似：<br>npm install -g static-server</p>
+<p>使用方法也很简单，在项目目录下指定该项目的入口文件即可：<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>-<span class="keyword">server</span> -i <span class="keyword">index</span>.html</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/static-server-1.png" alt=""></p>
+<p>下面是一些常用的选项：</p>
+<blockquote>
+<p>-p, –port <n>             指定端口启动<br>-i, –index <filename>       指定默认项目入口文件<br>-d, –debug                  显示错误信息<br>-n, –not-found <filename>   指定404页面</filename></filename></n></p>
+</blockquote>
+<p>详见：<a href="https://www.npmjs.com/package/static-server" target="_blank" rel="external">https://www.npmjs.com/package/static-server</a></p>
+<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
+<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
+<h2 id="u4F7F_u7528Ruby"><a href="#u4F7F_u7528Ruby" class="headerlink" title="使用Ruby"></a>使用Ruby</h2><p>如果你安装Ruby，Ruby也提供了一个很简便的方式：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -<span class="keyword">run</span> -<span class="keyword">e</span> httpd . -p 8888</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/ruby-http-server.png" alt=""></p>
+<h2 id="u4F7F_u7528Nginx"><a href="#u4F7F_u7528Nginx" class="headerlink" title="使用Nginx"></a>使用Nginx</h2><p>几乎所有的web应用在最终部署到<code>Linux</code>上时都会用到<code>Nginx</code>做反向代理服务器，所以很有必要会用<code>Nginx</code>。<br><a href="http://nginx.org/en/download.html" target="_blank" rel="external">下载</a>，解压，运行nginx.exe，在浏览器输入<code>localhost</code>或<code>127.0.0.1</code>，如果出现<br><strong>Welcome to nginx!</strong><br>则说明<code>Nginx</code>已经成功安装。</p>
+<p>下面是<code>Nginx</code>常用到的命令：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -s <span class="built_in">reload</span>                <span class="comment">// 重新加载nginx配置</span></span><br><span class="line">nginx -s <span class="built_in">stop</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你的需求只是实现静态资源服务，那么只需要如下简单配置即可：root代表项目的根目录，index代表默认的入口文件。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">server</span> &#123;</span><br><span class="line">    <span class="title">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="title">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line">    <span class="title">location</span> / &#123;</span><br><span class="line">        <span class="title">root</span>   E:\Work\Workspace;</span><br><span class="line">        <span class="title">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="title">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="title">root</span>   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候访问 <a href="http://localhost/index.html" target="_blank" rel="external">http://localhost/index.html</a> 就OK了。</p>
+<h2 id="u4F7F_u7528json-server"><a href="#u4F7F_u7528json-server" class="headerlink" title="使用json-server"></a>使用json-server</h2><p>如果你的需求只是想模拟<code>ajax</code>从后台获取数据，因为通常一个项目中前端开发和后台几乎是同时进行的，开发初期往往需要前端自己构造假数据来渲染页面，谷歌浏览器不在服务端环境下调试js，则会被视为跨域，从而导致无法获取本地<code>json</code>数据，要不就使用火狐浏览器，较好的解决方法是快速搭建一个JSON服务器,这个时候<a href="https://github.com/typicode/json-server" target="_blank" rel="external">json-server</a>就是个不错的选择了。</p>
+<p>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">json</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在任意文件夹下创建一个<code>json</code>文件：如data.json:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">posts</span>": <span class="value">[</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">1</span></span>, "<span class="attribute">title</span>": <span class="value"><span class="string">"json-server"</span></span>, "<span class="attribute">author</span>": <span class="value"><span class="string">"typicode"</span> </span>&#125;</span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">comments</span>": <span class="value">[</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">1</span></span>, "<span class="attribute">body</span>": <span class="value"><span class="string">"some comment"</span></span>, "<span class="attribute">postId</span>": <span class="value"><span class="number">1</span> </span>&#125;,</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">2</span></span>, "<span class="attribute">body</span>": <span class="value"><span class="string">"some comment"</span></span>, "<span class="attribute">postId</span>": <span class="value"><span class="number">1</span> </span>&#125;</span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">profile</span>": <span class="value">&#123; "<span class="attribute">name</span>": <span class="value"><span class="string">"typicode"</span> </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在该目录下启动<code>json-server</code>来监听这个文件:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">json-server <span class="comment">--watch data.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者指定端口启动启动</span></span><br><span class="line">json-server <span class="comment">--watch data.json --port 3004</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-1.png" alt=""></p>
+<p>可以看到<code>json-server</code>默认创建了三个请求资源，分别对应了<code>data.json</code>中的<code>key</code>值，很方便，这个时候浏览器访问localhostL3000/db 就会看到当前<code>data.json</code>的数据了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-2.png" alt=""></p>
+<p>访问<a href="http://localhost:3000/comments/1" target="_blank" rel="external">http://localhost:3000/comments/1</a> ，则可以获取到comments下id为1的json数据：<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-3.png" alt=""></p>
+<p>很神奇是吧，有了数据之后，可以让<code>json-server</code>也作为静态资源的服务器，这样就没有跨域问题了。<br><code>json-server</code>默认的静态资源（HTML,CSS,JS等）是在与json数据文件同级目录下的public文件夹中，你只需要创建一个名为<code>public</code>的文件夹，把静态资源放到<code>public</code>目录下，然后直接运行以下命令启动即可：<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">json</span>-server <span class="typedef"><span class="keyword">data</span>.json</span></span><br></pre></td></tr></table></figure></p>
+<p>假如我们需要指定静态资源文件夹的位置，则可以通过指定目录来启动<code>json-server</code>即可，如指定静态资源为json数据同级目录的source文件夹下，则：<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">json</span>-server <span class="typedef"><span class="keyword">data</span>.json <span class="comment">--static ./source</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这样，访问<a href="http://localhost:3000/index.html" target="_blank" rel="external">http://localhost:3000/index.html</a> 就可以成功加载到json数据了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-4.png" alt=""></p>
+<p><code>json-server</code>还有很多更强大的功能，如支持模拟REST API操作等，更多的功能可以到<a href="https://github.com/typicode/json-server/blob/master/README.md" target="_blank" rel="external">json-server项目文档</a>查看。</p>
+<h2 id="u4F7F_u7528_u4E00_u4E9BIDE"><a href="#u4F7F_u7528_u4E00_u4E9BIDE" class="headerlink" title="使用一些IDE"></a>使用一些IDE</h2><p>例如：HBuilder</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的吉他资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
+<h2 id="u4F7F_u75]]>
+    </summary>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="开发工具" scheme="http://chuiliu.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[理解 AngularJS 中的 ng-options]]></title>
+    <link href="http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/"/>
+    <id>http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/</id>
+    <published>2016-10-12T16:19:47.000Z</published>
+    <updated>2016-10-21T16:53:19.030Z</updated>
+    <content type="html"><![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将]]>
+    </summary>
+    
+      <category term="AngularJS" scheme="http://chuiliu.github.io/tags/AngularJS/"/>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[解决MySQL因max_allowed_packet的值设置过小而查询失败的问题]]></title>
     <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/</id>
     <published>2016-10-11T14:22:02.000Z</published>
-    <updated>2016-10-11T15:37:29.142Z</updated>
+    <updated>2016-10-17T06:59:28.152Z</updated>
     <content type="html"><![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
 <p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">global</span> max_allowed_packet = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span></span></span><br></pre></td></tr></table></figure></p>
-<p>重启数据库<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
+<p>重启数据库<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> mysql restart</span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --<span class="keyword">help</span> | <span class="keyword">grep</span> my.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></p>
 <p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_allowed_packet = <span class="number">10</span>M</span><br></pre></td></tr></table></figure></p>
 <p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐方法的把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
@@ -297,14 +372,21 @@
     <link href="http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"/>
     <id>http://chuiliu.github.io/2016/07/31/redis启动失败/</id>
     <published>2016-07-31T11:39:12.000Z</published>
-    <updated>2016-09-26T15:52:12.534Z</updated>
-    <content type="html"><![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;redis-server</span><br><span class="line">[<span class="number">8468</span>] <span class="number">31</span> Jul <span class="number">18</span>:<span class="number">55</span>:<span class="number">29.453</span> <span class="comment">#</span></span><br><span class="line">The Windows <span class="property">version</span> <span class="keyword">of</span> Redis allocates a memory mapped heap <span class="keyword">for</span> sharing <span class="keyword">with</span></span><br><span class="line"><span class="keyword">the</span> forked process used <span class="keyword">for</span> persistence operations. In order <span class="keyword">to</span> share this</span><br><span class="line">memory, Windows allocates <span class="keyword">from</span> <span class="keyword">the</span> system paging <span class="type">file</span> a portion <span class="keyword">equal</span> <span class="keyword">to</span> <span class="keyword">the</span></span><br><span class="line">size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap. At this <span class="property">time</span> there <span class="keyword">is</span> insufficient contiguous free</span><br><span class="line"><span class="constant">space</span> available <span class="keyword">in</span> <span class="keyword">the</span> system paging <span class="type">file</span> <span class="keyword">for</span> this operation (Windows <span class="keyword">error</span></span><br><span class="line"><span class="number">0x5AF</span>). To work <span class="keyword">around</span> this you may either increase <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> system</span><br><span class="line">paging <span class="type">file</span>, <span class="keyword">or</span> decrease <span class="keyword">the</span> size <span class="keyword">of</span> <span class="keyword">the</span> Redis heap <span class="keyword">with</span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line">Sometimes a reboot will defragment <span class="keyword">the</span> system paging <span class="type">file</span> sufficiently <span class="keyword">for</span></span><br><span class="line">this operation <span class="keyword">to</span> complete successfully.</span><br><span class="line"></span><br><span class="line">Please see <span class="keyword">the</span> documentation included <span class="keyword">with</span> <span class="keyword">the</span> binary distributions <span class="keyword">for</span> more</span><br><span class="line">details <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> <span class="comment">--maxheap flag.</span></span><br><span class="line"></span><br><span class="line">Redis can <span class="keyword">not</span> <span class="keyword">continue</span>. Exiting.</span><br></pre></td></tr></table></figure></p>
-<p>以上描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
+    <updated>2016-10-19T16:02:24.169Z</updated>
+    <content type="html"><![CDATA[<p>安装redis之后一直启动失败，报错内容如下：</p>
+<blockquote>
+<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version of Redis allocates a memory mapped heap for sharing with<br>the forked process used for persistence operations. In order to share this<br>memory, Windows allocates from the system paging file a portion equal to the<br>size of the Redis heap. At this time there is insufficient contiguous free<br>space available in the system paging file for this operation (Windows error<br>0x5AF). To work around this you may either increase the size of the system<br>paging file, or decrease the size of the Redis heap with the –maxheap flag.<br>Sometimes a reboot will defragment the system paging file sufficiently for<br>this operation to complete successfully.</p>
+<p>Please see the documentation included with the binary distributions for more<br>details on the –maxheap flag.</p>
+<p>Redis can not continue. Exiting.</p>
+</blockquote>
+<p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">C</span>:\Users\Administrator&gt;redis-server --maxheap <span class="number">1024000000</span></span><br><span class="line">                _._</span><br><span class="line">           _.-<span class="built_in">``</span>__ <span class="string">''</span>-._</span><br><span class="line">      _.-<span class="built_in">``</span>    <span class="built_in">`.  `</span>_.  <span class="string">''</span>-._           Redis <span class="number">2.8</span>.<span class="number">2402</span> (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</span><br><span class="line">  .-<span class="built_in">``</span> .-<span class="built_in">``</span><span class="built_in">`.  `</span><span class="built_in">``</span>\/    _.,_ <span class="string">''</span>-._</span><br><span class="line"> (    '      ,       .-<span class="built_in">`  | `</span>,    )     Running in stand alone mode</span><br><span class="line"> |<span class="built_in">`-._`</span>-...-<span class="built_in">` __...-.`</span><span class="built_in">`-._|'`</span> _.-'|     <span class="attribute">Port</span>: <span class="number">6379</span></span><br><span class="line"> |    <span class="built_in">`-._   `</span>._    /     _.-'    |     <span class="attribute">PID</span>: <span class="number">8296</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._  <span class="built_in">`-./  _.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |           <span class="attribute">http</span>:<span class="comment">//redis.io</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |</span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line">      `</span>-._    <span class="built_in">`-.__.-'    _.-'</span><br><span class="line">          `</span>-._        _.-'</span><br><span class="line">              `-.__.-'</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>安装redis之后一直启动失败，报错内容如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span ]]>
+    <![CDATA[<p>安装redis之后一直启动失败，报错内容如下：</p>
+<blockquote>
+<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version]]>
     </summary>
     
       <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
@@ -318,9 +400,17 @@
     <link href="http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://chuiliu.github.io/2016/07/31/mysql使用笔记/</id>
     <published>2016-07-31T11:35:38.000Z</published>
-    <updated>2016-09-26T15:27:56.823Z</updated>
+    <updated>2016-10-17T06:57:10.293Z</updated>
     <content type="html"><![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
 <li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h4><ul>
+<li><p>创建用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'username'</span>;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>授权</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">GRANT</span> all <span class="keyword">ON</span> databasename.* <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'localhost'</span>;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 ]]></content>
@@ -336,11 +426,34 @@
   </entry>
   
   <entry>
+    <title><![CDATA[使用iconfont字体图标]]></title>
+    <link href="http://chuiliu.github.io/2016/07/02/%E4%BD%BF%E7%94%A8iconfont%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/"/>
+    <id>http://chuiliu.github.io/2016/07/02/使用iconfont字体图标/</id>
+    <published>2016-07-02T08:30:47.000Z</published>
+    <updated>2016-10-19T15:59:34.895Z</updated>
+    <content type="html"><![CDATA[<p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介绍下如何使用 <a href="https://icomoon.io/app/#/select" target="_blank" rel="external">icomoon图标制作工具</a> 来快速生成字体图标。</p>
+<p>首先到<a href="http://iconfont.cn/" target="_blank" rel="external">http://iconfont.cn/</a>，选择到需要用到的图标。<br>通过搜索找一个微信图标：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-1.png" alt=""></p>
+<p>选择或者自己填写合适的颜色，然后选择SVG下载:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-2.png" alt=""></p>
+<p>下载完成后，打开 <a href="https://icomoon.io/app/#/select" target="_blank" rel="external">icomoon图标制作工具</a> ，点击左上角的“Import Icons”将刚刚下载的 weixin.svg 导入。<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-3.png" alt=""></p>
+<p>这时候可以在页面看到刚刚的微信图标成功上传，你只需鼠标选中界面上任何需要用到的图标，例如我选中了刚刚上传的微信图标、铅笔图标、音乐图标，点击右下角的“Generate Font”按钮进行创建，每个图标右边的输入框将对应到时候生成的类名<code>icon-*</code>，可以直接修改，再点击dowload下载就行了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-4.png" alt=""><br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-5.png" alt=""></p>
+<p>icomoon将自动生成css文件和示例<code>demo.html</code>，使用时只需要添加该图标对应的class就可以。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"icon-weixin"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"icon-pencil"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"icon-images"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介]]>
+    </summary>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[CSS 相关浏览器兼容问题 [1]]]></title>
     <link href="http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
     <id>http://chuiliu.github.io/2016/06/14/浏览器兼容/</id>
     <published>2016-06-14T14:26:29.000Z</published>
-    <updated>2016-06-16T07:18:30.454Z</updated>
+    <updated>2016-10-21T16:56:58.256Z</updated>
     <content type="html"><![CDATA[<h4 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>span<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>左浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>右浮动的div<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>chrome，firefox下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234454.png" alt=""><br>IE7下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234534.png" alt=""><br>解决：</p>
 <ol>
@@ -361,7 +474,7 @@
     
       <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="浏览器兼容" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/CSS/"/>
     
   </entry>
   
@@ -370,11 +483,11 @@
     <link href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/"/>
     <id>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</id>
     <published>2016-05-16T02:25:12.000Z</published>
-    <updated>2016-05-16T08:21:02.896Z</updated>
+    <updated>2016-10-19T15:20:07.851Z</updated>
     <content type="html"><![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
 <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#container &#123;</span><br><span class="line">    background: #bbada0;</span><br><span class="line">    width: 215px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">#container .cell &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 25px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    zoom: 1;</span><br><span class="line">    *display: inline;</span><br><span class="line">    background: #cdc1b4;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
+<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
 <ul>
 <li><p>移除空白字符，全部写在同一行</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -496,10 +609,10 @@
     <link href="http://chuiliu.github.io/2016/04/06/browser-compatibility/"/>
     <id>http://chuiliu.github.io/2016/04/06/browser-compatibility/</id>
     <published>2016-04-06T12:17:49.000Z</published>
-    <updated>2016-05-16T09:12:07.528Z</updated>
+    <updated>2016-10-21T16:57:16.634Z</updated>
     <content type="html"><![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
 <p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/2016-04-06_211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
@@ -514,7 +627,7 @@
     
       <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="浏览器兼容" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
+      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
     
   </entry>
   
@@ -556,105 +669,6 @@
       <category term="Git" scheme="http://chuiliu.github.io/tags/Git/"/>
     
       <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Ubuntu修改root密码]]></title>
-    <link href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/"/>
-    <id>http://chuiliu.github.io/2016/04/03/Ubuntu-1/</id>
-    <published>2016-04-03T02:56:41.000Z</published>
-    <updated>2016-05-16T08:23:32.644Z</updated>
-    <content type="html"><![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
-<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
-<p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><strong>Ubuntu版本14.04.4 LTS</strong></p>
-<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
-<]]>
-    </summary>
-    
-      <category term="Ubuntu" scheme="http://chuiliu.github.io/tags/Ubuntu/"/>
-    
-      <category term="Linux" scheme="http://chuiliu.github.io/categories/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[包管理工具 Bower]]></title>
-    <link href="http://chuiliu.github.io/2016/03/13/about-bower/"/>
-    <id>http://chuiliu.github.io/2016/03/13/about-bower/</id>
-    <published>2016-03-13T08:24:48.000Z</published>
-    <updated>2016-05-19T06:40:25.837Z</updated>
-    <content type="html"><![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上面提到的问题。<br>安装bower非常简单，前提是必须安装了Node.js和npm<br>检查是否安装Node.js<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="identifier"> </span><span class="title">-v</span></span><br></pre></td></tr></table></figure></p>
-<p>检查是否安装npm<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v</span><br></pre></td></tr></table></figure></p>
-<p>安装bower<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> bower</span></span><br></pre></td></tr></table></figure></p>
-<p>安装完毕后，可以通过以下命令查看bower是否安装成功<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>-v</span><br></pre></td></tr></table></figure></p>
-<p>初始化<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>init</span><br></pre></td></tr></table></figure></p>
-<p>初始化后会生成bower的配置文件bower.json，在配置文件中dependencies字段填写要安装的库的名称和版本，比如jquery:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"learnBower"</span></span>,</span><br><span class="line">  "<span class="attribute">homepage</span>": <span class="value"><span class="string">"https://github.com/chuiliu/learning"</span></span>,</span><br><span class="line">  "<span class="attribute">authors</span>": <span class="value">[</span><br><span class="line">    <span class="string">"chuiliu &lt;zhengchuiliu@foxmail.com&gt;"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">moduleType</span>": <span class="value">[]</span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"MIT"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">ignore</span>": <span class="value">[</span><br><span class="line">    <span class="string">"**/.*"</span>,</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">    <span class="string">"bower_components"</span>,</span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">jquery</span>": <span class="value"><span class="string">"latests"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>安装最新版的jquery，jquery将会被下载到<code>./bower_components</code>目录下<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install</span><br></pre></td></tr></table></figure></p>
-<p>安装bootstrap，<code>--save</code>可以将bootstrap写入bower.json配置文件中<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>install <span class="keyword">bootstrap </span>--save</span><br></pre></td></tr></table></figure></p>
-<p>查看已经安装的库<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="type">list</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>E:\learn\learnBower&gt;bower list<br>bower check-new     Checking for new versions of the project dependencies…<br>learnBower E:\learn\learnBower<br>├─┬ bootstrap#3.3.6 (latest is 4.0.0-alpha.2)<br>│ └── jquery#2.2.3 (latest is 3.0.0-beta1)<br>└── jquery#2.2.3</p>
-</blockquote>
-<p>查看库的信息<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="preprocessor">info</span> <span class="keyword">bootstrap</span></span><br></pre></td></tr></table></figure></p>
-<p>更新jquery到最新版<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>update jquery</span><br></pre></td></tr></table></figure></p>
-<p>删除库，如果删除了有被其它库依赖的库，bower会给出提示<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span>uninstall jquery</span><br></pre></td></tr></table></figure></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在搭建web项目时，通常我们需要依赖各种js库，但是这些库的下载、互相依赖关系和版本比较乱，这时候通常会想到有没有什么工具可以替代我们去做这件事，就像node.js的包管理工具 npm 一样，帮助我们方便实现包资源管理，bower是浏览器端的js包管理工具，它很好地解决了上]]>
-    </summary>
-    
-      <category term="bower" scheme="http://chuiliu.github.io/tags/bower/"/>
-    
-      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Node.js笔录：Query String]]></title>
-    <link href="http://chuiliu.github.io/2016/02/24/nodejs-querystring/"/>
-    <id>http://chuiliu.github.io/2016/02/24/nodejs-querystring/</id>
-    <published>2016-02-24T06:15:26.000Z</published>
-    <updated>2016-05-16T08:18:56.970Z</updated>
-    <content type="html"><![CDATA[<p>用到，做个笔记</p>
-<p>querystring模块提供了有关查询字符串的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querystring.stringify(obj, [sep], [eq])</span><br><span class="line">querystring.parse(str, [sep], [eq], [options])</span><br><span class="line">querystring.escape</span><br><span class="line">querystring.unescape</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;username:<span class="string">'zheng'</span>, password:<span class="string">'123456'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.stringify(obj));</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>username=zheng&amp;password=123456</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'username=zheng&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str1));</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str2));</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
-</li>
-<li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'username=用户名&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">escape</span> = querystring.escape(str);</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">unescape</span> = querystring.unescape(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">unescape</span>);</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<blockquote>
-<p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>用到，做个笔记</p>
-<p>querystring模块提供了有关查询字符串的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span cl]]>
-    </summary>
-    
-      <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
-    
-      <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
     
   </entry>
   

@@ -37,7 +37,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">stay alive</a>
+          <a href="/" id="subtitle">alive</a>
         </h2>
       
     </div>
@@ -74,6 +74,166 @@
 
   
     <!-- 修改成中文：分享，评论 -->
+<article id="post-如何快速搭建静态资源服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/10/19/如何快速搭建静态资源服务器/" class="article-date">
+  <time datetime="2016-10-19T13:29:30.000Z" itemprop="datePublished">2016-10-19 21:29:30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/如何快速搭建静态资源服务器/">总结篇：如何快速搭建静态资源服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的吉他资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
+<h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>就是个不错的选择，只需要一行命令就可以快速启动。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">http</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在项目根目录执行：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http-server -a <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">8000</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/http-server.png" alt=""></p>
+<h2 id="u4F7F_u7528static-server"><a href="#u4F7F_u7528static-server" class="headerlink" title="使用static-server"></a>使用static-server</h2><p><code>static-server</code>很类似<code>http-server</code>，也是基于node，安装和使用方法很相似：<br>npm install -g static-server</p>
+<p>使用方法也很简单，在项目目录下指定该项目的入口文件即可：<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>-<span class="keyword">server</span> -i <span class="keyword">index</span>.html</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/static-server-1.png" alt=""></p>
+<p>下面是一些常用的选项：</p>
+<blockquote>
+<p>-p, –port <n>             指定端口启动<br>-i, –index <filename>       指定默认项目入口文件<br>-d, –debug                  显示错误信息<br>-n, –not-found <filename>   指定404页面</filename></filename></n></p>
+</blockquote>
+<p>详见：<a href="https://www.npmjs.com/package/static-server" target="_blank" rel="external">https://www.npmjs.com/package/static-server</a></p>
+<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
+<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
+<h2 id="u4F7F_u7528Ruby"><a href="#u4F7F_u7528Ruby" class="headerlink" title="使用Ruby"></a>使用Ruby</h2><p>如果你安装Ruby，Ruby也提供了一个很简便的方式：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -<span class="keyword">run</span> -<span class="keyword">e</span> httpd . -p 8888</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/ruby-http-server.png" alt=""></p>
+<h2 id="u4F7F_u7528Nginx"><a href="#u4F7F_u7528Nginx" class="headerlink" title="使用Nginx"></a>使用Nginx</h2><p>几乎所有的web应用在最终部署到<code>Linux</code>上时都会用到<code>Nginx</code>做反向代理服务器，所以很有必要会用<code>Nginx</code>。<br><a href="http://nginx.org/en/download.html" target="_blank" rel="external">下载</a>，解压，运行nginx.exe，在浏览器输入<code>localhost</code>或<code>127.0.0.1</code>，如果出现<br><strong>Welcome to nginx!</strong><br>则说明<code>Nginx</code>已经成功安装。</p>
+<p>下面是<code>Nginx</code>常用到的命令：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -s <span class="built_in">reload</span>                <span class="comment">// 重新加载nginx配置</span></span><br><span class="line">nginx -s <span class="built_in">stop</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你的需求只是实现静态资源服务，那么只需要如下简单配置即可：root代表项目的根目录，index代表默认的入口文件。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">server</span> &#123;</span><br><span class="line">    <span class="title">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="title">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line">    <span class="title">location</span> / &#123;</span><br><span class="line">        <span class="title">root</span>   E:\Work\Workspace;</span><br><span class="line">        <span class="title">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="title">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="title">root</span>   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候访问 <a href="http://localhost/index.html" target="_blank" rel="external">http://localhost/index.html</a> 就OK了。</p>
+<h2 id="u4F7F_u7528json-server"><a href="#u4F7F_u7528json-server" class="headerlink" title="使用json-server"></a>使用json-server</h2><p>如果你的需求只是想模拟<code>ajax</code>从后台获取数据，因为通常一个项目中前端开发和后台几乎是同时进行的，开发初期往往需要前端自己构造假数据来渲染页面，谷歌浏览器不在服务端环境下调试js，则会被视为跨域，从而导致无法获取本地<code>json</code>数据，要不就使用火狐浏览器，较好的解决方法是快速搭建一个JSON服务器,这个时候<a href="https://github.com/typicode/json-server" target="_blank" rel="external">json-server</a>就是个不错的选择了。</p>
+<p>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">json</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在任意文件夹下创建一个<code>json</code>文件：如data.json:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">posts</span>": <span class="value">[</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">1</span></span>, "<span class="attribute">title</span>": <span class="value"><span class="string">"json-server"</span></span>, "<span class="attribute">author</span>": <span class="value"><span class="string">"typicode"</span> </span>&#125;</span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">comments</span>": <span class="value">[</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">1</span></span>, "<span class="attribute">body</span>": <span class="value"><span class="string">"some comment"</span></span>, "<span class="attribute">postId</span>": <span class="value"><span class="number">1</span> </span>&#125;,</span><br><span class="line">    &#123; "<span class="attribute">id</span>": <span class="value"><span class="number">2</span></span>, "<span class="attribute">body</span>": <span class="value"><span class="string">"some comment"</span></span>, "<span class="attribute">postId</span>": <span class="value"><span class="number">1</span> </span>&#125;</span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">profile</span>": <span class="value">&#123; "<span class="attribute">name</span>": <span class="value"><span class="string">"typicode"</span> </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在该目录下启动<code>json-server</code>来监听这个文件:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">json-server <span class="comment">--watch data.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者指定端口启动启动</span></span><br><span class="line">json-server <span class="comment">--watch data.json --port 3004</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-1.png" alt=""></p>
+<p>可以看到<code>json-server</code>默认创建了三个请求资源，分别对应了<code>data.json</code>中的<code>key</code>值，很方便，这个时候浏览器访问localhostL3000/db 就会看到当前<code>data.json</code>的数据了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-2.png" alt=""></p>
+<p>访问<a href="http://localhost:3000/comments/1" target="_blank" rel="external">http://localhost:3000/comments/1</a> ，则可以获取到comments下id为1的json数据：<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-3.png" alt=""></p>
+<p>很神奇是吧，有了数据之后，可以让<code>json-server</code>也作为静态资源的服务器，这样就没有跨域问题了。<br><code>json-server</code>默认的静态资源（HTML,CSS,JS等）是在与json数据文件同级目录下的public文件夹中，你只需要创建一个名为<code>public</code>的文件夹，把静态资源放到<code>public</code>目录下，然后直接运行以下命令启动即可：<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">json</span>-server <span class="typedef"><span class="keyword">data</span>.json</span></span><br></pre></td></tr></table></figure></p>
+<p>假如我们需要指定静态资源文件夹的位置，则可以通过指定目录来启动<code>json-server</code>即可，如指定静态资源为json数据同级目录的source文件夹下，则：<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">json</span>-server <span class="typedef"><span class="keyword">data</span>.json <span class="comment">--static ./source</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这样，访问<a href="http://localhost:3000/index.html" target="_blank" rel="external">http://localhost:3000/index.html</a> 就可以成功加载到json数据了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20161019/json-server-4.png" alt=""></p>
+<p><code>json-server</code>还有很多更强大的功能，如支持模拟REST API操作等，更多的功能可以到<a href="https://github.com/typicode/json-server/blob/master/README.md" target="_blank" rel="external">json-server项目文档</a>查看。</p>
+<h2 id="u4F7F_u7528_u4E00_u4E9BIDE"><a href="#u4F7F_u7528_u4E00_u4E9BIDE" class="headerlink" title="使用一些IDE"></a>使用一些IDE</h2><p>例如：HBuilder</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/" data-id="ciuh0e84g000wlcrl5kfmjnct" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-如何快速搭建静态资源服务器"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
+<article id="post-理解AngularJS中的ng-options" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+
+    <!-- 被我移动到里面 -->
+    <div class="article-meta">
+      <a href="/2016/10/13/理解AngularJS中的ng-options/" class="article-date">
+  <time datetime="2016-10-12T16:19:47.000Z" itemprop="datePublished">2016-10-13 0:19:47</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/Javascript/">Javascript</a>
+  </div>
+
+    </div>
+
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/理解AngularJS中的ng-options/">理解 AngularJS 中的 ng-options</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/" data-id="ciuh0e843000klcrlbb0mcdns" class="article-share-link">分享</a>
+      
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <a href="http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-理解AngularJS中的ng-options"><!--评论--></a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <!-- 修改成中文：分享，评论 -->
 <article id="post-解决MySQL因max-allowed-packet的值设置过小而查询失败的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -103,7 +263,7 @@
         <p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
 <p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">global</span> max_allowed_packet = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span></span></span><br></pre></td></tr></table></figure></p>
-<p>重启数据库<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql <span class="literal">start</span></span><br></pre></td></tr></table></figure></p>
+<p>重启数据库<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> mysql restart</span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --<span class="keyword">help</span> | <span class="keyword">grep</span> my.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></p>
 <p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_allowed_packet = <span class="number">10</span>M</span><br></pre></td></tr></table></figure></p>
 <p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐方法的把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
@@ -111,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" data-id="ciu5lbzg6000e5orlvdmxn8q5" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" data-id="ciuh0e83l000elcrl19x72juz" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -178,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" data-id="ciu5lbzgh000h5orl2rqcmdfj" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" data-id="ciuh0e83z000hlcrl0d6sdogj" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -288,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" data-id="ciu5lbzhn001j5orlphmf26cl" class="article-share-link">分享</a>
+      <a data-url="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" data-id="ciuh0e85c001slcrlbco4bmve" class="article-share-link">分享</a>
       
         <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
         <script type="text/javascript">
@@ -316,177 +476,9 @@
 
 
   
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-Maven添加外部依赖包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/09/01/Maven添加外部依赖包/" class="article-date">
-  <time datetime="2016-09-01T05:48:53.000Z" itemprop="datePublished">2016-09-1 13:48:53</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在实际项目开发中，项目使用到的jar包不一定来自Maven远程仓库，也可能来自本地的jar包，这时候也可以配置<code>pom.xml</code>添加本地包的依赖，具体配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>com.taobao.api<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="title">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">systemPath</span>&gt;</span>$&#123;basedir&#125;/src/main/java/WEB-INF/lib/taobao-sdk-java-auto_1455552377940-20160505.jar<span class="tag">&lt;/<span class="title">systemPath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/" data-id="ciu5lbzlv003g5orlp01rgtjx" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-Maven添加外部依赖包"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <!-- 修改成中文：分享，评论 -->
-<article id="post-JHipster中使用Config Server" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-
-    <!-- 被我移动到里面 -->
-    <div class="article-meta">
-      <a href="/2016/08/31/JHipster中使用Config Server/" class="article-date">
-  <time datetime="2016-08-31T08:32:10.000Z" itemprop="datePublished">2016-08-31 16:32:10</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-    </div>
-
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/31/JHipster中使用Config Server/">JHipster 中使用 Config Server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
-<ul>
-<li>开发环境一般使用本地文件系统来保存</li>
-<li>生产环境使用git仓库服务器上的配置</li>
-</ul>
-<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: native</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                native:</span><br><span class="line">                     <span class="comment"># 绝对路径配置：search-locations: file:///E:/config-repo</span></span><br><span class="line">                     search-locations: file:./central-config</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure></p>
-<p>以上配置项说明：</p>
-<ul>
-<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
-<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
-</ul>
-<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
-<p>例如：</p>
-<blockquote>
-<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
-</blockquote>
-<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">spring</span>:</span><br><span class="line">    <span class="attribute">cloud</span>:</span><br><span class="line">        <span class="attribute">config</span>:</span><br><span class="line">            <span class="attribute">name</span>: newFilename</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
-<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
-</ul>
-<p>测试users微服务：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mycompany.myapp.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.context.config.annotation.RefreshScope;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Administrator on 2016/8/30.</span><br><span class="line"> */</span></span><br><span class="line"><span class="annotation">@RestController</span></span><br><span class="line"><span class="annotation">@RequestMapping</span>(<span class="string">"/api"</span>)</span><br><span class="line"><span class="annotation">@Api</span>(value = <span class="string">"/api"</span>, description = <span class="string">"test"</span>, position = <span class="number">1</span>)</span><br><span class="line"><span class="comment">// 测试自动刷新配置</span></span><br><span class="line"><span class="annotation">@ConfigurationProperties</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testConfigResource</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.id:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.name:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Value</span>(<span class="string">"$&#123;testData.user.remark:defaultValue&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String remark;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_id"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testIntroduction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"id："</span> + id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_name"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"name："</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@RequestMapping</span>(value = <span class="string">"test_remark"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testRemark</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"remark："</span> + remark;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>项目配置如下：</p>
-<ul>
-<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: users微服务项目下配置文件中的id值</span><br><span class="line">        name: users微服务项目下配置文件中的name值</span><br><span class="line">        remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active: dev</span><br><span class="line">        include: git</span><br><span class="line">    cloud:</span><br><span class="line">        config:</span><br><span class="line">            server:</span><br><span class="line">                git:</span><br><span class="line">                    uri: https://github.com/chuiliu/config-repo</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: 本地文件系统配置文件中的id值</span><br><span class="line">        name: 本地文件系统配置文件中的name值</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testData:</span><br><span class="line">    user:</span><br><span class="line">        id: git远程仓库下配置文件中的id值</span><br><span class="line">        name: git远程仓库下配置文件中的name值</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
-<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
-<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/" data-id="ciu5lbzmb003q5orlr1z0wq4g" class="article-share-link">分享</a>
-      
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <a href="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/#disqus_thread" class="article-comment-link ds-thread-count" data-thread-key="post-JHipster中使用Config Server"><!--评论--></a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
   
 </section>
@@ -498,7 +490,7 @@
     
     <div class="widget">
       <h3 class="widget-title">分类</h3><hr>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/浏览器兼容/">浏览器兼容</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Javascript/">Javascript</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -508,7 +500,7 @@
     
     <div class="widget tagcloud">
       <h3 class="widget-title">标签云</h3><hr>
-      <a href="/tags/CSS/" style="font-size: 13.33px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/JHipster/" style="font-size: 13.33px;">JHipster</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 13.33px;">Node.js</a> <a href="/tags/Redis/" style="font-size: 16.67px;">Redis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 13.33px;">test</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/tags/浏览器兼容/" style="font-size: 13.33px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 13.33px;">编码</a>
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JHipster/" style="font-size: 12.5px;">JHipster</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 17.5px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 12.5px;">Node.js</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/test/" style="font-size: 12.5px;">test</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/浏览器兼容/" style="font-size: 12.5px;">浏览器兼容</a> <a href="/tags/编码/" style="font-size: 12.5px;">编码</a>
     </div>
   </div>
 
@@ -518,7 +510,7 @@
     
     <div class="widget">
       <h3 class="widget-title">标签</h3><hr>
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JHipster/">JHipster</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JHipster/">JHipster</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-Text/">sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编码/">编码</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -528,7 +520,7 @@
     
     <div class="widget">
       <h3 class="widget-title">归档</h3><hr>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -542,6 +534,14 @@
         <h3 class="widget-title">最新文章</h3><hr>
         
           <li>
+            <a href="/2016/10/19/如何快速搭建静态资源服务器/">总结篇：如何快速搭建静态资源服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/13/理解AngularJS中的ng-options/">理解 AngularJS 中的 ng-options</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</a>
           </li>
         
@@ -551,14 +551,6 @@
         
           <li>
             <a href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/31/JHipster中使用Config Server/">JHipster 中使用 Config Server</a>
           </li>
         
       </ul>
