@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,33 +83,45 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2016-04-13 21:04</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2016-04-13 21:04</span></div>
+
+
+
     <!-- 文章分类 -->
-    
-        <div class="article-category">
-            <i class="icon-category"></i>
-            <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
-        </div>
-    
+    <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <i class="icon-category"></i>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
+    </div>
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
 <p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
@@ -141,48 +154,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2016/04/24/about-space-2/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              空格的 ASCII 码
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2016/04/06/browser-compatibility/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">Firefox 定义日期 new Date() 兼容问题</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/04/24/about-space-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          空格的 ASCII 码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/06/browser-compatibility/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Firefox 定义日期 new Date() 兼容问题</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-undo-a-select-change" data-title="如何撤销下拉框选中的值" data-url="http://chuiliu.github.io/2016/04/13/undo-a-select-change/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-undo-a-select-change" data-title="如何撤销下拉框选中的值" data-url="http://chuiliu.github.io/2016/04/13/undo-a-select-change/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>

@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,28 +83,40 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2016-10-11 22:10</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2016-10-11 22:10</span></div>
+
+
+
     <!-- 文章分类 -->
-    
+    <!-- 文章的分类部分 -->
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
 <p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
@@ -117,48 +130,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2016/10/13/理解AngularJS中的ng-options/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              理解 AngularJS 中的 ng-options
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/13/理解AngularJS中的ng-options/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          理解 AngularJS 中的 ng-options
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-解决MySQL因max-allowed-packet的值设置过小而查询失败的问题" data-title="解决MySQL因max_allowed_packet的值设置过小而查询失败的问题" data-url="http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-解决MySQL因max-allowed-packet的值设置过小而查询失败的问题" data-title="解决MySQL因max_allowed_packet的值设置过小而查询失败的问题" data-url="http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>

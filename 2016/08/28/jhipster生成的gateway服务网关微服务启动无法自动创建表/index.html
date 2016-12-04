@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,33 +83,45 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2016-08-28 11:08</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2016-08-28 11:08</span></div>
+
+
+
     <!-- 文章分类 -->
-    
-        <div class="article-category">
-            <i class="icon-category"></i>
-            <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
-        </div>
-    
+    <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <i class="icon-category"></i>
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    </div>
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
 <p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
@@ -120,48 +133,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2016/08/31/JHipster中使用Config Server/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              JHipster 中使用 Config Server
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2016/08/06/mysql开启允许公网连接/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">MySQL 开启允许公网连接</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/08/31/JHipster中使用Config Server/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JHipster 中使用 Config Server
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/06/mysql开启允许公网连接/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">MySQL 开启允许公网连接</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-JHipster生成的gateway服务网关微服务启动无法自动创建表" data-title="JHipster 生成的 gateway 服务网关启动无法自动建表" data-url="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-JHipster生成的gateway服务网关微服务启动无法自动创建表" data-title="JHipster 生成的 gateway 服务网关启动无法自动建表" data-url="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>

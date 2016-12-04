@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,33 +83,45 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2016-10-13 00:10</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2016-10-13 00:10</span></div>
+
+
+
     <!-- 文章分类 -->
-    
-        <div class="article-category">
-            <i class="icon-category"></i>
-            <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
-        </div>
-    
+    <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <i class="icon-category"></i>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
+    </div>
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/13/理解AngularJS中的ng-options/">理解 AngularJS 中的 ng-options</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/13/理解AngularJS中的ng-options/">理解 AngularJS 中的 ng-options</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
 <ul>
@@ -120,48 +133,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2016/10/19/如何快速搭建静态资源服务器/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              如何快速搭建静态资源服务器
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/19/如何快速搭建静态资源服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          如何快速搭建静态资源服务器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-理解AngularJS中的ng-options" data-title="理解 AngularJS 中的 ng-options" data-url="http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-理解AngularJS中的ng-options" data-title="理解 AngularJS 中的 ng-options" data-url="http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>

@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,33 +83,45 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2015-12-16 23:12</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2015-12-16 23:12</span></div>
+
+
+
     <!-- 文章分类 -->
-    
-        <div class="article-category">
-            <i class="icon-category"></i>
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-        </div>
-    
+    <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <i class="icon-category"></i>
+        <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    </div>
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/16/about-hexo-2/">Hexo优化系列（landscape主题）</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/16/about-hexo-2/">Hexo优化系列（landscape主题）</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <ul>
 <li><h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3" class="headerlink" title="忽略目录或文件的渲染"></a>忽略目录或文件的渲染</h2>我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是<code>source</code>目录下的文件默认都会在执行<code>hexo deploy</code>命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：</li>
@@ -150,48 +163,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2015/12/19/Git生成SSH公钥/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              Git 生成 SSH 公钥
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2015/12/14/about-hexo-1/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">Hexo：为博客添加多说评论框</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2015/12/19/Git生成SSH公钥/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Git 生成 SSH 公钥
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/14/about-hexo-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hexo：为博客添加多说评论框</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-about-hexo-2" data-title="Hexo优化系列（landscape主题）" data-url="http://chuiliu.github.io/2015/12/16/about-hexo-2/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-about-hexo-2" data-title="Hexo优化系列（landscape主题）" data-url="http://chuiliu.github.io/2015/12/16/about-hexo-2/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>

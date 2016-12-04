@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/README.html</loc>
+    <lastmod>2016-12-04T12:02:44.370Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/</loc>
     <lastmod>2016-12-04T09:04:27.068Z</lastmod>
   </url>
@@ -69,11 +74,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2016-12-02T09:09:31.642Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/stop-and-go/index.html</loc>
-    <lastmod>2016-12-02T08:33:59.985Z</lastmod>
   </url>
   
   <url>
@@ -214,11 +214,6 @@
   <url>
     <loc>http://chuiliu.github.io/demo/catchFruits/README.html</loc>
     <lastmod>2016-04-26T11:28:55.383Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/README.html</loc>
-    <lastmod>2016-04-25T05:14:00.381Z</lastmod>
   </url>
   
   <url>

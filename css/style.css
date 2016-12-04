@@ -197,9 +197,11 @@ a:link, a:visited, a:active {
 }
 #header .sub-header-wrap .nav {
   display: inline-block;
-  width: 80%;
-  text-align: right;
   vertical-align: top;
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
 }
 #header .sub-header-wrap .nav-link {
   display: inline-block;
@@ -247,7 +249,7 @@ a:link, a:visited, a:active {
   position: absolute;
   /* top: 20px;*/
   top: 64px;
-  left: -50px;
+  left: -40px;
   font-size: 30px;
   color: #5bbd96;
 }

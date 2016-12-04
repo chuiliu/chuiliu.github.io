@@ -11,6 +11,7 @@
 	<title>
         lonica
     </title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
@@ -82,33 +83,45 @@
 
     <!-- container -->
     <div class="container">
-        <article class="article">
+        <!-- 文章 -->
+<article class="article">
 
     <!-- 文章单独页 -->
 
     <!-- 日期 -->
-    
-        <div class="article-date"><i class="icon-time"></i><span>2016-01-26 10:01</span></div>
-    
+    <!-- 文章的日期部分 -->
+
+    <div class="article-date"><i class="icon-time"></i><span>2016-01-26 10:01</span></div>
+
+
+
     <!-- 文章分类 -->
-    
-        <div class="article-category">
-            <i class="icon-category"></i>
-            <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
-        </div>
-    
+    <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <i class="icon-category"></i>
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
+    </div>
+
+
+
     <!-- 文章标题 -->
-    <h1 class="article-title-wrap"><a class="article-title" href="/2016/01/26/sublime-settings/">Sublime Text 常用快捷键与配置项</a></h1>
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/01/26/sublime-settings/">Sublime Text 常用快捷键与配置项</a></h1>
+
+
     <!-- 标签 -->
-    
-        <div class="article-tags">
-            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-Text/">sublime Text</a></li></ul>
-        </div>
-    
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-Text/">sublime Text</a></li></ul>
+    </div>
+
+
 
 
     <div class="markdown-body um">
-        <!-- 文章内容 -->
+        <!-- 文章正文 -->
         
             <h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ctrl + d     <span class="comment"># 选择相同的单词，连续按继续选择</span></span><br><span class="line">alt + F3     <span class="comment"># 选择整个文档中相同的单词</span></span><br><span class="line">ctrl + g     <span class="comment"># 输入行号，跳到某一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + l                 <span class="comment"># 选择一行，连续按继续选择</span></span><br><span class="line">ctrl + shift + ← / →     <span class="comment"># 向左/向右选择文本</span></span><br><span class="line">ctrl + shift + ↑ / ↓     <span class="comment"># 向上/向下移动行</span></span><br><span class="line">ctrl + shift + k         <span class="comment"># 删除一行</span></span><br><span class="line">ctrl + enter             <span class="comment"># 在当前行下插入一行</span></span><br><span class="line">ctrl + shift + enter     <span class="comment"># 在当前行上插入一行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + shift + d     <span class="comment"># 向下复制</span></span><br><span class="line">ctrl + shift + v     <span class="comment"># 粘贴，并按当前文本格式化</span></span><br><span class="line">ctrl + x             <span class="comment"># 剪切一行</span></span><br><span class="line">ctrl + k + k         <span class="comment"># ctrl+k后再按一次k，删除从光标处至行末的文本</span></span><br><span class="line">ctrl + p             <span class="comment"># 搜索项目中的文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alt + .              <span class="comment"># 闭合html标签</span></span><br><span class="line">ctrl + /             <span class="comment"># 单行注释</span></span><br><span class="line">ctrl + shift + /     <span class="comment"># 多行注释</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ctrl + pagedown      <span class="comment"># 切换到左边的标签页</span></span><br><span class="line">ctrl + pageup        <span class="comment"># 切换到右边的标签页</span></span><br><span class="line">ctrl + w             <span class="comment"># 关闭当前文件</span></span><br><span class="line">ctrl + shift + t     <span class="comment"># 恢复上一个关闭的标签</span></span><br><span class="line">alt + shift + <span class="number">2</span>      <span class="comment"># 分两屏</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -137,48 +150,53 @@
     </div>
 
     <!-- 上一篇，下一篇 -->
-    
-    <nav id="article-nav">
-      
-        <a href="/2016/02/24/nodejs-querystring/" id="article-nav-newer" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">上一篇</strong>
-          <div class="article-nav-title">
-            
-              Node.js笔录：Query String
-            
-          </div>
-        </a>
-      
-      
-        <a href="/2016/01/25/about-space-1/" id="article-nav-older" class="article-nav-link-wrap">
-          <strong class="article-nav-caption">下一篇</strong>
-          <div class="article-nav-title">关于换行</div>
-        </a>
-      
-    </nav>
-    
+    <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/02/24/nodejs-querystring/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Node.js笔录：Query String
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/25/about-space-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">关于换行</div>
+    </a>
+  
+</nav>
+
+
 
     <!-- 评论 -->
-    
-      <section id="article-comments">
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="post-sublime-settings" data-title="Sublime Text 常用快捷键与配置项" data-url="http://chuiliu.github.io/2016/01/26/sublime-settings/"></div>
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:'salix'};
-          (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-          </script>
-        <!-- 多说公共JS代码 end -->
-      </section>
-    
+    <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-sublime-settings" data-title="Sublime Text 常用快捷键与配置项" data-url="http://chuiliu.github.io/2016/01/26/sublime-settings/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+
 
 
 </article>
