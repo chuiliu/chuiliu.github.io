@@ -227,7 +227,9 @@ a {
                 transform: translateY(0);
     }
 
-
+    .icon-menu {
+        display: none;
+    }
 
 }
 
@@ -511,7 +513,7 @@ a {
     }
 
     .archive-title {
-        width: 80%;
+        width: 70%;
         -webkit-transition: color .2s, -webkit-transform .2s;
         transition: color .2s, -webkit-transform .2s;
         transition: transform .2s, color .2s;
@@ -524,7 +526,7 @@ a {
     }
 
     .archive-date {
-        width: 20%;
+        width: 30%;
         font-size: 14px;
         text-align: right;
         color: $color-article;
@@ -550,3 +552,6 @@ a {
 
     }
 }
+
+/* mobile */
+@import 'mobile';

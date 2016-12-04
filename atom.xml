@@ -139,17 +139,18 @@
     <link href="http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/"/>
     <id>http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/</id>
     <published>2016-10-12T16:19:47.000Z</published>
-    <updated>2016-12-02T07:45:00.197Z</updated>
+    <updated>2016-12-04T09:04:27.068Z</updated>
     <content type="html"><![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
 <ul>
-<li>支持两种格式的数据，数组和对象<a id="more"></a>
-</li>
+<li>支持两种格式的数据，数组和对象</li>
 </ul>
+<a id="more"></a>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
 <ul>
-<li>支持两种格式的数据，数组和对象]]>
+<li>支持两种格式的数据，数组和对象</li>
+</ul>]]>
     
     </summary>
     
