@@ -109,7 +109,7 @@
     <div class="markdown-body um">
         <!-- 文章内容 -->
         
-            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
+            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
 <p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
 
         

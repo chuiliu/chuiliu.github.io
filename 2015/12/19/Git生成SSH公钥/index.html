@@ -110,7 +110,7 @@
         <!-- 文章内容 -->
         
             <h2 id="u5982_u4F55_u751F_u5B58SSH_u516C_u94A5"><a href="#u5982_u4F55_u751F_u5B58SSH_u516C_u94A5" class="headerlink" title="如何生存SSH公钥"></a>如何生存SSH公钥</h2><ol>
-<li>创建SSH Key<br>在用户目录下查看是否有<code>.ssh</code>文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，则证明公钥已经生成，否则需要我们手动生成。<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建SSH Key</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail<span class="variable">@example</span>.com"</span></span><br></pre></td></tr></table></figure>
+<li>创建SSH Key<br>在用户目录下查看是否有<code>.ssh</code>文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，则证明公钥已经生成，否则需要我们手动生成。<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建SSH Key</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail<span class="variable">@example</span>.com"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>这个时候会看到<code>.ssh</code>下会生成私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>。</p>
@@ -118,7 +118,7 @@
 <li><p>github配置<br>在github上的设置页面中配置SSH keys，Title命名任意，将id_rsa.pub中的内容全选粘贴至Key文本框中即可。<br>github上Key是可以配置多个的，假如需要在不同的计算机上推送，则需要配置不同的Key。</p>
 </li>
 <li><p>测试SSH Key是否配置成功</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi chuiliu! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi chuiliu! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>出现以上则说明一切配置都OK。</p>
