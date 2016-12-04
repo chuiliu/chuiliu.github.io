@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="hexo,前端" />
+    <meta name="description" content="个人博客">
+    <meta name="renderer" content="webkit">
+
+	<title>
+        lonica
+    </title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
+    <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+    <!-- header -->
+    <header id="header">
+
+    <div class="main-header-wrap main-header-show hide">
+        <!-- 头像 -->
+        <a href="/" class="avatar"></a>
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 副标题 -->
+        
+          <h2 class="subtitle-wrap">什么鬼</h2>
+        
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+    <!-- 搜索框 -->
+    <!-- <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
+    </div> -->
+
+    <div class="sub-header-wrap">
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+
+</header>
+
+
+    <!-- container -->
+    <div class="container">
+        <article class="article">
+
+    <!-- 文章单独页 -->
+
+    <!-- 日期 -->
+    
+        <div class="article-date"><i class="icon-time"></i><span>2015-12-19 20:12</span></div>
+    
+    <!-- 文章分类 -->
+    
+        <div class="article-category">
+            <i class="icon-category"></i>
+            <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
+        </div>
+    
+    <!-- 文章标题 -->
+    <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/19/Git生成SSH公钥/">Git 生成 SSH 公钥</a></h1>
+    <!-- 标签 -->
+    
+        <div class="article-tags">
+            <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+        </div>
+    
+
+
+    <div class="markdown-body um">
+        <!-- 文章内容 -->
+        
+            <h2 id="u5982_u4F55_u751F_u5B58SSH_u516C_u94A5"><a href="#u5982_u4F55_u751F_u5B58SSH_u516C_u94A5" class="headerlink" title="如何生存SSH公钥"></a>如何生存SSH公钥</h2><ol>
+<li>创建SSH Key<br>在用户目录下查看是否有<code>.ssh</code>文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，则证明公钥已经生成，否则需要我们手动生成。<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建SSH Key</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail<span class="variable">@example</span>.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个时候会看到<code>.ssh</code>下会生成私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>。</p>
+<ol>
+<li><p>github配置<br>在github上的设置页面中配置SSH keys，Title命名任意，将id_rsa.pub中的内容全选粘贴至Key文本框中即可。<br>github上Key是可以配置多个的，假如需要在不同的计算机上推送，则需要配置不同的Key。</p>
+</li>
+<li><p>测试SSH Key是否配置成功</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi chuiliu! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>出现以上则说明一切配置都OK。</p>
+
+        
+    </div>
+
+    <!-- 上一篇，下一篇 -->
+    
+    <nav id="article-nav">
+      
+        <a href="/2015/12/26/Express/" id="article-nav-newer" class="article-nav-link-wrap">
+          <strong class="article-nav-caption">上一篇</strong>
+          <div class="article-nav-title">
+            
+              Express 4.x 安装
+            
+          </div>
+        </a>
+      
+      
+        <a href="/2015/12/16/about-hexo-2/" id="article-nav-older" class="article-nav-link-wrap">
+          <strong class="article-nav-caption">下一篇</strong>
+          <div class="article-nav-title">Hexo优化系列（landscape主题）</div>
+        </a>
+      
+    </nav>
+    
+
+    <!-- 评论 -->
+    
+      <section id="article-comments">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="post-Git生成SSH公钥" data-title="Git 生成 SSH 公钥" data-url="http://chuiliu.github.io/2015/12/19/Git生成SSH公钥/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:'salix'};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+          </script>
+        <!-- 多说公共JS代码 end -->
+      </section>
+    
+
+
+</article>
+
+
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 chuiliu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- 回顶部 -->
+<!-- 回顶部 -->
+<div id="to-top">
+    <span>TOP</span>
+</div>
+
+
+
+    <!-- js -->
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
+    <script src="/js/totop.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[lonica]]></title>
-  <subtitle><![CDATA[alive]]></subtitle>
+  <subtitle><![CDATA[什么鬼]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-10-22T01:22:02.997Z</updated>
+  <updated>2016-12-04T04:31:27.545Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,13 +15,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[总结篇：如何快速搭建静态资源服务器]]></title>
+    <title><![CDATA[移动 webapp 开发相关要点]]></title>
+    <link href="http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    <id>http://chuiliu.github.io/2016/11/15/移动开发/</id>
+    <published>2016-11-14T16:10:33.000Z</published>
+    <updated>2016-12-04T04:31:27.545Z</updated>
+    <content type="html"><![CDATA[<p>最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。</p>
+<h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
+<hr>
+<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span> = <span class="string">"format-detection"</span> content = <span class="string">"telephone=no"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="literal">a</span> href = <span class="string">"tel:13800000000"</span>&gt;call <span class="number">13800000000</span>&lt;/<span class="literal">a</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或者用js:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location<span class="class">.href</span> = <span class="string">'tell:10086'</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<h4 id="u5728_u79FB_u52A8_u7AEF_uFF0C_u89E6_u53D1_u70B9_u51FB_u4E8B_u4EF6_u65F6_uFF08_u8D85_u94FE_u63A5_u6216_u8005click_u4E8B_u4EF6_uFF09_u4F1A_u6709_u9AD8_u4EAE_u7684_u80CC_u666F_u6846_u6765_u8868_u793A_u70B9_u51FB_u7684_u54CD_u5E94_uFF0C_u53EF_u4EE5_u5C06_u5176_u900F_u660E_u6389_u4E0D_u663E_u793A_uFF1A"><a href="#u5728_u79FB_u52A8_u7AEF_uFF0C_u89E6_u53D1_u70B9_u51FB_u4E8B_u4EF6_u65F6_uFF08_u8D85_u94FE_u63A5_u6216_u8005click_u4E8B_u4EF6_uFF09_u4F1A_u6709_u9AD8_u4EAE_u7684_u80CC_u666F_u6846_u6765_u8868_u793A_u70B9_u51FB_u7684_u54CD_u5E94_uFF0C_u53EF_u4EE5_u5C06_u5176_u900F_u660E_u6389_u4E0D_u663E_u793A_uFF1A" class="headerlink" title="在移动端，触发点击事件时（超链接或者click事件）会有高亮的背景框来表示点击的响应，可以将其透明掉不显示："></a>在移动端，触发点击事件时（超链接或者click事件）会有高亮的背景框来表示点击的响应，可以将其透明掉不显示：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-tap-highlight-color</span>: <span class="tag">rgba</span>(0,0,0,0);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u9650_u5236_u7528_u6237_u53EA_u80FD_u8F93_u5165_u7EAF_u6587_u672C_uFF08_u6307_u4E0D_u5E26_u6709_u6837_u5F0F_uFF0C_u6BD4_u5982_u590D_u5236_u7C98_u8D34_u6765_u7684_u6587_u672C_u53EF_u80FD_u5B57_u4F53_u5B57_u53F7_u989C_u8272_u7B49_u6837_u5F0F_u4E0D_u4E00_u6837_uFF09"><a href="#u9650_u5236_u7528_u6237_u53EA_u80FD_u8F93_u5165_u7EAF_u6587_u672C_uFF08_u6307_u4E0D_u5E26_u6709_u6837_u5F0F_uFF0C_u6BD4_u5982_u590D_u5236_u7C98_u8D34_u6765_u7684_u6587_u672C_u53EF_u80FD_u5B57_u4F53_u5B57_u53F7_u989C_u8272_u7B49_u6837_u5F0F_u4E0D_u4E00_u6837_uFF09" class="headerlink" title="限制用户只能输入纯文本（指不带有样式，比如复制粘贴来的文本可能字体字号颜色等样式不一样）"></a>限制用户只能输入纯文本（指不带有样式，比如复制粘贴来的文本可能字体字号颜色等样式不一样）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">p</span> <span class="rules">&#123;<span class="rule"><span class="attribute">-webkit-user-modify</span>:<span class="value"> read-write-plaintext-only</span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>user-modify</code><br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-user-modify: <span class="keyword">read</span>-only | <span class="keyword">read</span>-<span class="keyword">write</span> | <span class="keyword">read</span>-<span class="keyword">write</span>-plaintext-only  <span class="comment">/*只读|可读写|可读写，内容只能是纯文本*/</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="u7981_u6B62_u7528_u6237_u8FDB_u884C_u6587_u672C_u9009_u62E9"><a href="#u7981_u6B62_u7528_u6237_u8FDB_u884C_u6587_u672C_u9009_u62E9" class="headerlink" title="禁止用户进行文本选择"></a>禁止用户进行文本选择</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-user-select</span>: <span class="tag">none</span>;</span><br><span class="line"><span class="tag">user-select</span>: <span class="tag">none</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u5236_u4F5C_u534A_u50CF_u7D20_u8FB9_u6846"><a href="#u5236_u4F5C_u534A_u50CF_u7D20_u8FB9_u6846" class="headerlink" title="制作半像素边框"></a>制作半像素边框</h4><p>移动端下使用<code>border: 1px solid #ccc;</code>不一定就能产生1像素的边框线，有些手机会显示成比1像素粗的边框，可以通过伪类来做边框，可以做成比1像素纤细的半像素边框：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.border-bottom &#123;</span><br><span class="line">    position: relative;</span><br><span class="line"></span><br><span class="line">    &amp;:after &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        content: "";</span><br><span class="line">        display: block;</span><br><span class="line">        width: 100%;</span><br><span class="line">        height: 1px;</span><br><span class="line">        background: #ccc;</span><br><span class="line">        left: 0;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        transform: scaleY(0.5);</span><br><span class="line">        -webkit-transform: scaleY(0.5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="u53D6_u6D88_u8F93_u5165_u6846_u3001_u6587_u672C_u6846_u9ED8_u8BA4_u805A_u7126_u6837_u5F0F"><a href="#u53D6_u6D88_u8F93_u5165_u6846_u3001_u6587_u672C_u6846_u9ED8_u8BA4_u805A_u7126_u6837_u5F0F" class="headerlink" title="取消输入框、文本框默认聚焦样式"></a>取消输入框、文本框默认聚焦样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">input</span><span class="pseudo">:focus</span>, <span class="tag">textarea</span><span class="pseudo">:focus</span> <span class="rules">&#123;<span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u4F7F_u7528localStorage"><a href="#u4F7F_u7528localStorage" class="headerlink" title="使用localStorage"></a>使用localStorage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>Storage.setItem(<span class="string">'title'</span>, <span class="string">'hello'</span>);</span><br><span class="line">var title = <span class="built_in">local</span>Storage.getItem(<span class="string">'title'</span>);</span><br><span class="line">// 移除</span><br><span class="line"><span class="built_in">local</span>Storage.removeItem(<span class="string">'title'</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u6A21_u62DFhover_u6548_u679C_uFF0C_u7528js_u89E3_u51B3"><a href="#u6A21_u62DFhover_u6548_u679C_uFF0C_u7528js_u89E3_u51B3" class="headerlink" title="模拟hover效果，用js解决"></a>模拟hover效果，用js解决</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).classList.add(<span class="string">'hover'</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).addEventListener(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).classList.remove(<span class="string">'hover'</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u7126_u70B9"><a href="#u7126_u70B9" class="headerlink" title="焦点"></a>焦点</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前焦点</span></span><br><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.activeElement;</span><br><span class="line"><span class="comment">// 滚到焦点处</span></span><br><span class="line"><span class="built_in">document</span>.activeElement.scrollIntoViewIfNeeded();</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u4FEE_u6539_u9009_u4E2D_u6587_u672C_u7684_u6837_u5F0F"><a href="#u4FEE_u6539_u9009_u4E2D_u6587_u672C_u7684_u6837_u5F0F" class="headerlink" title="修改选中文本的样式"></a>修改选中文本的样式</h4><p>使用<code>:selection</code>选择器<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:selection</span>: <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#fffaf4</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="u89E6_u6478_u4E8B_u4EF6"><a href="#u89E6_u6478_u4E8B_u4EF6" class="headerlink" title="触摸事件"></a>触摸事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.querySelector(<span class="string">'#tab'</span>);</span><br><span class="line">ele.addEventListener(<span class="string">'touchStart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    touch = e.touches[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> x = touch.pageX;</span><br><span class="line">    <span class="keyword">var</span> y = touch.pageY;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="u5F39_u6027_u76D2_u5B50_u5E03_u5C40"><a href="#u5F39_u6027_u76D2_u5B50_u5E03_u5C40" class="headerlink" title="弹性盒子布局"></a>弹性盒子布局</h4><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>: <span class="string">-webkit-box;</span></span><br><span class="line"><span class="attribute">display</span>: <span class="string">box;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。</p>
+<h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
+<hr>
+<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span> = <span class="string">"format-detection"</span> content = <span class="string">"telephone=no"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="literal">a</span> href = <span class="string">"tel:13800000000"</span>&gt;call <span class="number">13800000000</span>&lt;/<span class="literal">a</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或者用js:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location<span class="class">.href</span> = <span class="string">'tell:10086'</span></span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="移动端" scheme="http://chuiliu.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="移动端" scheme="http://chuiliu.github.io/categories/mobile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[如何快速搭建静态资源服务器]]></title>
     <link href="http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/</id>
     <published>2016-10-19T13:29:30.000Z</published>
-    <updated>2016-10-22T01:22:02.997Z</updated>
+    <updated>2016-12-02T06:26:18.442Z</updated>
     <content type="html"><![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
-<h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>就是个不错的选择，只需要一行命令就可以快速启动。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">http</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> browser-<span class="keyword">sync</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在项目根目录执行：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"css/*.css"</span></span><br><span class="line"># 也可以配置多项，或者通配符匹配任意目录</span><br><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"**/*.css, **/*.html"</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
+<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
+<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
+<a id="more"></a>
+<h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>也是个不错的选择，只需要一行命令就可以快速启动。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">http</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
 <p>在项目根目录执行：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http-server -a <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">8000</span></span><br></pre></td></tr></table></figure></p>
 <p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/http-server.png" alt=""></p>
 <h2 id="u4F7F_u7528static-server"><a href="#u4F7F_u7528static-server" class="headerlink" title="使用static-server"></a>使用static-server</h2><p><code>static-server</code>很类似<code>http-server</code>，也是基于node，安装和使用方法很相似：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> <span class="keyword">static</span>-<span class="keyword">server</span></span></span><br></pre></td></tr></table></figure></p>
@@ -32,9 +96,6 @@
 <p>-p, –port <n>             指定端口启动<br>-i, –index <filename>       指定默认项目入口文件<br>-d, –debug                  显示错误信息<br>-n, –not-found <filename>   指定404页面</filename></filename></n></p>
 </blockquote>
 <p>详见：<a href="https://www.npmjs.com/package/static-server" target="_blank" rel="external">https://www.npmjs.com/package/static-server</a></p>
-<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
-<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
 <h2 id="u4F7F_u7528Ruby"><a href="#u4F7F_u7528Ruby" class="headerlink" title="使用Ruby"></a>使用Ruby</h2><p>如果你安装Ruby，Ruby也提供了一个很简便的方式：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -<span class="keyword">run</span> -<span class="keyword">e</span> httpd . -p 8888</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/ruby-http-server.png" alt=""></p>
 <h2 id="u4F7F_u7528Nginx"><a href="#u4F7F_u7528Nginx" class="headerlink" title="使用Nginx"></a>使用Nginx</h2><p>几乎所有的web应用在最终部署到<code>Linux</code>上时都会用到<code>Nginx</code>做反向代理服务器，所以很有必要会用<code>Nginx</code>。<br><a href="http://nginx.org/en/download.html" target="_blank" rel="external">下载</a>，解压，运行nginx.exe，在浏览器输入<code>localhost</code>或<code>127.0.0.1</code>，如果出现<br><strong>Welcome to nginx!</strong><br>则说明<code>Nginx</code>已经成功安装。</p>
@@ -56,14 +117,20 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
-<h2 id="u4F7F_u75]]>
+<h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> browser-<span class="keyword">sync</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在项目根目录执行：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"css/*.css"</span></span><br><span class="line"># 也可以配置多项，或者通配符匹配任意目录</span><br><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"**/*.css, **/*.html"</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
+<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
+<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>]]>
+    
     </summary>
     
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="开发工具" scheme="http://chuiliu.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
   </entry>
   
@@ -72,20 +139,27 @@
     <link href="http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/"/>
     <id>http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/</id>
     <published>2016-10-12T16:19:47.000Z</published>
-    <updated>2016-10-21T16:53:19.030Z</updated>
+    <updated>2016-12-02T07:45:00.197Z</updated>
     <content type="html"><![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
+<ul>
+<li>支持两种格式的数据，数组和对象<a id="more"></a>
+</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将]]>
+    <![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
+<ul>
+<li>支持两种格式的数据，数组和对象]]>
+    
     </summary>
     
       <category term="AngularJS" scheme="http://chuiliu.github.io/tags/AngularJS/"/>
     
       <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
-      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
+      <category term="AngularJS" scheme="http://chuiliu.github.io/categories/fe/AngularJS/"/>
     
   </entry>
   
@@ -94,14 +168,14 @@
     <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/</id>
     <published>2016-10-11T14:22:02.000Z</published>
-    <updated>2016-10-17T06:59:28.152Z</updated>
+    <updated>2016-11-28T15:37:50.753Z</updated>
     <content type="html"><![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
 <p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">global</span> max_allowed_packet = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span></span></span><br></pre></td></tr></table></figure></p>
 <p>重启数据库<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> mysql restart</span><br></pre></td></tr></table></figure></p>
 <h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql --<span class="keyword">help</span> | <span class="keyword">grep</span> my.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></p>
 <p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_allowed_packet = <span class="number">10</span>M</span><br></pre></td></tr></table></figure></p>
-<p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐方法的把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
+<p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐的方法把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowe]]>
@@ -116,7 +190,7 @@
     <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
     <id>http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/</id>
     <published>2016-10-11T14:09:34.000Z</published>
-    <updated>2016-10-11T15:46:43.129Z</updated>
+    <updated>2016-12-02T09:09:31.642Z</updated>
     <content type="html"><![CDATA[<p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
 <p>经过一番尝试，找到了解决方法：</p>
 <ol>
@@ -138,16 +212,115 @@
   </entry>
   
   <entry>
+    <title><![CDATA[AngularJS 什么时候用$apply]]></title>
+    <link href="http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/"/>
+    <id>http://chuiliu.github.io/2016/10/08/AngularJS什么时候用-apply/</id>
+    <published>2016-10-08T13:29:20.000Z</published>
+    <updated>2016-11-27T14:38:29.401Z</updated>
+    <content type="html"><![CDATA[<p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
+<p><strong>其实总结一句就是：DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
+<p><strong><code>$apply()</code>必须在该调用的时候调用</strong>，在我们使用AngularJS的提供的指令或服务，如<code>ng-click</code>、<code>$timeout</code>等来处理数据模型时，Angluar会自动调用<code>$scope.$apply()</code>，如果再手动调用是会报错的。</p>
+<p>例如，假设我们不使用Angular提供的<code>$timeout</code>服务，而使用原生的<code>setTimeout()</code>，则这个时候必须用<code>$apply()</code>才能使得数据更新。</p>
+<p><strong>比较好的写法是将涉及数据模型改变的代码写在<code>$scope.$apply()</code>里面</strong>，而不是执行完代码后再调用一次<code>$scope.$apply()</code>。传递给<code>$scope.$apply()</code>执行，Angular才会对这段代码做异常处理。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'myModule'</span>, []).controller(<span class="string">'MyController'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.updateTime = function() &#123;</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            <span class="variable">$scope</span>.<span class="variable">$apply</span>(function() &#123;</span><br><span class="line">                <span class="variable">$scope</span>.timestamp = new Date().getTime();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
+<p><strong>其实总结]]>
+    </summary>
+    
+      <category term="AngularJS" scheme="http://chuiliu.github.io/tags/AngularJS/"/>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+    
+      <category term="AngularJS" scheme="http://chuiliu.github.io/categories/fe/AngularJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[理解浏览器同源策略与跨域的解决方案]]></title>
+    <link href="http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/"/>
+    <id>http://chuiliu.github.io/2016/09/28/浏览器同源策略/</id>
+    <published>2016-09-28T01:38:08.000Z</published>
+    <updated>2016-11-27T14:37:36.644Z</updated>
+    <content type="html"><![CDATA[<p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
+<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
+<ul>
+<li>协议相同</li>
+<li>域名相同</li>
+<li>端口相同</li>
+</ul>
+<p>也就是说，只要两个URL中的协议、域名或端口存在任何一项不同，则被浏览器视为是不同源的。<br>举个例子，下列与<code>http://test.example.com/page1/index.html</code>的同源情况</p>
+<blockquote>
+<p><a href="http://test.example.com/page2/index.html" target="_blank" rel="external">http://test.example.com/page2/index.html</a>  # 同源<br><a href="https://test.example.com/page1/index.html" target="_blank" rel="external">https://test.example.com/page1/index.html</a>  # 不同源，协议不同<br><a href="http://demo.example.com/page1/index.html" target="_blank" rel="external">http://demo.example.com/page1/index.html</a>  # 不同源，域名不同<br><a href="http://test.example.com:3000/page1/index.html" target="_blank" rel="external">http://test.example.com:3000/page1/index.html</a>  # 不同源，端口不同</p>
+</blockquote>
+<p>注意：<code>http://127.0.0.1:8080/index.html</code> 和 <code>http://localhost:8080/index.html</code> 当然也是不同源的</p>
+<p>HTML中的<code>&lt;link&gt;</code>，<code>&lt;img&gt;</code>，<code>&lt;script&gt;</code>，<code>&lt;iframe&gt;</code>等标签都可以跨域加载资源，它们实际上是发送了一次GET请求，而在Javascript中，浏览器不允许脚本行为的跨域，也就是由<code>XMLHttpRequest</code>发起HTTP的请求会受到同源策略的限制。所以当需要由<code>AJAX</code>跨域加载资源时，就会涉及到跨域的处理。</p>
+<p>跨域的处理通常有以下两种常用的解决方案。</p>
+<h2 id="CORS_u8DE8_u57DF"><a href="#CORS_u8DE8_u57DF" class="headerlink" title="CORS跨域"></a>CORS跨域</h2><p><code>CORS</code>跨域需要后端的解决，其主要原理是由服务端来授权控制谁可以跨域获取资源，这是一种比较安全的解决方案。</p>
+<h4 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h4><p>服务端返回的响应头应该在<code>Access-Control-Allow-Origin</code>中设置允许接受请求的域，例如这样设置<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 表示允许来自所有站点的跨域请求</span></span><br><span class="line">Access-Control-Allow-<span class="string">Origin:</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表示仅允许来自http://localhost:8000的跨域请求</span></span><br><span class="line">Access-Control-Allow-<span class="string">Origin:</span> <span class="string">http:</span><span class="comment">//localhost:8000</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F1.png" alt=""></p>
+<h4 id="OPTIONS_u9884_u8BF7_u6C42"><a href="#OPTIONS_u9884_u8BF7_u6C42" class="headerlink" title="OPTIONS预请求"></a>OPTIONS预请求</h4><p>当一个HTTP请求不是一个简单请求时，浏览器有一个预请求的过程，也就是发送一个<code>OPTIONS</code>请求，浏览器会预先发送一个<code>OPTIOMS</code>请求给目的站点，去探测目的站点是否允许来自这个源的站点跨域，这个过程是浏览器自行判断并发起的，不需要我们来写，除了GET请求、HEAD请求、没有传参的POST请求和以表单提交方式发出的POST请求外，其它的任何HTTP请求都会发出预请求去探测是否可以继续。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F4.png" alt="OPTION请求"><br><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F5.png" alt="POST请求"></p>
+<h4 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h4><p>如果是跨域并携带<code>cookie</code>的通信则要注意了，当<code>XMLHttpRequest</code>对象实例中<code>withCredentials</code>属性为<code>true</code>的情况下，服务端还必须设置<code>Access-Control-Allow-Credentials:true</code>来确定是否接受<code>cookie</code>，如果没有设置这个值，尽管客户端发送了<code>cookie</code>值过来，服务端也会忽略，并且请求失败。</p>
+<p>需要特别注意的是，如果此时响应头中<code>Access-Control-Allow-Origin</code>的值是<code>*</code>，此时请求还是会失败的，因为在带有<code>cookie</code>的HTTP请求中，<code>Access-Control-Allow-Origin</code>的值不能用<code>*</code>号通配符，只能设置具体的域名。否则Chrome会报如下错误：</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F2.png" alt=""></p>
+<p>因此只有对于一个不带有<code>credentials</code>的跨域请求，<code>Access-Control-Allow-Origin</code>才可以指定为<code>*</code>，表示允许来自所有域的请求。</p>
+<h4 id="Access-Control-Max-Age"><a href="#Access-Control-Max-Age" class="headerlink" title="Access-Control-Max-Age"></a>Access-Control-Max-Age</h4><p>响应头还可以设置<code>Access-Control-Max-Age</code>来告诉客户端这一次预请求的有效期，在有效期内再次跨域访问，浏览器不会预先发送预请求直到时间失效<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Max-Age: <span class="number">864000</span>  <span class="preprocessor"># 单位是秒，表示<span class="number">10</span>天内，浏览器对于该域的跨域请求，不需要再发送预请求</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Access-Control-Allow-Headers"><a href="#Access-Control-Allow-Headers" class="headerlink" title="Access-Control-Allow-Headers"></a>Access-Control-Allow-Headers</h4><p>在会发出预请求的情况下必须配置，指明可以自定义的请求头<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Access</span>-Control-Allow-Headers: Content-<span class="keyword">Type</span></span><br></pre></td></tr></table></figure></p>
+<p>如果POST请求需要传<code>JSON</code>格式的参数，前端设置了<code>&#39;Content-Type&#39;, &#39;application/json&#39;</code>，则服务端必须设置<code>Access-Control-Allow-Headers</code>，否则也不成功，Chrome会报下面的错：</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F3.png" alt=""></p>
+<h4 id="Access-Control-Allow-Methods"><a href="#Access-Control-Allow-Methods" class="headerlink" title="Access-Control-Allow-Methods"></a>Access-Control-Allow-Methods</h4><p>表示允许的请求方式，可以配置多个值<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Access-Control-Allow-Methods</span>: <span class="string">POST, GET, OPTION, PUT, DELETE</span></span><br></pre></td></tr></table></figure></p>
+<p><code>CORS</code>方式可以灵活可控地解决跨域问题，并且支持所有类型的HTTP请求，但是它存在一定的局限性，这种方式的兼容性差，只支持IE9+，不过很适合用于移动端。</p>
+<ul>
+<li>前端代码：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="keyword">var</span> postData = &#123;</span><br><span class="line">    name: <span class="string">'lonica'</span>,</span><br><span class="line">    email: <span class="string">'test@126.com'</span></span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'http://127.0.0.1:3001/'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(xhr.responseText));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(postData));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>服务端代码：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = &#123;</span><br><span class="line">        name: <span class="string">'lonica'</span></span><br><span class="line">    &#125;;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">        <span class="string">'Content-Type'</span> : <span class="string">'text/plain'</span>,</span><br><span class="line">        <span class="string">'Access-Control-Allow-Origin'</span> : <span class="string">'http://localhost:8000'</span>,</span><br><span class="line">        <span class="string">'Access-Control-Allow-Methods'</span> : <span class="string">'GET, POST, OPTIONS, PUT, DELETE, HEAD'</span>,</span><br><span class="line">        <span class="string">'Access-Control-Allow-Credentials'</span> : <span class="literal">true</span>,</span><br><span class="line">        <span class="string">'Access-Control-Allow-Headers'</span> : <span class="string">'Content-Type'</span>,</span><br><span class="line">        <span class="string">'Access-Control-Max-Age'</span> : <span class="string">'3600'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">&#125;).listen(<span class="number">3001</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="JSONP_u8DE8_u57DF"><a href="#JSONP_u8DE8_u57DF" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h2><p><code>JSONP</code>是<code>JSON with Padding</code>的简称，这种方式的兼容性好，但是只能处理GET请求的跨域，使用的时候需要特别注意。</p>
+<p>我们都知道，浏览器不允许使用<code>XMLHttpRequest</code>脚本去获取不同域的数据，但是可以通过<code>&lt;script&gt;</code>，<code>&lt;link&gt;</code>，<code>&lt;img&gt;</code>等标签来发起GET请求来获取数据，<code>JSONP</code>就是利用了这个原理，所以也不难理解<code>JSONP</code>为什么只能支持GET请求了。</p>
+<p><code>JSONP</code>的原理：利用<code>&lt;script&gt;</code>标签去获取一段<code>javascript</code>代码，这段<code>javascript</code>代码的内容（由服务端拼接）包含了一个方法的调用，调用方法时所传入的参数就是前端要拿到的数据，前端只需要在这个方法的实现里面处理传入的数据即可，<code>JSONP</code>需要前后端一起配合，确定方法名由前端传参给后端，并由后端拼接成调用方法的语句再返回给前端。</p>
+<ul>
+<li>前端代码</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 获取到的数据</span></span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ele = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    ele.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">    ele.src = <span class="string">'http://127.0.0.1:3000?callback=callback'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ele);</span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>后端代码实现：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> params = url.parse(req.url, <span class="literal">true</span>).query;</span><br><span class="line">    <span class="keyword">var</span> func = params.callback;</span><br><span class="line">    <span class="keyword">var</span> data = &#123;</span><br><span class="line">        tags: [<span class="string">'jsonp'</span>, <span class="string">'javascript'</span>]</span><br><span class="line">    &#125;;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span> : <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    res.end(func + <span class="string">'('</span> + <span class="built_in">JSON</span>.stringify(data) +<span class="string">')'</span>);</span><br><span class="line">&#125;).listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
+<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u54]]>
+    </summary>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="跨域" scheme="http://chuiliu.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/categories/fe/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Redis 使用笔记（二）]]></title>
     <link href="http://chuiliu.github.io/2016/09/27/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/"/>
     <id>http://chuiliu.github.io/2016/09/27/redis使用笔记2/</id>
     <published>2016-09-27T14:26:56.000Z</published>
-    <updated>2016-09-27T15:23:24.962Z</updated>
+    <updated>2016-12-02T16:46:49.979Z</updated>
     <content type="html"><![CDATA[<p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
 <ul>
 <li>二进制安全的字符串</li>
 <li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的</li>
+<li>集合（Sets），是不重复的并且无序的<a id="more"></a></li>
 <li>有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过score进行排序</li>
 <li>哈希（Hashes），由字段（field）及其关联的值（value）组成的映射</li>
 <li>Bit arrays</li>
@@ -190,13 +363,15 @@
 <li>rpop 从尾部移除元素</li>
 <li>ltrim 截取某个范围内的元素，并将结果赋值给该列表</li>
 </ul>
-<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lpush testList b</span><br><span class="line">lpush testList a</span><br><span class="line">rpush testList c</span><br><span class="line"><span class="keyword">lrange</span> testList <span class="number">0</span> <span class="number">3</span></span><br><span class="line">lpop testList</span><br><span class="line">rpop testList</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lpush testList b</span><br><span class="line">lpush testList a</span><br><span class="line">rpush testList c</span><br><span class="line"><span class="keyword">lrange</span> testList <span class="number">0</span> <span class="number">3</span></span><br><span class="line">lpop testList</span><br><span class="line">rpop testList</span><br></pre></td></tr></table></figure>
+]]></content>
     <summary type="html">
     <![CDATA[<p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
 <ul>
 <li>二进制安全的字符串</li>
 <li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（S]]>
+<li>集合（Sets），是不重复的并且无序的]]>
+    
     </summary>
     
       <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
@@ -335,9 +510,10 @@
     <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B01/"/>
     <id>http://chuiliu.github.io/2016/08/06/redis使用笔记1/</id>
     <published>2016-08-06T15:06:06.000Z</published>
-    <updated>2016-09-27T14:53:46.295Z</updated>
+    <updated>2016-12-02T16:46:08.227Z</updated>
     <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
 <li><p>下载Redis</p>
@@ -358,7 +534,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>最近项目用到redis作为内存数据库，</p>
-<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</]]>
+<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>]]>
+    
     </summary>
     
       <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
@@ -400,7 +577,7 @@
     <link href="http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://chuiliu.github.io/2016/07/31/mysql使用笔记/</id>
     <published>2016-07-31T11:35:38.000Z</published>
-    <updated>2016-10-17T06:57:10.293Z</updated>
+    <updated>2016-11-14T16:00:30.567Z</updated>
     <content type="html"><![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
 <li>修改root密码<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -413,7 +590,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">GRANT</span> all <span class="keyword">ON</span> databasename.* <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'localhost'</span>;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-]]></content>
+<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">coalesce</span>(<span class="keyword">sum</span>(price), <span class="number">0</span>) <span class="keyword">as</span> total <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">type</span>;</span></span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
     <![CDATA[<h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
 ]]>
@@ -444,7 +621,7 @@
     
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
   </entry>
   
@@ -472,9 +649,9 @@
     
       <category term="浏览器兼容" scheme="http://chuiliu.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
-      <category term="CSS" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/CSS/"/>
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/fe/CSS/"/>
     
   </entry>
   
@@ -510,9 +687,9 @@
     
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
-      <category term="CSS" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/CSS/"/>
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/fe/CSS/"/>
     
   </entry>
   
@@ -581,94 +758,9 @@
     
       <category term="jQuery" scheme="http://chuiliu.github.io/tags/jQuery/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
-      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[收藏夹]]></title>
-    <link href="http://chuiliu.github.io/2016/04/06/collection/"/>
-    <id>http://chuiliu.github.io/2016/04/06/collection/</id>
-    <published>2016-04-06T14:55:54.000Z</published>
-    <updated>2016-06-17T09:14:21.301Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.5idev.com/p-xhtml_html.shtml" target="_blank" rel="external">XHTML与HTML的区别</a><br><a href="http://javascript-puzzlers.herokuapp.com/" target="_blank" rel="external">do you really know JavaScript?</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[我的收藏夹]]>
-    
-    </summary>
-    
-      <category term="test" scheme="http://chuiliu.github.io/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Firefox 定义日期 new Date() 兼容问题]]></title>
-    <link href="http://chuiliu.github.io/2016/04/06/browser-compatibility/"/>
-    <id>http://chuiliu.github.io/2016/04/06/browser-compatibility/</id>
-    <published>2016-04-06T12:17:49.000Z</published>
-    <updated>2016-10-21T16:57:16.634Z</updated>
-    <content type="html"><![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
-<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<!-- - ## Firefox 定义日期new Date()兼容问题 -->
-<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<]]>
-    </summary>
-    
-      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
-    
-      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="浏览器兼容" scheme="http://chuiliu.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
-    
-      <category term="前端" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Javascript" scheme="http://chuiliu.github.io/categories/%E5%89%8D%E7%AB%AF/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[git 常用命令详解]]></title>
-    <link href="http://chuiliu.github.io/2016/04/06/about-git/"/>
-    <id>http://chuiliu.github.io/2016/04/06/about-git/</id>
-    <published>2016-04-06T02:23:54.000Z</published>
-    <updated>2016-10-11T14:16:12.766Z</updated>
-    <content type="html"><![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
-<ul>
-<li><p><strong>配置</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>常用</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看当前仓库的状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看提交日志</span></span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加当前目录下所有文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">// 添加文件</span></span><br><span class="line">git add [filename]</span><br><span class="line"><span class="comment">// 删除和移动的文件也能提交到暂存区</span></span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>commit</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提交到仓库</span></span><br><span class="line">git commit -m <span class="string">"descriptions"</span></span><br><span class="line">git commit [filename] -m <span class="string">"descriptions"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建分支</span></span><br><span class="line">git branch [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建并切换到分支</span></span><br><span class="line">git checkout -b [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换到分支</span></span><br><span class="line">git checkout [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交分支</span></span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并分支</span></span><br><span class="line">git merge [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除分支</span></span><br><span class="line">git branch -d [branchName]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>remote</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接到远程仓库</span></span><br><span class="line">git remote add origin git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推送到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程仓库更新到本地</span></span><br><span class="line">git pull git<span class="annotation">@github</span>.com:chuiliu/test.git [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从远程仓库克隆</span></span><br><span class="line">git clone git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
-<ul>
-<li><p><strong>配置</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"]]>
-    </summary>
-    
-      <category term="Git" scheme="http://chuiliu.github.io/tags/Git/"/>
-    
-      <category term="开发工具" scheme="http://chuiliu.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="Javascript" scheme="http://chuiliu.github.io/categories/fe/Javascript/"/>
     
   </entry>
   

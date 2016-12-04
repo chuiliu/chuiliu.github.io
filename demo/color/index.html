@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>颜色挑战游戏</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="game-begin">
+            <h2>看你有多色</h2>
+            <p>找出色块中不同的颜色</p>
+            <button id="start" class="btn">开始游戏</button>
+        </div>
+        <div class="game">
+            <div class="header">
+                得分：<span class="score">0</span>
+                时间：<span class="time">60</span>
+            </div>
+            <div class="game-panel"></div>
+        </div>
+        <div class="game-over">
+            <div class="header">经鉴定，你是</div>
+            <h2><span class="endScore">0</span></h2>
+            <button id="restart" class="btn">再来一次</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="colorJudgement.js"></script>
+</body>
+</html>

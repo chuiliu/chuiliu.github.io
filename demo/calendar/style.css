@@ -1,0 +1,117 @@
+/* reset */
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,span,img,a,form,input,select,label,textarea,button,legend,iframe,blockquote,pre,hr,figure,table,td,th,tr,caption,header,footer,section,article,aside,nav {margin: 0;padding: 0;}
+ul,ol {list-style: none;}
+a,button {cursor: pointer;}
+a {text-decoration: none;}
+fieldset,img {border: 0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%}
+button,input,select,textarea {font-size:100%}
+
+
+.calendar {
+    position: relative;
+    margin: 200px auto;
+    width: 200px;
+    text-align: center;
+    font-family: Serif, Georgia, "Times New Roman";
+    color: #fff;
+    background-color: rgba(72, 179, 131, .8);
+    -webkit-box-shadow: 0 6px 0 #2ca467 inset;
+    -moz-box-shadow: 0 6px 0 #2ca467 inset;
+    box-shadow: 0 50px 0 #2ca467 inset;
+    // 当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    transition: background 1s;
+}
+
+.calendar .month {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.calendar .date {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 90px;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .3);
+    letter-spacing: 6px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.calendar .date::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(72, 179, 131, .8);
+    content: attr(data-date);
+    -webkit-transform: rotateX(267deg);
+    -moz-transform: rotateX(267deg);
+    transform: rotateX(267deg);
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    transition: transform .5s;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+// .calendar:hover {
+//     background: rgba(72, 179, 131, 0);
+// }
+
+// .calendar:hover .date::before {
+//     -webkit-transform: rotateX(6deg);
+//     -moz-transform: rotateX(6deg);
+//     transform: rotateX(6deg);
+// }
+
+.update .date::before {
+    -webkit-transform: rotateX(6deg);
+    -moz-transform: rotateX(6deg);
+    transform: rotateX(6deg);
+}
+
+.update {
+    background: rgba(72, 179, 131, 0);
+}
+
+.calendar::before {
+    position: absolute;
+    left: 18px;
+    top: -10px;
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 20px;
+    border: 4px solid #2ca467;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.calendar::after {
+    position: absolute;
+    right: 18px;
+    top: -10px;
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 20px;
+    border: 4px solid #2ca467;
+    border-radius: 3px;
+    background-color: #fff;
+}
