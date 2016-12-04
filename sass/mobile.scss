@@ -11,6 +11,7 @@
     #header {
         position: static;
         height: auto;
+        // line-height: auto;
 
         .main-header-wrap {
             position: static;
@@ -28,7 +29,9 @@
                 position: static;
                 top: 0;
                 left: 0;
-                margin-top: 0;
+                margin-top: 2px;
+                height: 28px;
+                line-height: 28px;
                 font-size: 18px;
             }
             .subtitle-wrap {
@@ -43,6 +46,7 @@
                 top: 20px;
                 width: 30px;
                 height: 30px;
+                line-height: 30px;
                 background-color: $color-light-gray;
                 border-radius: 4px;
                 font-size: 28px;
@@ -116,26 +120,21 @@
 
     /* 分页 */
     .pagination {
-
         .page-number,
         .space,
         .prev,
         .next {
             margin-right: 5px;
-            // width: 40px;
-            height: 28px;
-            line-height: 28px;
+            padding: 0 8px;
+            width: auto;
+            height: 24px;
+            line-height: 24px;
         }
     }
 
-
-
-}
-
-
-@media screen and (max-width: 420px) {
     /* totop */
     #to-top {
         display: none;
     }
+
 }

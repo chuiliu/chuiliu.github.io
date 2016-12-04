@@ -56,7 +56,6 @@ a:link, a:visited, a:active {
   left: 0;
   width: 100%;
   height: 40px;
-  line-height: 40px;
   z-index: 999;
 }
 #header .main-header-wrap {
@@ -381,7 +380,7 @@ a:link, a:visited, a:active {
 .pagination .next {
   display: inline-block;
   margin-right: 10px;
-  width: 40px;
+  padding: 0 16px;
   height: 28px;
   line-height: 28px;
   -webkit-box-sizing: border-box;
@@ -536,7 +535,9 @@ a:link, a:visited, a:active {
     position: static;
     top: 0;
     left: 0;
-    margin-top: 0;
+    margin-top: 2px;
+    height: 28px;
+    line-height: 28px;
     font-size: 18px;
   }
   #header .main-header-wrap .subtitle-wrap {
@@ -550,6 +551,7 @@ a:link, a:visited, a:active {
     top: 20px;
     width: 30px;
     height: 30px;
+    line-height: 30px;
     background-color: #eee;
     border-radius: 4px;
     font-size: 28px;
@@ -614,11 +616,12 @@ a:link, a:visited, a:active {
   .pagination .prev,
   .pagination .next {
     margin-right: 5px;
-    height: 28px;
-    line-height: 28px;
+    padding: 0 8px;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
   }
-}
-@media screen and (max-width: 420px) {
+
   /* totop */
   #to-top {
     display: none;

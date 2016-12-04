@@ -30,13 +30,16 @@
     });
 
     $(window).scroll(function(){
+        $('.nav').hide();
         var mobile = window.matchMedia('(max-width: 768px)').matches;
         scrollTop = $(this).scrollTop();
 
         if (!mobile && lastTop < scrollTop && scrollTop > minScroll) {
+            // 上滚
             $mainHeader.removeClass('main-header-show hide');
             $subHeader.removeClass('sub-header-show');
         } else if (!mobile && lastTop > scrollTop && scrollTop > minScroll) {
+            // 下滚
             $subHeader.addClass('sub-header-show');
         } else if (!mobile) {
             $mainHeader.addClass('main-header-show');
