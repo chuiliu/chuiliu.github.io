@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -125,7 +131,9 @@
         
             <p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
 <p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
-<p>解决方法：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String newStr = str.replaceAll(<span class="string">"[\\s\\u00A0]+$"</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure></p>
+<p>解决方法：</p>
+<pre><code class="java">String newStr = str.replaceAll(&quot;[\\s\\u00A0]+$&quot;, &quot;&quot;);
+</code></pre>
 <p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
 
         
@@ -208,6 +216,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

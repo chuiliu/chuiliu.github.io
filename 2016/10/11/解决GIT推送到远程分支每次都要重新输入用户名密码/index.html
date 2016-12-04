@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -121,12 +127,17 @@
             <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
 <p>经过一番尝试，找到了解决方法：</p>
 <ol>
-<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://username:password@git.coding.net/username/Demo.git</span><br></pre></td></tr></table></figure>
-</li>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
+</code></pre></li>
 </ol>
-<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br></pre></td></tr></table></figure></p>
-<p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br><span class="line">    fetch = +refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/remotes/</span>origin<span class="comment">/*</span></span><br></pre></td></tr></table></figure></p>
-
+<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：</p>
+<pre><code>git remote rm origin
+git remote add origin https://username:password@git.coding.net/username/Demo.git
+</code></pre><p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。</p>
+<pre><code>[remote &quot;origin&quot;]
+    url = https://username:password@git.coding.net/username/Demo.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+</code></pre>
         
     </div>
 
@@ -207,6 +218,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

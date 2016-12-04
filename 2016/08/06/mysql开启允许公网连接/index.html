@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -123,8 +129,9 @@
     <div class="markdown-body um">
         <!-- 文章正文 -->
         
-            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
-<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：</p>
+<pre><code>netstat
+</code></pre><p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
 
         
     </div>
@@ -206,6 +213,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

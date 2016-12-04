@@ -333,7 +333,6 @@ a:link, a:visited, a:active {
   margin: 0 auto;
   padding: 20px 0;
   /* 阅读全文*/
-  /* 修改表格*/
 }
 .markdown-body .article-more-link a {
   display: block;
@@ -352,14 +351,6 @@ a:link, a:visited, a:active {
 .markdown-body .article-more-link a:hover {
   color: #fff;
   background-color: #5bbd96;
-}
-.markdown-body .highlight tr,
-.markdown-body .highlight td {
-  border: none !important;
-  padding: 0 !important;
-}
-.markdown-body .highlight table {
-  background-color: #f7f7f7;
 }
 
 .markdown-body.um {

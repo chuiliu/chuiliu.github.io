@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -123,22 +129,35 @@
     <div class="markdown-body um">
         <!-- 文章正文 -->
         
-            <h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor"># 一级标题</span></span><br><span class="line"><span class="preprocessor">##  二级标题</span></span><br><span class="line"><span class="preprocessor">### 三级标题</span></span><br><span class="line"><span class="preprocessor">#### 四级标题</span></span><br><span class="line"><span class="preprocessor">##### 五级标题</span></span><br><span class="line"><span class="preprocessor">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="u5217_u8868"><a href="#u5217_u8868" class="headerlink" title="列表"></a>列表</h2><h6 id="u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4"><a href="#u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4" class="headerlink" title="无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4."></a>无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4.</h6><h6 id="u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C"><a href="#u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C" class="headerlink" title="符号和文字间需要加上一个字符的空格"></a>符号和文字间需要加上一个字符的空格</h6><h4 id="u65E0_u5E8F_u5217_u8868"><a href="#u65E0_u5E8F_u5217_u8868" class="headerlink" title="无序列表"></a>无序列表</h4><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">-<span class="ruby"> 香蕉</span><br><span class="line"></span>-<span class="ruby"> 哈密瓜</span><br><span class="line"></span>-<span class="ruby"> 葡萄</span></span><br></pre></td></tr></table></figure>
-<ul>
+            <h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><pre><code># 一级标题
+##  二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre><a id="more"></a>
+<h1 id="u4E00_u7EA7_u6807_u9898"><a href="#u4E00_u7EA7_u6807_u9898" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="u4E8C_u7EA7_u6807_u9898"><a href="#u4E8C_u7EA7_u6807_u9898" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="u4E09_u7EA7_u6807_u9898"><a href="#u4E09_u7EA7_u6807_u9898" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="u56DB_u7EA7_u6807_u9898"><a href="#u56DB_u7EA7_u6807_u9898" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="u4E94_u7EA7_u6807_u9898"><a href="#u4E94_u7EA7_u6807_u9898" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="u516D_u7EA7_u6807_u9898"><a href="#u516D_u7EA7_u6807_u9898" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="u5217_u8868"><a href="#u5217_u8868" class="headerlink" title="列表"></a>列表</h2><h6 id="u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4"><a href="#u65E0_u5E8F_u5217_u8868_u53EA_u9700_u5728_u6587_u5B57_u524D_u52A0_u4E0A_-__u6216_*__uFF0C_u6709_u5E8F_u5217_u5219_u76F4_u63A5_u5728_u6587_u5B57_u524D_u52A0_u4E0A1-_2-_3-_4" class="headerlink" title="无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4."></a>无序列表只需在文字前加上 - 或 * ，有序列则直接在文字前加上1. 2. 3. 4.</h6><h6 id="u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C"><a href="#u7B26_u53F7_u548C_u6587_u5B57_u95F4_u9700_u8981_u52A0_u4E0A_u4E00_u4E2A_u5B57_u7B26_u7684_u7A7A_u683C" class="headerlink" title="符号和文字间需要加上一个字符的空格"></a>符号和文字间需要加上一个字符的空格</h6><h4 id="u65E0_u5E8F_u5217_u8868"><a href="#u65E0_u5E8F_u5217_u8868" class="headerlink" title="无序列表"></a>无序列表</h4><pre><code>- 香蕉
+- 哈密瓜
+- 葡萄
+</code></pre><ul>
 <li>香蕉</li>
 <li>哈密瓜</li>
 <li>葡萄</li>
 </ul>
-<h4 id="u6709_u5E8F_u5217_u8868"><a href="#u6709_u5E8F_u5217_u8868" class="headerlink" title="有序列表"></a>有序列表</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 杨梅</span><br><span class="line"><span class="number">2.</span> 百香果</span><br><span class="line"><span class="number">3.</span> 榴莲</span><br></pre></td></tr></table></figure>
-<ol>
+<h4 id="u6709_u5E8F_u5217_u8868"><a href="#u6709_u5E8F_u5217_u8868" class="headerlink" title="有序列表"></a>有序列表</h4><pre><code>1. 杨梅
+2. 百香果
+3. 榴莲
+</code></pre><ol>
 <li>杨梅</li>
 <li>百香果</li>
 <li>榴莲</li>
 </ol>
-<h2 id="u5F15_u7528"><a href="#u5F15_u7528" class="headerlink" title="引用"></a>引用</h2><h6 id="u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528"><a href="#u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528" class="headerlink" title="在文本前加上 &gt; 即可表示引用"></a>在文本前加上 &gt; 即可表示引用</h6><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&gt; 一级</span><br><span class="line">&gt;&gt; 二级</span><br><span class="line"><span class="tag">&lt;<span class="title">blockquote</span>&gt;</span>三级引用<span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span></span><br><span class="line">&gt;&gt; 还是二级</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="u5F15_u7528"><a href="#u5F15_u7528" class="headerlink" title="引用"></a>引用</h2><h6 id="u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528"><a href="#u5728_u6587_u672C_u524D_u52A0_u4E0A__26gt_3B__u5373_u53EF_u8868_u793A_u5F15_u7528" class="headerlink" title="在文本前加上 &gt; 即可表示引用"></a>在文本前加上 &gt; 即可表示引用</h6><pre><code>&gt; 一级
+&gt;&gt; 二级
+&lt;blockquote&gt;三级引用&lt;/blockquote&gt;
+&gt;&gt; 还是二级
+&gt;
+</code></pre><blockquote>
 <p>一级</p>
 <blockquote>
 <p>二级</p>
@@ -149,14 +168,19 @@
 <blockquote>
 <h3 id="u6843_u82B1_u6E90_u8BB0"><a href="#u6843_u82B1_u6E90_u8BB0" class="headerlink" title="桃花源记"></a>桃花源记</h3><h6 id="u9676_u6E0A_u660E"><a href="#u9676_u6E0A_u660E" class="headerlink" title="陶渊明"></a>陶渊明</h6><p>晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。<br>　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。<br>　　见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语云：“不足为外人道也。”(间隔 一作：隔绝)<br>　　既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，遂迷，不复得路。<br>　　南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终，后遂无问津者。</p>
 </blockquote>
-<h2 id="u8D85_u94FE_u63A5"><a href="#u8D85_u94FE_u63A5" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="link_label">百度一下，你就知道</span>](<span class="link_url">http://baidu.com</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="http://baidu.com" target="_blank" rel="external">百度一下，你就知道</a></p>
-<h2 id="u56FE_u7247"><a href="#u56FE_u7247" class="headerlink" title="图片"></a>图片</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="link_label">zhengchuiliu</span>](<span class="link_url">https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460" alt="zhengchuiliu"></p>
-<h2 id="u7C97_u4F53_u548C_u659C_u4F53"><a href="#u7C97_u4F53_u548C_u659C_u4F53" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><h6 id="u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C"><a href="#u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C" class="headerlink" title="用 ** 包裹需要加粗的文本"></a>用 ** 包裹需要加粗的文本</h6><h6 id="u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C"><a href="#u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C" class="headerlink" title="用 * 包裹需要斜体的文本"></a>用 * 包裹需要斜体的文本</h6><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">*</span><span class="keyword">*</span>这是粗体<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"><span class="keyword">*</span>这是斜体<span class="keyword">*</span></span><br></pre></td></tr></table></figure>
-<p><strong>这是粗体</strong><br><em>这是斜体</em></p>
-<h2 id="u8868_u683C"><a href="#u8868_u683C" class="headerlink" title="表格"></a>表格</h2><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">|<span class="string">居中</span>|<span class="string">左对齐</span>|<span class="string">右对齐</span>|</span><br><span class="line">|<span class="string">:-----:</span>|<span class="string">-----</span>|<span class="string">-----:</span>|</span><br><span class="line">|<span class="string">Chinese</span>|<span class="string">English</span>|<span class="string">Math</span>|</span><br><span class="line">|<span class="string">Math</span>|<span class="string">Chinese</span>|<span class="string">Chinese</span>|</span><br><span class="line">|<span class="string">English</span>|<span class="string">Math</span>|<span class="string">English</span>|</span><br></pre></td></tr></table></figure>
-<table>
+<h2 id="u8D85_u94FE_u63A5"><a href="#u8D85_u94FE_u63A5" class="headerlink" title="超链接"></a>超链接</h2><pre><code>[百度一下，你就知道](http://baidu.com)
+</code></pre><p><a href="http://baidu.com" target="_blank" rel="external">百度一下，你就知道</a></p>
+<h2 id="u56FE_u7247"><a href="#u56FE_u7247" class="headerlink" title="图片"></a>图片</h2><pre><code>![zhengchuiliu](https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460)
+</code></pre><p><img src="https://avatars2.githubusercontent.com/u/12490286?v=3&amp;s=460" alt="zhengchuiliu"></p>
+<h2 id="u7C97_u4F53_u548C_u659C_u4F53"><a href="#u7C97_u4F53_u548C_u659C_u4F53" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><h6 id="u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C"><a href="#u7528_**__u5305_u88F9_u9700_u8981_u52A0_u7C97_u7684_u6587_u672C" class="headerlink" title="用 ** 包裹需要加粗的文本"></a>用 ** 包裹需要加粗的文本</h6><h6 id="u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C"><a href="#u7528_*__u5305_u88F9_u9700_u8981_u659C_u4F53_u7684_u6587_u672C" class="headerlink" title="用 * 包裹需要斜体的文本"></a>用 * 包裹需要斜体的文本</h6><pre><code>**这是粗体**
+*这是斜体*
+</code></pre><p><strong>这是粗体</strong><br><em>这是斜体</em></p>
+<h2 id="u8868_u683C"><a href="#u8868_u683C" class="headerlink" title="表格"></a>表格</h2><pre><code>|居中|左对齐|右对齐|
+|:-----:|-----|-----:|
+|Chinese|English|Math|
+|Math|Chinese|Chinese|
+|English|Math|English|
+</code></pre><table>
 <thead>
 <tr>
 <th style="text-align:center">居中</th>
@@ -185,7 +209,9 @@
 <h2 id="u4EE3_u7801_u7247_u6BB5"><a href="#u4EE3_u7801_u7247_u6BB5" class="headerlink" title="代码片段"></a>代码片段</h2><h6 id="u5F15_u7528_u4E00_u5C0F_u6BB5_u884C_u5185_u4EE3_u7801_u7247_u6BB5_uFF0C_u53EA_u9700_u8981_u7528__60__u628A_u4EE3_u7801_u7247_u6BB5_u5305_u88F9_u8D77_u6765"><a href="#u5F15_u7528_u4E00_u5C0F_u6BB5_u884C_u5185_u4EE3_u7801_u7247_u6BB5_uFF0C_u53EA_u9700_u8981_u7528__60__u628A_u4EE3_u7801_u7247_u6BB5_u5305_u88F9_u8D77_u6765" class="headerlink" title="引用一小段行内代码片段，只需要用 ` 把代码片段包裹起来"></a>引用一小段行内代码片段，只需要用 ` 把代码片段包裹起来</h6><h6 id="u884C_u9996_u7A7A_u56DB_u4E2A_u7A7A_u683C_u6216tab_u53EF_u4EE5_u8868_u793A_u4EE3_u7801_u7247_u6BB5"><a href="#u884C_u9996_u7A7A_u56DB_u4E2A_u7A7A_u683C_u6216tab_u53EF_u4EE5_u8868_u793A_u4EE3_u7801_u7247_u6BB5" class="headerlink" title="行首空四个空格或tab可以表示代码片段"></a>行首空四个空格或tab可以表示代码片段</h6><h6 id="u4F7F_u7528_u4E09_u4E2A__60__u628A_u4EE3_u7801_u5305_u88F9_u8D77_u6765"><a href="#u4F7F_u7528_u4E09_u4E2A__60__u628A_u4EE3_u7801_u5305_u88F9_u8D77_u6765" class="headerlink" title="使用三个 ` 把代码包裹起来"></a>使用三个 ` 把代码包裹起来</h6><p>这是<code>javascript</code>代码</p>
 <pre><code>var say = &quot;Hello World&quot;;
 console.log(say);
-</code></pre><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> say = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(say);</span><br></pre></td></tr></table></figure>
+</code></pre><pre><code class="javascript">var say = &quot;Hello World&quot;;
+console.log(say);
+</code></pre>
 <h2 id="u5206_u5272_u7EBF"><a href="#u5206_u5272_u7EBF" class="headerlink" title="分割线"></a>分割线</h2><h6 id="u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF"><a href="#u53E6_u8D77_u4E00_u884C_uFF0C_u8FDE_u7EED_u8F93_u5165_u4E09_u4E2A_u661F_u53F7_uFF08*_uFF09_u5373_u53EF_u521B_u5EFA_u5206_u5272_u7EBF" class="headerlink" title="另起一行，连续输入三个星号（<em>*</em>）即可创建分割线"></a>另起一行，连续输入三个星号（<em>*</em>）即可创建分割线</h6><hr>
 <h2 id="markdown_u4E2D_u5982_u4F55_u8868_u793A_u7F29_u8FDB"><a href="#markdown_u4E2D_u5982_u4F55_u8868_u793A_u7F29_u8FDB" class="headerlink" title="markdown中如何表示缩进"></a>markdown中如何表示缩进</h2><ul>
 <li><code>&amp;ensp;</code>,<code>&amp;#8194;</code> 表示半角的空格</li>
@@ -268,6 +294,10 @@ console.log(say);
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

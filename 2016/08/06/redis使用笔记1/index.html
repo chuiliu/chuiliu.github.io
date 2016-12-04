@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -124,25 +130,35 @@
         <!-- 文章正文 -->
         
             <p>最近项目用到redis作为内存数据库，</p>
-<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
-<li><p>下载Redis</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
+<p>windows系统启动redis</p>
+<pre><code>redis-server
+</code></pre><a id="more"></a>
+<p>客户端连接到redis服务器</p>
+<pre><code>redis-cli
+</code></pre><h3 id="Linux_u4E0B_u7684_u64CD_u4F5C"><a href="#Linux_u4E0B_u7684_u64CD_u4F5C" class="headerlink" title="Linux下的操作"></a>Linux下的操作</h3><ol>
+<li>下载Redis<pre><code class="shell">wget http://download.redis.io/releases/redis-3.2.3.tar.gz
+</code></pre>
 </li>
-<li><p>解压</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">tar xzf redis-3.2.3.tar.gz</span><br></pre></td></tr></table></figure>
+<li>解压<pre><code class="shell">tar xzf redis-3.2.3.tar.gz
+</code></pre>
 </li>
-<li><p>编译</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">cd redis-<span class="number">3.2</span><span class="number">.3</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-</li>
+<li>编译<pre><code>cd redis-3.2.3
+make
+</code></pre></li>
 </ol>
-<p>通过redis客户端连接到redis服务器<br><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
-<p>连接到服务器后，可以使用info命令查看和操作redis数据库：<br>查看redis的详细信息<br><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">info</span></span><br></pre></td></tr></table></figure></p>
-<p>操作<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="built_in">set</span> key hello</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get key</span><br><span class="line"><span class="string">"hello"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>如果需要redis在以后台程序的方式运行，以下命令启动<br><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> &amp;</span><br></pre></td></tr></table></figure></p>
-<p>或者将<code>redis.conf</code>配置文件中的<code>daemonize</code>值修改为<code>yes</code></p>
+<p>通过redis客户端连接到redis服务器</p>
+<pre><code>redis-cli
+</code></pre><p>连接到服务器后，可以使用info命令查看和操作redis数据库：<br>查看redis的详细信息</p>
+<pre><code>info
+</code></pre><p>操作</p>
+<pre><code>127.0.0.1:6379&gt; set key hello
+OK
+127.0.0.1:6379&gt; get key
+&quot;hello&quot;
+127.0.0.1:6379&gt;
+</code></pre><p>如果需要redis在以后台程序的方式运行，以下命令启动</p>
+<pre><code>redis-server &amp;
+</code></pre><p>或者将<code>redis.conf</code>配置文件中的<code>daemonize</code>值修改为<code>yes</code></p>
 
         
     </div>
@@ -224,6 +240,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

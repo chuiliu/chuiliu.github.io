@@ -368,18 +368,6 @@ a {
             background-color: $color-theme;
         }
     }
-
-    /* 修改表格*/
-    .highlight {
-        tr,
-        td {
-            border: none!important;
-            padding: 0!important;
-        }
-        table {
-            background-color: #f7f7f7;
-        }
-    }
 }
 .markdown-body.um {
     font-family: "Microsoft YaHei";

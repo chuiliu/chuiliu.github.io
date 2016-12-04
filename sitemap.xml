@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/</loc>
+    <lastmod>2016-12-04T13:06:31.249Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2016-12-04T13:00:38.981Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/README.html</loc>
     <lastmod>2016-12-04T12:02:44.370Z</lastmod>
   </url>
@@ -14,11 +24,6 @@
   <url>
     <loc>http://chuiliu.github.io/about/index.html</loc>
     <lastmod>2016-12-04T04:40:54.659Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2016-12-04T04:31:27.545Z</lastmod>
   </url>
   
   <url>
@@ -84,11 +89,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2016-11-28T15:37:50.753Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/</loc>
-    <lastmod>2016-11-27T14:38:29.401Z</lastmod>
   </url>
   
   <url>

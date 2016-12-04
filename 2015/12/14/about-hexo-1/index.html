@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -128,17 +134,28 @@
 <ol>
 <li>在<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>官网注册账号</li>
 <li>选择<strong>我要安装</strong>创建站点</li>
-<li><p>在<code>_config.yml</code>中添加多说配置（二级域名就是创建站点时填写的<strong>多说域名</strong>）：</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">duoshuo_shortname</span>: <span class="string">多说二级域名</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改<code>themes\landscape\layout\_partial\article.ejs</code><br>把</p>
-<figure class="highlight mojolicious"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="perl"> <span class="keyword">if</span> (!<span class="keyword">index</span> &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; </span>%&gt;<span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"disqus_thread"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line"></span>&lt;%<span class="perl"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
-<p>替换成<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">%</span> <span class="attribute">if</span> (!<span class="attribute">index</span> &amp;&amp; <span class="attribute">post.comments</span> &amp;&amp; <span class="attribute">config.duoshuo_shortname</span>)&#123; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说评论框 start --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ds-thread"</span> <span class="attribute">data-thread-key</span>=<span class="value">"&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;"</span> <span class="attribute">data-title</span>=<span class="value">"&lt;%= post.title %&gt;"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说评论框 end --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> duoshuoQuery = &#123;short_name:<span class="string">'&lt;%= config.duoshuo_shortname %&gt;'</span>&#125;;</span><br><span class="line">      (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</span><br><span class="line">        ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</span><br><span class="line">        ds.charset = <span class="string">'UTF-8'</span>;</span><br><span class="line">        (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] </span><br><span class="line">         || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</span><br><span class="line">      &#125;)();</span><br><span class="line">      </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>把</p>
-<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> (item.comment &amp;&amp; config.disqus_shortname)&#123; </span>%&gt;<span class="xml">  </span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"alignright"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.permalink </span>%&gt;<span class="xml"><span class="tag"><span class="value">#disqus_thread"</span> <span class="attribute">class</span>=<span class="value">"comment-link"</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">a</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  </span><br><span class="line"></span>&lt;%<span class="ruby"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
-<p>替换成</p>
-<figure class="highlight erb"><table><tr><td class="code"><pre><span class="line"><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> (item.comment &amp;&amp; config.duoshuo_shortname)&#123; </span>%&gt;<span class="xml">  </span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"alignright"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.permalink </span>%&gt;<span class="xml"><span class="tag"><span class="value">#disqus_thread"</span> <span class="attribute">class</span>=<span class="value">"comment-link"</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">a</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  </span><br><span class="line"></span>&lt;%<span class="ruby"> &#125; </span>%&gt;<span class="xml"></span></span><br></pre></td></tr></table></figure>
-</li>
+<li>在<code>_config.yml</code>中添加多说配置（二级域名就是创建站点时填写的<strong>多说域名</strong>）：<pre><code>duoshuo_shortname: 多说二级域名
+</code></pre></li>
+<li>修改<code>themes\landscape\layout\_partial\article.ejs</code><br>把<pre><code>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname){ %&gt;
+&lt;section id=&quot;comments&quot;&gt;
+ &lt;div id=&quot;disqus_thread&quot;&gt;
+   &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+ &lt;/div&gt;
+&lt;/section&gt;
+&lt;% } %&gt;
+</code></pre>替换成```<br>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname){ %&gt;<br><section id="comments"> <!-- 多说评论框 start -->
+ <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div> <!-- 多说评论框 end -->
+ <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+ <script type="text/javascript"><br> var duoshuoQuery = {short_name:’&lt;%= config.duoshuo_shortname %&gt;’};<br>   (function() {<pre><code> var ds = document.createElement(&#39;script&#39;);
+ ds.type = &#39;text/javascript&#39;;ds.async = true;
+ ds.src = (document.location.protocol == &#39;https:&#39; ? &#39;https:&#39; : &#39;http:&#39;) + &#39;//static.duoshuo.com/embed.js&#39;;
+ ds.charset = &#39;UTF-8&#39;;
+ (document.getElementsByTagName(&#39;head&#39;)[0] 
+  || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(ds);
+</code></pre>   })();<br>   </script> <!-- 多说公共JS代码 end -->
+</section><br>&lt;% } %&gt;<pre><code>把
+</code></pre>&lt;% if (item.comment &amp;&amp; config.disqus_shortname){ %&gt;<br><div class="alignright"><br> <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a><br></div><br>&lt;% } %&gt;<pre><code>替换成
+</code></pre>&lt;% if (item.comment &amp;&amp; config.duoshuo_shortname){ %&gt;<br><div class="alignright"><br> <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a><br></div><br>&lt;% } %&gt;<br>```</li>
 </ol>
 
         
@@ -221,6 +238,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

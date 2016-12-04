@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -125,12 +131,15 @@
         <!-- 文章内容 -->
         
             <p>最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。</p>
-<h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
+<h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot; /&gt;
+</code></pre><p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
 <hr>
-<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span> = <span class="string">"format-detection"</span> content = <span class="string">"telephone=no"</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写<br><figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line">&lt;<span class="literal">a</span> href = <span class="string">"tel:13800000000"</span>&gt;call <span class="number">13800000000</span>&lt;/<span class="literal">a</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>或者用js:<br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">location<span class="class">.href</span> = <span class="string">'tell:10086'</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><pre><code>&lt;meta name = &quot;format-detection&quot; content = &quot;telephone=no&quot;&gt;
+</code></pre><p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写</p>
+<pre><code>&lt;a href = &quot;tel:13800000000&quot;&gt;call 13800000000&lt;/a&gt;
+</code></pre><p>或者用js:</p>
+<pre><code>location.href = &#39;tell:10086&#39;
+</code></pre>
             
                 <p class="article-more-link">
                     <a href="/2016/11/15/移动开发/#more">阅读全文</a>
@@ -187,12 +196,18 @@
         <!-- 文章内容 -->
         
             <p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
-<h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> browser-<span class="keyword">sync</span></span></span><br></pre></td></tr></table></figure></p>
-<p>在项目根目录执行：<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"css/*.css"</span></span><br><span class="line"># 也可以配置多项，或者通配符匹配任意目录</span><br><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"**/*.css, **/*.html"</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
-<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:<br><figure class="highlight mel"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python</span> -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
-<p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">8080</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
+<h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
+<pre><code>npm install -g browser-sync
+</code></pre><p>在项目根目录执行：</p>
+<pre><code>browser-sync start --server --files &quot;css/*.css&quot;
+# 也可以配置多项，或者通配符匹配任意目录
+browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
+</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
+<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:</p>
+<pre><code>python -m SimpleHTTPServer
+</code></pre><p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：</p>
+<pre><code>python -m SimpleHTTPServer 8080
+</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
             
                 <p class="article-more-link">
                     <a href="/2016/10/19/如何快速搭建静态资源服务器/#more">阅读全文</a>
@@ -303,12 +318,18 @@
         <!-- 文章内容 -->
         
             <p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
-<p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">'%max_allowed_packet%'</span>;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">global</span> max_allowed_packet = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span></span></span><br></pre></td></tr></table></figure></p>
-<p>重启数据库<br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">service</span> mysql restart</span><br></pre></td></tr></table></figure></p>
-<h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">mysql --<span class="keyword">help</span> | <span class="keyword">grep</span> my.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></p>
-<p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">max_allowed_packet = <span class="number">10</span>M</span><br></pre></td></tr></table></figure></p>
-<p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐的方法把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
+<p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：</p>
+<pre><code>SHOW VARIABLES LIKE &#39;%max_allowed_packet%&#39;;
+</code></pre><h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小</p>
+<pre><code class="sql">set global max_allowed_packet = 1024*1024*10
+</code></pre>
+<p>重启数据库</p>
+<pre><code>service mysql restart
+</code></pre><h3 id="u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6"><a href="#u65B9_u6CD5_u4E8C_uFF1A_u4FEE_u6539_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="方法二：修改配置文件"></a>方法二：修改配置文件</h3><p>通过修改MySQL的配置文件也可以修改该值：<br>查找配置文件的路径</p>
+<pre><code>mysql --help | grep my.cnf
+</code></pre><p>找到配置文件后切换到该路径用vim打开，找到并直接修改其值即可：</p>
+<pre><code>max_allowed_packet = 10M
+</code></pre><p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐的方法把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
 
         
     </div>
@@ -358,12 +379,17 @@
             <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
 <p>经过一番尝试，找到了解决方法：</p>
 <ol>
-<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://username:password@git.coding.net/username/Demo.git</span><br></pre></td></tr></table></figure>
-</li>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
+</code></pre></li>
 </ol>
-<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br></pre></td></tr></table></figure></p>
-<p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = <span class="string">https:</span><span class="comment">//username:password@git.coding.net/username/Demo.git</span></span><br><span class="line">    fetch = +refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/remotes/</span>origin<span class="comment">/*</span></span><br></pre></td></tr></table></figure></p>
-
+<p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：</p>
+<pre><code>git remote rm origin
+git remote add origin https://username:password@git.coding.net/username/Demo.git
+</code></pre><p>这种方式虽然挺好，但是只是解决了当前项目的推送问题，并没有全局生效，如果是另外克隆的其它项目，则也需要在克隆时带上用户名和密码才会生效。另外需要注意的是，这样做会导致在<code>./.git/config</code>文件中可以直接看到明文密码，个人认为不太安全，因此还是建议大家使用配置SSH公钥的方式，即方便、好管理又安全。</p>
+<pre><code>[remote &quot;origin&quot;]
+    url = https://username:password@git.coding.net/username/Demo.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+</code></pre>
         
     </div>
 
@@ -402,6 +428,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

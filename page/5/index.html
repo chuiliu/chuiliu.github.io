@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -125,8 +131,14 @@
         <!-- 文章内容 -->
         
             <!-- - ## Firefox 定义日期new Date()兼容问题 -->
-<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
+<pre><code>  var date = new Date(&#39;2016/04/06 12:45:11&#39;);
+  var date = new Date(&#39;2016-04-06T12:45:11&#39;);
+</code></pre><p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：</p>
+<pre><code class="javascript">  var dateString = &#39;2016-04-06 12:45:11&#39;;
+  var date1 = new Date(dateString.replace(/\s/,&#39;T&#39;);
+  var date2 = new Date(dateString.replace(/-/g,&#39;/&#39;);
+</code></pre>
 
         
     </div>
@@ -180,9 +192,10 @@
         
             <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
 <ul>
-<li><strong>配置</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><strong>配置</strong><pre><code class="java">// 配置用户信息
+git config --global user.name &quot;[name]&quot;
+git config --global user.email &quot;[email address]&quot;
+</code></pre>
             
                 <p class="article-more-link">
                     <a href="/2016/04/06/about-git/#more">阅读全文</a>
@@ -349,17 +362,29 @@
         <!-- 文章内容 -->
         
             <p>用到，做个笔记</p>
-<p>querystring模块提供了有关查询字符串参数处理的操作，提供具体以下4个方法：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">querystring.stringify(obj, [sep], [eq])</span><br><span class="line">querystring.parse(str, [sep], [eq], [options])</span><br><span class="line">querystring.escape</span><br><span class="line">querystring.unescape</span><br></pre></td></tr></table></figure></p>
+<p>querystring模块提供了有关查询字符串参数处理的操作，提供具体以下4个方法：</p>
+<pre><code class="javascript">querystring.stringify(obj, [sep], [eq])
+querystring.parse(str, [sep], [eq], [options])
+querystring.escape
+querystring.unescape
+</code></pre>
 <ul>
 <li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;username:<span class="string">'zheng'</span>, password:<span class="string">'123456'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.stringify(obj));</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var querystring = require(&#39;querystring&#39;);
+var obj = {username:&#39;zheng&#39;, password:&#39;123456&#39;};
+console.log(querystring.stringify(obj));
+</code></pre>
 <p>输出结果为：</p>
 <blockquote>
 <p>username=zheng&amp;password=123456</p>
 </blockquote>
 </li>
 <li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'username=zheng&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str1));</span><br><span class="line"><span class="built_in">console</span>.log(querystring.parse(str2));</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var str1 = &#39;username=zheng&amp;password=123456&#39;;
+var str2 = &#39;username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music&#39;;
+console.log(querystring.parse(str1));
+console.log(querystring.parse(str2));
+</code></pre>
 <p>输出结果为：</p>
 <blockquote>
 <p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
@@ -368,7 +393,12 @@
 <li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
 </li>
 <li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'username=用户名&amp;password=123456'</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">escape</span> = querystring.escape(str);</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">unescape</span> = querystring.unescape(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">escape</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">unescape</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var str = &#39;username=用户名&amp;password=123456&#39;;
+var escape = querystring.escape(str);
+var unescape = querystring.unescape(escape);
+console.log(escape);
+console.log(unescape);
+</code></pre>
 <p>输出结果为：</p>
 <blockquote>
 <p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
@@ -414,6 +444,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

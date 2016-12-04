@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -124,8 +130,14 @@
         <!-- 文章正文 -->
         
             <!-- - ## Firefox 定义日期new Date()兼容问题 -->
-<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：<br>  <figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016/04/06 12:45:11'</span>);</span><br><span class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>(<span class="string">'2016-04-06T12:45:11'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：<br>   <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dateString = <span class="string">'2016-04-06 12:45:11'</span>;</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/\s/</span>,<span class="string">'T'</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(dateString.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
+<pre><code>  var date = new Date(&#39;2016/04/06 12:45:11&#39;);
+  var date = new Date(&#39;2016-04-06T12:45:11&#39;);
+</code></pre><p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：</p>
+<pre><code class="javascript">  var dateString = &#39;2016-04-06 12:45:11&#39;;
+  var date1 = new Date(dateString.replace(/\s/,&#39;T&#39;);
+  var date2 = new Date(dateString.replace(/-/g,&#39;/&#39;);
+</code></pre>
 
         
     </div>
@@ -207,6 +219,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

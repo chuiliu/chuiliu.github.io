@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -180,8 +186,9 @@
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure></p>
-<p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：</p>
+<pre><code>netstat
+</code></pre><p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
 
         
     </div>
@@ -234,7 +241,9 @@
         <!-- 文章内容 -->
         
             <p>最近项目用到redis作为内存数据库，</p>
-<p>windows系统启动redis<br><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
+<p>windows系统启动redis</p>
+<pre><code>redis-server
+</code></pre>
             
                 <p class="article-more-link">
                     <a href="/2016/08/06/redis使用笔记1/#more">阅读全文</a>
@@ -297,9 +306,26 @@
 <p>Redis can not continue. Exiting.</p>
 </blockquote>
 <p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:\Users\Administrator&gt;redis-server --maxheap <span class="number">1024000000</span></span><br><span class="line">                _._</span><br><span class="line">           _.-<span class="built_in">``</span>__ <span class="string">''</span>-._</span><br><span class="line">      _.-<span class="built_in">``</span>    <span class="built_in">`.  `</span>_.  <span class="string">''</span>-._           Redis <span class="number">2.8</span>.<span class="number">2402</span> (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</span><br><span class="line">  .-<span class="built_in">``</span> .-<span class="built_in">``</span><span class="built_in">`.  `</span><span class="built_in">``</span>\/    _.,_ <span class="string">''</span>-._</span><br><span class="line"> (    '      ,       .-<span class="built_in">`  | `</span>,    )     Running in stand alone mode</span><br><span class="line"> |<span class="built_in">`-._`</span>-...-<span class="built_in">` __...-.`</span><span class="built_in">`-._|'`</span> _.-'|     <span class="attribute">Port</span>: <span class="number">6379</span></span><br><span class="line"> |    <span class="built_in">`-._   `</span>._    /     _.-'    |     <span class="attribute">PID</span>: <span class="number">8296</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._  <span class="built_in">`-./  _.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |           <span class="attribute">http</span>:<span class="comment">//redis.io</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |</span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line">      `</span>-._    <span class="built_in">`-.__.-'    _.-'</span><br><span class="line">          `</span>-._        _.-'</span><br><span class="line">              `-.__.-'</span><br></pre></td></tr></table></figure>
-
+<pre><code>redis-server --maxheap 1024000000
+</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
+                _._
+           _.-``__ &#39;&#39;-._
+      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
+ (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
+ |    `-._   `._    /     _.-&#39;    |     PID: 8296
+  `-._    `-._  `-./  _.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+      `-._    `-.__.-&#39;    _.-&#39;
+          `-._        _.-&#39;
+              `-.__.-&#39;
+</code></pre>
         
     </div>
 
@@ -351,18 +377,18 @@
         <!-- 文章内容 -->
         
             <h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
-<li>修改root密码<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=<span class="keyword">password</span>(<span class="string">'new password'</span>);</span></span><br></pre></td></tr></table></figure>
+<li>修改root密码<pre><code class="sql">set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;new password&#39;);
+</code></pre>
 </li>
 </ul>
 <h4 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h4><ul>
-<li><p>创建用户</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'username'</span>;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>授权</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">GRANT</span> all <span class="keyword">ON</span> databasename.* <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'localhost'</span>;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>创建用户<pre><code>CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;username&#39;;
+</code></pre></li>
+<li>授权<pre><code>GRANT all ON databasename.* TO &#39;username&#39;@&#39;localhost&#39;;
+</code></pre></li>
 </ul>
-<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">coalesce</span>(<span class="keyword">sum</span>(price), <span class="number">0</span>) <span class="keyword">as</span> total <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">type</span>;</span></span><br></pre></td></tr></table></figure>
+<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><pre><code>select coalesce(sum(price), 0) as total group by type;
+</code></pre>
         
     </div>
 
@@ -401,6 +427,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

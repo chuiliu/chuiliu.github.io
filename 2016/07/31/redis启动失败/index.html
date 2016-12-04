@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -130,9 +136,26 @@
 <p>Redis can not continue. Exiting.</p>
 </blockquote>
 <p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">redis-server <span class="comment">--maxheap 1024000000</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:\Users\Administrator&gt;redis-server --maxheap <span class="number">1024000000</span></span><br><span class="line">                _._</span><br><span class="line">           _.-<span class="built_in">``</span>__ <span class="string">''</span>-._</span><br><span class="line">      _.-<span class="built_in">``</span>    <span class="built_in">`.  `</span>_.  <span class="string">''</span>-._           Redis <span class="number">2.8</span>.<span class="number">2402</span> (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</span><br><span class="line">  .-<span class="built_in">``</span> .-<span class="built_in">``</span><span class="built_in">`.  `</span><span class="built_in">``</span>\/    _.,_ <span class="string">''</span>-._</span><br><span class="line"> (    '      ,       .-<span class="built_in">`  | `</span>,    )     Running in stand alone mode</span><br><span class="line"> |<span class="built_in">`-._`</span>-...-<span class="built_in">` __...-.`</span><span class="built_in">`-._|'`</span> _.-'|     <span class="attribute">Port</span>: <span class="number">6379</span></span><br><span class="line"> |    <span class="built_in">`-._   `</span>._    /     _.-'    |     <span class="attribute">PID</span>: <span class="number">8296</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._  <span class="built_in">`-./  _.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |           <span class="attribute">http</span>:<span class="comment">//redis.io</span></span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line"> |`</span>-._<span class="built_in">`-._    `</span>-.__.-<span class="string">'    _.-'</span>_.-'|</span><br><span class="line"> |    <span class="built_in">`-._`</span>-._        _.-<span class="string">'_.-'</span>    |</span><br><span class="line">  <span class="built_in">`-._    `</span>-._<span class="built_in">`-.__.-'_.-'    _.-'</span><br><span class="line">      `</span>-._    <span class="built_in">`-.__.-'    _.-'</span><br><span class="line">          `</span>-._        _.-'</span><br><span class="line">              `-.__.-'</span><br></pre></td></tr></table></figure>
-
+<pre><code>redis-server --maxheap 1024000000
+</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
+                _._
+           _.-``__ &#39;&#39;-._
+      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
+ (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
+ |    `-._   `._    /     _.-&#39;    |     PID: 8296
+  `-._    `-._  `-./  _.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+      `-._    `-.__.-&#39;    _.-&#39;
+          `-._        _.-&#39;
+              `-.__.-&#39;
+</code></pre>
         
     </div>
 
@@ -213,6 +236,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

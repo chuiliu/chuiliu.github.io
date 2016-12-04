@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!-- highlight.js -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
+
 
 
     <!--[if lt IE 9]>
@@ -125,27 +131,57 @@
         
             <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
 <ul>
-<li><strong>配置</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置用户信息</span></span><br><span class="line">git config --global user.name <span class="string">"[name]"</span></span><br><span class="line">git config --global user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>配置</strong><pre><code class="java">// 配置用户信息
+git config --global user.name &quot;[name]&quot;
+git config --global user.email &quot;[email address]&quot;
+</code></pre>
+<a id="more"></a></li>
+<li><strong>常用</strong><br>```java<br>// 初始化git仓库<br>git init</li>
 </ul>
-<a id="more"></a>
-<ul>
-<li><p><strong>常用</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 初始化git仓库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看当前仓库的状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看提交日志</span></span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>add</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加当前目录下所有文件（3种方式）</span></span><br><span class="line">git add .</span><br><span class="line">git add -A</span><br><span class="line">git add --all</span><br><span class="line"><span class="comment">// 添加文件</span></span><br><span class="line">git add [filename]</span><br><span class="line"><span class="comment">// 删除和移动的文件也能提交到暂存区</span></span><br><span class="line">git add --all</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>commit</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 提交到仓库</span></span><br><span class="line">git commit -m <span class="string">"descriptions"</span></span><br><span class="line">git commit [filename] -m <span class="string">"descriptions"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建分支</span></span><br><span class="line">git branch [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建并切换到分支</span></span><br><span class="line">git checkout -b [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换到分支</span></span><br><span class="line">git checkout [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交分支</span></span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并分支</span></span><br><span class="line">git merge [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除分支</span></span><br><span class="line">git branch -d [branchName]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>remote</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 连接到远程仓库</span></span><br><span class="line">git remote add origin git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推送到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程仓库更新到本地</span></span><br><span class="line">git pull git<span class="annotation">@github</span>.com:chuiliu/test.git [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从远程仓库克隆</span></span><br><span class="line">git clone git<span class="annotation">@github</span>.com:chuiliu/test.git</span><br></pre></td></tr></table></figure>
-</li>
+<p>// 查看当前仓库的状态<br>git status</p>
+<p>// 查看提交日志<br>git log</p>
+<pre><code>- **add**
+```java
+// 添加当前目录下所有文件（3种方式）
+git add .
+git add -A
+git add --all
+// 添加文件
+git add [filename]
+// 删除和移动的文件也能提交到暂存区
+git add --all
+</code></pre><ul>
+<li><strong>commit</strong><br>```java<br>// 提交到仓库<br>git commit -m “descriptions”<br>git commit [filename] -m “descriptions”</li>
 </ul>
+<pre><code>
+- **分支**
+```java
+// 查看当前分支
+git branch
+
+// 新建分支
+git branch [branchName]
+
+// 新建并切换到分支
+git checkout -b [branchName]
+
+// 切换到分支
+git checkout [branchName]
+
+// 提交分支
+git push origin [branchName]
+
+// 合并分支
+git merge [branchName]
+
+// 删除分支
+git branch -d [branchName]
+</code></pre><ul>
+<li><strong>remote</strong><br>```java<br>// 连接到远程仓库<br>git remote add origin git@github.com:chuiliu/test.git</li>
+</ul>
+<p>// 推送到远程仓库<br>git push -u origin master</p>
+<p>// 远程仓库更新到本地<br>git pull git@github.com:chuiliu/test.git [branchName]</p>
+<p>// 从远程仓库克隆<br>git clone git@github.com:chuiliu/test.git<br>```</p>
 
         
     </div>
@@ -227,6 +263,10 @@
     <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
     <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
