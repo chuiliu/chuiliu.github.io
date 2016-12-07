@@ -3,6 +3,15 @@ Allow: /
 Allow: /archives/
 Allow: /categories/
 Allow: /about/
+Allow: /tags/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /sass/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /project/
+Disallow: /demo/
 
 Sitemap: http://chuiliu.github.io/sitemap.xml
 Sitemap: http://chuiliu.github.io/baidusitemap.xml
