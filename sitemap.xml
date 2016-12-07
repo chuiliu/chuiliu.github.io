@@ -2,13 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/</loc>
-    <lastmod>2016-12-04T13:06:31.249Z</lastmod>
+    <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
+    <lastmod>2016-12-07T08:52:04.641Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-12-07T06:26:59.527Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2015/12/16/about-hexo-2/</loc>
+    <lastmod>2016-12-07T06:19:30.381Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/02/%E4%BD%BF%E7%94%A8iconfont%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/</loc>
+    <lastmod>2016-12-07T06:13:01.927Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/09/27/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</loc>
+    <lastmod>2016-12-07T06:10:44.718Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2016-12-07T06:10:25.819Z</lastmod>
   </url>
   
   <url>
     <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2016-12-04T13:00:38.981Z</lastmod>
+    <lastmod>2016-12-07T06:09:26.739Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-12-07T06:07:34.374Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2016-12-07T06:06:15.841Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/</loc>
+    <lastmod>2016-12-07T06:03:23.283Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2016-12-07T06:02:52.004Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/js/catchFruits.js</loc>
+    <lastmod>2016-12-06T15:41:17.504Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/css/style.css</loc>
+    <lastmod>2016-12-06T15:36:44.181Z</lastmod>
   </url>
   
   <url>
@@ -42,16 +97,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/09/27/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</loc>
-    <lastmod>2016-12-02T16:46:49.979Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B01/</loc>
-    <lastmod>2016-12-02T16:46:08.227Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
     <lastmod>2016-12-02T16:45:18.887Z</lastmod>
   </url>
@@ -74,26 +119,6 @@
   <url>
     <loc>http://chuiliu.github.io/categories/index.html</loc>
     <lastmod>2016-12-02T14:38:59.219Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</loc>
-    <lastmod>2016-12-02T09:09:31.642Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2016-12-02T06:26:18.442Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2016-11-28T15:37:50.753Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</loc>
-    <lastmod>2016-11-27T14:37:36.644Z</lastmod>
   </url>
   
   <url>
@@ -152,11 +177,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/07/02/%E4%BD%BF%E7%94%A8iconfont%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/</loc>
-    <lastmod>2016-10-19T15:59:34.895Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</loc>
     <lastmod>2016-10-19T15:20:07.851Z</lastmod>
   </url>
@@ -179,21 +199,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/08/06/mysql%E5%BC%80%E5%90%AF%E5%85%81%E8%AE%B8%E5%85%AC%E7%BD%91%E8%BF%9E%E6%8E%A5/</loc>
     <lastmod>2016-08-06T16:02:07.931Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2015/12/16/about-hexo-2/</loc>
-    <lastmod>2016-06-17T06:33:56.013Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/catchFruits/js/catchFruits.js</loc>
-    <lastmod>2016-06-17T05:41:34.072Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/catchFruits/css/style.css</loc>
-    <lastmod>2016-06-17T05:37:24.733Z</lastmod>
   </url>
   
   <url>

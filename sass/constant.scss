@@ -4,29 +4,32 @@
 // $color-theme: #f19f0f;  // 鲜橙
 // $color-theme: #009a61;  // 深绿
 // $color-theme: #49be38;  // 翠绿
-$color-theme: #5bbd96;  // 豆绿
+// $color-theme: #5bbd96;  // 豆绿
 // $color-theme: #e78170;  // 淡红
 // $color-theme: #6b919e;  // 暗蓝
 // $color-theme: #0e83cd;  // 湛蓝
+// $color-theme: #7a3675;   // 紫色
+$color-theme: #9278e5;   // 蓝紫色
 
 // 超链接
 $color-link: #4094c7;
+// $color-link: #874ab1;
 $color-link-hover: #4094c7;
 // 背景
 $color-bg: #fff;
 $color-border: #ddd;
 // 主标题
 $color-title: #555;
-$color-title-hover: $color-theme;
+$color-title-hover: darken($color-theme, 10%);
 // 副标题
 $color-subtitle: #666;
 // 文章标题
-$color-article-title: darken(#6b919e, 20%);
-// $color-article-title: darken($color-theme, 20%);
+// $color-article-title: darken(#6b919e, 20%);
+$color-article-title: #333;
 // $color-article-title-hover: lighten($color-article-title, 10%);
 $color-article-title-hover: $color-theme;
 // 正文字体
-$color-article: #666;
+$color-article: #444;
 // 按钮
 $color-btn: darken($color-theme, 10%);
 $color-btn-hover: lighten($color-btn, 5%);
@@ -38,8 +41,8 @@ $color-gray: #ccc;
 $color-light-gray: #eee;
 
 // Font
-// 正文字体
-$font-family: 'Microsoft YaHei';
+// $font-family: Tahoma, Helvetica, Arial, "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+$font-family: Tahoma, Helvetica, Arial, "Microsoft YaHei", sans-serif;
 $font-size: 16px;
 
 

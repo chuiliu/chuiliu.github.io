@@ -1,0 +1,21 @@
+ /* 绝对定位 */
+ @mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+   position: absolute;
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+ }
+
+@mixin absolute-top-left($top: auto, $left: auto) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin absolute-top-right($top: auto, $right: auto) {
+    position: absolute;
+    top: $top;
+    right: $right;
+}
+

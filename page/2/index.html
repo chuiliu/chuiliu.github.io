@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="hexo,前端" />
-    <meta name="description" content="个人博客">
     <meta name="renderer" content="webkit">
 
-	<title>
-        lonica
-    </title>
+    
+    <meta name="keywords" content="博客,前端,JavaScript,hexo">
+    
+
+
+    
+
+    <meta name="decription" content="">
+
+
+
+    
+
+
+	<title></title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
 
-    <!-- highlight.js -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
-
-
-
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
-
 
 </head>
 <body>
     <!-- header -->
     <header id="header">
 
-    <div class="main-header-wrap main-header-show hide">
+    <div class="main-header-wrap">
         <!-- 菜单按钮 -->
         <i class="icon-menu"></i>
         <!-- 头像 -->
@@ -59,6 +63,7 @@
           
         </nav>
     </div>
+
     <!-- 搜索框 -->
     <!-- <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
@@ -87,35 +92,157 @@
 </header>
 
 
+    <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
     <!-- container -->
     <div class="container">
         
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
+    <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-10-08 21:10</span></div>
+    <!-- 文章标题 -->
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</a></h1>
 
 
+    <div class="article-title-short">解</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
 
     <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/工具/">工具</a>
     </div>
 
 
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-11 22:10</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
+<p>经过一番尝试，找到了解决方法：</p>
+<ol>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
+</code></pre></li>
+</ol>
+            
+                <p class="article-more-link">
+                    <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" class="ds-thread-count" data-thread-key="post-解决GIT推送到远程分支每次都要重新输入用户名密码"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/08/AngularJS什么时候用-apply/">AngularJS 什么时候用$apply</a></h1>
 
+
+    <div class="article-title-short">A</div>
+    <!-- <div class="article-title-short">类</div> -->
+
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
+    </div>
+
+
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-08 21:10</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
+<p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
+            
+                <p class="article-more-link">
+                    <a href="/2016/10/08/AngularJS什么时候用-apply/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
 
     <!-- 标签 -->
     <!-- 文章的标签 -->
@@ -126,61 +253,78 @@
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/08/AngularJS什么时候用-apply/" class="ds-thread-count" data-thread-key="post-AngularJS什么时候用-apply"></a> -->
+      <!--  -->
+    <!-- </footer> -->
 
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
-<p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
-<p><strong><code>$apply()</code>必须在该调用的时候调用</strong>，在我们使用AngularJS的提供的指令或服务，如<code>ng-click</code>、<code>$timeout</code>等来处理数据模型时，Angluar会自动调用<code>$scope.$apply()</code>，如果再手动调用是会报错的。</p>
-<p>例如，假设我们不使用Angular提供的<code>$timeout</code>服务，而使用原生的<code>setTimeout()</code>，则这个时候必须用<code>$apply()</code>才能使得数据更新。</p>
-<p><strong>比较好的写法是将涉及数据模型改变的代码写在<code>$scope.$apply()</code>里面</strong>，而不是执行完代码后再调用一次<code>$scope.$apply()</code>。传递给<code>$scope.$apply()</code>执行，Angular才会对这段代码做异常处理。</p>
-<pre><code>angular.module(&#39;myModule&#39;, []).controller(&#39;MyController&#39;, function($scope) {
-    $scope.updateTime = function() {
-        setTimeout(function() {
-            $scope.$apply(function() {
-                $scope.timestamp = new Date().getTime();
-            });
-        }, 1000);
-    };
-});
-</code></pre>
-        
-    </div>
-
-
-
-
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-09-28 09:09</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/28/浏览器同源策略/">理解浏览器同源策略与跨域的解决方案</a></h1>
 
+
+    <div class="article-title-short">理</div>
+    <!-- <div class="article-title-short">类</div> -->
+
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
+    </div>
+
+
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-28 09:09</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
+<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
+            
+                <p class="article-more-link">
+                    <a href="/2016/09/28/浏览器同源策略/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
 
     <!-- 标签 -->
     <!-- 文章的标签 -->
@@ -191,156 +335,82 @@
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/28/浏览器同源策略/" class="ds-thread-count" data-thread-key="post-浏览器同源策略"></a> -->
+      <!--  -->
+    <!-- </footer> -->
 
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
-<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
-<ul>
-<li>协议相同</li>
-<li>域名相同</li>
-<li>端口相同</li>
-</ul>
-<p>也就是说，只要两个URL中的协议、域名或端口存在任何一项不同，则被浏览器视为是不同源的。<br>举个例子，下列与<code>http://test.example.com/page1/index.html</code>的同源情况</p>
-<blockquote>
-<p><a href="http://test.example.com/page2/index.html" target="_blank" rel="external">http://test.example.com/page2/index.html</a>  # 同源<br><a href="https://test.example.com/page1/index.html" target="_blank" rel="external">https://test.example.com/page1/index.html</a>  # 不同源，协议不同<br><a href="http://demo.example.com/page1/index.html" target="_blank" rel="external">http://demo.example.com/page1/index.html</a>  # 不同源，域名不同<br><a href="http://test.example.com:3000/page1/index.html" target="_blank" rel="external">http://test.example.com:3000/page1/index.html</a>  # 不同源，端口不同</p>
-</blockquote>
-<p>注意：<code>http://127.0.0.1:8080/index.html</code> 和 <code>http://localhost:8080/index.html</code> 当然也是不同源的</p>
-<p>HTML中的<code>&lt;link&gt;</code>，<code>&lt;img&gt;</code>，<code>&lt;script&gt;</code>，<code>&lt;iframe&gt;</code>等标签都可以跨域加载资源，它们实际上是发送了一次GET请求，而在Javascript中，浏览器不允许脚本行为的跨域，也就是由<code>XMLHttpRequest</code>发起HTTP的请求会受到同源策略的限制。所以当需要由<code>AJAX</code>跨域加载资源时，就会涉及到跨域的处理。</p>
-<p>跨域的处理通常有以下两种常用的解决方案。</p>
-<h2 id="CORS_u8DE8_u57DF"><a href="#CORS_u8DE8_u57DF" class="headerlink" title="CORS跨域"></a>CORS跨域</h2><p><code>CORS</code>跨域需要后端的解决，其主要原理是由服务端来授权控制谁可以跨域获取资源，这是一种比较安全的解决方案。</p>
-<h4 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h4><p>服务端返回的响应头应该在<code>Access-Control-Allow-Origin</code>中设置允许接受请求的域，例如这样设置</p>
-<pre><code>// 表示允许来自所有站点的跨域请求
-Access-Control-Allow-Origin: *
-
-// 表示仅允许来自http://localhost:8000的跨域请求
-Access-Control-Allow-Origin: http://localhost:8000
-</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F1.png" alt=""></p>
-<h4 id="OPTIONS_u9884_u8BF7_u6C42"><a href="#OPTIONS_u9884_u8BF7_u6C42" class="headerlink" title="OPTIONS预请求"></a>OPTIONS预请求</h4><p>当一个HTTP请求不是一个简单请求时，浏览器有一个预请求的过程，也就是发送一个<code>OPTIONS</code>请求，浏览器会预先发送一个<code>OPTIOMS</code>请求给目的站点，去探测目的站点是否允许来自这个源的站点跨域，这个过程是浏览器自行判断并发起的，不需要我们来写，除了GET请求、HEAD请求、没有传参的POST请求和以表单提交方式发出的POST请求外，其它的任何HTTP请求都会发出预请求去探测是否可以继续。</p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F4.png" alt="OPTION请求"><br><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F5.png" alt="POST请求"></p>
-<h4 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h4><p>如果是跨域并携带<code>cookie</code>的通信则要注意了，当<code>XMLHttpRequest</code>对象实例中<code>withCredentials</code>属性为<code>true</code>的情况下，服务端还必须设置<code>Access-Control-Allow-Credentials:true</code>来确定是否接受<code>cookie</code>，如果没有设置这个值，尽管客户端发送了<code>cookie</code>值过来，服务端也会忽略，并且请求失败。</p>
-<p>需要特别注意的是，如果此时响应头中<code>Access-Control-Allow-Origin</code>的值是<code>*</code>，此时请求还是会失败的，因为在带有<code>cookie</code>的HTTP请求中，<code>Access-Control-Allow-Origin</code>的值不能用<code>*</code>号通配符，只能设置具体的域名。否则Chrome会报如下错误：</p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F2.png" alt=""></p>
-<p>因此只有对于一个不带有<code>credentials</code>的跨域请求，<code>Access-Control-Allow-Origin</code>才可以指定为<code>*</code>，表示允许来自所有域的请求。</p>
-<h4 id="Access-Control-Max-Age"><a href="#Access-Control-Max-Age" class="headerlink" title="Access-Control-Max-Age"></a>Access-Control-Max-Age</h4><p>响应头还可以设置<code>Access-Control-Max-Age</code>来告诉客户端这一次预请求的有效期，在有效期内再次跨域访问，浏览器不会预先发送预请求直到时间失效</p>
-<pre><code>Access-Control-Max-Age: 864000  # 单位是秒，表示10天内，浏览器对于该域的跨域请求，不需要再发送预请求
-</code></pre><h4 id="Access-Control-Allow-Headers"><a href="#Access-Control-Allow-Headers" class="headerlink" title="Access-Control-Allow-Headers"></a>Access-Control-Allow-Headers</h4><p>在会发出预请求的情况下必须配置，指明可以自定义的请求头</p>
-<pre><code>Access-Control-Allow-Headers: Content-Type
-</code></pre><p>如果POST请求需要传<code>JSON</code>格式的参数，前端设置了<code>&#39;Content-Type&#39;, &#39;application/json&#39;</code>，则服务端必须设置<code>Access-Control-Allow-Headers</code>，否则也不成功，Chrome会报下面的错：</p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/20160928/%E8%B7%A8%E5%9F%9F3.png" alt=""></p>
-<h4 id="Access-Control-Allow-Methods"><a href="#Access-Control-Allow-Methods" class="headerlink" title="Access-Control-Allow-Methods"></a>Access-Control-Allow-Methods</h4><p>表示允许的请求方式，可以配置多个值</p>
-<pre><code>Access-Control-Allow-Methods: POST, GET, OPTION, PUT, DELETE
-</code></pre><p><code>CORS</code>方式可以灵活可控地解决跨域问题，并且支持所有类型的HTTP请求，但是它存在一定的局限性，这种方式的兼容性差，只支持IE9+，不过很适合用于移动端。</p>
-<ul>
-<li>前端代码：</li>
-</ul>
-<pre><code class="javascript">var xhr = new XMLHttpRequest();
-var postData = {
-    name: &#39;lonica&#39;,
-    email: &#39;test@126.com&#39;
-};
-xhr.open(&#39;POST&#39;, &#39;http://127.0.0.1:3001/&#39;, true);
-xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
-xhr.withCredentials = true;
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
-        console.log(JSON.parse(xhr.responseText));
-    }
-};
-xhr.send(JSON.stringify(postData));
-</code></pre>
-<ul>
-<li>服务端代码：</li>
-</ul>
-<pre><code>var http = require(&#39;http&#39;);
-
-http.createServer(function(req, res) {
-    var data = {
-        name: &#39;lonica&#39;
-    };
-    res.writeHead(200, {
-        &#39;Content-Type&#39; : &#39;text/plain&#39;,
-        &#39;Access-Control-Allow-Origin&#39; : &#39;http://localhost:8000&#39;,
-        &#39;Access-Control-Allow-Methods&#39; : &#39;GET, POST, OPTIONS, PUT, DELETE, HEAD&#39;,
-        &#39;Access-Control-Allow-Credentials&#39; : true,
-        &#39;Access-Control-Allow-Headers&#39; : &#39;Content-Type&#39;,
-        &#39;Access-Control-Max-Age&#39; : &#39;3600&#39;
-    });
-    res.end(JSON.stringify(data));
-}).listen(3001);
-</code></pre><h2 id="JSONP_u8DE8_u57DF"><a href="#JSONP_u8DE8_u57DF" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h2><p><code>JSONP</code>是<code>JSON with Padding</code>的简称，这种方式的兼容性好，但是只能处理GET请求的跨域，使用的时候需要特别注意。</p>
-<p>我们都知道，浏览器不允许使用<code>XMLHttpRequest</code>脚本去获取不同域的数据，但是可以通过<code>&lt;script&gt;</code>，<code>&lt;link&gt;</code>，<code>&lt;img&gt;</code>等标签来发起GET请求来获取数据，<code>JSONP</code>就是利用了这个原理，所以也不难理解<code>JSONP</code>为什么只能支持GET请求了。</p>
-<p><code>JSONP</code>的原理：利用<code>&lt;script&gt;</code>标签去获取一段<code>javascript</code>代码，这段<code>javascript</code>代码的内容（由服务端拼接）包含了一个方法的调用，调用方法时所传入的参数就是前端要拿到的数据，前端只需要在这个方法的实现里面处理传入的数据即可，<code>JSONP</code>需要前后端一起配合，确定方法名由前端传参给后端，并由后端拼接成调用方法的语句再返回给前端。</p>
-<ul>
-<li>前端代码</li>
-</ul>
-<pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
-    function callback(data) {
-        // 获取到的数据
-        console.log(data);
-    }
-
-    var ele = document.createElement(&#39;script&#39;);
-    ele.type = &#39;text/javascript&#39;;
-    ele.src = &#39;http://127.0.0.1:3000?callback=callback&#39;;
-    document.body.appendChild(ele);
-
-&lt;/script&gt;
-</code></pre>
-<ul>
-<li>后端代码实现：</li>
-</ul>
-<pre><code class="javascript">var http = require(&#39;http&#39;);
-var url = require(&#39;url&#39;);
-
-http.createServer(function(req, res) {
-    var params = url.parse(req.url, true).query;
-    var func = params.callback;
-    var data = {
-        tags: [&#39;jsonp&#39;, &#39;javascript&#39;]
-    };
-    res.writeHead(200, {&#39;Content-Type&#39; : &#39;text/plain&#39;});
-    res.end(func + &#39;(&#39; + JSON.stringify(data) +&#39;)&#39;);
-}).listen(3000);
-</code></pre>
-
-        
-    </div>
-
-
-
-
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-09-27 22:09</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a></h1>
 
+
+    <div class="article-title-short">R</div>
+    <!-- <div class="article-title-short">类</div> -->
+
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+    </div>
+
+
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-27 22:09</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（Sets），是不重复的并且无序的</li>
+</ul>
+            
+                <p class="article-more-link">
+                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
 
     <!-- 标签 -->
     <!-- 文章的标签 -->
@@ -351,66 +421,65 @@ http.createServer(function(req, res) {
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" class="ds-thread-count" data-thread-key="post-redis使用笔记2"></a> -->
+      <!--  -->
+    <!-- </footer> -->
 
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
-<ul>
-<li>二进制安全的字符串</li>
-<li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的
-            
-                <p class="article-more-link">
-                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-
-
-
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-09-01 13:09</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/Java/">Java</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">M</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-01 13:09</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -428,185 +497,36 @@ http.createServer(function(req, res) {
         
     </div>
 
-
-
-
-
-</article>
-
-
-    <article class="article">
-
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-08-31 16:08</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/Java/">Java</a>
-    </div>
-
-
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/31/JHipster中使用Config Server/">JHipster 中使用 Config Server</a></h1>
-
-
     <!-- 标签 -->
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
     </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/01/Maven添加外部依赖包/" class="ds-thread-count" data-thread-key="post-Maven添加外部依赖包"></a> -->
+      <!--  -->
+    <!-- </footer> -->
 
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
-<ul>
-<li>开发环境一般使用本地文件系统来保存</li>
-<li>生产环境使用git仓库服务器上的配置</li>
-</ul>
-<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：</p>
-<pre><code class="python">spring:
-    profiles:
-        active: dev
-        include: native
-    cloud:
-        config:
-            server:
-                native:
-                     # 绝对路径配置：search-locations: file:///E:/config-repo
-                     search-locations: file:./central-config
-                git:
-                    uri: https://github.com/chuiliu/config-repo
-</code></pre>
-<p>以上配置项说明：</p>
-<ul>
-<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
-<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
-</ul>
-<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
-<p>例如：</p>
-<blockquote>
-<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
-</blockquote>
-<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：</p>
-<pre><code>spring:
-    cloud:
-        config:
-            name: newFilename
-</code></pre><ul>
-<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
-<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
-</ul>
-<p>测试users微服务：</p>
-<pre><code class="java">package com.mycompany.myapp.web.rest;
-
-import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-/**
- * Created by Administrator on 2016/8/30.
- */
-@RestController
-@RequestMapping(&quot;/api&quot;)
-@Api(value = &quot;/api&quot;, description = &quot;test&quot;, position = 1)
-// 测试自动刷新配置
-@ConfigurationProperties
-public class testConfigResource {
-
-    @Value(&quot;${testData.user.id:defaultValue}&quot;)
-    private String id;
-
-    @Value(&quot;${testData.user.name:defaultValue}&quot;)
-    private String name;
-
-    @Value(&quot;${testData.user.remark:defaultValue}&quot;)
-    private String remark;
-
-    @RequestMapping(value = &quot;test_id&quot;, method = RequestMethod.GET)
-    public String testIntroduction() {
-        return &quot;id：&quot; + id;
-    }
-
-    @RequestMapping(value = &quot;test_name&quot;, method = RequestMethod.GET)
-    public String testName() {
-        return &quot;name：&quot; + name;
-    }
-
-    @RequestMapping(value = &quot;test_remark&quot;, method = RequestMethod.GET)
-    public String testRemark() {
-        return &quot;remark：&quot; + remark;
-    }
-}
-</code></pre>
-<p>项目配置如下：</p>
-<ul>
-<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: users微服务项目下配置文件中的id值
-      name: users微服务项目下配置文件中的name值
-      remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）
-</code></pre>
-</li>
-<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
-<pre><code class="python">spring:
-  profiles:
-      active: dev
-      include: git
-  cloud:
-      config:
-          server:
-              git:
-                  uri: https://github.com/chuiliu/config-repo
-</code></pre>
-</li>
-<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: 本地文件系统配置文件中的id值
-      name: 本地文件系统配置文件中的name值
-</code></pre>
-</li>
-<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: git远程仓库下配置文件中的id值
-      name: git远程仓库下配置文件中的name值
-</code></pre>
-</li>
-</ul>
-<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
-<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
-<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
-
-        
-    </div>
-
-
-
-
+    
 
 </article>
 
@@ -620,8 +540,8 @@ public class testConfigResource {
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 chuiliu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
 </footer>
@@ -636,8 +556,7 @@ public class testConfigResource {
 
 
     <!-- js -->
-    <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
-    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
     <!-- highlight.js -->
     <script src="/js/highlight.pack.js" type="text/javascript"></script>

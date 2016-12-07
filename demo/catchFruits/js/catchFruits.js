@@ -139,36 +139,6 @@ Rabbit.prototype.move = function() {
 };
 
 
-// 分数对象
-/*var Score = function(obj) {
-    this.imgObj = obj;
-    this.width = 40;
-    this.height = 40;
-    this.x = 0;
-    this.y = 400;
-    this.speed = 10;
-    // 是否消失
-    this.isDisappear = false;
-};*/
-
-// 画出分数
-/*Score.prototype.draw = function() {
-    ctx.drawImage(this.imgObj, this.x, this.y, this.width, this.height);
-};*/
-
-// 分数上升
-/*Score.prototype.up = function() {
-    console.log('分数上升')
-    if(!this.isDisappear && this.y > 0) {
-        console.log('hahahahah')
-        this.y -= this.speed;
-    } else {
-        this.isDisappear = true;
-    }
-};*/
-
-
-
 // 是否接到水果
 var isCatch = function(rabbit, fruit) {
     var rabbitX = rabbit.x;
@@ -204,7 +174,7 @@ var gameStart = function(options) {
             cancelAnimationFrame(window.game);
             clearInterval(calculateTime);
             var result = document.getElementById('result');
-            result.getElementsByTagName('span')[0].innerHTML = 'Game Over\nYour Score: ' + score;
+            result.getElementsByTagName('span')[0].innerHTML = 'GAME OVER\nYOUR SCORE: ' + score;
             result.style.display = 'block';
         }
     }, 1000);
@@ -250,20 +220,16 @@ var gameStart = function(options) {
 
                 if (fruitArr[i].isCatch) {
                     var scoreImg = getScoreImg();
-                    // var scoreObj = new Score(scoreImg);
-                    // scoreObj.x = fruitArr[i].x;
-                    // scoreArr.push(scoreObj);
 
-
-                    fruitArr.splice(fruitArr[i], 1);
+                    // fruitArr.splice(fruitArr[i], 1);
+                    fruitArr.splice(i, 1);
+                    console.log('fruitArr', fruitArr.length);
 
                 }
 
 
             }
         }
-
-        console.log('>>>>>>>>>>>>>>>>>>>>>', scoreArr)
 
         for (var i in scoreArr) {
             scoreArr[i].draw();

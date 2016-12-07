@@ -4,33 +4,71 @@
   <subtitle><![CDATA[什么鬼]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-12-04T13:00:38.981Z</updated>
+  <updated>2016-12-07T08:52:04.641Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
-    <name><![CDATA[chuiliu]]></name>
+    <name><![CDATA[lonica]]></name>
     <email><![CDATA[767079315@qq.com]]></email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[程序员与画家]]></title>
+    <link href="http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/"/>
+    <id>http://chuiliu.github.io/2016/12/06/程序员与画家/</id>
+    <published>2016-12-06T12:45:55.000Z</published>
+    <updated>2016-12-07T08:52:04.641Z</updated>
+    <content type="html"><![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank" rel="external">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，几个小方块愉快地在一起就可以画个小人。<br><img style="margin: 0 auto;" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"></p>
+<p>于是我又在 dotpict 上画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。</p>
+<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>
+<a id="more"></a>
+<p>后来想了下，这么简单的点阵式，好像可以用代码来画出来，于是我顺便把这几只鸟从 dotpict 上画的每个点转成矩阵，再用canvas画下来。<br>于是效果就出来了。</p>
+<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="ZBxVgQ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="ZBxVgQ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/ZBxVgQ/" target="_blank" rel="external">ZBxVgQ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="vyRvJJ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="vyRvJJ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/vyRvJJ/" target="_blank" rel="external">vyRvJJ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>程序员还是要懂点艺术的。<br>画了株小仙人掌。<img src="http://o743aqnrb.bkt.clouddn.com/%E4%BB%99%E4%BA%BA%E6%8E%8C.png"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，几个小方块愉快地在一起就可以画个小人。<br><img style="margin: 0 auto;" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"></p>
+<p>于是我又在 dotpict 上画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。</p>
+<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>]]>
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
+    
+      <category term="canvas" scheme="http://chuiliu.github.io/tags/canvas/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="折腾" scheme="http://chuiliu.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="折腾" scheme="http://chuiliu.github.io/categories/%E6%8A%98%E8%85%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[移动 webapp 开发相关要点]]></title>
     <link href="http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     <id>http://chuiliu.github.io/2016/11/15/移动开发/</id>
     <published>2016-11-14T16:10:33.000Z</published>
-    <updated>2016-12-04T13:00:38.981Z</updated>
+    <updated>2016-12-07T06:09:26.739Z</updated>
     <content type="html"><![CDATA[<p>最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。</p>
 <h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot; /&gt;
 </code></pre><p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
 <hr>
-<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><pre><code>&lt;meta name = &quot;format-detection&quot; content = &quot;telephone=no&quot;&gt;
+<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><a id="more"></a>
+<pre><code>&lt;meta name = &quot;format-detection&quot; content = &quot;telephone=no&quot;&gt;
 </code></pre><p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写</p>
 <pre><code>&lt;a href = &quot;tel:13800000000&quot;&gt;call 13800000000&lt;/a&gt;
 </code></pre><p>或者用js:</p>
 <pre><code>location.href = &#39;tell:10086&#39;
-</code></pre><a id="more"></a>
-<hr>
+</code></pre><hr>
 <h4 id="u5728_u79FB_u52A8_u7AEF_uFF0C_u89E6_u53D1_u70B9_u51FB_u4E8B_u4EF6_u65F6_uFF08_u8D85_u94FE_u63A5_u6216_u8005click_u4E8B_u4EF6_uFF09_u4F1A_u6709_u9AD8_u4EAE_u7684_u80CC_u666F_u6846_u6765_u8868_u793A_u70B9_u51FB_u7684_u54CD_u5E94_uFF0C_u53EF_u4EE5_u5C06_u5176_u900F_u660E_u6389_u4E0D_u663E_u793A_uFF1A"><a href="#u5728_u79FB_u52A8_u7AEF_uFF0C_u89E6_u53D1_u70B9_u51FB_u4E8B_u4EF6_u65F6_uFF08_u8D85_u94FE_u63A5_u6216_u8005click_u4E8B_u4EF6_uFF09_u4F1A_u6709_u9AD8_u4EAE_u7684_u80CC_u666F_u6846_u6765_u8868_u793A_u70B9_u51FB_u7684_u54CD_u5E94_uFF0C_u53EF_u4EE5_u5C06_u5176_u900F_u660E_u6389_u4E0D_u663E_u793A_uFF1A" class="headerlink" title="在移动端，触发点击事件时（超链接或者click事件）会有高亮的背景框来表示点击的响应，可以将其透明掉不显示："></a>在移动端，触发点击事件时（超链接或者click事件）会有高亮的背景框来表示点击的响应，可以将其透明掉不显示：</h4><pre><code class="css">-webkit-tap-highlight-color: rgba(0,0,0,0);
 // 或者
 -webkit-tap-highlight-color: transparent;
@@ -103,12 +141,7 @@ display: box;
 <h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot; /&gt;
 </code></pre><p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
 <hr>
-<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4><pre><code>&lt;meta name = &quot;format-detection&quot; content = &quot;telephone=no&quot;&gt;
-</code></pre><p>如果禁止点击后，有个别地方需要设置回原来的拨打电话，则可以这样写</p>
-<pre><code>&lt;a href = &quot;tel:13800000000&quot;&gt;call 13800000000&lt;/a&gt;
-</code></pre><p>或者用js:</p>
-<pre><code>location.href = &#39;tell:10086&#39;
-</code></pre>]]>
+<h4 id="u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7"><a href="#u7981_u6B62iPhone_u6D4F_u89C8_u5668_u4E0B_u7535_u8BDD_u53F7_u7801_u53EF_u4EE5_u70B9_u51FB_u62E8_u53F7" class="headerlink" title="禁止iPhone浏览器下电话号码可以点击拨号"></a>禁止iPhone浏览器下电话号码可以点击拨号</h4>]]>
     
     </summary>
     
@@ -125,21 +158,34 @@ display: box;
     <link href="http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/</id>
     <published>2016-10-19T13:29:30.000Z</published>
-    <updated>2016-12-02T06:26:18.442Z</updated>
+    <updated>2016-12-07T06:07:34.374Z</updated>
     <content type="html"><![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
 <h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
 <pre><code>npm install -g browser-sync
-</code></pre><p>在项目根目录执行：</p>
+</code></pre><a id="more"></a>
+<p>在项目根目录执行：</p>
 <pre><code>browser-sync start --server --files &quot;css/*.css&quot;
 # 也可以配置多项，或者通配符匹配任意目录
 browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 </code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
+<p>使用gulp启动</p>
+<pre><code>npm install gulp browser-sync --save-dev
+</code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
+var browserSync = require(&#39;browser-sync&#39;);
+
+gulp.task(&#39;browserSync&#39;, function() {
+    browserSync({
+        server: {
+            baseDir: &#39;dirName&#39;
+        }
+    });
+});
+</code></pre>
 <h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:</p>
 <pre><code>python -m SimpleHTTPServer
 </code></pre><p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：</p>
 <pre><code>python -m SimpleHTTPServer 8080
 </code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
-<a id="more"></a>
 <h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>也是个不错的选择，只需要一行命令就可以快速启动。<br>安装：</p>
 <pre><code>npm install -g http-server
 </code></pre><p>在项目根目录执行：</p>
@@ -213,16 +259,7 @@ json-server --watch data.json --port 3004
     <![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
 <h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
 <pre><code>npm install -g browser-sync
-</code></pre><p>在项目根目录执行：</p>
-<pre><code>browser-sync start --server --files &quot;css/*.css&quot;
-# 也可以配置多项，或者通配符匹配任意目录
-browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
-</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
-<h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:</p>
-<pre><code>python -m SimpleHTTPServer
-</code></pre><p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：</p>
-<pre><code>python -m SimpleHTTPServer 8080
-</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>]]>
+</code></pre>]]>
     
     </summary>
     
@@ -269,11 +306,12 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
     <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://chuiliu.github.io/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/</id>
     <published>2016-10-11T14:22:02.000Z</published>
-    <updated>2016-11-28T15:37:50.753Z</updated>
+    <updated>2016-12-07T06:26:59.527Z</updated>
     <content type="html"><![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
 <p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：</p>
 <pre><code>SHOW VARIABLES LIKE &#39;%max_allowed_packet%&#39;;
-</code></pre><h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小</p>
+</code></pre><a id="more"></a>
+<h3 id="u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539"><a href="#u65B9_u6CD5_u4E00_uFF1A_u4F7F_u7528_u547D_u4EE4_u4FEE_u6539" class="headerlink" title="方法一：使用命令修改"></a>方法一：使用命令修改</h3><p>可以通过命令修改<code>max_allowed_packet</code>的值，然后通过重启MySQL服务来使命令生效，具体方法如下：<br>修改值大小</p>
 <pre><code class="sql">set global max_allowed_packet = 1024*1024*10
 </code></pre>
 <p>重启数据库</p>
@@ -285,10 +323,16 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 </code></pre><p><strong>PS：</strong>前段时间经常遇到<code>max_allowed_packet</code>的值隔好几天就又被重置为1M的情况，查找了很久没有找具体的原因，谷歌和百度了不少都说是遭到黑客攻击之类的，因此按大家推荐的方法把数据库的用户和密码都做修改，修改过后这段时间也没再出现过这个问题，建议大家不要使用太简单的密码。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowe]]>
+    <![CDATA[<p>在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为<code>max_allowed_packet</code>，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中<code>max_allowed_packet</code>的限制值时，对数据库的读写操作则会失败。</p>
+<p>那么如何修改这个值的大小。首先，我们可以通过这个命令先查看当前<code>max_allowed_packet</code>值的大小：</p>
+<pre><code>SHOW VARIABLES LIKE &#39;%max_allowed_packet%&#39;;
+</code></pre>]]>
+    
     </summary>
     
       <category term="MySQL" scheme="http://chuiliu.github.io/tags/MySQL/"/>
+    
+      <category term="MySQL" scheme="http://chuiliu.github.io/categories/MySQL/"/>
     
   </entry>
   
@@ -297,13 +341,14 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
     <link href="http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3GIT%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
     <id>http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/</id>
     <published>2016-10-11T14:09:34.000Z</published>
-    <updated>2016-12-02T09:09:31.642Z</updated>
+    <updated>2016-12-07T06:02:52.004Z</updated>
     <content type="html"><![CDATA[<p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
 <p>经过一番尝试，找到了解决方法：</p>
 <ol>
 <li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
 </code></pre></li>
 </ol>
+<a id="more"></a>
 <p>如果当前项目已经存在，不想再重新克隆，则可以先删除本来的主机名再重新配置远程仓库即可：</p>
 <pre><code>git remote rm origin
 git remote add origin https://username:password@git.coding.net/username/Demo.git
@@ -316,10 +361,15 @@ git remote add origin https://username:password@git.coding.net/username/Demo.git
     <![CDATA[<p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
 <p>经过一番尝试，找到了解决方法：</p>
 <ol>
-<li>在克隆项目]]>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
+</code></pre></li>
+</ol>]]>
+    
     </summary>
     
       <category term="Git" scheme="http://chuiliu.github.io/tags/Git/"/>
+    
+      <category term="工具" scheme="http://chuiliu.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -328,9 +378,10 @@ git remote add origin https://username:password@git.coding.net/username/Demo.git
     <link href="http://chuiliu.github.io/2016/10/08/AngularJS%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8-apply/"/>
     <id>http://chuiliu.github.io/2016/10/08/AngularJS什么时候用-apply/</id>
     <published>2016-10-08T13:29:20.000Z</published>
-    <updated>2016-12-04T13:06:31.249Z</updated>
+    <updated>2016-12-07T06:03:23.283Z</updated>
     <content type="html"><![CDATA[<p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
 <p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
+<a id="more"></a>
 <p><strong><code>$apply()</code>必须在该调用的时候调用</strong>，在我们使用AngularJS的提供的指令或服务，如<code>ng-click</code>、<code>$timeout</code>等来处理数据模型时，Angluar会自动调用<code>$scope.$apply()</code>，如果再手动调用是会报错的。</p>
 <p>例如，假设我们不使用Angular提供的<code>$timeout</code>服务，而使用原生的<code>setTimeout()</code>，则这个时候必须用<code>$apply()</code>才能使得数据更新。</p>
 <p><strong>比较好的写法是将涉及数据模型改变的代码写在<code>$scope.$apply()</code>里面</strong>，而不是执行完代码后再调用一次<code>$scope.$apply()</code>。传递给<code>$scope.$apply()</code>执行，Angular才会对这段代码做异常处理。</p>
@@ -346,7 +397,8 @@ git remote add origin https://username:password@git.coding.net/username/Demo.git
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
-<p>其实总结一句就是：<st]]>
+<p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>]]>
+    
     </summary>
     
       <category term="AngularJS" scheme="http://chuiliu.github.io/tags/AngularJS/"/>
@@ -366,9 +418,10 @@ git remote add origin https://username:password@git.coding.net/username/Demo.git
     <link href="http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/"/>
     <id>http://chuiliu.github.io/2016/09/28/浏览器同源策略/</id>
     <published>2016-09-28T01:38:08.000Z</published>
-    <updated>2016-11-27T14:37:36.644Z</updated>
+    <updated>2016-12-07T06:06:15.841Z</updated>
     <content type="html"><![CDATA[<p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
 <h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
+<a id="more"></a>
 <ul>
 <li>协议相同</li>
 <li>域名相同</li>
@@ -479,7 +532,8 @@ http.createServer(function(req, res) {
 ]]></content>
     <summary type="html">
     <![CDATA[<p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
-<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u54]]>
+<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>]]>
+    
     </summary>
     
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -497,12 +551,15 @@ http.createServer(function(req, res) {
     <link href="http://chuiliu.github.io/2016/09/27/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/"/>
     <id>http://chuiliu.github.io/2016/09/27/redis使用笔记2/</id>
     <published>2016-09-27T14:26:56.000Z</published>
-    <updated>2016-12-02T16:46:49.979Z</updated>
+    <updated>2016-12-07T06:10:44.718Z</updated>
     <content type="html"><![CDATA[<p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
 <ul>
 <li>二进制安全的字符串</li>
 <li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的<a id="more"></a></li>
+<li>集合（Sets），是不重复的并且无序的</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li>有序集合（Sorted sets），每个字符串元素都关联到一个叫score浮动数值（floating number value）。里面的元素总是通过score进行排序</li>
 <li>哈希（Hashes），由字段（field）及其关联的值（value）组成的映射</li>
 <li>Bit arrays</li>
@@ -572,7 +629,8 @@ rpop testList
 <ul>
 <li>二进制安全的字符串</li>
 <li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的]]>
+<li>集合（Sets），是不重复的并且无序的</li>
+</ul>]]>
     
     </summary>
     
@@ -807,7 +865,7 @@ public class testConfigResource {
     <link href="http://chuiliu.github.io/2016/08/06/redis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B01/"/>
     <id>http://chuiliu.github.io/2016/08/06/redis使用笔记1/</id>
     <published>2016-08-06T15:06:06.000Z</published>
-    <updated>2016-12-02T16:46:08.227Z</updated>
+    <updated>2016-12-07T06:10:25.819Z</updated>
     <content type="html"><![CDATA[<p>最近项目用到redis作为内存数据库，</p>
 <p>windows系统启动redis</p>
 <pre><code>redis-server
@@ -933,9 +991,10 @@ OK
     <link href="http://chuiliu.github.io/2016/07/02/%E4%BD%BF%E7%94%A8iconfont%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/"/>
     <id>http://chuiliu.github.io/2016/07/02/使用iconfont字体图标/</id>
     <published>2016-07-02T08:30:47.000Z</published>
-    <updated>2016-10-19T15:59:34.895Z</updated>
+    <updated>2016-12-07T06:13:01.927Z</updated>
     <content type="html"><![CDATA[<p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介绍下如何使用 <a href="https://icomoon.io/app/#/select" target="_blank" rel="external">icomoon图标制作工具</a> 来快速生成字体图标。</p>
 <p>首先到<a href="http://iconfont.cn/" target="_blank" rel="external">http://iconfont.cn/</a>，选择到需要用到的图标。<br>通过搜索找一个微信图标：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-1.png" alt=""></p>
+<a id="more"></a>
 <p>选择或者自己填写合适的颜色，然后选择SVG下载:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-2.png" alt=""></p>
 <p>下载完成后，打开 <a href="https://icomoon.io/app/#/select" target="_blank" rel="external">icomoon图标制作工具</a> ，点击左上角的“Import Icons”将刚刚下载的 weixin.svg 导入。<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-3.png" alt=""></p>
 <p>这时候可以在页面看到刚刚的微信图标成功上传，你只需鼠标选中界面上任何需要用到的图标，例如我选中了刚刚上传的微信图标、铅笔图标、音乐图标，点击右下角的“Generate Font”按钮进行创建，每个图标右边的输入框将对应到时候生成的类名<code>icon-*</code>，可以直接修改，再点击dowload下载就行了。<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-4.png" alt=""><br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-5.png" alt=""></p>
@@ -946,7 +1005,9 @@ OK
 </code></pre>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介]]>
+    <![CDATA[<p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介绍下如何使用 <a href="https://icomoon.io/app/#/select">icomoon图标制作工具</a> 来快速生成字体图标。</p>
+<p>首先到<a href="http://iconfont.cn/">http://iconfont.cn/</a>，选择到需要用到的图标。<br>通过搜索找一个微信图标：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-1.png" alt=""></p>]]>
+    
     </summary>
     
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -1089,77 +1150,6 @@ OK
       <category term="编码" scheme="http://chuiliu.github.io/tags/%E7%BC%96%E7%A0%81/"/>
     
       <category term="Java" scheme="http://chuiliu.github.io/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[如何撤销下拉框选中的值]]></title>
-    <link href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/"/>
-    <id>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</id>
-    <published>2016-04-13T13:25:50.000Z</published>
-    <updated>2016-05-16T08:00:14.138Z</updated>
-    <content type="html"><![CDATA[<p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
-<p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
-<p>Example：</p>
-<pre><code class="html">&lt;select name=&quot;template&quot;&gt;
-    &lt;option value=&quot;template1&quot;&gt;模板一&lt;/option&gt;
-    &lt;option value=&quot;template2&quot;&gt;模板二&lt;/option&gt;
-    &lt;option value=&quot;template3&quot;&gt;模板三&lt;/option&gt;
-&lt;/select&gt;
-&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
-</code></pre>
-<pre><code class="javascript">$(&#39;#template&#39;).change(function() {
-    var selected = $(this).val();
-    var text = $.trim($(&#39;#target&#39;).text());
-
-    if(text) {
-        if(confirm(&#39;是否覆盖已有模板？&#39;)) {
-            $(&#39;#target&#39;).text(selected);
-        } else {
-            $(&#39;#template&#39;).val($.data(this, &#39;current&#39;));
-        }
-    } else {
-        $(&#39;#target&#39;).text(selected);
-    }
-
-    $.data(this, &#39;current&#39;, $(this).val());
-});
-</code></pre>
-<p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
-<p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
-<hr>
-<p>参考：<a href="http://stackoverflow.com/questions/3963855/jquery-how-to-undo-a-select-change" target="_blank" rel="external">jQuery how to undo a select change</a></p>
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $('#template').change(function() {
-        var selected = $(this).val();
-        var text = $.trim($('#target').text());
-
-        if(text) {
-            if(confirm('是否覆盖已有模板？')) {
-                $('#target').text(selected);
-            } else {
-                $('#template').val($.data(this, 'current'));
-            }
-        } else {
-            $('#target').text(selected);
-        }
-        $.data(this, 'current', $(this).val());
-    });
-</script>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
-<p>解决这个问题可以使用jQuery提供的]]>
-    </summary>
-    
-      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
-    
-      <category term="jQuery" scheme="http://chuiliu.github.io/tags/jQuery/"/>
-    
-      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
-    
-      <category term="Javascript" scheme="http://chuiliu.github.io/categories/fe/Javascript/"/>
     
   </entry>
   

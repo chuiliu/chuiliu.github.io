@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'constant';
 @import 'common';
+@import 'mixin';
 
 html,
 body {
@@ -16,34 +17,35 @@ a {
     }
 }
 
+::selection {
+    color: $color-white;
+    background-color: $color-theme;
+}
+
 .container {
-    margin: 120px auto 0;
+    margin: 30px auto 0;
+    // margin: 120px auto 0;
     min-width: $min-width;
     max-width: $max-width;
 }
 
 /* header */
 #header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
     width: 100%;
-    height: 40px;
-    // line-height: 40px;
+
+    // height: 100px;
     z-index: 999;
+    // background: linear-gradient(to bottom, #8e0eb5, #95a8fb);
+    // background: url(../img/bg.jpg) no-repeat 0 85%;
 
     .main-header-wrap {
         position: relative;
         margin: 0 auto;
         min-width: $min-width;
         max-width: $max-width;
-        /* background-color: red;*/
-        opacity: 0;
-        /* transform: translateY(-10px);*/
-        -webkit-transition: opacity .3s, -webkit-transform .3s;
-        transition: opacity .3s, -webkit-transform .3s;
-        transition: opacity .3s, transform .3s;
-        transition: opacity .3s, transform .3s, -webkit-transform .3s;
 
         .avatar {
             display: inline-block;
@@ -55,10 +57,11 @@ a {
             background-size: cover;
             -webkit-border-radius: 50%;
                     border-radius: 50%;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 2px $color-theme;
 
             &:before {
                 display: inline-block;
-                content: 'home';
+                content: 'HOME';
                 width: $avatar-width;
                 height: $avatar-width;
                 line-height: $avatar-width;
@@ -67,9 +70,9 @@ a {
                 background-color: rgba(0, 0, 0, .6);
                 -webkit-border-radius: 50%;
                         border-radius: 50%;
-                -webkit-transform: translateX(-$avatar-width/2);
-                    -ms-transform: translateX(-$avatar-width/2);
-                        transform: translateX(-$avatar-width/2);
+                -webkit-transform: translateX(-$avatar-width * 1 / 3);
+                    -ms-transform: translateX(-$avatar-width * 1 / 3);
+                        transform: translateX(-$avatar-width * 1 / 3);
                 -webkit-transition: opacity .3s, color .3s, -webkit-transform .3s;
                 transition: opacity .3s, color .3s, -webkit-transform .3s;
                 transition: opacity .3s, transform .3s, color .3s;
@@ -153,9 +156,11 @@ a {
         top: 0;
         width: 100%;
         height: 40px;
-        /* background-color: lighten($color-theme, 20%);*/
-        background-color: $color-bg;
-        /* background-color: lighten($color-light-black, 20%);*/
+        // background-color: $color-bg;
+        background-color: $color-theme;
+        background: -webkit-gradient(linear, left top, right top, from(darken($color-theme, 10%)), color-stop(darken(#95a8fb, 10%)), to(#d116c0));
+        background: -webkit-linear-gradient(left, darken($color-theme, 10%), darken(#95a8fb, 10%), #d116c0);
+        background: linear-gradient(to right, darken($color-theme, 10%), darken(#95a8fb, 10%), #d116c0);
         opacity: 0;
         -webkit-transform: translateY(-20px);
             -ms-transform: translateY(-20px);
@@ -166,6 +171,7 @@ a {
         transition: opacity .4s, background-color .3s, transform .3s, -webkit-transform .3s;
         border-bottom: 1px solid $color-border;
         z-index: 999;
+        // animation: gradient 10s infinite;
 
         .title-wrap {
             display: inline-block;
@@ -176,8 +182,8 @@ a {
 
             .title {
                 line-height: 40px;
-                /* color: $color-bg;*/
-                color: #808080;
+                color: $color-white;
+                // color: #808080;
                 &:hover {
                     color: $color-theme;
                 }
@@ -191,18 +197,25 @@ a {
             height: 40px;
             line-height: 40px;
             text-align: right;
+            font-size: 0;
         }
 
         .nav-link {
             display: inline-block;
             padding: 0 4px;
-            height: 28px;
-            line-height: 28px;
+            // height: 28px;
+            // line-height: 28px;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            text-align: center;
             color: $color-bg;
-            background-color: $color-theme;
-            -webkit-border-radius: 6px;
-                    border-radius: 6px;
-            border: 1px solid $color-theme;
+            // background-color: $color-theme;
+            background-color: transparent;
+            // -webkit-border-radius: 6px;
+                    // border-radius: 6px;
+            // border: 1px solid $color-theme;
             -webkit-transition: background-color .6s, color .3s;
             transition: background-color .6s, color .3s;
 
@@ -213,15 +226,11 @@ a {
         }
     }
 
-    .main-header-show {
-        opacity: 1;
-        /* transform: translateY(0);*/
-    }
 
     .sub-header-show {
         opacity: .95;
-        background-color: $color-bg;
-        /* background-color: $color-theme;*/
+        // background-color: $color-bg;
+         background-color: $color-theme;
         /* background-color: $color-light-black;*/
         -webkit-transform: translateY(0);
             -ms-transform: translateY(0);
@@ -237,15 +246,15 @@ a {
 
 /* article */
 .article {
+    margin: 0 $main-padding;
+    margin-top: 50px;
     position: relative;
     padding-top: 20px;
     padding-bottom: 10px;
-    margin: 0 $main-padding;
     border-top: 1px solid $color-border;
 
     .article-remark {
         position: absolute;
-        /* top: 20px;*/
         top: 64px;
         left: -40px;
         font-size: 30px;
@@ -253,28 +262,48 @@ a {
     }
 
     .article-date {
-        span {
-            margin-left: 10px;
-        }
-    }
-
-    .article-date {
-        display: inline-block;
+        // display: inline-block;
         height: 30px;
         line-height: 30px;
-        /* font-weight: 700;*/
         font-size: 14px;
         color: #777;
     }
 
-    .article-category {
+    .article-title-short {
         display: inline-block;
-        margin-left: 30px;
+        // margin-top: 10px;
+        margin-right: 10px;
+        vertical-align: top;
+        width: 42px;
+        height: 42px;
+        color: #fff;
+        border-radius: 50%;
+        // font-size: 14px;
+        text-align: center;
+        line-height: 42px;
+        background: -webkit-gradient(linear, left top, right bottom, from(#d116c0), to(#95a8fb));
+        background: -webkit-linear-gradient(top left, #d116c0, #95a8fb);
+        background: linear-gradient(to bottom right, #d116c0, #95a8fb);
+        // box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-theme;
+    }
+
+    .article-date-category {
+        display: inline-block;
+    }
+
+    .article-category {
+        // display: inline-block;
+        // margin-left: 30px;
+
+        .article-category-link {
+
+        }
     }
 
     .article-title-wrap {
-        margin-top: 8px;
-        font-size: 28px;
+        // margin-top: 6px;
+        margin-bottom: 12px;
+        font-size: 30px;
         color: $color-article-title;
     }
 
@@ -284,6 +313,7 @@ a {
         color: inherit;
         -webkit-transition: color .3s;
         transition: color .3s;
+        font-weight: 400;
 
         &:hover {
             color: $color-article-title-hover;
@@ -330,7 +360,7 @@ a {
     .article-nav-link-wrap {
         display: block;
         width: 100%;
-        margin: 0 auto;
+        margin: 10px auto;
         text-align: center;
     }
     #article-nav-newer {
@@ -370,12 +400,12 @@ a {
     }
 }
 .markdown-body.um {
-    font-family: "Microsoft YaHei";
+    font-family: $font-family;
     color: $color-article;
 
     h1,h2,h3,h4,h5,h6 {
         color: #222;
-        font-weight: 400;
+        font-weight: 500;
     }
 }
 /* end github-markdown-css */
@@ -460,15 +490,17 @@ a {
     cursor: pointer;
 
     span {
-        color: $color-bg;
-        background: #444;
-        -webkit-border-radius: 3px;
-                border-radius: 3px;
         display: block;
-        height: 40px;
         width: 40px;
+        height: 40px;
+        font-weight: 700;
         line-height: 40px;
         text-align: center;
+        border: 1px solid $color-theme;
+        -webkit-border-radius: 3px;
+                border-radius: 3px;
+        color: $color-theme;
+        // background: #444;
     }
 }
 
@@ -542,6 +574,12 @@ a {
 
     }
 }
+
+#mobile-nav {
+    display: none;
+}
+
+
 
 /* mobile */
 @import 'mobile';

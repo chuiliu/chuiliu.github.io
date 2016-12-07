@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="hexo,前端" />
-    <meta name="description" content="个人博客">
     <meta name="renderer" content="webkit">
 
-	<title>
-        lonica
-    </title>
+    
+    <meta name="keywords" content="博客,前端,JavaScript,hexo">
+    
+
+
+    
+
+    <meta name="decription" content="">
+
+
+
+    
+
+
+	<title></title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
 
-    <!-- highlight.js -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
-
-
-
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
-
 
 </head>
 <body>
     <!-- header -->
     <header id="header">
 
-    <div class="main-header-wrap main-header-show hide">
+    <div class="main-header-wrap">
         <!-- 菜单按钮 -->
         <i class="icon-menu"></i>
         <!-- 头像 -->
@@ -59,6 +63,7 @@
           
         </nav>
     </div>
+
     <!-- 搜索框 -->
     <!-- <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
@@ -87,35 +92,114 @@
 </header>
 
 
+    <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
     <!-- container -->
     <div class="container">
         
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
+    <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2015-12-14 21:12</span></div>
+    <!-- 文章标题 -->
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/16/about-hexo-2/">Hexo优化系列</a></h1>
 
 
+    <div class="article-title-short">H</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
 
     <div class="article-category">
-        <i class="icon-category"></i>
+        <!-- <i class="icon-category"></i> -->
         <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
     </div>
 
 
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo：为博客添加多说评论框</a></h1>
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
 
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2015-12-16 23:12</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>记下使用hexo来的一些使用经验和主题修改，针对的是默认的landscape主题。</p>
+<h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3" class="headerlink" title="忽略目录或文件的渲染"></a>忽略目录或文件的渲染</h2><p>我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是<code>source</code>目录下的文件默认都会在执行<code>hexo deploy</code>命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：</p>
+<ul>
+<li>在根目录下<code>_config.yml</code>文件中添加以下配置，代表不渲染<code>source</code>目录下的README.md文件：<pre><code>skip_render: README.md
+</code></pre></li>
+<li>如果想配置不渲染多个文件，则可以这样配置：<br>其中，<code>demo/**</code>代表不渲染<code>source/demo/</code>下的所有目录和文件<pre><code>skip_render:
+  - &#39;README.md&#39;
+  - &#39;demo/**&#39;
+</code></pre></li>
+<li>此外，配置中还可以使用正则来匹配：<pre><code>skip_render: demo/*.html
+</code></pre></li>
+</ul>
+<h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2><ol>
+<li>在<code>themes/landscape/layout/_partial/</code> 下新建 <code>totop.ejs</code> ，代码如下：<pre><code class="html">&lt;!-- 回顶部 --&gt;
+&lt;div id=&quot;to-top&quot; style=&quot;position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;&quot;&gt;
+&lt;span style=&quot;color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;&quot;&gt;TOP&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>在<code>themes/landscape/source/js/</code> 下新建<code>totop.js</code>，代码如下：<pre><code class="javascript">(function($) {
+ $(window).scroll(function(){
+     if ($(window).scrollTop() &gt; 200){
+         $(&quot;#to-top&quot;).stop().animate({right:&quot;5px&quot;});
+     }else{
+         $(&quot;#to-top&quot;).stop().animate({right:&quot;-50px&quot;});
+     }
+ });
+ $(&quot;#to-top&quot;).click(function(){
+     $(&#39;body,html&#39;).animate({
+         scrollTop:0
+     },300);
+     return false;
+ });
+})(jQuery);
+</code></pre>
+</li>
+<li>在<code>themes/landscape/layout/_partial/after_footer.ejs</code>最后添加如下代码：<pre><code>&lt;%- partial(&#39;totop&#39;) %&gt;
+&lt;%- js(&#39;js/totop&#39;) %&gt;
+</code></pre></li>
+</ol>
+<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
+<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
+<li>设置组件的样式，复制生成的代码</li>
+<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
+<li><p>在<code>theme/landscape/_config.yml</code> 中添加如下代码：</p>
+<pre><code>widges:
+- weibo
+</code></pre></li>
+</ol>
+
+        
+    </div>
 
     <!-- 标签 -->
     <!-- 文章的标签 -->
@@ -126,6 +210,65 @@
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/16/about-hexo-2/" class="ds-thread-count" data-thread-key="post-about-hexo-2"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+    <!-- 文章标题 -->
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo：为博客添加多说评论框</a></h1>
+
+
+    <div class="article-title-short">H</div>
+    <!-- <div class="article-title-short">类</div> -->
+
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    </div>
+
+
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2015-12-14 21:12</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -139,49 +282,74 @@
         
     </div>
 
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/14/about-hexo-1/" class="ds-thread-count" data-thread-key="post-about-hexo-1"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2015-12-12 15:12</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/others/">其它</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/12/markdown/">Markdown语法</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">M</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/others/">其它</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2015-12-12 15:12</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -201,9 +369,36 @@
         
     </div>
 
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+    </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/12/markdown/" class="ds-thread-count" data-thread-key="post-markdown"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
 
 </article>
 
@@ -217,8 +412,8 @@
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 chuiliu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
 </footer>
@@ -233,8 +428,7 @@
 
 
     <!-- js -->
-    <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
-    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
     <!-- highlight.js -->
     <script src="/js/highlight.pack.js" type="text/javascript"></script>

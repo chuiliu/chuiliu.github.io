@@ -14,8 +14,8 @@
 
         .main-header-wrap {
             position: static;
-            display: block;
             text-align: center;
+            border-top: 2px solid $color-theme;
 
             .avatar {
                 margin-left: 0;
@@ -40,53 +40,27 @@
 
             .icon-menu {
                 display: block;
-                position: absolute;
-                right: 20px;
-                top: 20px;
-                width: 30px;
-                height: 30px;
-                line-height: 30px;
+                position: fixed;
+                right: 18px;
+                top: 18px;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
                 background-color: $color-light-gray;
                 border-radius: 4px;
                 font-size: 28px;
                 font-weight: 700;
-                color: lighten($color-article, 5%);
+                color: lighten($color-article, 10%);
                 z-index: 999;
+            }
+
+            .icon-menu-expand {
+
             }
 
             // 导航栏
             .nav {
                 display: none;
-                position: absolute;
-                right: 20px;
-                width: 45%;
-                border: 1px solid $color-theme;
-                border-radius: 2px;
-                z-index: 999;
-            }
-
-            .nav-link {
-                position: relative;
-                display: block;
-                padding: 0 10px;
-                height: 36px;
-                line-height: 36px;
-                color: $color-bg;
-                border: none;
-                border-radius: 0;
-
-                &:not(:last-child):after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 1px;
-                    background: $color-light-gray;
-                    -webkit-transform: scaleY(0.5);
-                            transform: scaleY(0.5);
-                }
             }
         }
 
@@ -98,22 +72,27 @@
     /* articel */
     .article {
         padding-top: 6px;
-        margin: 0 20px;  // main-padding
+        margin: 0 20px 20px;  // main-padding
 
         .article-remark {
             display: none;
-            // top: 38px;
-            // left: -36px;
         }
 
         .article-category {
-            display: none;
+            // display: none;
         }
 
         .article-title-wrap {
             margin-top: 2px;
             font-size: 22px;
-            // color: $color-article-title;
+        }
+
+        .article-tag-list-item {
+            font-size: 10px;
+            margin-right: 8px;
+            padding: 0 2px;
+            height: 18px;
+            line-height: 18px;
         }
     }
 
@@ -136,4 +115,57 @@
         display: none;
     }
 
+
+    #mobile-nav {
+        display: block;
+        // display: none;
+        position: fixed;
+        bottom: 100%;
+        right: 0;
+        // right: 20px;
+        width: 100%;
+        border: 1px solid $color-theme;
+        // border-radius: 2px;
+        z-index: 999;
+        -webkit-transition: -webkit-transform .3s;
+                transition: -webkit-transform .3s;
+                transition: transform .3s;
+                transition: transform .3s, -webkit-transform .3s;
+        // transform: translateX(100%);
+
+        .mobile-nav-link {
+            position: relative;
+            display: block;
+            padding: 0 12px;
+            height: 38px;
+            line-height: 38px;
+            color: $color-white;
+            background-color: rgba($color-theme, .9);
+            border: none;
+            border-radius: 0;
+
+            &:not(:last-child):after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background: $color-light-gray;
+                -webkit-transform: scaleY(0.5);
+                        transform: scaleY(0.5);
+            }
+        }
+    }
+
+    .mobile-nav-expand {
+        -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+    }
+
 }
+
+
+
+

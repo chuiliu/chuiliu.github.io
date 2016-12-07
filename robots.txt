@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /about/
+
+Sitemap: http://chuiliu.github.io/sitemap.xml
+Sitemap: http://chuiliu.github.io/baidusitemap.xml

@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="hexo,前端" />
-    <meta name="description" content="个人博客">
     <meta name="renderer" content="webkit">
 
-	<title>
-        lonica
-    </title>
+    
+    <meta name="keywords" content="博客,前端,JavaScript,hexo">
+    
+
+
+    
+
+    <meta name="decription" content="">
+
+
+
+    
+
+
+	<title></title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
 
-    <!-- highlight.js -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
-
-
-
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
-
 
 </head>
 <body>
     <!-- header -->
     <header id="header">
 
-    <div class="main-header-wrap main-header-show hide">
+    <div class="main-header-wrap">
         <!-- 菜单按钮 -->
         <i class="icon-menu"></i>
         <!-- 头像 -->
@@ -59,6 +63,7 @@
           
         </nav>
     </div>
+
     <!-- 搜索框 -->
     <!-- <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
@@ -87,45 +92,183 @@
 </header>
 
 
+    <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
     <!-- container -->
     <div class="container">
         
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
+    <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-04-06 20:04</span></div>
+    <!-- 文章标题 -->
+    <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a></h1>
 
 
+    <div class="article-title-short">如</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
 
     <div class="article-category">
-        <i class="icon-category"></i>
+        <!-- <i class="icon-category"></i> -->
         <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
     </div>
 
 
+
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-04-13 21:04</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
+<p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
+<p>Example：</p>
+<pre><code class="html">&lt;select name=&quot;template&quot;&gt;
+    &lt;option value=&quot;template1&quot;&gt;模板一&lt;/option&gt;
+    &lt;option value=&quot;template2&quot;&gt;模板二&lt;/option&gt;
+    &lt;option value=&quot;template3&quot;&gt;模板三&lt;/option&gt;
+&lt;/select&gt;
+&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="javascript">$(&#39;#template&#39;).change(function() {
+    var selected = $(this).val();
+    var text = $.trim($(&#39;#target&#39;).text());
+
+    if(text) {
+        if(confirm(&#39;是否覆盖已有模板？&#39;)) {
+            $(&#39;#target&#39;).text(selected);
+        } else {
+            $(&#39;#template&#39;).val($.data(this, &#39;current&#39;));
+        }
+    } else {
+        $(&#39;#target&#39;).text(selected);
+    }
+
+    $.data(this, &#39;current&#39;, $(this).val());
+});
+</code></pre>
+<p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
+<p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
+<hr>
+<p>参考：<a href="http://stackoverflow.com/questions/3963855/jquery-how-to-undo-a-select-change" target="_blank" rel="external">jQuery how to undo a select change</a></p>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#template').change(function() {
+        var selected = $(this).val();
+        var text = $.trim($('#target').text());
+
+        if(text) {
+            if(confirm('是否覆盖已有模板？')) {
+                $('#target').text(selected);
+            } else {
+                $('#template').val($.data(this, 'current'));
+            }
+        } else {
+            $('#target').text(selected);
+        }
+        $.data(this, 'current', $(this).val());
+    });
+</script>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/" class="ds-thread-count" data-thread-key="post-undo-a-select-change"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/04/06/browser-compatibility/">Firefox 定义日期 new Date() 兼容问题</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">F</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-04-06 20:04</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -143,49 +286,74 @@
         
     </div>
 
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
+    </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/06/browser-compatibility/" class="ds-thread-count" data-thread-key="post-browser-compatibility"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-04-06 10:04</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/04/06/about-git/">Git 常用命令详解</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">G</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-04-06 10:04</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -204,49 +372,74 @@ git config --global user.email &quot;[email address]&quot;
         
     </div>
 
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/06/about-git/" class="ds-thread-count" data-thread-key="post-about-git"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-04-03 10:04</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/04/03/Ubuntu-1/">Ubuntu修改root密码</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">U</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-04-03 10:04</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -258,49 +451,74 @@ git config --global user.email &quot;[email address]&quot;
         
     </div>
 
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/" class="ds-thread-count" data-thread-key="post-Ubuntu-1"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
 
 </article>
 
 
     <article class="article">
 
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-03-13 16:03</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/03/13/about-bower/">包管理工具 Bower</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">包</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-03-13 16:03</span>
+    </div>
+
+
+    </div>
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -314,104 +532,36 @@ git config --global user.email &quot;[email address]&quot;
         
     </div>
 
-
-
-
-
-</article>
-
-
-    <article class="article">
-
-    <!-- 首页文章 -->
-    <i class="icon-article article-remark"></i>
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-02-24 14:02</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-    </div>
-
-
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/02/24/nodejs-querystring/">Node.js笔录：Query String</a></h1>
-
-
     <!-- 标签 -->
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
     </div>
 
 
 
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/03/13/about-bower/" class="ds-thread-count" data-thread-key="post-about-bower"></a> -->
+      <!--  -->
+    <!-- </footer> -->
 
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>用到，做个笔记</p>
-<p>querystring模块提供了有关查询字符串参数处理的操作，提供具体以下4个方法：</p>
-<pre><code class="javascript">querystring.stringify(obj, [sep], [eq])
-querystring.parse(str, [sep], [eq], [options])
-querystring.escape
-querystring.unescape
-</code></pre>
-<ul>
-<li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
-<pre><code class="javascript">var querystring = require(&#39;querystring&#39;);
-var obj = {username:&#39;zheng&#39;, password:&#39;123456&#39;};
-console.log(querystring.stringify(obj));
-</code></pre>
-<p>输出结果为：</p>
-<blockquote>
-<p>username=zheng&amp;password=123456</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
-<pre><code class="javascript">var str1 = &#39;username=zheng&amp;password=123456&#39;;
-var str2 = &#39;username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music&#39;;
-console.log(querystring.parse(str1));
-console.log(querystring.parse(str2));
-</code></pre>
-<p>输出结果为：</p>
-<blockquote>
-<p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
-</blockquote>
-</li>
-<li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
-</li>
-<li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
-<pre><code class="javascript">var str = &#39;username=用户名&amp;password=123456&#39;;
-var escape = querystring.escape(str);
-var unescape = querystring.unescape(escape);
-console.log(escape);
-console.log(unescape);
-</code></pre>
-<p>输出结果为：</p>
-<blockquote>
-<p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
-</blockquote>
-</li>
-</ul>
-
-        
-    </div>
-
-
-
-
+    
 
 </article>
 
@@ -425,8 +575,8 @@ console.log(unescape);
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 chuiliu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
 </footer>
@@ -441,8 +591,7 @@ console.log(unescape);
 
 
     <!-- js -->
-    <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
-    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
     <!-- highlight.js -->
     <script src="/js/highlight.pack.js" type="text/javascript"></script>

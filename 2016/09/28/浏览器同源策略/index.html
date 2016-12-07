@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="hexo,前端" />
-    <meta name="description" content="个人博客">
     <meta name="renderer" content="webkit">
 
-	<title>
-        lonica
-    </title>
+    
+        
+    <meta name="keywords" content="前端,跨域">
+    
+
+
+    
+
+    <meta name="decription" content="理解浏览器同源策略与跨域的解决方案,开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。
+同源策略对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：">
+
+
+
+    
+
+
+	<title>lonica | 理解浏览器同源策略与跨域的解决方案</title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
 
-    <!-- highlight.js -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
-
-
-
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
-
 
 </head>
 <body>
     <!-- header -->
     <header id="header">
 
-    <div class="main-header-wrap main-header-show hide">
+    <div class="main-header-wrap">
         <!-- 菜单按钮 -->
         <i class="icon-menu"></i>
         <!-- 头像 -->
@@ -59,6 +65,7 @@
           
         </nav>
     </div>
+
     <!-- 搜索框 -->
     <!-- <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
@@ -87,50 +94,65 @@
 </header>
 
 
+    <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
     <!-- container -->
     <div class="container">
         <!-- 文章 -->
 <article class="article">
 
-    <!-- 文章单独页 -->
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-09-28 09:09</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/28/浏览器同源策略/">理解浏览器同源策略与跨域的解决方案</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">理</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
 
-    <div class="markdown-body um">
-        <!-- 文章正文 -->
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-28 09:09</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
         
             <p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
 <h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
+<a id="more"></a>
 <ul>
 <li>协议相同</li>
 <li>域名相同</li>
@@ -242,8 +264,38 @@ http.createServer(function(req, res) {
         
     </div>
 
-    <!-- 上一篇，下一篇 -->
-    <!-- 上一篇，下一篇 -->
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/28/浏览器同源策略/" class="ds-thread-count" data-thread-key="post-浏览器同源策略"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+        <!-- 上一篇，下一篇 -->
+        <!-- 上一篇，下一篇 -->
 
 <nav id="article-nav">
   
@@ -266,8 +318,8 @@ http.createServer(function(req, res) {
 
 
 
-    <!-- 评论 -->
-    <!-- 文章的多说评论 -->
+        <!-- 评论 -->
+        <!-- 文章的多说评论 -->
 
   <section id="article-comments">
     <!-- 多说评论框 start -->
@@ -289,8 +341,7 @@ http.createServer(function(req, res) {
   </section>
 
 
-
-
+    
 
 </article>
 
@@ -300,8 +351,8 @@ http.createServer(function(req, res) {
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 chuiliu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
 </footer>
@@ -316,8 +367,7 @@ http.createServer(function(req, res) {
 
 
     <!-- js -->
-    <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
-    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
     <!-- highlight.js -->
     <script src="/js/highlight.pack.js" type="text/javascript"></script>

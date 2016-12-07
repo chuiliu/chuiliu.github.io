@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="hexo,前端" />
-    <meta name="description" content="个人博客">
     <meta name="renderer" content="webkit">
 
-	<title>
-        lonica
-    </title>
+    
+        
+    <meta name="keywords" content="前端,开发工具">
+    
+
+
+    
+
+    <meta name="decription" content="如何快速搭建静态资源服务器,前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：
+使用browser-syncbrowser-sync，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即">
+
+
+
+    
+
+
+	<title>lonica | 如何快速搭建静态资源服务器</title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
     <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
 
-    <!-- highlight.js -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atelier-sulphurpool-light.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/highlight/atelier-sulphurpool-light.css"> -->
-
-
-
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
-
 
 </head>
 <body>
     <!-- header -->
     <header id="header">
 
-    <div class="main-header-wrap main-header-show hide">
+    <div class="main-header-wrap">
         <!-- 菜单按钮 -->
         <i class="icon-menu"></i>
         <!-- 头像 -->
@@ -59,6 +65,7 @@
           
         </nav>
     </div>
+
     <!-- 搜索框 -->
     <!-- <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
@@ -87,62 +94,89 @@
 </header>
 
 
+    <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
     <!-- container -->
     <div class="container">
         <!-- 文章 -->
 <article class="article">
 
-    <!-- 文章单独页 -->
-
-    <!-- 日期 -->
-    <!-- 文章的日期部分 -->
-
-    <div class="article-date"><i class="icon-time"></i><span>2016-10-19 21:10</span></div>
-
-
-
-    <!-- 文章分类 -->
-    <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <i class="icon-category"></i>
-        <a class="article-category-link" href="/categories/fe/">前端</a>
-    </div>
-
-
+    <!-- <i class="icon-article article-remark"></i> -->
 
     <!-- 文章标题 -->
     <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/19/如何快速搭建静态资源服务器/">如何快速搭建静态资源服务器</a></h1>
 
 
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
+    <div class="article-title-short">如</div>
+    <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+    <div class="article-date-category">
+
+        <!-- 文章分类 -->
+        <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a>
     </div>
 
 
 
+        <!-- 日期 -->
+        <!-- 文章的日期部分 -->
 
-    <div class="markdown-body um">
-        <!-- 文章正文 -->
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-19 21:10</span>
+    </div>
+
+
+    </div>
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
         
             <p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
 <h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
 <pre><code>npm install -g browser-sync
-</code></pre><p>在项目根目录执行：</p>
+</code></pre><a id="more"></a>
+<p>在项目根目录执行：</p>
 <pre><code>browser-sync start --server --files &quot;css/*.css&quot;
 # 也可以配置多项，或者通配符匹配任意目录
 browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 </code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/brower-sync.png" alt=""></p>
+<p>使用gulp启动</p>
+<pre><code>npm install gulp browser-sync --save-dev
+</code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
+var browserSync = require(&#39;browser-sync&#39;);
+
+gulp.task(&#39;browserSync&#39;, function() {
+    browserSync({
+        server: {
+            baseDir: &#39;dirName&#39;
+        }
+    });
+});
+</code></pre>
 <h2 id="u4F7F_u7528Python"><a href="#u4F7F_u7528Python" class="headerlink" title="使用Python"></a>使用Python</h2><p>如果你安装了Python，那这个方法可能最简便了，只需要在该目录下执行命令:</p>
 <pre><code>python -m SimpleHTTPServer
 </code></pre><p>这样就启动了一个静态web服务器，此时项目的根目录为执行命令时所在目录，默认端口是8000，如果需要指定端口，则加上端口号启动：</p>
 <pre><code>python -m SimpleHTTPServer 8080
 </code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/20161019/python-http-server-1.png" alt=""></p>
-<a id="more"></a>
 <h2 id="u4F7F_u7528http-server"><a href="#u4F7F_u7528http-server" class="headerlink" title="使用http-server"></a>使用http-server</h2><p>如果你安装了node，那么<code>http-server</code>也是个不错的选择，只需要一行命令就可以快速启动。<br>安装：</p>
 <pre><code>npm install -g http-server
 </code></pre><p>在项目根目录执行：</p>
@@ -215,8 +249,38 @@ json-server --watch data.json --port 3004
         
     </div>
 
-    <!-- 上一篇，下一篇 -->
-    <!-- 上一篇，下一篇 -->
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/" class="ds-thread-count" data-thread-key="post-如何快速搭建静态资源服务器"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+        <!-- 上一篇，下一篇 -->
+        <!-- 上一篇，下一篇 -->
 
 <nav id="article-nav">
   
@@ -239,8 +303,8 @@ json-server --watch data.json --port 3004
 
 
 
-    <!-- 评论 -->
-    <!-- 文章的多说评论 -->
+        <!-- 评论 -->
+        <!-- 文章的多说评论 -->
 
   <section id="article-comments">
     <!-- 多说评论框 start -->
@@ -262,8 +326,7 @@ json-server --watch data.json --port 3004
   </section>
 
 
-
-
+    
 
 </article>
 
@@ -273,8 +336,8 @@ json-server --watch data.json --port 3004
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 chuiliu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
 </footer>
@@ -289,8 +352,7 @@ json-server --watch data.json --port 3004
 
 
     <!-- js -->
-    <!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script> -->
-    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/index.js" type="text/javascript"></script>
     <!-- highlight.js -->
     <script src="/js/highlight.pack.js" type="text/javascript"></script>

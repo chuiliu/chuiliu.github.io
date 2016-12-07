@@ -7,59 +7,54 @@
     var $totop = $('#to-top');
     var $mainHeader = $('#header .main-header-wrap');
     var $subHeader = $('#header .sub-header-wrap');
+    var $mobileNav = $('#mobile-nav');
 
-    if (scrollTop < minScroll) {
-        $mainHeader.removeClass('hide');
-    }
 
+    // 回顶部
     $totop.click(function() {
         $('body, html').animate({
-            scrollTop:0
-        },300);
+            scrollTop: 0
+        }, 300);
         return false;
     });
+
+    // 移动端菜单按钮
     $('.icon-menu').on('click', function(e) {
         e.stopPropagation();
-        $('.main-header-wrap .nav').show();
+        // $mobileNav.show();
+        $mobileNav.addClass('mobile-nav-expand');
         $(document).on('click', function() {
-            $('.main-header-wrap .nav').hide();
+            // $mobileNav.hide();
+            $mobileNav.removeClass('mobile-nav-expand');
         });
     });
-    $('.main-header-wrap .nav').on('click', function(e) {
+
+    $mobileNav.on('click', function(e) {
         e.stopPropagation();
     });
 
     $(window).scroll(function(){
 
-        var mobile = false;
-        // 判断屏幕宽度
-        if (window.matchMedia) {
-            mobile = window.matchMedia('(max-width: 768px)').matches
-        } else {
-            mobile = $(window).width() <= 768 ? true : false;
-        }
-
+        var mobile = isMatchMedia(768);
 
         scrollTop = $(this).scrollTop();
 
-        if (mobile) {
-            $('.main-header-wrap .nav').hide();
-        }
-
         if (!mobile && lastTop < scrollTop && scrollTop > minScroll) {
-            // 上滚
-            $mainHeader.removeClass('main-header-show hide');
+            // PC端，下滚，滚动条大于导航栏消失距离
+            // $mainHeader.removeClass('main-header-show');
             $subHeader.removeClass('sub-header-show');
         } else if (!mobile && lastTop > scrollTop && scrollTop > minScroll) {
-            // 下滚
+            // PC端，上滚，显示条小于导航栏消失距离
             $subHeader.addClass('sub-header-show');
         } else if (!mobile) {
-            $mainHeader.addClass('main-header-show');
+            // $mainHeader.addClass('main-header-show');
             $subHeader.removeClass('sub-header-show');
+        } else if (mobile) {
+            $mobileNav.removeClass('mobile-nav-expand');
         }
 
-        lastTop = scrollTop;
 
+        lastTop = scrollTop;
         // 回顶部
         if (scrollTop > 200){
             $totop.stop().animate({right:'5px'});
@@ -68,6 +63,23 @@
         }
 
     });
+
+    /**
+     * 是否符合媒体查询
+     * @param  {[type]}  maxWidth [description]
+     * @return {Boolean}          [description]
+     */
+    function isMatchMedia(maxWidth) {
+        var isMatch = false;
+        // 判断屏幕宽度
+        if (window.matchMedia) {
+            isMatch = window.matchMedia('(max-width: '+ maxWidth +'px)').matches;
+        } else {
+            isMatch = $(window).width() <= maxWidth ? true : false;
+        }
+        return isMatch;
+    }
+
 
 
 })(jQuery);
