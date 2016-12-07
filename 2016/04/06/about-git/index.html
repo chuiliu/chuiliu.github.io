@@ -159,14 +159,25 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
 git config --global user.name &quot;[name]&quot;
 git config --global user.email &quot;[email address]&quot;
 </code></pre>
-<a id="more"></a></li>
-<li><strong>常用</strong><br>```java<br>// 初始化git仓库<br>git init</li>
+</li>
 </ul>
-<p>// 查看当前仓库的状态<br>git status</p>
-<p>// 查看提交日志<br>git log</p>
-<pre><code>- **add**
-```java
-// 添加当前目录下所有文件（3种方式）
+<a id="more"></a>
+<ul>
+<li><strong>常用</strong></li>
+</ul>
+<pre><code class="java">// 初始化git仓库
+git init
+
+// 查看当前仓库的状态
+git status
+
+// 查看提交日志
+git log
+</code></pre>
+<ul>
+<li><strong>add</strong></li>
+</ul>
+<pre><code class="java">// 添加当前目录下所有文件（3种方式）
 git add .
 git add -A
 git add --all
@@ -174,13 +185,18 @@ git add --all
 git add [filename]
 // 删除和移动的文件也能提交到暂存区
 git add --all
-</code></pre><ul>
-<li><strong>commit</strong><br>```java<br>// 提交到仓库<br>git commit -m “descriptions”<br>git commit [filename] -m “descriptions”</li>
+</code></pre>
+<ul>
+<li><strong>commit</strong></li>
 </ul>
-<pre><code>
-- **分支**
-```java
-// 查看当前分支
+<pre><code class="java">// 提交到仓库
+git commit -m &quot;descriptions&quot;
+git commit [filename] -m &quot;descriptions&quot;
+</code></pre>
+<ul>
+<li><strong>分支</strong></li>
+</ul>
+<pre><code class="java">// 查看当前分支
 git branch
 
 // 新建分支
@@ -200,12 +216,22 @@ git merge [branchName]
 
 // 删除分支
 git branch -d [branchName]
-</code></pre><ul>
-<li><strong>remote</strong><br>```java<br>// 连接到远程仓库<br>git remote add origin git@github.com:chuiliu/test.git</li>
+</code></pre>
+<ul>
+<li><strong>remote</strong></li>
 </ul>
-<p>// 推送到远程仓库<br>git push -u origin master</p>
-<p>// 远程仓库更新到本地<br>git pull git@github.com:chuiliu/test.git [branchName]</p>
-<p>// 从远程仓库克隆<br>git clone git@github.com:chuiliu/test.git<br>```</p>
+<pre><code class="java">// 连接到远程仓库
+git remote add origin git@github.com:chuiliu/test.git
+
+// 推送到远程仓库
+git push -u origin master
+
+// 远程仓库更新到本地
+git pull git@github.com:chuiliu/test.git [branchName]
+
+// 从远程仓库克隆
+git clone git@github.com:chuiliu/test.git
+</code></pre>
 
         
     </div>

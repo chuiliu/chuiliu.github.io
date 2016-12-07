@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
+    <lastmod>2016-12-07T15:17:33.357Z</lastmod>
+    <data>
+        <display>
+        <title>Git 常用命令详解</title>
+        <pubTime>2016-04-06T02:23:54.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
     <lastmod>2016-12-07T08:52:04.641Z</lastmod>
     <data>
@@ -329,26 +349,6 @@
            
              
               <breadCrumb title="Hexo" url="http://chuiliu.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
-    <lastmod>2016-12-02T16:44:44.200Z</lastmod>
-    <data>
-        <display>
-        <title>Git 常用命令详解</title>
-        <pubTime>2016-04-06T02:23:54.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
           
         </display>
     </data>

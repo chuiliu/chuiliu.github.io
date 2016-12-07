@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
+    <lastmod>2016-12-07T15:17:33.357Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
     <lastmod>2016-12-07T08:52:04.641Z</lastmod>
   </url>
@@ -99,11 +104,6 @@
   <url>
     <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
     <lastmod>2016-12-02T16:45:18.887Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
-    <lastmod>2016-12-02T16:44:44.200Z</lastmod>
   </url>
   
   <url>
