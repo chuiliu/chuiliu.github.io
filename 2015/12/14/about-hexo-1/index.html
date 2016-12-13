@@ -15,7 +15,12 @@
 
     
 
-    <meta name="decription" content="Hexo：为博客添加多说评论框,Hexo默认使用的评论框是国外比较流行的Disqus，为方便使用我们可以把评论框替换成国内比较流行的多说，我使用的是官方landscape主题，具体步骤如下:">
+    <meta name="decription" content="Hexo：为博客添加多说评论框,Hexo默认使用的评论框是国外比较流行的Disqus，为方便使用我们可以把评论框替换成国内比较流行的多说，我使用的是官方landscape主题，具体步骤如下:
+
+
+在多说官网注册账号
+选择我要安装创建站点
+在_config.yml中添加多说配置（二级域名就是创建站点时">
 
 
 
@@ -35,8 +40,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -93,7 +99,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -108,25 +114,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo：为博客添加多说评论框</a></h1>
 
 
-    <div class="article-title-short">H</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">H</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -135,8 +143,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -144,7 +152,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -163,20 +172,41 @@
  &lt;/div&gt;
 &lt;/section&gt;
 &lt;% } %&gt;
-</code></pre>替换成```<br>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname){ %&gt;<br><section id="comments"> <!-- 多说评论框 start -->
- <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div> <!-- 多说评论框 end -->
- <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
- <script type="text/javascript"><br> var duoshuoQuery = {short_name:’&lt;%= config.duoshuo_shortname %&gt;’};<br>   (function() {<pre><code> var ds = document.createElement(&#39;script&#39;);
- ds.type = &#39;text/javascript&#39;;ds.async = true;
- ds.src = (document.location.protocol == &#39;https:&#39; ? &#39;https:&#39; : &#39;http:&#39;) + &#39;//static.duoshuo.com/embed.js&#39;;
- ds.charset = &#39;UTF-8&#39;;
- (document.getElementsByTagName(&#39;head&#39;)[0] 
-  || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(ds);
-</code></pre>   })();<br>   </script> <!-- 多说公共JS代码 end -->
-</section><br>&lt;% } %&gt;<pre><code>把
-</code></pre>&lt;% if (item.comment &amp;&amp; config.disqus_shortname){ %&gt;<br><div class="alignright"><br> <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a><br></div><br>&lt;% } %&gt;<pre><code>替换成
-</code></pre>&lt;% if (item.comment &amp;&amp; config.duoshuo_shortname){ %&gt;<br><div class="alignright"><br> <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a><br></div><br>&lt;% } %&gt;<br>```</li>
+</code></pre>替换成<pre><code>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname){ %&gt;
+&lt;section id=&quot;comments&quot;&gt;
+ &lt;!-- 多说评论框 start --&gt;
+ &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;
+ &lt;!-- 多说评论框 end --&gt;
+ &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;
+ &lt;script type=&quot;text/javascript&quot;&gt;
+ var duoshuoQuery = {short_name:&#39;&lt;%= config.duoshuo_shortname %&gt;&#39;};
+   (function() {
+     var ds = document.createElement(&#39;script&#39;);
+     ds.type = &#39;text/javascript&#39;;ds.async = true;
+     ds.src = (document.location.protocol == &#39;https:&#39; ? &#39;https:&#39; : &#39;http:&#39;) + &#39;//static.duoshuo.com/embed.js&#39;;
+     ds.charset = &#39;UTF-8&#39;;
+     (document.getElementsByTagName(&#39;head&#39;)[0] 
+      || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(ds);
+   })();
+   &lt;/script&gt;
+ &lt;!-- 多说公共JS代码 end --&gt;
+&lt;/section&gt;
+&lt;% } %&gt;
+</code></pre>把</li>
 </ol>
+<pre><code class="html">&lt;% if (item.comment &amp;&amp; config.disqus_shortname){ %&gt;  
+  &lt;div class=&quot;alignright&quot;&gt;  
+    &lt;a href=&quot;&lt;%- item.permalink %&gt;#disqus_thread&quot; class=&quot;comment-link&quot;&gt;Comments&lt;/a&gt;  
+  &lt;/div&gt;  
+&lt;% } %&gt;
+</code></pre>
+<p> 替换成</p>
+<pre><code class="html">&lt;% if (item.comment &amp;&amp; config.duoshuo_shortname){ %&gt;  
+  &lt;div class=&quot;alignright&quot;&gt;  
+    &lt;a href=&quot;&lt;%- item.permalink %&gt;#disqus_thread&quot; class=&quot;comment-link&quot;&gt;Comments&lt;/a&gt;  
+  &lt;/div&gt;  
+&lt;% } %&gt;
+</code></pre>
 
         
     </div>
@@ -263,7 +293,10 @@
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

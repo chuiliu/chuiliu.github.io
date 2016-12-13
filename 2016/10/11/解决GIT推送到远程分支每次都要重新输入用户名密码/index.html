@@ -18,7 +18,7 @@
     <meta name="decription" content="解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码,最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。
 经过一番尝试，找到了解决方法：
 
-在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：git clone htt">
+在克隆">
 
 
 
@@ -38,8 +38,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -96,7 +97,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -111,25 +112,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</a></h1>
 
 
-    <div class="article-title-short">解</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">解</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -138,8 +141,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -147,7 +150,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -252,7 +256,10 @@ git remote add origin https://username:password@git.coding.net/username/Demo.git
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

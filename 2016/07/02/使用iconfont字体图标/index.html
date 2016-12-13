@@ -15,8 +15,7 @@
 
     
 
-    <meta name="decription" content="使用iconfont字体图标,最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是iconfont，下面就介绍下如何使用 icomoon图标制作工具 来快速生成字体图标。
-首先到http://iconfont.cn/，选择到需要用">
+    <meta name="decription" content="使用iconfont字体图标,最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是iconfont，下面就介绍下如何使用 icom">
 
 
 
@@ -36,8 +35,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -94,7 +94,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -109,25 +109,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/07/02/使用iconfont字体图标/">使用iconfont字体图标</a></h1>
 
 
-    <div class="article-title-short">使</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">使</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -136,8 +138,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -145,7 +147,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -247,7 +250,10 @@
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

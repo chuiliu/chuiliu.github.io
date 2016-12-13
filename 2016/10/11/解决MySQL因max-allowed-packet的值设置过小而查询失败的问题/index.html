@@ -15,8 +15,7 @@
 
     
 
-    <meta name="decription" content="解决MySQL因max_allowed_packet的值设置过小而查询失败的问题,在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为max_allowed_packet，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中max_allowed_packet的限制值时，对数据库的读写操作则会失败。
-那么如何修改这个值的大小">
+    <meta name="decription" content="解决MySQL因max_allowed_packet的值设置过小而查询失败的问题,在MySQL中，Client和Server通信时可接收数据包的大小是受限制的，这个限制值为max_allowed_packet，通信的最小单位就是packet，当Server接收的数据包大小超过了MySQL配置文件中m">
 
 
 
@@ -36,8 +35,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -94,7 +94,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -109,25 +109,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</a></h1>
 
 
-    <div class="article-title-short">解</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">解</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -136,8 +138,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -145,7 +147,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -203,11 +206,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/13/理解AngularJS中的ng-options/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/13/来些CSS技巧/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          理解 AngularJS 中的 ng-options
+          来些CSS技巧
         
       </div>
     </a>
@@ -250,7 +253,10 @@
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

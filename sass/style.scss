@@ -22,11 +22,19 @@ a {
     background-color: $color-theme;
 }
 
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+    // background: linear-gradient(to bottom, $color-white 90%, $color-theme) no-repeat;
+
+}
+
 .container {
     margin: 30px auto 0;
     // margin: 120px auto 0;
     min-width: $min-width;
     max-width: $max-width;
+
 }
 
 /* header */
@@ -90,7 +98,7 @@ a {
 
         .title-wrap {
             position: absolute;
-            left: 150px;
+            left: $main-padding + 105px;
             top: 8px;
             margin-top: 8px;
             font-size: 22px;
@@ -106,7 +114,7 @@ a {
 
         .subtitle-wrap {
             position: absolute;
-            left: 150px;
+            left: $main-padding + 105px;
             top: 56px;
             width: 50%;
             height: 24px;
@@ -212,7 +220,7 @@ a {
                     // border-radius: 6px;
             // border: 1px solid $color-theme;
             -webkit-transition: background-color .6s, color .3s;
-            transition: background-color .6s, color .3s;
+                    transition: background-color .6s, color .3s;
 
             &:hover {
                 color: $color-theme;
@@ -463,16 +471,21 @@ a {
 }
 
 
+.fix {
+    height: $footer-height;
+}
+
 /* footer */
 #footer {
-    position: relative;
-    bottom: 0;
-    margin: 0 auto;
-    padding: 60px 0 10px;
+    height: $footer-height;
     width: 100%;
     font-size: 14px;
     color: $color-article;
     text-align: center;
+
+    .outer {
+        padding-top: 50px;
+    }
 }
 
 /* 回顶部 */

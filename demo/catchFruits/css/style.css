@@ -8,6 +8,7 @@ body {
 }
 
 #container {
+    position: relative;
     margin: 0 auto;
     margin-top: 50px;
     width: 400px;
@@ -28,8 +29,9 @@ body {
 #result {
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 50%;
     margin-left: -170px;
+    margin-top: -120px;
     padding: 20px;
     width: 300px;
     height: 200px;

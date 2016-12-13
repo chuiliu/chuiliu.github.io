@@ -17,7 +17,7 @@
 
     <meta name="decription" content="MySQL 开启允许公网连接,部署项目后，发现本地无法连接到MySQL远程数据库：原因一：MySQL没有允许公网访问查看是否公网访问：
 netstat
-如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件/etc/mysql/my.cnf，将bind-address的值改为0.0.0.0">
+如果mysql的Local Address列的值是127.0.0.1:3306，则说明没有开启公网访问解决方法：修改mysql配置文件/etc/my">
 
 
 
@@ -37,8 +37,9 @@ netstat
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -95,7 +96,7 @@ netstat
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -110,25 +111,27 @@ netstat
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a></h1>
 
 
-    <div class="article-title-short">M</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">M</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -137,8 +140,8 @@ netstat
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -146,7 +149,8 @@ netstat
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -240,7 +244,10 @@ netstat
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

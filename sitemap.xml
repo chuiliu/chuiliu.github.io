@@ -2,13 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
-    <lastmod>2016-12-07T15:17:33.357Z</lastmod>
+    <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
+    <lastmod>2016-12-13T09:35:26.607Z</lastmod>
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
-    <lastmod>2016-12-07T08:52:04.641Z</lastmod>
+    <loc>http://chuiliu.github.io/2015/12/19/Git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
+    <lastmod>2016-12-13T06:25:01.204Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/06/10/%E7%94%A8Node-js%E7%88%AC%E8%99%AB%E4%B8%8B%E8%BD%BD%E8%8A%B1%E7%93%A3%E7%BD%91%E7%94%BB%E6%9D%BF%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2016-12-13T06:06:23.756Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/about/index.html</loc>
+    <lastmod>2016-12-11T07:10:22.931Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/project/index.html</loc>
+    <lastmod>2016-12-11T07:09:21.025Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/13/%E6%9D%A5%E4%BA%9BCSS%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-12-11T06:49:11.607Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
+    <lastmod>2016-12-11T04:34:52.726Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/12/08/%E5%AE%9E%E7%8E%B0footer%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8/</loc>
+    <lastmod>2016-12-10T15:38:13.411Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/loading/css/style.css</loc>
+    <lastmod>2016-12-10T10:32:47.986Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/loading/css/loading.css</loc>
+    <lastmod>2016-12-10T10:32:47.974Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
+    <lastmod>2016-12-10T10:29:44.604Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-12-10T09:14:07.882Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/loading/index.html</loc>
+    <lastmod>2016-12-10T05:42:34.625Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2016-12-08T08:45:59.595Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/catchFruits/css/style.css</loc>
+    <lastmod>2016-12-08T07:50:12.330Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/calendar/index.html</loc>
+    <lastmod>2016-12-08T07:41:23.555Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/calendar/style.css</loc>
+    <lastmod>2016-12-08T07:36:52.880Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/404.html</loc>
+    <lastmod>2016-12-08T01:33:08.161Z</lastmod>
   </url>
   
   <url>
@@ -37,16 +117,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2016-12-07T06:09:26.739Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2016-12-07T06:07:34.374Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</loc>
     <lastmod>2016-12-07T06:06:15.841Z</lastmod>
   </url>
@@ -67,28 +137,8 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/demo/catchFruits/css/style.css</loc>
-    <lastmod>2016-12-06T15:36:44.181Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/README.html</loc>
     <lastmod>2016-12-04T12:02:44.370Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/</loc>
-    <lastmod>2016-12-04T09:04:27.068Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/about/index.html</loc>
-    <lastmod>2016-12-04T04:40:54.659Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/project/index.html</loc>
-    <lastmod>2016-12-04T04:15:43.609Z</lastmod>
   </url>
   
   <url>
@@ -99,16 +149,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/01/26/sublime-settings/</loc>
     <lastmod>2016-12-02T16:48:10.807Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
-    <lastmod>2016-12-02T16:45:18.887Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
-    <lastmod>2016-12-02T16:44:23.710Z</lastmod>
   </url>
   
   <url>
@@ -127,16 +167,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/demo/calendar/index.html</loc>
-    <lastmod>2016-11-25T14:47:57.060Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/calendar/style.css</loc>
-    <lastmod>2016-11-25T14:29:20.405Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-11-14T16:00:30.567Z</lastmod>
   </url>
@@ -152,11 +182,6 @@
   </url>
   
   <url>
-    <loc>http://chuiliu.github.io/2015/12/19/Git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
-    <lastmod>2016-10-22T01:51:56.042Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://chuiliu.github.io/2016/01/25/about-space-1/</loc>
     <lastmod>2016-10-22T01:37:57.774Z</lastmod>
   </url>
@@ -164,11 +189,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
     <lastmod>2016-10-21T16:57:16.634Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
-    <lastmod>2016-10-21T16:56:58.256Z</lastmod>
   </url>
   
   <url>
@@ -209,6 +229,11 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/13/undo-a-select-change/</loc>
     <lastmod>2016-05-16T08:00:14.138Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
+    <lastmod>2016-05-15T02:30:43.826Z</lastmod>
   </url>
   
   <url>

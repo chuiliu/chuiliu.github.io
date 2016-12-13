@@ -16,7 +16,7 @@
     
 
     <meta name="decription" content="AngularJS 什么时候用$apply,写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句$scope.$apply()，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。
-其实总结一句就是：DOM监听事件处理程序中的代码，外部的回调函数（例如setTimeout(),setInterval()）中的代码等不在Angu">
+其实总结一句就是：DOM监听事件处理程序中的代">
 
 
 
@@ -36,8 +36,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -94,7 +95,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -109,25 +110,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/08/AngularJS什么时候用-apply/">AngularJS 什么时候用$apply</a></h1>
 
 
-    <div class="article-title-short">A</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">A</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -136,8 +139,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -145,7 +148,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -251,7 +255,10 @@
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

@@ -9,14 +9,14 @@
 
     
         
-    <meta name="keywords" content="前端,移动端">
+    <meta name="keywords" content="CSS,前端,移动端">
     
 
 
     
 
     <meta name="decription" content="移动 webapp 开发相关要点,最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。
-viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, u">
+viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-">
 
 
 
@@ -36,8 +36,9 @@ viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -94,7 +95,7 @@ viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -109,25 +110,27 @@ viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/11/15/移动开发/">移动 webapp 开发相关要点</a></h1>
 
 
-    <div class="article-title-short">移</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">移</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -136,8 +139,8 @@ viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -145,7 +148,8 @@ viewport，页面比例初始化，禁止页面的缩放行为&amp;lt;meta name=
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -235,7 +239,7 @@ display: box;
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
     </div>
 
 
@@ -313,7 +317,10 @@ display: box;
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

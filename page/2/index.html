@@ -34,8 +34,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -92,7 +93,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -107,361 +108,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        
+        <!-- container -->
+        <div class="container">
+            
     <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</a></h1>
-
-
-    <div class="article-title-short">解</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/工具/">工具</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-10-11 22:10</span>
-    </div>
-
-
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
-<p>经过一番尝试，找到了解决方法：</p>
-<ol>
-<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
-</code></pre></li>
-</ol>
-            
-                <p class="article-more-link">
-                    <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" class="ds-thread-count" data-thread-key="post-解决GIT推送到远程分支每次都要重新输入用户名密码"></a> -->
-      <!--  -->
-    <!-- </footer> -->
 
     
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/08/AngularJS什么时候用-apply/">AngularJS 什么时候用$apply</a></h1>
-
-
-    <div class="article-title-short">A</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-10-08 21:10</span>
-    </div>
-
-
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
-<p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
-            
-                <p class="article-more-link">
-                    <a href="/2016/10/08/AngularJS什么时候用-apply/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/10/08/AngularJS什么时候用-apply/" class="ds-thread-count" data-thread-key="post-AngularJS什么时候用-apply"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
-    
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/28/浏览器同源策略/">理解浏览器同源策略与跨域的解决方案</a></h1>
-
-
-    <div class="article-title-short">理</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-09-28 09:09</span>
-    </div>
-
-
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
-<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
-            
-                <p class="article-more-link">
-                    <a href="/2016/09/28/浏览器同源策略/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/09/28/浏览器同源策略/" class="ds-thread-count" data-thread-key="post-浏览器同源策略"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
-    
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a></h1>
-
-
-    <div class="article-title-short">R</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-09-27 22:09</span>
-    </div>
-
-
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
-<ul>
-<li>二进制安全的字符串</li>
-<li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的</li>
-</ul>
-            
-                <p class="article-more-link">
-                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" class="ds-thread-count" data-thread-key="post-redis使用笔记2"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
-    
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a></h1>
 
 
-    <div class="article-title-short">M</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">M</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -470,8 +137,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -479,7 +146,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -531,11 +199,1145 @@
 </article>
 
 
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/31/JHipster中使用Config Server/">JHipster 中使用 Config Server</a></h1>
+
+
+        <div class="article-title-short">J</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Java/">Java</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-08-31 16:08</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
+<ul>
+<li>开发环境一般使用本地文件系统来保存</li>
+<li>生产环境使用git仓库服务器上的配置</li>
+</ul>
+<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：</p>
+<pre><code class="python">spring:
+    profiles:
+        active: dev
+        include: native
+    cloud:
+        config:
+            server:
+                native:
+                     # 绝对路径配置：search-locations: file:///E:/config-repo
+                     search-locations: file:./central-config
+                git:
+                    uri: https://github.com/chuiliu/config-repo
+</code></pre>
+<p>以上配置项说明：</p>
+<ul>
+<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
+<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
+</ul>
+<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
+<p>例如：</p>
+<blockquote>
+<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
+</blockquote>
+<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：</p>
+<pre><code>spring:
+    cloud:
+        config:
+            name: newFilename
+</code></pre><ul>
+<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
+<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
+</ul>
+<p>测试users微服务：</p>
+<pre><code class="java">package com.mycompany.myapp.web.rest;
+
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Created by Administrator on 2016/8/30.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+@Api(value = &quot;/api&quot;, description = &quot;test&quot;, position = 1)
+// 测试自动刷新配置
+@ConfigurationProperties
+public class testConfigResource {
+
+    @Value(&quot;${testData.user.id:defaultValue}&quot;)
+    private String id;
+
+    @Value(&quot;${testData.user.name:defaultValue}&quot;)
+    private String name;
+
+    @Value(&quot;${testData.user.remark:defaultValue}&quot;)
+    private String remark;
+
+    @RequestMapping(value = &quot;test_id&quot;, method = RequestMethod.GET)
+    public String testIntroduction() {
+        return &quot;id：&quot; + id;
+    }
+
+    @RequestMapping(value = &quot;test_name&quot;, method = RequestMethod.GET)
+    public String testName() {
+        return &quot;name：&quot; + name;
+    }
+
+    @RequestMapping(value = &quot;test_remark&quot;, method = RequestMethod.GET)
+    public String testRemark() {
+        return &quot;remark：&quot; + remark;
+    }
+}
+</code></pre>
+<p>项目配置如下：</p>
+<ul>
+<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
+<pre><code class="python">testData:
+  user:
+      id: users微服务项目下配置文件中的id值
+      name: users微服务项目下配置文件中的name值
+      remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）
+</code></pre>
+</li>
+<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
+<pre><code class="python">spring:
+  profiles:
+      active: dev
+      include: git
+  cloud:
+      config:
+          server:
+              git:
+                  uri: https://github.com/chuiliu/config-repo
+</code></pre>
+</li>
+<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
+<pre><code class="python">testData:
+  user:
+      id: 本地文件系统配置文件中的id值
+      name: 本地文件系统配置文件中的name值
+</code></pre>
+</li>
+<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
+<pre><code class="python">testData:
+  user:
+      id: git远程仓库下配置文件中的id值
+      name: git远程仓库下配置文件中的name值
+</code></pre>
+</li>
+</ul>
+<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
+<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
+<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/" class="ds-thread-count" data-thread-key="post-JHipster中使用Config Server"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a></h1>
+
+
+        <div class="article-title-short">J</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-08-28 11:08</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
+<p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
+<p>这个错误是数据库版本导致的，在一个mysql数据表中同时使用了多个timesatmp类型的字段并且都设置了默认值时，低版本MySQL不支持多个CURRENT_TIMESTAMP默认值，MySQL5.6.5以上版本则允许。</p>
+<p>我是使用的数据库版本是MySQL5.1，重新安装为MySQL5.7后问题就解决了。</p>
+<p>参考：<a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla" target="_blank" rel="external">http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla</a></p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/" class="ds-thread-count" data-thread-key="post-JHipster生成的gateway服务网关微服务启动无法自动创建表"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a></h1>
+
+
+        <div class="article-title-short">M</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-08-06 23:08</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：</p>
+<pre><code>netstat
+</code></pre><p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" class="ds-thread-count" data-thread-key="post-mysql开启允许公网连接"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/06/redis使用笔记1/">Redis 使用笔记（一）</a></h1>
+
+
+        <div class="article-title-short">R</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-08-06 23:08</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>最近项目用到redis作为内存数据库，</p>
+<p>windows系统启动redis</p>
+<pre><code>redis-server
+</code></pre>
+            
+                <p class="article-more-link">
+                    <a href="/2016/08/06/redis使用笔记1/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/08/06/redis使用笔记1/" class="ds-thread-count" data-thread-key="post-redis使用笔记1"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/31/redis启动失败/">Redis 启动失败</a></h1>
+
+
+        <div class="article-title-short">R</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-07-31 19:07</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>安装redis之后一直启动失败，报错内容如下：</p>
+<blockquote>
+<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version of Redis allocates a memory mapped heap for sharing with<br>the forked process used for persistence operations. In order to share this<br>memory, Windows allocates from the system paging file a portion equal to the<br>size of the Redis heap. At this time there is insufficient contiguous free<br>space available in the system paging file for this operation (Windows error<br>0x5AF). To work around this you may either increase the size of the system<br>paging file, or decrease the size of the Redis heap with the –maxheap flag.<br>Sometimes a reboot will defragment the system paging file sufficiently for<br>this operation to complete successfully.</p>
+<p>Please see the documentation included with the binary distributions for more<br>details on the –maxheap flag.</p>
+<p>Redis can not continue. Exiting.</p>
+</blockquote>
+<p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
+<pre><code>redis-server --maxheap 1024000000
+</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
+                _._
+           _.-``__ &#39;&#39;-._
+      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
+ (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
+ |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
+ |    `-._   `._    /     _.-&#39;    |     PID: 8296
+  `-._    `-._  `-./  _.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+ |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
+ |    `-._`-._        _.-&#39;_.-&#39;    |
+  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
+      `-._    `-.__.-&#39;    _.-&#39;
+          `-._        _.-&#39;
+              `-.__.-&#39;
+</code></pre>
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/07/31/redis启动失败/" class="ds-thread-count" data-thread-key="post-redis启动失败"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/31/mysql使用笔记/">MySQL 使用笔记</a></h1>
+
+
+        <div class="article-title-short">M</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-07-31 19:07</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
+<li>修改root密码<pre><code class="sql">set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;new password&#39;);
+</code></pre>
+</li>
+</ul>
+<h4 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h4><ul>
+<li>创建用户<pre><code>CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;username&#39;;
+</code></pre></li>
+<li>授权<pre><code>GRANT all ON databasename.* TO &#39;username&#39;@&#39;localhost&#39;;
+</code></pre></li>
+</ul>
+<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><pre><code>select coalesce(sum(price), 0) as total group by type;
+</code></pre>
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/07/31/mysql使用笔记/" class="ds-thread-count" data-thread-key="post-mysql使用笔记"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/02/使用iconfont字体图标/">使用iconfont字体图标</a></h1>
+
+
+        <div class="article-title-short">使</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-07-02 16:07</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介绍下如何使用 <a href="https://icomoon.io/app/#/select">icomoon图标制作工具</a> 来快速生成字体图标。</p>
+<p>首先到<a href="http://iconfont.cn/">http://iconfont.cn/</a>，选择到需要用到的图标。<br>通过搜索找一个微信图标：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-1.png" alt=""></p>
+            
+                <p class="article-more-link">
+                    <a href="/2016/07/02/使用iconfont字体图标/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/07/02/使用iconfont字体图标/" class="ds-thread-count" data-thread-key="post-使用iconfont字体图标"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a></h1>
+
+
+        <div class="article-title-short">C</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-06-14 22:06</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>在填坑。</p>
+<h3 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h3><pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+    &lt;span&gt;span&lt;/span&gt;
+    &lt;span&gt;span&lt;/span&gt;
+    &lt;div class=&quot;left&quot;&gt;左浮动的div&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;右浮动的div&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>chrome，firefox下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234454.png" alt=""><br>IE7下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234534.png" alt=""><br>解决：</p>
+<ol>
+<li>针对IE7为浮动元素设置负的margin-top值</li>
+<li>将浮动元素写到行内元素前面<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+ &lt;div class=&quot;left&quot;&gt;左浮动的div&lt;/div&gt;
+ &lt;div class=&quot;right&quot;&gt;右浮动的div&lt;/div&gt;
+ &lt;span&gt;span&lt;/span&gt;
+ &lt;span&gt;span&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="u95EE_u98982_uFF1AIE6_u4E0D_u8BA4_u8BC6min-height"><a href="#u95EE_u98982_uFF1AIE6_u4E0D_u8BA4_u8BC6min-height" class="headerlink" title="问题2：IE6不认识min-height"></a>问题2：IE6不认识min-height</h3><p>解决：</p>
+<pre><code class="css">div {
+    min-height: 200px;
+    height: 200px!important;  /* 因为IE6不识别!important，这一句对IE6无效*/
+    height: 200px;            /* 这一句对IE6生效，IE6盒子的高度会被内容撑大，即使设置了高度，因此这样做的效果和min-height是一样的*/
+}
+</code></pre>
+<h3 id="u95EE_u98983_uFF1AIE8_2C_9_2C_10__u4E0B_u6807_u7B7E_u4E2D_u7684_u56FE_u7247_u4F1A_u51FA_u73B0_u8FB9_u6846"><a href="#u95EE_u98983_uFF1AIE8_2C_9_2C_10__u4E0B_u6807_u7B7E_u4E2D_u7684_u56FE_u7247_u4F1A_u51FA_u73B0_u8FB9_u6846" class="headerlink" title="问题3：IE8, 9, 10 下<a>标签中的图片会出现边框"></a>问题3：IE8, 9, 10 下<a>标签中的图片会出现边框</a></h3><p>直接去掉边框：</p>
+<pre><code class="css">img {
+    border:none;
+}
+</code></pre>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/06/14/浏览器兼容/" class="ds-thread-count" data-thread-key="post-浏览器兼容"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/06/10/用Node-js爬虫下载花瓣网画板图片/">用Node.js爬虫下载花瓣网画板的图片</a></h1>
+
+
+        <div class="article-title-short">用</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-06-10 21:06</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>记一次略坑的过程。 <a href="https://github.com/chuiliu/huaban_crawler/blob/master/app.js" target="_blank" rel="external">源码地址</a></p>
+<p>最近刚好同学毕设在做爬虫，看了一下，如果不是搞得太复杂的话主要只是写些正则，于是我尝试写个Node版的简单点的，很喜欢逛花瓣网，有时想批量下载，但是却没办法下载整个画板的图片，因此不妨把喜欢的画板图片爬下来并一次性下载到本地。做个功能给自己用也好。</p>
+<p>首先是找到任意画板的地址，于是我随意找了个宫崎骏的画板进去，<a href="http://huaban.com/boards/25498000/" target="_blank" rel="external">http://huaban.com/boards/25498000/</a>，其实多研究几个url，观察其区别，不难发现，这个url对我们的有效信息就是<code>25498000</code>，也就是画板ID。</p>
+<p>然而当我打开源代码查看时，什么鬼，网页全是用js渲染的，不能用<code>cheerio</code>来解决问题了，只能想一下有什么捷径，看到有可以用<code>Phantom.js</code>，感觉比较麻烦，我只是想下载图片而已，继续研究下数据看看是否有必要再说。</p>
+<p>于是我打开Chrome控制台，可以发现，当我们点开画板中的图片或者下拉加载更多时，ajax会去请求这么一个url：<a href="http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1" target="_blank" rel="external">http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1</a>，这个请求对应的响应信息中<code>pins</code>字段下有画板中20张图片的信息，并且是规规则则的js对象，很明显url中<code>limit=20</code>就是获取前20张图片的意思，我们可以改变这个值来获取，而<code>pin_count
+:408</code>就是这个画板的总图片数量。感觉还是勉强可以通过正则来取出我们要的<code>json</code>数据的。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/%E8%8A%B1%E7%93%A3%E7%BD%91%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB2.png" alt=""></p>
+<p>于是就试了下，先把数据打印出来看看</p>
+<pre><code>var http = require(&#39;http&#39;);
+var url = &#39;http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1&#39;;
+http.get(url, function(res) {
+    var html = &#39;&#39;;
+    res.on(&#39;data&#39;, function(data) {
+        html += data;
+    });
+    res.on(&#39;end&#39;, function() {
+        console.log(html)
+    });
+});
+</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/%E8%8A%B1%E7%93%A3%E7%BD%91%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB1.png" alt=""></p>
+<p>找到我要的信息是放在<code>app.page[&quot;board&quot;]</code>，于是我从这里开始截取，截取到对象的结束处，对象结束处的标志是<code>};</code>的出现，于是构造成json数据。</p>
+<pre><code class="javascript">/**
+ * 取到画板数据
+ */
+var getBoardObj = function(html) {
+    var board = /(app\.page\[&quot;board&quot;\]).*};/.exec(html)[0];
+    board = board.substring(17, board.length - 1).trim().substring(1);
+
+    return JSON.parse(board);
+};
+</code></pre>
+<p>尝试打印出来，并替换多个url测试，最终确认是可行的，感觉快可以实现了。</p>
+<p>但是经过一番研究，发现当把<code>limit</code>的值变成画板总图片数量时并不能获取到所有数据，经测试花瓣网限制住了只能获取到100张，路又走不通了。<br>最终经过重重失败和测试，终于发现max是上一页的最后一张图片的id，而那个没有值的参数<code>iwlq03dw</code>是会变的，最后一位从a-z再从0-9重复循环，可能只是个标识吧，无法知道具体是做什么用的，但发现不影响得到的数据。<br>于是就可以构造加载更多的url了。</p>
+<pre><code class="javascript">/**
+ * 加载更多
+ */
+var loadMore = function(url) {
+    var nextUrl = url.replace(/max=\d*&amp;/, &#39;max=&#39; + images[images.length - 1].pin_id + &#39;&amp;&#39;);
+    fetchData(nextUrl, downloadAll);
+};
+</code></pre>
+<p>发现这些规律后好做多了，然而新的问题又来了，我们应该从哪一张图片开始获取呢？我所取到的url是加载第二页的数据的url，从这个url作为入口去获取只能获取到从第二页到最后一页的数据，第一页丢失了，又把自己带坑里了。折腾一番之后，猜测后台可能的实现逻辑，假如这个字段为空，一般我们写后台会从第一页数据开始获取吧，于是测试下，果然，发现不填max值也可以获取数据，并且是从第一页，感觉又可以有追求了。</p>
+<p>程序实现思路：先分页请求，把图片全部取到，放到images数组里面，然后再下载images数组中的图片。</p>
+<p>下载的时候使用<code>async</code>模块来控制并发，一次只给下载3张，每下载完成一张则callback一次，如果没控制的话，下载太多图最后会一直等待没响应。</p>
+<pre><code>async.mapLimit(images, 3, function(image, callback) {
+    // 下载
+    download(image, callback);
+}, function (err, result) {
+    console.log(&#39;下载完成情况：&#39; + result);
+});
+</code></pre><p>下载方法的实现</p>
+<pre><code>var ws = fs.createWriteStream(filePath);
+ws.on(&#39;finish&#39;, function() {
+    console.log(&#39;&#39; + filename + &#39; 已下载&#39;);
+    callback(null, filename + &#39;下载成功&#39;);
+});
+
+http.get(imgUrl, function(res) {
+    res.pipe(ws);
+}).on(&#39;finish&#39;, function() {
+    console.log(&#39;http请求完成: &#39;, imgUrl);
+}).on(&#39;error&#39;, function() {
+    console.log(&#39;error&#39;);
+});
+</code></pre><p>最终程序<br>&amp; 源码地址 <a href="https://github.com/chuiliu/huaban_crawler/blob/master/app.js" target="_blank" rel="external">爬取花瓣网画板图片</a></p>
+<pre><code class="javascript">var http = require(&#39;http&#39;),
+    fs = require(&#39;fs&#39;),
+    async = require(&#39;async&#39;);
+
+
+var url = &#39;http://huaban.com/boards/155643/?ip44g0nc&amp;max=&amp;limit=20&amp;wfl=1&#39;,
+    imageUrlBase = &#39;http://img.hb.aicdn.com/&#39;,
+    downloadPath = &#39;download/&#39;;
+
+// 保存所有图片
+var images = [],
+// 图片类型
+    imagesTypes = {
+    &#39;image/png&#39;: &#39;.png&#39;,
+    &#39;image/jpeg&#39;: &#39;.jpg&#39;,
+    &#39;image/bmp&#39;: &#39;.bmp&#39;,
+    &#39;image/gif&#39;: &#39;.gif&#39;,
+    &#39;image/x-icon&#39;: &#39;.ico&#39;,
+    &#39;image/tiff&#39;: &#39;.tif&#39;,
+    &#39;image/vnd.wap.wbmp&#39;: &#39;.wbmp&#39;
+};
+
+/**
+ * 获取花瓣网数据
+ */
+var fetchData = function(url, callback) {
+    console.log(&#39;开始抓取花瓣网图片地址&#39;);
+
+    // 爬取数据
+    http.get(url, function(res) {
+        var html = &#39;&#39;;
+
+        res.on(&#39;data&#39;, function(data) {
+            html += data;
+        });
+
+        res.on(&#39;end&#39;, function() {
+            // 取到画板数据
+            var board = getBoardObj(html);
+
+            var pins = board.pins;
+            images = images.concat(pins);
+
+            // 画板图片总数量
+            var count = board.pin_count;
+            console.log(&#39;已抓取到&#39; + board.pins.length + &#39;张图片的地址&#39;);
+
+            if (images.length == count || pins.length == 0) {
+                // 停止抓取
+                console.log(&#39;抓取结束，即将下载&#39; + images.length + &#39;张图片&#39;);
+                callback &amp;&amp; callback();
+                return;
+            } else {
+                // 加载更多
+                loadMore(url);
+            }
+        });
+    }).on(&#39;error&#39;, function() {
+        console.log(&#39;error&#39;);
+    });
+};
+
+
+/**
+ * 取到画板数据
+ * @return {[type]} [description]
+ */
+var getBoardObj = function(html) {
+    var board = /(app\.page\[&quot;board&quot;\]).*};/.exec(html)[0];
+    board = board.substring(17, board.length - 1).trim().substring(1);
+
+    return JSON.parse(board);
+};
+
+
+/**
+ * 加载更多
+ */
+var loadMore = function(url) {
+    var nextUrl = url.replace(/max=\d*&amp;/, &#39;max=&#39; + images[images.length - 1].pin_id + &#39;&amp;&#39;);
+    fetchData(nextUrl, downloadAll);
+};
+
+
+var downloadAll = function() {
+    // 创建名为画板ID的文件夹
+    downloadPath += images[0].board_id + &#39;/&#39;;
+    if(!fs.existsSync(downloadPath)) {
+         fs.mkdirSync(downloadPath);
+    }
+
+    async.mapLimit(images, 3, function(image, callback) {
+        // 下载
+        download(image, callback);
+    }, function (err, result) {
+        console.log(&#39;下载完成情况：&#39; + result);
+    });
+};
+
+
+/**
+ * 下载图片
+ */
+var downloadCount = 0;
+var download = function(image, callback) {
+
+    var imgUrl =  imageUrlBase + image.file.key;
+    var filename = image.file.id + (imagesTypes[image.file.type] || &#39;.jpg&#39;);
+    var filePath = downloadPath + filename;
+
+    if (fs.existsSync(filePath)) {
+        console.log(&#39;图片 &#39;, filePath, &#39; 已存在&#39;);
+        ++downloadCount;
+        callback(null, &#39;图片已存在&#39;);
+    } else {
+        var ws = fs.createWriteStream(filePath);
+        ws.on(&#39;finish&#39;, function() {
+            console.log(&#39;&#39; , filename, &#39; 已下载，总下载进度&#39;, 100 * (++downloadCount / images.length).toFixed(2), &#39;%&#39;);
+            callback(null, filename + &#39;下载成功&#39;);
+        });
+
+        http.get(imgUrl, function(res) {
+            res.pipe(ws);
+        }).on(&#39;finish&#39;, function() {
+            console.log(&#39;http请求完成: &#39;, imgUrl);
+        }).on(&#39;error&#39;, function() {
+            console.log(&#39;error&#39;);
+        });
+    }
+};
+
+
+
+// begin
+fetchData(url, downloadAll);
+</code></pre>
+<p>下载其它画板的话，将画板ID替换就可以了。</p>
+<p>注：图片太大or太多会导致下载较慢。</p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascrit/">Javascrit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/06/10/用Node-js爬虫下载花瓣网画板图片/" class="ds-thread-count" data-thread-key="post-用Node-js爬虫下载花瓣网画板图片"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
 <div class="pagination">
-    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next</a>
+    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next</a>
 </div>
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

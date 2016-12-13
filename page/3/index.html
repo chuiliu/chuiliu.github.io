@@ -34,8 +34,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -92,7 +93,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -107,25 +108,154 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        
+        <!-- container -->
+        <div class="container">
+            
     <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/31/JHipster中使用Config Server/">JHipster 中使用 Config Server</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/05/16/remove-inline-block-space/">去除 inline-block 之间的空白间隔</a></h1>
 
 
-    <div class="article-title-short">J</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">去</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-05-16 10:05</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code class="html">&lt;div id=&quot;container&quot;&gt;
+    &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;
+    &lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;
+    &lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;
+    &lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><pre><code class="css">#container {
+    background: #bbada0;
+    width: 215px;
+    padding: 10px;
+}
+#container .cell {
+    width: 50px;
+    height: 25px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: #cdc1b4;
+    text-align: center;
+}
+</code></pre>
+<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
+<ul>
+<li>移除空白字符，全部写在同一行<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
+  &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>改变换行的位置<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
+  cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
+  cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
+  cell4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>设置父元素的font-size为0，再为每个inline-block对象设置font-size的值<pre><code class="css">#container {
+  background: #bbada0;
+  width: 215px;
+  padding: 10px;
+  font-size: 0;
+}
+</code></pre>
+最终效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516145701.png" alt=""></li>
+</ul>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/" class="ds-thread-count" data-thread-key="post-remove-inline-block-space"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/24/about-space-2/">空格的 ASCII 码</a></h1>
+
+
+        <div class="article-title-short">空</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -134,145 +264,27 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-08-31 16:08</span>
+        <span class="text">2016-04-24 21:04</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <h3 id="JHipster_u4E2D_u4F7F_u7528Config_Server"><a href="#JHipster_u4E2D_u4F7F_u7528Config_Server" class="headerlink" title="JHipster中使用Config Server"></a>JHipster中使用Config Server</h3><p>JHipster中当启动一个微服务或者网关时，首先会连接到JHipster Registry去获取相应的配置信息，而微服务工程下的配置信息将被覆盖（只覆盖某个配置项的值，不会覆盖整个文件），可在<a href="http://localhost:8761/#/config" target="_blank" rel="external">http://localhost:8761/#/config</a>下查看各个微服务在JHipster Registry中的配置信息</p>
-<ul>
-<li>开发环境一般使用本地文件系统来保存</li>
-<li>生产环境使用git仓库服务器上的配置</li>
-</ul>
-<p>保存配置文件的地址需要在<code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置，配置如下：</p>
-<pre><code class="python">spring:
-    profiles:
-        active: dev
-        include: native
-    cloud:
-        config:
-            server:
-                native:
-                     # 绝对路径配置：search-locations: file:///E:/config-repo
-                     search-locations: file:./central-config
-                git:
-                    uri: https://github.com/chuiliu/config-repo
+            <p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
+<p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
+<p>解决方法：</p>
+<pre><code class="java">String newStr = str.replaceAll(&quot;[\\s\\u00A0]+$&quot;, &quot;&quot;);
 </code></pre>
-<p>以上配置项说明：</p>
-<ul>
-<li><code>spring.profiles.active:dev</code>：使用开发环境的配置</li>
-<li><code>spring.profiles.include:git</code>：使用本地文件系统的配置，如果要使用远程git仓库的配置，则需修改<code>spring.profiles.include</code>值为<code>git</code></li>
-</ul>
-<p>默认命名规则：<strong>{微服务名}[-dev|prod].yml</strong>，<br>此外，命名为<code>application[-dev|prod].yml</code>的配置文件将对所有注册到注册中心的微服务和网关起作用，可以在其中配置各个微服务所共有的信息。</p>
-<p>例如：</p>
-<blockquote>
-<p>在名为gateway的网关的生产环境的配置文件应命名为：gateway-prod.yml<br>名为users的微服务的配置文件则命名为：users-prod.yml</p>
-</blockquote>
-<p>可在各个微服务项目下的<code>bootstrap[-dev|prod].yml</code>文件中修改以下配置项来定义配置文件名：</p>
-<pre><code>spring:
-    cloud:
-        config:
-            name: newFilename
-</code></pre><ul>
-<li>demo地址：<a href="https://github.com/chuiliu/jhipster-microservice-demo" target="_blank" rel="external">https://github.com/chuiliu/jhipster-microservice-demo</a></li>
-<li>config server仓库地址：<a href="https://github.com/chuiliu/config-repo" target="_blank" rel="external">https://github.com/chuiliu/config-repo</a></li>
-</ul>
-<p>测试users微服务：</p>
-<pre><code class="java">package com.mycompany.myapp.web.rest;
-
-import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-/**
- * Created by Administrator on 2016/8/30.
- */
-@RestController
-@RequestMapping(&quot;/api&quot;)
-@Api(value = &quot;/api&quot;, description = &quot;test&quot;, position = 1)
-// 测试自动刷新配置
-@ConfigurationProperties
-public class testConfigResource {
-
-    @Value(&quot;${testData.user.id:defaultValue}&quot;)
-    private String id;
-
-    @Value(&quot;${testData.user.name:defaultValue}&quot;)
-    private String name;
-
-    @Value(&quot;${testData.user.remark:defaultValue}&quot;)
-    private String remark;
-
-    @RequestMapping(value = &quot;test_id&quot;, method = RequestMethod.GET)
-    public String testIntroduction() {
-        return &quot;id：&quot; + id;
-    }
-
-    @RequestMapping(value = &quot;test_name&quot;, method = RequestMethod.GET)
-    public String testName() {
-        return &quot;name：&quot; + name;
-    }
-
-    @RequestMapping(value = &quot;test_remark&quot;, method = RequestMethod.GET)
-    public String testRemark() {
-        return &quot;remark：&quot; + remark;
-    }
-}
-</code></pre>
-<p>项目配置如下：</p>
-<ul>
-<li><p>users微服务工程下<code>application-dev.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: users微服务项目下配置文件中的id值
-      name: users微服务项目下配置文件中的name值
-      remark: users微服务项目下配置文件中的remark值（在本地文件系统中的配置和git远程仓库中均没有配置这个值）
-</code></pre>
-</li>
-<li><p><code>jhipster-registry</code>下的<code>application-dev.yml</code>中配置：</p>
-<pre><code class="python">spring:
-  profiles:
-      active: dev
-      include: git
-  cloud:
-      config:
-          server:
-              git:
-                  uri: https://github.com/chuiliu/config-repo
-</code></pre>
-</li>
-<li><p>本地文件系统<code>file:./central-config</code>下<code>users.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: 本地文件系统配置文件中的id值
-      name: 本地文件系统配置文件中的name值
-</code></pre>
-</li>
-<li><p>远程git仓库下<code>users-dev.yml</code>的配置项：</p>
-<pre><code class="python">testData:
-  user:
-      id: git远程仓库下配置文件中的id值
-      name: git远程仓库下配置文件中的name值
-</code></pre>
-</li>
-</ul>
-<p>在swagger测试结果如下：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-id.png"></p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-name.png"></p>
-<p>因为远程git仓库下没有配置remark的值，因此取到的值是微服务工程下配置的：<br><img src="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png" alt="http://o743aqnrb.bkt.clouddn.com/config%20server%20testtest-reamrk.png"></p>
-<p>参考：<a href="http://www.infoq.com/cn/articles/spring-cloud-service-wiring" target="_blank" rel="external">http://www.infoq.com/cn/articles/spring-cloud-service-wiring</a></p>
+<p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
 
         
     </div>
@@ -281,7 +293,7 @@ public class testConfigResource {
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
     </div>
 
 
@@ -302,7 +314,7 @@ public class testConfigResource {
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/08/31/JHipster中使用Config Server/" class="ds-thread-count" data-thread-key="post-JHipster中使用Config Server"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/24/about-space-2/" class="ds-thread-count" data-thread-key="post-about-space-2"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -315,45 +327,92 @@ public class testConfigResource {
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/">JHipster 生成的 gateway 服务网关启动无法自动建表</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/13/undo-a-select-change/">如何撤销下拉框选中的值</a></h1>
 
 
-    <div class="article-title-short">J</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">如</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-08-28 11:08</span>
+        <span class="text">2016-04-13 21:04</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>在使用JHipster生成的网关微服务启动时报错，无法生成用户数据库，导致无法进行后续的用户注册和登录，具体报错信息如下：</p>
-<p>Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause [Failed SQL: CREATE TABLE gateway.jhi_user (id BIGINT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, password_hash VARCHAR(60) NULL, first_name VARCHAR(50) NULL, last_name VARCHAR(50) NULL, email VARCHAR(100) NULL, activated BIT(1) NOT NULL, lang_key VARCHAR(5) NULL, activation_key VARCHAR(20) NULL, reset_key VARCHAR(20) NULL, created_by VARCHAR(50) NOT NULL, created_date timestamp DEFAULT NOW() NOT NULL, reset_date timestamp NULL, last_modified_by VARCHAR(50) NULL, last_modified_date timestamp DEFAULT NOW() NULL, CONSTRAINT PK_JHI_USER PRIMARY KEY (id), UNIQUE (email), UNIQUE (login))]</p>
-<p>这个错误是数据库版本导致的，在一个mysql数据表中同时使用了多个timesatmp类型的字段并且都设置了默认值时，低版本MySQL不支持多个CURRENT_TIMESTAMP默认值，MySQL5.6.5以上版本则允许。</p>
-<p>我是使用的数据库版本是MySQL5.1，重新安装为MySQL5.7后问题就解决了。</p>
-<p>参考：<a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla" target="_blank" rel="external">http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla</a></p>
+            <p>昨天修bug时发现，系统有个功能是选择文字模板，如果选择的模板改变，会弹窗确认框选择是否覆盖之前的内容，当选择否的时候，不覆盖当前内容，但是下拉框的值变了，这就出现了不对应，所以应该在选择否的时候，撤销下拉框的本次选中。</p>
+<p>解决这个问题可以使用jQuery提供的 <a href="http://api.jquery.com/jQuery.data/" target="_blank" rel="external">$.data()</a> 来把值赋给一个自定义属性，并在每次确认改变选中下拉框的值的时候更新这个属性的值。</p>
+<p>Example：</p>
+<pre><code class="html">&lt;select name=&quot;template&quot;&gt;
+    &lt;option value=&quot;template1&quot;&gt;模板一&lt;/option&gt;
+    &lt;option value=&quot;template2&quot;&gt;模板二&lt;/option&gt;
+    &lt;option value=&quot;template3&quot;&gt;模板三&lt;/option&gt;
+&lt;/select&gt;
+&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="javascript">$(&#39;#template&#39;).change(function() {
+    var selected = $(this).val();
+    var text = $.trim($(&#39;#target&#39;).text());
+
+    if(text) {
+        if(confirm(&#39;是否覆盖已有模板？&#39;)) {
+            $(&#39;#target&#39;).text(selected);
+        } else {
+            $(&#39;#template&#39;).val($.data(this, &#39;current&#39;));
+        }
+    } else {
+        $(&#39;#target&#39;).text(selected);
+    }
+
+    $.data(this, &#39;current&#39;, $(this).val());
+});
+</code></pre>
+<p><strong>演示</strong>：<br>选择文字模板：<select name="template" id="template"><br>    <option value="template1">模板一</option><br>    <option value="template2">模板二</option><br>    <option value="template3">模板三</option><br></select></p>
+<p><div style="color:ccc;width:300px;height:100px;border:1px solid #ccc;padding: 5px;" id="target"></div></p>
+<hr>
+<p>参考：<a href="http://stackoverflow.com/questions/3963855/jquery-how-to-undo-a-select-change" target="_blank" rel="external">jQuery how to undo a select change</a></p>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#template').change(function() {
+        var selected = $(this).val();
+        var text = $.trim($('#target').text());
+
+        if(text) {
+            if(confirm('是否覆盖已有模板？')) {
+                $('#target').text(selected);
+            } else {
+                $('#template').val($.data(this, 'current'));
+            }
+        } else {
+            $('#target').text(selected);
+        }
+        $.data(this, 'current', $(this).val());
+    });
+</script>
 
         
     </div>
@@ -362,7 +421,7 @@ public class testConfigResource {
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JHipster/">JHipster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
 
 
@@ -383,7 +442,7 @@ public class testConfigResource {
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/08/28/JHipster生成的gateway服务网关微服务启动无法自动创建表/" class="ds-thread-count" data-thread-key="post-JHipster生成的gateway服务网关微服务启动无法自动创建表"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/13/undo-a-select-change/" class="ds-thread-count" data-thread-key="post-undo-a-select-change"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -396,43 +455,52 @@ public class testConfigResource {
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/06/mysql开启允许公网连接/">MySQL 开启允许公网连接</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/06/browser-compatibility/">Firefox 定义日期 new Date() 兼容问题</a></h1>
 
 
-    <div class="article-title-short">M</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">F</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-08-06 23:08</span>
+        <span class="text">2016-04-06 20:04</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>部署项目后，发现本地无法连接到MySQL远程数据库：<br>原因一：MySQL没有允许公网访问<br>查看是否公网访问：</p>
-<pre><code>netstat
-</code></pre><p>如果mysql的<code>Local Address</code>列的值是<code>127.0.0.1:3306</code>，则说明没有开启公网访问<br>解决方法：<br>修改mysql配置文件<code>/etc/mysql/my.cnf</code>，将<code>bind-address</code>的值改为<code>0.0.0.0</code></p>
+            <!-- - ## Firefox 定义日期new Date()兼容问题 -->
+<p>今天改bug时遇到一个问题，在火狐浏览器中，通过<code>var date = new Date(&#39;2016-04-06 12:45:11&#39;);</code>这个方式定义的<strong>Date</strong>对象是无效的，出现<strong>Date {Invalid Date}</strong>错误，而在谷歌浏览器中不存在这样的问题。<br>查阅资料发现，Firefox中和Chrome中均可以用以下方式创建Date对象：</p>
+<pre><code>  var date = new Date(&#39;2016/04/06 12:45:11&#39;);
+  var date = new Date(&#39;2016-04-06T12:45:11&#39;);
+</code></pre><p>  Firefox中测试结果：<br>  <img src="http://o743aqnrb.bkt.clouddn.com/20160406/211017.png" alt=""><br>  因此问题解决方案如下：</p>
+<pre><code class="javascript">  var dateString = &#39;2016-04-06 12:45:11&#39;;
+  var date1 = new Date(dateString.replace(/\s/,&#39;T&#39;);
+  var date2 = new Date(dateString.replace(/-/g,&#39;/&#39;);
+</code></pre>
 
         
     </div>
@@ -441,7 +509,7 @@ public class testConfigResource {
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
     </div>
 
 
@@ -462,7 +530,7 @@ public class testConfigResource {
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/08/06/mysql开启允许公网连接/" class="ds-thread-count" data-thread-key="post-mysql开启允许公网连接"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/06/browser-compatibility/" class="ds-thread-count" data-thread-key="post-browser-compatibility"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -475,47 +543,60 @@ public class testConfigResource {
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/08/06/redis使用笔记1/">Redis 使用笔记（一）</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/06/about-git/">Git 常用命令详解</a></h1>
 
 
-    <div class="article-title-short">R</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">G</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-08-06 23:08</span>
+        <span class="text">2016-04-06 10:04</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>最近项目用到redis作为内存数据库，</p>
-<p>windows系统启动redis</p>
-<pre><code>redis-server
+            <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
+<h2 id="u914D_u7F6E"><a href="#u914D_u7F6E" class="headerlink" title="配置"></a>配置</h2><p>安装完 git 之后首先第一步通常是配置你的个人信息，包括 name 和 email ，配置完毕后，任何修改or提交等操作 git 才会知道是谁干的</p>
+<pre><code class="bash"># 配置用户信息
+git config --global user.name &quot;[name]&quot;
+git config --global user.email &quot;[email address]&quot;
+
+# example
+git config --global user.name &quot;chuiliu&quot;
+git config --global user.email &quot;xxx@foxmail.com&quot;
+</code></pre>
+<p>配置完毕后可以使用下面的命令查看所有的git配置，能看到刚刚配置的用户信息</p>
+<pre><code class="bash">git config -l
+git config --list
 </code></pre>
             
                 <p class="article-more-link">
-                    <a href="/2016/08/06/redis使用笔记1/#more">阅读全文</a>
+                    <a href="/2016/04/06/about-git/#more">阅读全文</a>
                 </p>
             
         
@@ -525,7 +606,7 @@ public class testConfigResource {
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
     </div>
 
 
@@ -546,7 +627,7 @@ public class testConfigResource {
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/08/06/redis使用笔记1/" class="ds-thread-count" data-thread-key="post-redis使用笔记1"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/06/about-git/" class="ds-thread-count" data-thread-key="post-about-git"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -559,67 +640,47 @@ public class testConfigResource {
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/31/redis启动失败/">Redis 启动失败</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/03/Ubuntu-1/">Ubuntu修改root密码</a></h1>
 
 
-    <div class="article-title-short">R</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">U</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-07-31 19:07</span>
+        <span class="text">2016-04-03 10:04</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>安装redis之后一直启动失败，报错内容如下：</p>
-<blockquote>
-<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version of Redis allocates a memory mapped heap for sharing with<br>the forked process used for persistence operations. In order to share this<br>memory, Windows allocates from the system paging file a portion equal to the<br>size of the Redis heap. At this time there is insufficient contiguous free<br>space available in the system paging file for this operation (Windows error<br>0x5AF). To work around this you may either increase the size of the system<br>paging file, or decrease the size of the Redis heap with the –maxheap flag.<br>Sometimes a reboot will defragment the system paging file sufficiently for<br>this operation to complete successfully.</p>
-<p>Please see the documentation included with the binary distributions for more<br>details on the –maxheap flag.</p>
-<p>Redis can not continue. Exiting.</p>
-</blockquote>
-<p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<pre><code>redis-server --maxheap 1024000000
-</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
-                _._
-           _.-``__ &#39;&#39;-._
-      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
- (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
- |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
- |    `-._   `._    /     _.-&#39;    |     PID: 8296
-  `-._    `-._  `-./  _.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
-      `-._    `-.__.-&#39;    _.-&#39;
-          `-._        _.-&#39;
-              `-.__.-&#39;
-</code></pre>
+            <p><strong>Ubuntu版本14.04.4 LTS</strong></p>
+<p>安装Ubuntu后一直没有使用root账户登录过，今天使用root登录发现无法登录，安装的时候没有给root账号设置过密码。查阅资料后发现可以通过以下方式来启用root账户：</p>
+<p>在终端执行命令<code>sudo passwd root</code>，输入要修改的密码，然后就可以用root账号登录。</p>
+
         
     </div>
 
@@ -627,7 +688,7 @@ public class testConfigResource {
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
     </div>
 
 
@@ -648,7 +709,447 @@ public class testConfigResource {
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/07/31/redis启动失败/" class="ds-thread-count" data-thread-key="post-redis启动失败"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/04/03/Ubuntu-1/" class="ds-thread-count" data-thread-key="post-Ubuntu-1"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/02/24/nodejs-querystring/">Node.js笔录：Query String</a></h1>
+
+
+        <div class="article-title-short">N</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-02-24 14:02</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>用到，做个笔记</p>
+<p>querystring模块提供了有关查询字符串参数处理的操作，提供具体以下4个方法：</p>
+<pre><code class="javascript">querystring.stringify(obj, [sep], [eq])
+querystring.parse(str, [sep], [eq], [options])
+querystring.escape
+querystring.unescape
+</code></pre>
+<ul>
+<li><h2 id="querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29"><a href="#querystring-stringify_28obj_2C__5Bsep_5D_2C__5Beq_5D_29" class="headerlink" title="querystring.stringify(obj, [sep], [eq])"></a>querystring.stringify(obj, [sep], [eq])</h2><p>将一个对象序列化成字符串请求参数，参数obj指要序列化的对象<br><code>[sep]</code>：分隔符，默认值 <code>&amp;</code><br><code>[eq]</code>：分配符，默认值 <code>=</code></p>
+<pre><code class="javascript">var querystring = require(&#39;querystring&#39;);
+var obj = {username:&#39;zheng&#39;, password:&#39;123456&#39;};
+console.log(querystring.stringify(obj));
+</code></pre>
+<p>输出结果为：</p>
+<blockquote>
+<p>username=zheng&amp;password=123456</p>
+</blockquote>
+</li>
+<li><h2 id="querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29"><a href="#querystring-parse_28str_2C__5Bsep_5D_2C__5Beq_5D_2C__5Boptions_5D_29" class="headerlink" title="querystring.parse(str, [sep], [eq], [options])"></a>querystring.parse(str, [sep], [eq], [options])</h2><p>将字符串序解析成对象<br><code>[sep]</code>：分隔符，默认值<code>&amp;</code><br><code>[eq]</code>：分配符，默认值<code>=</code><br><code>[options]</code>：限制对象中键值对的数量，默认值<code>1000</code>，设置为<code>0</code>则不限制</p>
+<pre><code class="javascript">var str1 = &#39;username=zheng&amp;password=123456&#39;;
+var str2 = &#39;username=zheng&amp;password=123456&amp;tag=movie&amp;tag=music&#39;;
+console.log(querystring.parse(str1));
+console.log(querystring.parse(str2));
+</code></pre>
+<p>输出结果为：</p>
+<blockquote>
+<p>{ username: ‘zheng’, password: ‘123456’ }<br>{ username: ‘zheng’, password: ‘123456’, tag: [ ‘movie’, ‘music’ ] }</p>
+</blockquote>
+</li>
+<li><h2 id="querystring-escape"><a href="#querystring-escape" class="headerlink" title="querystring.escape"></a>querystring.escape</h2><p>对参数中的字符串进行编码</p>
+</li>
+<li><h2 id="querystring-unescape"><a href="#querystring-unescape" class="headerlink" title="querystring.unescape"></a>querystring.unescape</h2><p>对参数进行解码</p>
+<pre><code class="javascript">var str = &#39;username=用户名&amp;password=123456&#39;;
+var escape = querystring.escape(str);
+var unescape = querystring.unescape(escape);
+console.log(escape);
+console.log(unescape);
+</code></pre>
+<p>输出结果为：</p>
+<blockquote>
+<p>username%3D%E7%94%A8%E6%88%B7%E5%90%8D%26password%3D123456<br>‘username=用户名&amp;password=123456’</p>
+</blockquote>
+</li>
+</ul>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/02/24/nodejs-querystring/" class="ds-thread-count" data-thread-key="post-nodejs-querystring"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/01/26/sublime-settings/">Sublime Text 常用快捷键与配置项</a></h1>
+
+
+        <div class="article-title-short">S</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-01-26 10:01</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <h3 id="u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E"><a href="#u8BB0_u5F55_sublime_Text_3__u7F16_u8F91_u5668_u4E2D_u4E00_u4E9B_u5E38_u7528_u7684_u5FEB_u6377_u952E" class="headerlink" title="记录 sublime Text 3 编辑器中一些常用的快捷键"></a>记录 sublime Text 3 编辑器中一些常用的快捷键</h3><pre><code class="python">ctrl + d     # 选择相同的单词，连续按继续选择
+alt + F3     # 选择整个文档中相同的单词
+ctrl + g     # 输入行号，跳到某一行
+
+
+ctrl + l                 # 选择一行，连续按继续选择
+ctrl + shift + ← / →     # 向左/向右选择文本
+ctrl + shift + ↑ / ↓     # 向上/向下移动行
+ctrl + shift + k         # 删除一行
+ctrl + enter             # 在当前行下插入一行
+ctrl + shift + enter     # 在当前行上插入一行
+
+
+ctrl + shift + d     # 向下复制
+ctrl + shift + v     # 粘贴，并按当前文本格式化
+ctrl + x             # 剪切一行
+ctrl + k + k         # ctrl+k后再按一次k，删除从光标处至行末的文本
+ctrl + p             # 搜索项目中的文件
+
+
+alt + .              # 闭合html标签
+ctrl + /             # 单行注释
+ctrl + shift + /     # 多行注释
+
+
+ctrl + pagedown      # 切换到左边的标签页
+ctrl + pageup        # 切换到右边的标签页
+ctrl + w             # 关闭当前文件
+ctrl + shift + t     # 恢复上一个关闭的标签
+alt + shift + 2      # 分两屏
+</code></pre>
+            
+                <p class="article-more-link">
+                    <a href="/2016/01/26/sublime-settings/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-Text/">sublime Text</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/01/26/sublime-settings/" class="ds-thread-count" data-thread-key="post-sublime-settings"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/01/25/about-space-1/">关于换行</a></h1>
+
+
+        <div class="article-title-short">关</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/others/">其它</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-01-25 11:01</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>不同操作系统下表示一行文本的结束的标识符是不同的：</p>
+<ul>
+<li>UNIX/LINUX 行尾换行 \n , LF</li>
+<li>Windows 行尾回车换行 \n\r , CRLF</li>
+<li>Mac 行尾回车 \r , CR</li>
+</ul>
+<p>Unix/Mac系统下的文件在Windows里打开的话，所有文字会变成一行；<br>Windows系统下的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。</p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/01/25/about-space-1/" class="ds-thread-count" data-thread-key="post-about-space-1"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/26/Express/">Express 4.x 安装</a></h1>
+
+
+        <div class="article-title-short">E</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2015-12-26 19:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>最近在学习Node.js，今天尝试安装最新版的 <strong>Express 4.13.1</strong> 框架，记录一下安装过程，分享给大家学习</p>
+<ul>
+<li>全局安装最新版的 Express<pre><code>npm install -g express
+</code></pre></li>
+<li>需要注意的是，安装到这一步后，当你直接在命令行执行<strong>express</strong>命令时会报以下错误：<pre><code>C:\Users\Administrator&gt;express -V
+&#39;express&#39;不是内部或外部命令，也不是可运行的程序或批处理文件。
+</code></pre></li>
+<li>这是因为<strong>4.x</strong>版本的Express已经把命令行工具 <a href="https://github.com/expressjs/generator" target="_blank" rel="external">express-generator</a> 独立出来，<code>express-generator</code>是用来生成Express项目结构用的，因此还需要全局安装<code>express-generator</code><pre><code>npm install -g express-generator
+</code></pre></li>
+<li>到这里全局安装就完成了，我们可以查看当前Express的版本<pre><code>express -V
+</code></pre></li>
+<li>一切安装完毕之后就可以创建Express应用了，生成一个Express项目非常简单，只需要使用express命令再加上项目名称就可以在当前目录下生成Express应用，默认生成使用的模板引擎是<code>jade</code>，并切换到该目录下<pre><code>express testExpress &amp;&amp; cd testExpress
+</code></pre>如果是使用<code>ejs</code>作为模板引擎：<pre><code>express -e testExpress
+</code></pre>这时候会生成Express项目的结构：<br><img src="http://o743aqnrb.bkt.clouddn.com/image/express.png?watermark/2/text/Y2h1aWxpdQ==/font/Y29uc29sYXM=/fontsize/500/fill/I0Y2RjRGNA==/dissolve/75/gravity/SouthEast/dx/20/dy/10" alt=""></li>
+</ul>
+<ul>
+<li>接下来安装Express以及所需的module<br>express项目生成时是没有自动下载依赖模块的，我们可以打开<code>package.json</code>查看或修改项目的默认依赖，然后执行下面命令安装依赖：<pre><code>npm install
+</code></pre></li>
+<li><p>等待依赖安装完毕后，启动应用</p>
+<pre><code>npm start
+</code></pre><p>也可以使用下面命令启动，其实这也是<code>npm start</code>的实际启动方式，如果使用 <a href="https://github.com/Unitech/pm2" target="_blank" rel="external">PM2</a>、<a href="https://www.npmjs.com/package/supervisor" target="_blank" rel="external">supervisor</a> 等进程管理工具启动则需要下面这种方式：</p>
+<pre><code># 使用node命令启动
+node ./bin/www
+
+# 使用PM2启动
+pm2 ./bin/www
+
+# 使用supervisor启动
+supervisor ./bin./www
+</code></pre></li>
+<li><p>这时候在浏览器访问 <strong><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></strong> ，如看到下图则表示安装成功</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/image/express1.png" alt=""></p>
+<p>参考 <a href="https://github.com/strongloop/express#quick-start" target="_blank" rel="external">https://github.com/strongloop/express#quick-start</a></p>
+</li>
+<li><p><code>Express 4.x</code>与<code>Express 3.x</code> 差别较大，如果需要安装<code>Express 3.x</code>，则可以指定版本安装</p>
+<pre><code>npm install -g express-generator@3
+</code></pre></li>
+</ul>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/26/Express/" class="ds-thread-count" data-thread-key="post-Express"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -658,10 +1159,13 @@ public class testConfigResource {
 
 
 <div class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next</a>
 </div>
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

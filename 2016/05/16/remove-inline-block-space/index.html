@@ -17,8 +17,7 @@
 
     <meta name="decription" content="去除 inline-block 之间的空白间隔,当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。
 HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;cell&amp;quot;&amp;gt;cell1&amp;lt;/div&amp;gt;
-    &amp;lt;div class">
+    &amp;lt;div class=&amp;quot">
 
 
 
@@ -38,8 +37,9 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -96,7 +96,7 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -111,25 +111,27 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/05/16/remove-inline-block-space/">去除 inline-block 之间的空白间隔</a></h1>
 
 
-    <div class="article-title-short">去</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">去</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -138,8 +140,8 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -147,7 +149,8 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -239,11 +242,11 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 
 <nav id="article-nav">
   
-    <a href="/2016/06/14/浏览器兼容/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/10/用Node-js爬虫下载花瓣网画板图片/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          CSS 相关浏览器兼容问题 [1]
+          用Node.js爬虫下载花瓣网画板的图片
         
       </div>
     </a>
@@ -286,7 +289,10 @@ HTML&amp;lt;div id=&amp;quot;container&amp;quot;&amp;gt;
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

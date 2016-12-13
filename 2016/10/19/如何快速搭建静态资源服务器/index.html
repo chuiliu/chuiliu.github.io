@@ -16,7 +16,7 @@
     
 
     <meta name="decription" content="如何快速搭建静态资源服务器,前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：
-使用browser-syncbrowser-sync，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即">
+使用browser-syncbrowse">
 
 
 
@@ -36,8 +36,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -94,7 +95,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -109,25 +110,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/19/如何快速搭建静态资源服务器/">如何快速搭建静态资源服务器</a></h1>
 
 
-    <div class="article-title-short">如</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">如</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -136,8 +139,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -145,7 +148,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -162,7 +166,7 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 <p>使用gulp启动</p>
 <pre><code>npm install gulp browser-sync --save-dev
 </code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
-var browserSync = require(&#39;browser-sync&#39;);
+var browserSync = require(&#39;browser-sync&#39;).create();;
 
 gulp.task(&#39;browserSync&#39;, function() {
     browserSync({
@@ -294,9 +298,9 @@ json-server --watch data.json --port 3004
     </a>
   
   
-    <a href="/2016/10/13/理解AngularJS中的ng-options/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/10/13/来些CSS技巧/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">理解 AngularJS 中的 ng-options</div>
+      <div class="article-nav-title">来些CSS技巧</div>
     </a>
   
 </nav>
@@ -331,7 +335,10 @@ json-server --watch data.json --port 3004
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

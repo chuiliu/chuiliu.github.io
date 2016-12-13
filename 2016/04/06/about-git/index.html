@@ -16,10 +16,9 @@
     
 
     <meta name="decription" content="Git 常用命令详解,备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善
-
-配置// 配置用户信息
-git config --global user.name &amp;quot;[name]&amp;quot;
-git config --global user.email &amp;quot;[email address]&amp;quot;">
+配置安装完 git 之后首先第一步通常是配置你的个人信息，包括 name 和 email ，配置完毕后，任何修改or提交等操作 git 才会知道是谁干的
+# 配置用户信息
+git config --glo">
 
 
 
@@ -39,8 +38,9 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -97,7 +97,7 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -112,25 +112,27 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/04/06/about-git/">Git 常用命令详解</a></h1>
 
 
-    <div class="article-title-short">G</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">G</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -139,8 +141,8 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -148,90 +150,122 @@ git config --global user.email &amp;quot;[email address]&amp;quot;">
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
             <p>备忘，记录一些常用的 git 命令，现在只会用一些最简单的，以后慢慢完善</p>
-<ul>
-<li><strong>配置</strong><pre><code class="java">// 配置用户信息
+<h2 id="u914D_u7F6E"><a href="#u914D_u7F6E" class="headerlink" title="配置"></a>配置</h2><p>安装完 git 之后首先第一步通常是配置你的个人信息，包括 name 和 email ，配置完毕后，任何修改or提交等操作 git 才会知道是谁干的</p>
+<pre><code class="bash"># 配置用户信息
 git config --global user.name &quot;[name]&quot;
 git config --global user.email &quot;[email address]&quot;
+
+# example
+git config --global user.name &quot;chuiliu&quot;
+git config --global user.email &quot;xxx@foxmail.com&quot;
 </code></pre>
-</li>
-</ul>
+<p>配置完毕后可以使用下面的命令查看所有的git配置，能看到刚刚配置的用户信息</p>
+<pre><code class="bash">git config -l
+git config --list
+</code></pre>
 <a id="more"></a>
-<ul>
-<li><strong>常用</strong></li>
-</ul>
-<pre><code class="java">// 初始化git仓库
-git init
-
-// 查看当前仓库的状态
-git status
-
-// 查看提交日志
-git log
+<h2 id="u521D_u59CB_u5316"><a href="#u521D_u59CB_u5316" class="headerlink" title="初始化"></a>初始化</h2><p>怎样让某个目录变成一个git仓库呢，首先，我们需要在该目录下执行初始化命令</p>
+<pre><code class="bash">git init  # 初始化git仓库
 </code></pre>
-<ul>
-<li><strong>add</strong></li>
-</ul>
-<pre><code class="java">// 添加当前目录下所有文件（3种方式）
+<p>经过初始化后，当前目录就是一个git仓库了，git会生成一个名为<code>.git</code>的隐藏文件夹来保存仓库的版本信息，</p>
+<h2 id="u67E5_u770B_u4ED3_u5E93_u7684_u72B6_u6001"><a href="#u67E5_u770B_u4ED3_u5E93_u7684_u72B6_u6001" class="headerlink" title="查看仓库的状态"></a>查看仓库的状态</h2><p>这个命令可以看到，当前哪些文件被修改，哪些文件未暂存，哪些已经暂存，还可以看到有冲突的文件，很常用。</p>
+<pre><code class="bash">git status
+</code></pre>
+<h2 id="u67E5_u770B_u63D0_u4EA4_u65E5_u5FD7"><a href="#u67E5_u770B_u63D0_u4EA4_u65E5_u5FD7" class="headerlink" title="查看提交日志"></a>查看提交日志</h2><pre><code class="bash">git log
+</code></pre>
+<h2 id="u6682_u5B58"><a href="#u6682_u5B58" class="headerlink" title="暂存"></a>暂存</h2><p>暂存的命令是<code>git add</code>，这里add的意思是，把文件加入到 git 的暂存区，没有执行过 add的文件，git 是不认识的，执行 commit的时候也不会被提交，也就是说，文件的提交前提是必须先 add。</p>
+<pre><code class="bash"># 添加当前目录下所有文件（3种方式）
 git add .
 git add -A
 git add --all
-// 添加文件
+
+# 添加某个文件
 git add [filename]
-// 删除和移动的文件也能提交到暂存区
+# 添加index.html到暂存区
+git add index.html
+
+# 删除和移动的文件也能提交到暂存区
 git add --all
 </code></pre>
-<ul>
-<li><strong>commit</strong></li>
-</ul>
-<pre><code class="java">// 提交到仓库
+<h2 id="u63D0_u4EA4"><a href="#u63D0_u4EA4" class="headerlink" title="提交"></a>提交</h2><p>提交的命令是<code>git commit</code>，特别注意的是，这里是提交到<strong>本地git仓库</strong>的版本区，而不是远程仓库，初学的时候容易混淆。<code>git commit</code>的时候必须加上提交说明信息，并且不能为空，<code>-m</code>选项表示message，即提交信息。如果直接执行<code>git commit</code>，忘记<code>-m</code>选项，git 会要求你填写提交信息。<br>每一次提交会产生一个版本信息，git将会完全记录，并且可以回退到指定版本等。</p>
+<pre><code class="bash"># 提交到仓库
 git commit -m &quot;descriptions&quot;
 git commit [filename] -m &quot;descriptions&quot;
+
+# example
+# 将当前暂存区的所有文件提交到版本区
+git commit -m &quot;update&quot;
+# 将暂存区中的index.html文件提交到版本区
+git commit index.html -m &quot;更新 index.html&quot;
 </code></pre>
-<ul>
-<li><strong>分支</strong></li>
-</ul>
-<pre><code class="java">// 查看当前分支
+<h2 id="u5206_u652F"><a href="#u5206_u652F" class="headerlink" title="分支"></a>分支</h2><p>通常我们会把代码放到多个分支上，通常会有一个分支来专门放稳定版本的代码，开发则在另外的分支上开发。<br>多人开发时，开发也可能是在多个分支上开发，比如开发中A在分支A上开发功能A，开发者B在分支B上开发功能B，他们之间的开发互不干扰，等他们都开发好功能之后，再各自将分支合并到开发分支C上</p>
+<pre><code class="bash"># 查看当前所有分支，当前所在的分支前面会有个*符号
 git branch
 
-// 新建分支
+# 新建分支
 git branch [branchName]
 
-// 新建并切换到分支
+# 新建并切换到分支
 git checkout -b [branchName]
 
-// 切换到分支
+# 切换到分支
 git checkout [branchName]
 
-// 提交分支
+# 提交到[branchName]分支
 git push origin [branchName]
 
-// 合并分支
+# 合并[branchName]到主分支
 git merge [branchName]
 
-// 删除分支
+# 删除分支
 git branch -d [branchName]
 </code></pre>
-<ul>
-<li><strong>remote</strong></li>
-</ul>
-<pre><code class="java">// 连接到远程仓库
-git remote add origin git@github.com:chuiliu/test.git
-
-// 推送到远程仓库
-git push -u origin master
-
-// 远程仓库更新到本地
-git pull git@github.com:chuiliu/test.git [branchName]
-
-// 从远程仓库克隆
-git clone git@github.com:chuiliu/test.git
+<h2 id="u8FDC_u7A0B_u4ED3_u5E93"><a href="#u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>上面的命令都只是操作的本地的git仓库，而远程仓库是另外一回事，团队在协同开发则需要把代码放在远程仓库，我们在本地提交后，需要把远程仓库的代码同步下来，再推送本地的更新到远程仓库。</p>
+<h3 id="git_remote_add"><a href="#git_remote_add" class="headerlink" title="git remote add"></a>git remote add</h3><p>如果是刚刚创建在本地的git仓库，想要连接到远程仓库，则只要在远程（github，coding 等）创建一个仓库，复制下仓库的url，然后在本地仓库根目录下执行下面命令，可以用ssh协议（需要配置）和http协议。<br>这里的<code>origin</code>是git默认为远程仓库起的名字，可以修改成别的，如果有多个远程仓库，就要命多个不同的名字。</p>
+<pre><code class="bash">git remote add origin git@github.com:chuiliu/test.git
 </code></pre>
+<h3 id="git_pull"><a href="#git_pull" class="headerlink" title="git pull"></a>git pull</h3><p>将远程仓库的最新代码更新到本地</p>
+<pre><code>git pull
+git pull git@github.com:chuiliu/test.git [branchName]
+</code></pre><h3 id="git_push"><a href="#git_push" class="headerlink" title="git push"></a>git push</h3><p>将本地代码推送到远程仓库，</p>
+<pre><code>git push -u origin master
+git push origin master
+# 默认会推送到master分支
+git push
+</code></pre><h3 id="git_clone"><a href="#git_clone" class="headerlink" title="git clone"></a>git clone</h3><p>将远程仓库克隆到本地，非常常用的命令，比如我们想把github上的某个项目代码下载到本地，通常就是采用这种方式。<br>因此你也可以在github上直接创建一个空仓库，然后<code>git clone</code>到本地，克隆下来的就已经连接好远程仓库了，不需要再执行<code>git remote add</code>命令来建立连接。</p>
+<pre><code class="bash">git clone git@github.com:chuiliu/test.git
+</code></pre>
+<h2 id="u56DE_u6EDA"><a href="#u56DE_u6EDA" class="headerlink" title="回滚"></a>回滚</h2><p>回滚到上一次commit的状态</p>
+<pre><code>git reset --hard
+</code></pre><h2 id="gtiignore"><a href="#gtiignore" class="headerlink" title=".gtiignore"></a>.gtiignore</h2><p>通常git仓库下有些文件是不需要被提交的，比如常见的<code>node_module</code>、<code>.idea</code>之类的库文件或ide的文件，我们可以创建一个名为<code>.gitignore</code>的文件来配置哪些信息不需要被提交。</p>
+<pre><code># 创建.gitignore文件
+touch .gitignore
+</code></pre><p>一个<code>.gitignore</code>文件可能是这样的，使用通配符来匹配不需要提交的文件或目录：</p>
+<pre><code>bin/
+target/
+.settings/
+.idea/
+.classpath/
+.project/
+*.epoch
+*.log
+*.iml
+</code></pre><h2 id="u5220_u9664"><a href="#u5220_u9664" class="headerlink" title="删除"></a>删除</h2><p>删除文件</p>
+<pre><code class="bash"># 删除test.txt
+git rm test.txt
+</code></pre>
+<p>从暂存区删除文件，不删除物理文件</p>
+<pre><code>git rm –cached test.txt
+</code></pre><p>忽略已经跟踪着的文件，和<code>.gitignore</code>一样，但是执行了这一句后尽管这个目录不写入<code>.gitignore</code>文件，git也会忽略对它的跟踪</p>
+<pre><code>git update-index --assume-unchanged  node_modules/
+</code></pre><h2 id="u7528git_u4E00_u8D77_u5199_u4EE3_u7801"><a href="#u7528git_u4E00_u8D77_u5199_u4EE3_u7801" class="headerlink" title="用git一起写代码"></a>用git一起写代码</h2><p>当多人协同写代码的时候，一般的流程是，先将你的修改<code>add</code>和<code>commit</code>到本地的版本区，然后再从远程仓库<code>pull</code>同步最新的代码到本地，如果这时候有冲突，则必须先解决，然后<code>add</code>和<code>commit</code>，再<code>push</code>你的代码到远程仓库，如果没有冲突，则直接<code>push</code>就OK了。</p>
 
         
     </div>
@@ -318,7 +352,10 @@ git clone git@github.com:chuiliu/test.git
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

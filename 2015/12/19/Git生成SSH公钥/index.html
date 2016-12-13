@@ -18,8 +18,7 @@
     <meta name="decription" content="Git 生成 SSH 公钥,如何生存SSH公钥
 创建SSH Key在用户目录下查看是否有.ssh文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在id_rsa和id_rsa.pub两个文件，则证明公钥已经生成，否则需要我们手动生成。
 # 创建SSH Key
-ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
-这个时候会看到.ssh下会">
+ssh-keygen -t rsa">
 
 
 
@@ -39,8 +38,9 @@ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -97,7 +97,7 @@ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -112,25 +112,27 @@ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/19/Git生成SSH公钥/">Git 生成 SSH 公钥</a></h1>
 
 
-    <div class="article-title-short">G</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">G</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -139,8 +141,8 @@ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -148,7 +150,8 @@ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -161,10 +164,12 @@ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
 </li>
 <li><p>github配置<br>在github上的设置页面中配置SSH keys，Title命名任意，将id_rsa.pub中的内容全选粘贴至Key文本框中即可。<br>github上Key是可以配置多个的，假如需要在不同的计算机上推送，则需要配置不同的Key。</p>
 </li>
-<li><p>测试SSH Key是否配置成功<br>```<br>$ ssh -T git@github.com<br>Hi chuiliu! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<li><p>测试SSH Key是否配置成功</p>
+<pre><code> $ ssh -T git@github.com
+ Hi chuiliu! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>出现以上则说明一切配置都OK。</p>
 </li>
 </ol>
-<p>```<br>出现以上则说明一切配置都OK。</p>
 
         
     </div>
@@ -251,7 +256,10 @@ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

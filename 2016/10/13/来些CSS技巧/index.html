@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+
+    
+        
+    <meta name="keywords" content="CSS,前端,技巧">
+    
+
+
+    
+
+    <meta name="decription" content="来些CSS技巧,积少成多的感觉。
+
+一个很常见的问题，列表横向排列的时候，我们需要给每个列表设置右边距，通常最后一个是不必要设置的，如果网站需要兼容到IE8等不支持:last-child之类的选择器时，其实可以这样解决：ul列表可以设置宽度长一点，然后给ul的父元素设置overflow:hidden">
+
+
+
+    
+
+
+	<title>lonica | 来些CSS技巧</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
+    <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+
+    <div class="main-header-wrap">
+        <!-- 菜单按钮 -->
+        <i class="icon-menu"></i>
+        <!-- 头像 -->
+        <a href="/" class="avatar"></a>
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 副标题 -->
+        
+          <h2 class="subtitle-wrap">什么鬼</h2>
+        
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+    <!-- 搜索框 -->
+    <!-- <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
+    </div> -->
+
+    <div class="sub-header-wrap">
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+
+</header>
+
+
+        <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
+<article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/13/来些CSS技巧/">来些CSS技巧</a></h1>
+
+
+        <div class="article-title-short">来</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-13 00:10</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>积少成多的感觉。</p>
+<ol>
+<li><p>一个很常见的问题，列表横向排列的时候，我们需要给每个列表设置右边距，通常最后一个是不必要设置的，如果网站需要兼容到IE8等不支持<code>:last-child</code>之类的选择器时，其实可以这样解决：<code>ul</code>列表可以设置宽度长一点，然后给<code>ul</code>的父元素设置<code>overflow:hidden</code>，这样每个<code>li</code>设置<code>margin：right</code>超出也无所谓，就不要再给最后一个<code>li</code>设置右边距为<code>0</code><br><img height="250" style="margin-left: -30px;" src="http://o743aqnrb.bkt.clouddn.com/css%E6%8A%80%E5%B7%A7css%E6%8A%80%E5%B7%A7-1.png"></p>
+</li>
+<li><p>用<code>box-shadow</code>画边框<br>边框毫无疑问用<code>border</code>来实现就行，如果需要再加一层呢？对的，用<code>box-shadow</code>，<code>box-shadow</code>第四个参数可以让阴影的半径增大或减小，可以将前三个参数设为0，就不会呈现出阴影效果而是边框效果<br></p><p data-height="265" data-theme-id="light" data-slug-hash="GNBLWo" data-default-tab="css,result" data-user="lonica" data-embed-version="2" data-pen-title="GNBLWo" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/GNBLWo/" target="_blank" rel="external">GNBLWo</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><br>不过需要注意的是，<code>box-shadow</code>第四个参数长度是从边框外开始计算的，如果是两层<code>box-shadow</code>的话，第二层的值必须大于第一层才能看的到。并且，它不是边框，只是个看起来像边框的阴影。所以相邻的元素会被<code>box-shadow</code>部分遮挡住。<a id="more"></a><p></p>
+</li>
+<li><p>一个兼容多移动端的尺寸设置问题，可以在不同的媒体查询条件下针对不同尺寸的屏幕给根元素<code>&lt;html&gt;</code>设置不同的<code>font-size</code>值，然后长度单位就都用<code>rem</code>就好解决了。</p>
+</li>
+<li><p>用<code>rem</code>来取代<code>em</code>，<code>em</code>是相对父元素的字体来计算的，<code>1em = 父元素的font-size</code>，因为字体会变，<code>em</code>不利于整体性，容易混乱。<code>rem</code>是相对于 root element，即根元素<code>&lt;html&gt;</code>的<code>font-size</code>大小来计算的，使用<code>rem</code>单位可以保持整体一致。<br>因为浏览器默认<code>1rem = 16px</code>，为了方便计算，通常会把根元素的字体设置为62.5%，这样根元素的字体就是<code>10px</code>，即<code>1rem = 10px</code>，所以<code>16px = 1.6rem</code>，直观很多</p>
+<pre><code class="css">html {
+ font-size: 62.5%;
+}
+</code></pre>
+</li>
+<li><p>有时候想在伪元素上出现指定的文字怎么办，办法总是有的，伪元素的<code>content</code>内容可以来自元素的属性，使用<code>attr()</code>来获取到</p>
+<pre><code class="html">&lt;div id=&quot;box&quot; data-title=&quot;hello&quot;&gt;hello&lt;/div&gt;
+&lt;a href=&quot;https://www.google.com/&quot;&gt;google&lt;/a&gt;
+</code></pre>
+<pre><code>// 将data-title的内容作为content
+#box::after {
+ content: attr(data-title);
+}
+// 将href的内容作为content
+a::after {
+ content: attr(href);
+}
+</code></pre></li>
+<li><p>大图片自适应小屏幕，使用<code>min-width</code>来解决</p>
+<pre><code>img {
+ min-width: 100%;
+}
+</code></pre><p>需要兼容IE6的话，IE6下使用 <code>img {width: 100%}</code></p>
+</li>
+<li><p>文本溢出用省略号显示</p>
+<pre><code class="css">p {
+ text-overflow: ellipsis; 
+ overflow: hidden; 
+ white-space: nowrap; 
+}
+</code></pre>
+</li>
+<li><p>阻止鼠标点击事件，阻止hover和active状态的变化触发的事件，ie11+可支持</p>
+<pre><code class="css">div {
+ pointer-events：none;
+}
+</code></pre>
+</li>
+<li><p>实现背景半透明，文字不透明<br><code>opacity</code>会使得所有元素变透明，包括文字，如果需要实现文字不透明，可以在文字部分使用定位，定位到背景上面。</p>
+</li>
+</ol>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/13/来些CSS技巧/" class="ds-thread-count" data-thread-key="post-来些CSS技巧"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+        <!-- 上一篇，下一篇 -->
+        <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/19/如何快速搭建静态资源服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          如何快速搭建静态资源服务器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</div>
+    </a>
+  
+</nav>
+
+
+
+        <!-- 评论 -->
+        <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-来些CSS技巧" data-title="来些CSS技巧" data-url="http://chuiliu.github.io/2016/10/13/来些CSS技巧/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+    
+
+</article>
+
+
+        </div>
+        <div class="fix"></div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- 回顶部 -->
+<!-- 回顶部 -->
+<div id="to-top">
+    <span>TOP</span>
+</div>
+
+
+
+    <!-- js -->
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -16,9 +16,7 @@
     
 
     <meta name="decription" content="Hexo优化系列,记下使用hexo来的一些使用经验和主题修改，针对的是默认的landscape主题。
-忽略目录或文件的渲染我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是source目录下的文件默认都会在执行hexo deploy命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：
-
-在根目录下_config.yml文件中添加以下配置，代表不渲">
+忽略目录或文件的渲染我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是source目录下的文件默认都会在执行hexo deploy命令时被渲染，因此He">
 
 
 
@@ -38,8 +36,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -96,7 +95,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -111,25 +110,27 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        <!-- 文章 -->
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
 <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2015/12/16/about-hexo-2/">Hexo优化系列</a></h1>
 
 
-    <div class="article-title-short">H</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">H</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -138,8 +139,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -147,7 +148,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -287,7 +289,10 @@
 </article>
 
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

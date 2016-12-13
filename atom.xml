@@ -4,7 +4,7 @@
   <subtitle><![CDATA[什么鬼]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-12-07T08:52:04.641Z</updated>
+  <updated>2016-12-10T15:38:13.411Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -15,15 +15,158 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[实现footer在页面底部]]></title>
+    <link href="http://chuiliu.github.io/2016/12/08/%E5%AE%9E%E7%8E%B0footer%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8/"/>
+    <id>http://chuiliu.github.io/2016/12/08/实现footer在页面底部/</id>
+    <published>2016-12-08T05:30:30.000Z</published>
+    <updated>2016-12-10T15:38:13.411Z</updated>
+    <content type="html"><![CDATA[<p>突然发现自己写的hexo模板有点问题，当页面主体高度不够的时候，footer页脚也跟着往上移，不在整个页面的底部了，很不协调，看着也不舒服。于是问题就来了，如何解决。</p>
+<h2 id="u5728footer_u4F7F_u7528_u8D1F_u7684margin-top"><a href="#u5728footer_u4F7F_u7528_u8D1F_u7684margin-top" class="headerlink" title="在footer使用负的margin-top"></a>在footer使用负的margin-top</h2><p>思路：将页面主体部分的<code>min-height</code>设为100%，于是页面就可以充满整个浏览器窗口了，footer就不会低于页面高度了，然后footer部分再使用负的<code>margin-top</code>来使footer往上移，这样就刚好置于页面底部。但这时候需要一个空的标签来保持主体部分距离底部的高度等于footer高度，防止文字覆盖在footer上面。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+         主体正文
+        &lt;div class=&quot;fix&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        底栏固定
+    &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/body&gt;
+</code></pre>
+<a id="more"></a>
+<pre><code class="css">html, body, div, footer {margin:  0;padding: 0;}
+html, body {
+    height: 100%;
+}
+.content {
+    min-height: 100%;
+}
+.fix {
+    height: 100px;
+}
+.footer {
+    margin-top: -100px;
+    height: 100px;
+    color: #fff;
+    background-color: #313131;
+}
+</code></pre>
+<p>缺点：多了个辅助用的空标签，有种hack的感觉</p>
+<h2 id="u5728_u9875_u9762_u4E3B_u4F53_u90E8_u5206_u4F7F_u7528_u8D1F_u7684margin-bottom"><a href="#u5728_u9875_u9762_u4E3B_u4F53_u90E8_u5206_u4F7F_u7528_u8D1F_u7684margin-bottom" class="headerlink" title="在页面主体部分使用负的margin-bottom"></a>在页面主体部分使用负的margin-bottom</h2><p>实现思路和上面的方法类似，html结构同上，缺点也是需要一个空标签。</p>
+<pre><code class="css">html, body {
+    height: 100%;
+}
+.content {
+    min-height: 100%;
+    margin-bottom: -100px;
+}
+.footer,
+.fix {
+    height: 100px;
+}
+</code></pre>
+<h2 id="footer_u7528_u7EDD_u5BF9_u5B9A_u4F4D"><a href="#footer_u7528_u7EDD_u5BF9_u5B9A_u4F4D" class="headerlink" title="footer用绝对定位"></a>footer用绝对定位</h2><p>思路：body的<code>min-height</code>设为100%，并相对定位，然后footer用绝对定位固定在底部，主体部分用与footer相等高度的<code>padding-bottom</code>来控制底部距离。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;页面主体&lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;底栏固定&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    position: relative;
+}
+.content {
+    padding-bottom: 100px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+</code></pre>
+<h2 id="u901A_u8FC7_u8BA1_u7B97_u5C5E_u6027_u6765_u8BA1_u7B97_u9875_u9762_u4E3B_u4F53_u9AD8_u5EA6"><a href="#u901A_u8FC7_u8BA1_u7B97_u5C5E_u6027_u6765_u8BA1_u7B97_u9875_u9762_u4E3B_u4F53_u9AD8_u5EA6" class="headerlink" title="通过计算属性来计算页面主体高度"></a>通过计算属性来计算页面主体高度</h2><p>看到有文章写用Javascript来解决，我感觉不太好，但用上同样的道理，css3的<code>calc()</code>也可以解决，虽然说兼容性差了点。<br>思路：footer高度固定，通过计算控制页面主体部分的高度，<code>1vh</code>等于视口高度的<code>1%</code></p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;页面主体&lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;页面底栏&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html, body {
+    height: 100%;
+}
+.content {
+    min-height: calc(100vh - 100px);
+}
+.footer {
+    height: 100px;
+}
+</code></pre>
+<p>缺点：兼容性差</p>
+<h2 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h2><p>在这篇文章 <a href="https://css-tricks.com/couple-takes-sticky-footer/" target="_blank" rel="external">Sticky Footer, Five Ways</a> 中看到还有两种比较新鲜的实现方式，采用<code>flex</code>和<code>CSS Grid</code>。</p>
+<p><code>flex</code>的方法是这样的，因为<code>flexbox</code>元素可以在容器中填充满，因此只要将<code>body</code>变成<code>flex</code>布局，然后控制<code>body</code>的<code>min-height</code>为100%就行了，页面主体部分是<code>flex</code>元素就会自动伸缩了。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+    content
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+}
+</code></pre>
+<p>CSS Grid比较新，个人还没了解过，就不细说了。CSS Grid最近很热的感觉，可能又将是以后的趋势，现在能够支持的浏览器很少。<br>CSS 真是越来越灵活了，解决方案也越来越多。</p>
+<p>看到<a href="https://css-tricks.com/couple-takes-sticky-footer/" target="_blank" rel="external">Sticky Footer, Five Ways</a> 这篇文章评论下大家还提出更多的解决方案。另外的方法还有<code>display:table</code>等，文章很不错，推荐阅读，感谢文章作者。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>突然发现自己写的hexo模板有点问题，当页面主体高度不够的时候，footer页脚也跟着往上移，不在整个页面的底部了，很不协调，看着也不舒服。于是问题就来了，如何解决。</p>
+<h2 id="u5728footer_u4F7F_u7528_u8D1F_u7684margin-top"><a href="#u5728footer_u4F7F_u7528_u8D1F_u7684margin-top" class="headerlink" title="在footer使用负的margin-top"></a>在footer使用负的margin-top</h2><p>思路：将页面主体部分的<code>min-height</code>设为100%，于是页面就可以充满整个浏览器窗口了，footer就不会低于页面高度了，然后footer部分再使用负的<code>margin-top</code>来使footer往上移，这样就刚好置于页面底部。但这时候需要一个空的标签来保持主体部分距离底部的高度等于footer高度，防止文字覆盖在footer上面。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+         主体正文
+        &lt;div class=&quot;fix&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        底栏固定
+    &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/body&gt;
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+    
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/fe/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[程序员与画家]]></title>
     <link href="http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/"/>
     <id>http://chuiliu.github.io/2016/12/06/程序员与画家/</id>
     <published>2016-12-06T12:45:55.000Z</published>
-    <updated>2016-12-07T08:52:04.641Z</updated>
-    <content type="html"><![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank" rel="external">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，几个小方块愉快地在一起就可以画个小人。<br><img style="margin: 0 auto;" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"></p>
-<p>于是我又在 dotpict 上画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。</p>
-<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>
+    <updated>2016-12-13T09:35:26.607Z</updated>
+    <content type="html"><![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+<p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
+<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
 <a id="more"></a>
+<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>
 <p>后来想了下，这么简单的点阵式，好像可以用代码来画出来，于是我顺便把这几只鸟从 dotpict 上画的每个点转成矩阵，再用canvas画下来。<br>于是效果就出来了。</p>
 <p></p><p data-height="265" data-theme-id="dark" data-slug-hash="ZBxVgQ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="ZBxVgQ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/ZBxVgQ/" target="_blank" rel="external">ZBxVgQ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -34,9 +177,9 @@
 <p>程序员还是要懂点艺术的。<br>画了株小仙人掌。<img src="http://o743aqnrb.bkt.clouddn.com/%E4%BB%99%E4%BA%BA%E6%8E%8C.png"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，几个小方块愉快地在一起就可以画个小人。<br><img style="margin: 0 auto;" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"></p>
-<p>于是我又在 dotpict 上画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。</p>
-<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>]]>
+    <![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+<p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
+<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>]]>
     
     </summary>
     
@@ -48,7 +191,9 @@
     
       <category term="折腾" scheme="http://chuiliu.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="折腾" scheme="http://chuiliu.github.io/categories/%E6%8A%98%E8%85%BE/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+    
+      <category term="折腾" scheme="http://chuiliu.github.io/categories/fe/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
@@ -57,7 +202,7 @@
     <link href="http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     <id>http://chuiliu.github.io/2016/11/15/移动开发/</id>
     <published>2016-11-14T16:10:33.000Z</published>
-    <updated>2016-12-07T06:09:26.739Z</updated>
+    <updated>2016-12-08T08:45:59.595Z</updated>
     <content type="html"><![CDATA[<p>最近接触了移动端开发，将开发中遇到的一些相关知识点记下来。</p>
 <h4 id="viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A"><a href="#viewport_uFF0C_u9875_u9762_u6BD4_u4F8B_u521D_u59CB_u5316_uFF0C_u7981_u6B62_u9875_u9762_u7684_u7F29_u653E_u884C_u4E3A" class="headerlink" title="viewport，页面比例初始化，禁止页面的缩放行为"></a>viewport，页面比例初始化，禁止页面的缩放行为</h4><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot; /&gt;
 </code></pre><p>页面宽度为设备宽度，高度为设备高度，初始缩放1倍，最大缩放1倍，最小缩放1倍， 禁止用户缩放行为<br><code>user-scalable=no</code>也可以写成<code>user-scalable=0</code></p>
@@ -145,6 +290,8 @@ display: box;
     
     </summary>
     
+      <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
+    
       <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="移动端" scheme="http://chuiliu.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
@@ -158,7 +305,7 @@ display: box;
     <link href="http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/</id>
     <published>2016-10-19T13:29:30.000Z</published>
-    <updated>2016-12-07T06:07:34.374Z</updated>
+    <updated>2016-12-10T09:14:07.882Z</updated>
     <content type="html"><![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
 <h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
 <pre><code>npm install -g browser-sync
@@ -171,7 +318,7 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 <p>使用gulp启动</p>
 <pre><code>npm install gulp browser-sync --save-dev
 </code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
-var browserSync = require(&#39;browser-sync&#39;);
+var browserSync = require(&#39;browser-sync&#39;).create();;
 
 gulp.task(&#39;browserSync&#39;, function() {
     browserSync({
@@ -272,32 +419,80 @@ json-server --watch data.json --port 3004
   </entry>
   
   <entry>
-    <title><![CDATA[理解 AngularJS 中的 ng-options]]></title>
-    <link href="http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/"/>
-    <id>http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/</id>
+    <title><![CDATA[来些CSS技巧]]></title>
+    <link href="http://chuiliu.github.io/2016/10/13/%E6%9D%A5%E4%BA%9BCSS%E6%8A%80%E5%B7%A7/"/>
+    <id>http://chuiliu.github.io/2016/10/13/来些CSS技巧/</id>
     <published>2016-10-12T16:19:47.000Z</published>
-    <updated>2016-12-04T09:04:27.068Z</updated>
-    <content type="html"><![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
-<ul>
-<li>支持两种格式的数据，数组和对象</li>
-</ul>
-<a id="more"></a>
+    <updated>2016-12-11T06:49:11.607Z</updated>
+    <content type="html"><![CDATA[<p>积少成多的感觉。</p>
+<ol>
+<li><p>一个很常见的问题，列表横向排列的时候，我们需要给每个列表设置右边距，通常最后一个是不必要设置的，如果网站需要兼容到IE8等不支持<code>:last-child</code>之类的选择器时，其实可以这样解决：<code>ul</code>列表可以设置宽度长一点，然后给<code>ul</code>的父元素设置<code>overflow:hidden</code>，这样每个<code>li</code>设置<code>margin：right</code>超出也无所谓，就不要再给最后一个<code>li</code>设置右边距为<code>0</code><br><img height="250" style="margin-left: -30px;" src="http://o743aqnrb.bkt.clouddn.com/css%E6%8A%80%E5%B7%A7css%E6%8A%80%E5%B7%A7-1.png"></p>
+</li>
+<li><p>用<code>box-shadow</code>画边框<br>边框毫无疑问用<code>border</code>来实现就行，如果需要再加一层呢？对的，用<code>box-shadow</code>，<code>box-shadow</code>第四个参数可以让阴影的半径增大或减小，可以将前三个参数设为0，就不会呈现出阴影效果而是边框效果<br></p><p data-height="265" data-theme-id="light" data-slug-hash="GNBLWo" data-default-tab="css,result" data-user="lonica" data-embed-version="2" data-pen-title="GNBLWo" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/GNBLWo/" target="_blank" rel="external">GNBLWo</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><br>不过需要注意的是，<code>box-shadow</code>第四个参数长度是从边框外开始计算的，如果是两层<code>box-shadow</code>的话，第二层的值必须大于第一层才能看的到。并且，它不是边框，只是个看起来像边框的阴影。所以相邻的元素会被<code>box-shadow</code>部分遮挡住。<a id="more"></a><p></p>
+</li>
+<li><p>一个兼容多移动端的尺寸设置问题，可以在不同的媒体查询条件下针对不同尺寸的屏幕给根元素<code>&lt;html&gt;</code>设置不同的<code>font-size</code>值，然后长度单位就都用<code>rem</code>就好解决了。</p>
+</li>
+<li><p>用<code>rem</code>来取代<code>em</code>，<code>em</code>是相对父元素的字体来计算的，<code>1em = 父元素的font-size</code>，因为字体会变，<code>em</code>不利于整体性，容易混乱。<code>rem</code>是相对于 root element，即根元素<code>&lt;html&gt;</code>的<code>font-size</code>大小来计算的，使用<code>rem</code>单位可以保持整体一致。<br>因为浏览器默认<code>1rem = 16px</code>，为了方便计算，通常会把根元素的字体设置为62.5%，这样根元素的字体就是<code>10px</code>，即<code>1rem = 10px</code>，所以<code>16px = 1.6rem</code>，直观很多</p>
+<pre><code class="css">html {
+ font-size: 62.5%;
+}
+</code></pre>
+</li>
+<li><p>有时候想在伪元素上出现指定的文字怎么办，办法总是有的，伪元素的<code>content</code>内容可以来自元素的属性，使用<code>attr()</code>来获取到</p>
+<pre><code class="html">&lt;div id=&quot;box&quot; data-title=&quot;hello&quot;&gt;hello&lt;/div&gt;
+&lt;a href=&quot;https://www.google.com/&quot;&gt;google&lt;/a&gt;
+</code></pre>
+<pre><code>// 将data-title的内容作为content
+#box::after {
+ content: attr(data-title);
+}
+// 将href的内容作为content
+a::after {
+ content: attr(href);
+}
+</code></pre></li>
+<li><p>大图片自适应小屏幕，使用<code>min-width</code>来解决</p>
+<pre><code>img {
+ min-width: 100%;
+}
+</code></pre><p>需要兼容IE6的话，IE6下使用 <code>img {width: 100%}</code></p>
+</li>
+<li><p>文本溢出用省略号显示</p>
+<pre><code class="css">p {
+ text-overflow: ellipsis; 
+ overflow: hidden; 
+ white-space: nowrap; 
+}
+</code></pre>
+</li>
+<li><p>阻止鼠标点击事件，阻止hover和active状态的变化触发的事件，ie11+可支持</p>
+<pre><code class="css">div {
+ pointer-events：none;
+}
+</code></pre>
+</li>
+<li><p>实现背景半透明，文字不透明<br><code>opacity</code>会使得所有元素变透明，包括文字，如果需要实现文字不透明，可以在文字部分使用定位，定位到背景上面。</p>
+</li>
+</ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
-<ul>
-<li>支持两种格式的数据，数组和对象</li>
-</ul>]]>
+    <![CDATA[<p>积少成多的感觉。</p>
+<ol>
+<li><p>一个很常见的问题，列表横向排列的时候，我们需要给每个列表设置右边距，通常最后一个是不必要设置的，如果网站需要兼容到IE8等不支持<code>:last-child</code>之类的选择器时，其实可以这样解决：<code>ul</code>列表可以设置宽度长一点，然后给<code>ul</code>的父元素设置<code>overflow:hidden</code>，这样每个<code>li</code>设置<code>margin：right</code>超出也无所谓，就不要再给最后一个<code>li</code>设置右边距为<code>0</code><br><img height="250" style="margin-left: -30px;" src="http://o743aqnrb.bkt.clouddn.com/css%E6%8A%80%E5%B7%A7css%E6%8A%80%E5%B7%A7-1.png"></p>
+</li>
+<li><p>用<code>box-shadow</code>画边框<br>边框毫无疑问用<code>border</code>来实现就行，如果需要再加一层呢？对的，用<code>box-shadow</code>，<code>box-shadow</code>第四个参数可以让阴影的半径增大或减小，可以将前三个参数设为0，就不会呈现出阴影效果而是边框效果<br><p data-height="265" data-theme-id="light" data-slug-hash="GNBLWo" data-default-tab="css,result" data-user="lonica" data-embed-version="2" data-pen-title="GNBLWo" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/GNBLWo/">GNBLWo</a> by lonica (<a href="http://codepen.io/lonica">@lonica</a>) on <a href="http://codepen.io">CodePen</a>.</p><br><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><br>不过需要注意的是，<code>box-shadow</code>第四个参数长度是从边框外开始计算的，如果是两层<code>box-shadow</code>的话，第二层的值必须大于第一层才能看的到。并且，它不是边框，只是个看起来像边框的阴影。所以相邻的元素会被<code>box-shadow</code>部分遮挡住。]]>
     
     </summary>
     
-      <category term="AngularJS" scheme="http://chuiliu.github.io/tags/AngularJS/"/>
+      <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
     
-      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="技巧" scheme="http://chuiliu.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
     
       <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
     
-      <category term="AngularJS" scheme="http://chuiliu.github.io/categories/fe/AngularJS/"/>
+      <category term="CSS" scheme="http://chuiliu.github.io/categories/fe/CSS/"/>
     
   </entry>
   
@@ -1021,8 +1216,9 @@ OK
     <link href="http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/"/>
     <id>http://chuiliu.github.io/2016/06/14/浏览器兼容/</id>
     <published>2016-06-14T14:26:29.000Z</published>
-    <updated>2016-10-21T16:56:58.256Z</updated>
-    <content type="html"><![CDATA[<h4 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h4><pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+    <updated>2016-12-11T04:34:52.726Z</updated>
+    <content type="html"><![CDATA[<p>在填坑。</p>
+<h3 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h3><pre><code class="html">&lt;div class=&quot;container&quot;&gt;
     &lt;span&gt;span&lt;/span&gt;
     &lt;span&gt;span&lt;/span&gt;
     &lt;div class=&quot;left&quot;&gt;左浮动的div&lt;/div&gt;
@@ -1041,9 +1237,22 @@ OK
 </code></pre>
 </li>
 </ol>
-<h4 id="u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528"><a href="#u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528" class="headerlink" title="问题2：IE6、IE7下，给元素设置min-width不起作用"></a>问题2：IE6、IE7下，给元素设置min-width不起作用</h4>]]></content>
+<h3 id="u95EE_u98982_uFF1AIE6_u4E0D_u8BA4_u8BC6min-height"><a href="#u95EE_u98982_uFF1AIE6_u4E0D_u8BA4_u8BC6min-height" class="headerlink" title="问题2：IE6不认识min-height"></a>问题2：IE6不认识min-height</h3><p>解决：</p>
+<pre><code class="css">div {
+    min-height: 200px;
+    height: 200px!important;  /* 因为IE6不识别!important，这一句对IE6无效*/
+    height: 200px;            /* 这一句对IE6生效，IE6盒子的高度会被内容撑大，即使设置了高度，因此这样做的效果和min-height是一样的*/
+}
+</code></pre>
+<h3 id="u95EE_u98983_uFF1AIE8_2C_9_2C_10__u4E0B_u6807_u7B7E_u4E2D_u7684_u56FE_u7247_u4F1A_u51FA_u73B0_u8FB9_u6846"><a href="#u95EE_u98983_uFF1AIE8_2C_9_2C_10__u4E0B_u6807_u7B7E_u4E2D_u7684_u56FE_u7247_u4F1A_u51FA_u73B0_u8FB9_u6846" class="headerlink" title="问题3：IE8, 9, 10 下<a>标签中的图片会出现边框"></a>问题3：IE8, 9, 10 下<a>标签中的图片会出现边框</a></h3><p>直接去掉边框：</p>
+<pre><code class="css">img {
+    border:none;
+}
+</code></pre>
+]]></content>
     <summary type="html">
-    <![CDATA[<h4 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u8]]>
+    <![CDATA[<p>在填坑。</p>
+<h3 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5]]>
     </summary>
     
       <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
@@ -1059,97 +1268,229 @@ OK
   </entry>
   
   <entry>
-    <title><![CDATA[去除 inline-block 之间的空白间隔]]></title>
-    <link href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/"/>
-    <id>http://chuiliu.github.io/2016/05/16/remove-inline-block-space/</id>
-    <published>2016-05-16T02:25:12.000Z</published>
-    <updated>2016-10-19T15:20:07.851Z</updated>
-    <content type="html"><![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
-&lt;/div&gt;
+    <title><![CDATA[用Node.js爬虫下载花瓣网画板的图片]]></title>
+    <link href="http://chuiliu.github.io/2016/06/10/%E7%94%A8Node-js%E7%88%AC%E8%99%AB%E4%B8%8B%E8%BD%BD%E8%8A%B1%E7%93%A3%E7%BD%91%E7%94%BB%E6%9D%BF%E5%9B%BE%E7%89%87/"/>
+    <id>http://chuiliu.github.io/2016/06/10/用Node-js爬虫下载花瓣网画板图片/</id>
+    <published>2016-06-10T13:01:17.000Z</published>
+    <updated>2016-12-13T06:06:23.756Z</updated>
+    <content type="html"><![CDATA[<p>记一次略坑的过程。 <a href="https://github.com/chuiliu/huaban_crawler/blob/master/app.js" target="_blank" rel="external">源码地址</a></p>
+<p>最近刚好同学毕设在做爬虫，看了一下，如果不是搞得太复杂的话主要只是写些正则，于是我尝试写个Node版的简单点的，很喜欢逛花瓣网，有时想批量下载，但是却没办法下载整个画板的图片，因此不妨把喜欢的画板图片爬下来并一次性下载到本地。做个功能给自己用也好。</p>
+<p>首先是找到任意画板的地址，于是我随意找了个宫崎骏的画板进去，<a href="http://huaban.com/boards/25498000/" target="_blank" rel="external">http://huaban.com/boards/25498000/</a>，其实多研究几个url，观察其区别，不难发现，这个url对我们的有效信息就是<code>25498000</code>，也就是画板ID。</p>
+<p>然而当我打开源代码查看时，什么鬼，网页全是用js渲染的，不能用<code>cheerio</code>来解决问题了，只能想一下有什么捷径，看到有可以用<code>Phantom.js</code>，感觉比较麻烦，我只是想下载图片而已，继续研究下数据看看是否有必要再说。</p>
+<p>于是我打开Chrome控制台，可以发现，当我们点开画板中的图片或者下拉加载更多时，ajax会去请求这么一个url：<a href="http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1" target="_blank" rel="external">http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1</a>，这个请求对应的响应信息中<code>pins</code>字段下有画板中20张图片的信息，并且是规规则则的js对象，很明显url中<code>limit=20</code>就是获取前20张图片的意思，我们可以改变这个值来获取，而<code>pin_count
+:408</code>就是这个画板的总图片数量。感觉还是勉强可以通过正则来取出我们要的<code>json</code>数据的。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/%E8%8A%B1%E7%93%A3%E7%BD%91%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB2.png" alt=""></p>
+<p>于是就试了下，先把数据打印出来看看</p>
+<pre><code>var http = require(&#39;http&#39;);
+var url = &#39;http://huaban.com/boards/25498000/?iwlq03dw&amp;max=580817693&amp;limit=20&amp;wfl=1&#39;;
+http.get(url, function(res) {
+    var html = &#39;&#39;;
+    res.on(&#39;data&#39;, function(data) {
+        html += data;
+    });
+    res.on(&#39;end&#39;, function() {
+        console.log(html)
+    });
+});
+</code></pre><p><img src="http://o743aqnrb.bkt.clouddn.com/%E8%8A%B1%E7%93%A3%E7%BD%91%E7%88%AC%E8%99%AB/%E7%88%AC%E8%99%AB1.png" alt=""></p>
+<p>找到我要的信息是放在<code>app.page[&quot;board&quot;]</code>，于是我从这里开始截取，截取到对象的结束处，对象结束处的标志是<code>};</code>的出现，于是构造成json数据。</p>
+<pre><code class="javascript">/**
+ * 取到画板数据
+ */
+var getBoardObj = function(html) {
+    var board = /(app\.page\[&quot;board&quot;\]).*};/.exec(html)[0];
+    board = board.substring(17, board.length - 1).trim().substring(1);
+
+    return JSON.parse(board);
+};
 </code></pre>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><pre><code class="css">#container {
-    background: #bbada0;
-    width: 215px;
-    padding: 10px;
-}
-#container .cell {
-    width: 50px;
-    height: 25px;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    background: #cdc1b4;
-    text-align: center;
-}
+<p>尝试打印出来，并替换多个url测试，最终确认是可行的，感觉快可以实现了。</p>
+<p>但是经过一番研究，发现当把<code>limit</code>的值变成画板总图片数量时并不能获取到所有数据，经测试花瓣网限制住了只能获取到100张，路又走不通了。<br>最终经过重重失败和测试，终于发现max是上一页的最后一张图片的id，而那个没有值的参数<code>iwlq03dw</code>是会变的，最后一位从a-z再从0-9重复循环，可能只是个标识吧，无法知道具体是做什么用的，但发现不影响得到的数据。<br>于是就可以构造加载更多的url了。</p>
+<pre><code class="javascript">/**
+ * 加载更多
+ */
+var loadMore = function(url) {
+    var nextUrl = url.replace(/max=\d*&amp;/, &#39;max=&#39; + images[images.length - 1].pin_id + &#39;&amp;&#39;);
+    fetchData(nextUrl, downloadAll);
+};
 </code></pre>
-<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
-<ul>
-<li>移除空白字符，全部写在同一行<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-  &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
-&lt;/div&gt;
+<p>发现这些规律后好做多了，然而新的问题又来了，我们应该从哪一张图片开始获取呢？我所取到的url是加载第二页的数据的url，从这个url作为入口去获取只能获取到从第二页到最后一页的数据，第一页丢失了，又把自己带坑里了。折腾一番之后，猜测后台可能的实现逻辑，假如这个字段为空，一般我们写后台会从第一页数据开始获取吧，于是测试下，果然，发现不填max值也可以获取数据，并且是从第一页，感觉又可以有追求了。</p>
+<p>程序实现思路：先分页请求，把图片全部取到，放到images数组里面，然后再下载images数组中的图片。</p>
+<p>下载的时候使用<code>async</code>模块来控制并发，一次只给下载3张，每下载完成一张则callback一次，如果没控制的话，下载太多图最后会一直等待没响应。</p>
+<pre><code>async.mapLimit(images, 3, function(image, callback) {
+    // 下载
+    download(image, callback);
+}, function (err, result) {
+    console.log(&#39;下载完成情况：&#39; + result);
+});
+</code></pre><p>下载方法的实现</p>
+<pre><code>var ws = fs.createWriteStream(filePath);
+ws.on(&#39;finish&#39;, function() {
+    console.log(&#39;&#39; + filename + &#39; 已下载&#39;);
+    callback(null, filename + &#39;下载成功&#39;);
+});
+
+http.get(imgUrl, function(res) {
+    res.pipe(ws);
+}).on(&#39;finish&#39;, function() {
+    console.log(&#39;http请求完成: &#39;, imgUrl);
+}).on(&#39;error&#39;, function() {
+    console.log(&#39;error&#39;);
+});
+</code></pre><p>最终程序<br>&amp; 源码地址 <a href="https://github.com/chuiliu/huaban_crawler/blob/master/app.js" target="_blank" rel="external">爬取花瓣网画板图片</a></p>
+<pre><code class="javascript">var http = require(&#39;http&#39;),
+    fs = require(&#39;fs&#39;),
+    async = require(&#39;async&#39;);
+
+
+var url = &#39;http://huaban.com/boards/155643/?ip44g0nc&amp;max=&amp;limit=20&amp;wfl=1&#39;,
+    imageUrlBase = &#39;http://img.hb.aicdn.com/&#39;,
+    downloadPath = &#39;download/&#39;;
+
+// 保存所有图片
+var images = [],
+// 图片类型
+    imagesTypes = {
+    &#39;image/png&#39;: &#39;.png&#39;,
+    &#39;image/jpeg&#39;: &#39;.jpg&#39;,
+    &#39;image/bmp&#39;: &#39;.bmp&#39;,
+    &#39;image/gif&#39;: &#39;.gif&#39;,
+    &#39;image/x-icon&#39;: &#39;.ico&#39;,
+    &#39;image/tiff&#39;: &#39;.tif&#39;,
+    &#39;image/vnd.wap.wbmp&#39;: &#39;.wbmp&#39;
+};
+
+/**
+ * 获取花瓣网数据
+ */
+var fetchData = function(url, callback) {
+    console.log(&#39;开始抓取花瓣网图片地址&#39;);
+
+    // 爬取数据
+    http.get(url, function(res) {
+        var html = &#39;&#39;;
+
+        res.on(&#39;data&#39;, function(data) {
+            html += data;
+        });
+
+        res.on(&#39;end&#39;, function() {
+            // 取到画板数据
+            var board = getBoardObj(html);
+
+            var pins = board.pins;
+            images = images.concat(pins);
+
+            // 画板图片总数量
+            var count = board.pin_count;
+            console.log(&#39;已抓取到&#39; + board.pins.length + &#39;张图片的地址&#39;);
+
+            if (images.length == count || pins.length == 0) {
+                // 停止抓取
+                console.log(&#39;抓取结束，即将下载&#39; + images.length + &#39;张图片&#39;);
+                callback &amp;&amp; callback();
+                return;
+            } else {
+                // 加载更多
+                loadMore(url);
+            }
+        });
+    }).on(&#39;error&#39;, function() {
+        console.log(&#39;error&#39;);
+    });
+};
+
+
+/**
+ * 取到画板数据
+ * @return {[type]} [description]
+ */
+var getBoardObj = function(html) {
+    var board = /(app\.page\[&quot;board&quot;\]).*};/.exec(html)[0];
+    board = board.substring(17, board.length - 1).trim().substring(1);
+
+    return JSON.parse(board);
+};
+
+
+/**
+ * 加载更多
+ */
+var loadMore = function(url) {
+    var nextUrl = url.replace(/max=\d*&amp;/, &#39;max=&#39; + images[images.length - 1].pin_id + &#39;&amp;&#39;);
+    fetchData(nextUrl, downloadAll);
+};
+
+
+var downloadAll = function() {
+    // 创建名为画板ID的文件夹
+    downloadPath += images[0].board_id + &#39;/&#39;;
+    if(!fs.existsSync(downloadPath)) {
+         fs.mkdirSync(downloadPath);
+    }
+
+    async.mapLimit(images, 3, function(image, callback) {
+        // 下载
+        download(image, callback);
+    }, function (err, result) {
+        console.log(&#39;下载完成情况：&#39; + result);
+    });
+};
+
+
+/**
+ * 下载图片
+ */
+var downloadCount = 0;
+var download = function(image, callback) {
+
+    var imgUrl =  imageUrlBase + image.file.key;
+    var filename = image.file.id + (imagesTypes[image.file.type] || &#39;.jpg&#39;);
+    var filePath = downloadPath + filename;
+
+    if (fs.existsSync(filePath)) {
+        console.log(&#39;图片 &#39;, filePath, &#39; 已存在&#39;);
+        ++downloadCount;
+        callback(null, &#39;图片已存在&#39;);
+    } else {
+        var ws = fs.createWriteStream(filePath);
+        ws.on(&#39;finish&#39;, function() {
+            console.log(&#39;&#39; , filename, &#39; 已下载，总下载进度&#39;, 100 * (++downloadCount / images.length).toFixed(2), &#39;%&#39;);
+            callback(null, filename + &#39;下载成功&#39;);
+        });
+
+        http.get(imgUrl, function(res) {
+            res.pipe(ws);
+        }).on(&#39;finish&#39;, function() {
+            console.log(&#39;http请求完成: &#39;, imgUrl);
+        }).on(&#39;error&#39;, function() {
+            console.log(&#39;error&#39;);
+        });
+    }
+};
+
+
+
+// begin
+fetchData(url, downloadAll);
 </code></pre>
-</li>
-<li>改变换行的位置<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-  &lt;div class=&quot;cell&quot;&gt;
-  cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell4&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-</li>
-<li>设置父元素的font-size为0，再为每个inline-block对象设置font-size的值<pre><code class="css">#container {
-  background: #bbada0;
-  width: 215px;
-  padding: 10px;
-  font-size: 0;
-}
-</code></pre>
-最终效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516145701.png" alt=""></li>
-</ul>
+<p>下载其它画板的话，将画板ID替换就可以了。</p>
+<p>注：图片太大or太多会导致下载较慢。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML<]]>
+    <![CDATA[<p>记一次略坑的过程。 <a href="https://github.com/chuiliu/huaban_crawler/blob/master/app.js" target="_blank" rel="external">源码地址</a></p>
+<p>最近刚好同学毕设在]]>
     </summary>
     
-      <category term="CSS" scheme="http://chuiliu.github.io/tags/CSS/"/>
+      <category term="Javascrit" scheme="http://chuiliu.github.io/tags/Javascrit/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="Node.js" scheme="http://chuiliu.github.io/tags/Node-js/"/>
     
-      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+      <category term="折腾" scheme="http://chuiliu.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="CSS" scheme="http://chuiliu.github.io/categories/fe/CSS/"/>
+      <category term="爬虫" scheme="http://chuiliu.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
-  </entry>
-  
-  <entry>
-    <title><![CDATA[空格的 ASCII 码]]></title>
-    <link href="http://chuiliu.github.io/2016/04/24/about-space-2/"/>
-    <id>http://chuiliu.github.io/2016/04/24/about-space-2/</id>
-    <published>2016-04-24T13:42:58.000Z</published>
-    <updated>2016-04-24T15:01:30.521Z</updated>
-    <content type="html"><![CDATA[<p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
-<p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
-<p>解决方法：</p>
-<pre><code class="java">String newStr = str.replaceAll(&quot;[\\s\\u00A0]+$&quot;, &quot;&quot;);
-</code></pre>
-<p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;<]]>
-    </summary>
-    
-      <category term="Java" scheme="http://chuiliu.github.io/tags/Java/"/>
-    
-      <category term="编码" scheme="http://chuiliu.github.io/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Java" scheme="http://chuiliu.github.io/categories/Java/"/>
+      <category term="Node.js" scheme="http://chuiliu.github.io/categories/Node-js/"/>
     
   </entry>
   

@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
-    <lastmod>2016-12-07T15:17:33.357Z</lastmod>
-    <data>
-        <display>
-        <title>Git 常用命令详解</title>
-        <pubTime>2016-04-06T02:23:54.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
-    <lastmod>2016-12-07T08:52:04.641Z</lastmod>
+    <lastmod>2016-12-13T09:35:26.607Z</lastmod>
     <data>
         <display>
         <title>程序员与画家</title>
@@ -42,12 +22,215 @@
          
            
              
-              <breadCrumb title="折腾" url="http://chuiliu.github.io/categories/%E6%8A%98%E8%85%BE/"/>
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+             
+              <breadCrumb title="折腾" url="http://chuiliu.github.io/categories/fe/%E6%8A%98%E8%85%BE/"/>
           
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://chuiliu.github.io/2015/12/19/Git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
+    <lastmod>2016-12-13T06:25:01.204Z</lastmod>
+    <data>
+        <display>
+        <title>Git 生成 SSH 公钥</title>
+        <pubTime>2015-12-19T12:33:48.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/06/10/%E7%94%A8Node-js%E7%88%AC%E8%99%AB%E4%B8%8B%E8%BD%BD%E8%8A%B1%E7%93%A3%E7%BD%91%E7%94%BB%E6%9D%BF%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2016-12-13T06:06:23.756Z</lastmod>
+    <data>
+        <display>
+        <title>用Node.js爬虫下载花瓣网画板的图片</title>
+        <pubTime>2016-06-10T13:01:17.000Z</pubTime>
+        
+        <tag>Javascrit</tag>
+         
+        <tag>Node.js</tag>
+         
+        <tag>折腾</tag>
+         
+        <tag>爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://chuiliu.github.io/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/13/%E6%9D%A5%E4%BA%9BCSS%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-12-11T06:49:11.607Z</lastmod>
+    <data>
+        <display>
+        <title>来些CSS技巧</title>
+        <pubTime>2016-10-12T16:19:47.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>技巧</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+             
+              <breadCrumb title="CSS" url="http://chuiliu.github.io/categories/fe/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
+    <lastmod>2016-12-11T04:34:52.726Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 相关浏览器兼容问题 [1]</title>
+        <pubTime>2016-06-14T14:26:29.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>浏览器兼容</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+             
+              <breadCrumb title="CSS" url="http://chuiliu.github.io/categories/fe/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/12/08/%E5%AE%9E%E7%8E%B0footer%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8/</loc>
+    <lastmod>2016-12-10T15:38:13.411Z</lastmod>
+    <data>
+        <display>
+        <title>实现footer在页面底部</title>
+        <pubTime>2016-12-08T05:30:30.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+             
+              <breadCrumb title="CSS" url="http://chuiliu.github.io/categories/fe/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
+    <lastmod>2016-12-10T10:29:44.604Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo：为博客添加多说评论框</title>
+        <pubTime>2015-12-14T13:05:38.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://chuiliu.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-12-10T09:14:07.882Z</lastmod>
+    <data>
+        <display>
+        <title>如何快速搭建静态资源服务器</title>
+        <pubTime>2016-10-19T13:29:30.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>开发工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2016-12-08T08:45:59.595Z</lastmod>
+    <data>
+        <display>
+        <title>移动 webapp 开发相关要点</title>
+        <pubTime>2016-11-14T16:10:33.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>移动端</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="http://chuiliu.github.io/categories/mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
     
   <url>
     <loc>http://chuiliu.github.io/2016/10/11/%E8%A7%A3%E5%86%B3MySQL%E5%9B%A0max-allowed-packet%E7%9A%84%E5%80%BC%E8%AE%BE%E7%BD%AE%E8%BF%87%E5%B0%8F%E8%80%8C%E6%9F%A5%E8%AF%A2%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
@@ -150,50 +333,6 @@
 
     
   <url>
-    <loc>http://chuiliu.github.io/2016/11/15/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2016-12-07T06:09:26.739Z</lastmod>
-    <data>
-        <display>
-        <title>移动 webapp 开发相关要点</title>
-        <pubTime>2016-11-14T16:10:33.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>移动端</tag>
-         
-         
-           
-             
-              <breadCrumb title="移动端" url="http://chuiliu.github.io/categories/mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2016-12-07T06:07:34.374Z</lastmod>
-    <data>
-        <display>
-        <title>如何快速搭建静态资源服务器</title>
-        <pubTime>2016-10-19T13:29:30.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>开发工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://chuiliu.github.io/2016/09/28/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</loc>
     <lastmod>2016-12-07T06:06:15.841Z</lastmod>
     <data>
@@ -267,34 +406,6 @@
     
     
     
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/13/%E7%90%86%E8%A7%A3AngularJS%E4%B8%AD%E7%9A%84ng-options/</loc>
-    <lastmod>2016-12-04T09:04:27.068Z</lastmod>
-    <data>
-        <display>
-        <title>理解 AngularJS 中的 ng-options</title>
-        <pubTime>2016-10-12T16:19:47.000Z</pubTime>
-        
-        <tag>AngularJS</tag>
-         
-        <tag>Javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
-          
-             
-              <breadCrumb title="AngularJS" url="http://chuiliu.github.io/categories/fe/AngularJS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
   <url>
     <loc>http://chuiliu.github.io/2015/12/12/markdown/</loc>
     <lastmod>2016-12-02T16:50:17.363Z</lastmod>
@@ -334,48 +445,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
-    <lastmod>2016-12-02T16:45:18.887Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo：为博客添加多说评论框</title>
-        <pubTime>2015-12-14T13:05:38.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://chuiliu.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/03/13/about-bower/</loc>
-    <lastmod>2016-12-02T16:44:23.710Z</lastmod>
-    <data>
-        <display>
-        <title>包管理工具 Bower</title>
-        <pubTime>2016-03-13T08:24:48.000Z</pubTime>
-        
-        <tag>bower</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
     
     
     
@@ -443,26 +512,6 @@
 
     
   <url>
-    <loc>http://chuiliu.github.io/2015/12/19/Git%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</loc>
-    <lastmod>2016-10-22T01:51:56.042Z</lastmod>
-    <data>
-        <display>
-        <title>Git 生成 SSH 公钥</title>
-        <pubTime>2015-12-19T12:33:48.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://chuiliu.github.io/2016/01/25/about-space-1/</loc>
     <lastmod>2016-10-22T01:37:57.774Z</lastmod>
     <data>
@@ -503,33 +552,6 @@
           
              
               <breadCrumb title="Javascript" url="http://chuiliu.github.io/categories/fe/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/06/14/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9/</loc>
-    <lastmod>2016-10-21T16:56:58.256Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 相关浏览器兼容问题 [1]</title>
-        <pubTime>2016-06-14T14:26:29.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>浏览器兼容</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
-          
-             
-              <breadCrumb title="CSS" url="http://chuiliu.github.io/categories/fe/CSS/"/>
           
         </display>
     </data>
@@ -706,6 +728,26 @@
           
              
               <breadCrumb title="Javascript" url="http://chuiliu.github.io/categories/fe/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/04/06/about-git/</loc>
+    <lastmod>2016-05-15T02:30:43.826Z</lastmod>
+    <data>
+        <display>
+        <title>Git 常用命令详解</title>
+        <pubTime>2016-04-06T02:23:54.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chuiliu.github.io/categories/dev-tool/"/>
           
         </display>
     </data>

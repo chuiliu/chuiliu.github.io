@@ -34,8 +34,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -92,7 +93,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -107,35 +108,133 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        
+        <!-- container -->
+        <div class="container">
+            
     <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/06/程序员与画家/">程序员与画家</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/08/实现footer在页面底部/">实现footer在页面底部</a></h1>
 
 
-    <div class="article-title-short">程</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">实</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/折腾/">折腾</a>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-12-08 13:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>突然发现自己写的hexo模板有点问题，当页面主体高度不够的时候，footer页脚也跟着往上移，不在整个页面的底部了，很不协调，看着也不舒服。于是问题就来了，如何解决。</p>
+<h2 id="u5728footer_u4F7F_u7528_u8D1F_u7684margin-top"><a href="#u5728footer_u4F7F_u7528_u8D1F_u7684margin-top" class="headerlink" title="在footer使用负的margin-top"></a>在footer使用负的margin-top</h2><p>思路：将页面主体部分的<code>min-height</code>设为100%，于是页面就可以充满整个浏览器窗口了，footer就不会低于页面高度了，然后footer部分再使用负的<code>margin-top</code>来使footer往上移，这样就刚好置于页面底部。但这时候需要一个空的标签来保持主体部分距离底部的高度等于footer高度，防止文字覆盖在footer上面。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+         主体正文
+        &lt;div class=&quot;fix&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        底栏固定
+    &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/body&gt;
+</code></pre>
+            
+                <p class="article-more-link">
+                    <a href="/2016/12/08/实现footer在页面底部/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/12/08/实现footer在页面底部/" class="ds-thread-count" data-thread-key="post-实现footer在页面底部"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/06/程序员与画家/">程序员与画家</a></h1>
+
+
+        <div class="article-title-short">程</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/折腾/">折腾</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -143,14 +242,15 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，几个小方块愉快地在一起就可以画个小人。<br><img style="margin: 0 auto;" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"></p>
-<p>于是我又在 dotpict 上画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。</p>
-<p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>
+            <p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+<p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
+<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
             
                 <p class="article-more-link">
                     <a href="/2016/12/06/程序员与画家/#more">阅读全文</a>
@@ -197,18 +297,20 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/11/15/移动开发/">移动 webapp 开发相关要点</a></h1>
 
 
-    <div class="article-title-short">移</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">移</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -217,8 +319,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -226,7 +328,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -248,7 +351,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
     </div>
 
 
@@ -282,18 +385,20 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/19/如何快速搭建静态资源服务器/">如何快速搭建静态资源服务器</a></h1>
 
 
-    <div class="article-title-short">如</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">如</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -302,8 +407,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -311,7 +416,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -366,28 +472,30 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/13/理解AngularJS中的ng-options/">理解 AngularJS 中的 ng-options</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/13/来些CSS技巧/">来些CSS技巧</a></h1>
 
 
-    <div class="article-title-short">理</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">来</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -395,18 +503,20 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>用 AngularJS 实现下拉列表，我们可能很快地想到使用<code>ngRepeat</code>指令来实现，AngularJS 提供了另一种更灵活的方式——<code>ngOptions</code>，使用<code>ngOptions</code>指令可以很方便地将数组或者对象数据渲染到下拉列表的option元素中，它优于<code>ngRepeat</code>主要是在于它的实现会占用更少的内存资源，它在每次循环中不会创建新的作用域。</p>
-<ul>
-<li>支持两种格式的数据，数组和对象</li>
-</ul>
+            <p>积少成多的感觉。</p>
+<ol>
+<li><p>一个很常见的问题，列表横向排列的时候，我们需要给每个列表设置右边距，通常最后一个是不必要设置的，如果网站需要兼容到IE8等不支持<code>:last-child</code>之类的选择器时，其实可以这样解决：<code>ul</code>列表可以设置宽度长一点，然后给<code>ul</code>的父元素设置<code>overflow:hidden</code>，这样每个<code>li</code>设置<code>margin：right</code>超出也无所谓，就不要再给最后一个<code>li</code>设置右边距为<code>0</code><br><img height="250" style="margin-left: -30px;" src="http://o743aqnrb.bkt.clouddn.com/css%E6%8A%80%E5%B7%A7css%E6%8A%80%E5%B7%A7-1.png"></p>
+</li>
+<li><p>用<code>box-shadow</code>画边框<br>边框毫无疑问用<code>border</code>来实现就行，如果需要再加一层呢？对的，用<code>box-shadow</code>，<code>box-shadow</code>第四个参数可以让阴影的半径增大或减小，可以将前三个参数设为0，就不会呈现出阴影效果而是边框效果<br><p data-height="265" data-theme-id="light" data-slug-hash="GNBLWo" data-default-tab="css,result" data-user="lonica" data-embed-version="2" data-pen-title="GNBLWo" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/GNBLWo/">GNBLWo</a> by lonica (<a href="http://codepen.io/lonica">@lonica</a>) on <a href="http://codepen.io">CodePen</a>.</p><br><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><br>不过需要注意的是，<code>box-shadow</code>第四个参数长度是从边框外开始计算的，如果是两层<code>box-shadow</code>的话，第二层的值必须大于第一层才能看的到。并且，它不是边框，只是个看起来像边框的阴影。所以相邻的元素会被<code>box-shadow</code>部分遮挡住。
             
                 <p class="article-more-link">
-                    <a href="/2016/10/13/理解AngularJS中的ng-options/#more">阅读全文</a>
+                    <a href="/2016/10/13/来些CSS技巧/#more">阅读全文</a>
                 </p>
             
         
@@ -416,7 +526,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
     </div>
 
 
@@ -437,7 +547,7 @@
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/10/13/理解AngularJS中的ng-options/" class="ds-thread-count" data-thread-key="post-理解AngularJS中的ng-options"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/13/来些CSS技巧/" class="ds-thread-count" data-thread-key="post-来些CSS技巧"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -450,18 +560,20 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决MySQL因max-allowed-packet的值设置过小而查询失败的问题/">解决MySQL因max_allowed_packet的值设置过小而查询失败的问题</a></h1>
 
 
-    <div class="article-title-short">解</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">解</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
@@ -470,8 +582,8 @@
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
@@ -479,7 +591,8 @@
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
@@ -530,11 +643,362 @@
 </article>
 
 
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/">解决HTTPS方式下GIT推送到远程分支每次都要重新输入用户名密码</a></h1>
+
+
+        <div class="article-title-short">解</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/工具/">工具</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-11 22:10</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>最近因换了硬盘，重新克隆Git项目到本地，因为使用的是HTTPS方式克隆的，在每次推送代码到Coding上时发现都要输入username和password，除非改成SSH方式，不然很不方便。</p>
+<p>经过一番尝试，找到了解决方法：</p>
+<ol>
+<li>在克隆项目时加上用户名和密码信息，这样以后这个项目的推送就不需要再输用户名密码：<pre><code>git clone https://username:password@git.coding.net/username/Demo.git
+</code></pre></li>
+</ol>
+            
+                <p class="article-more-link">
+                    <a href="/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/11/解决GIT推送到远程分支每次都要重新输入用户名密码/" class="ds-thread-count" data-thread-key="post-解决GIT推送到远程分支每次都要重新输入用户名密码"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/10/08/AngularJS什么时候用-apply/">AngularJS 什么时候用$apply</a></h1>
+
+
+        <div class="article-title-short">A</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/AngularJS/">AngularJS</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-10-08 21:10</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>写AngularJS代码时会时常发现，有时候明明数据模型更新了但是页面视图层并没有更新，然后只要在代码里加上一句<code>$scope.$apply()</code>，视图就更新了。以前总是不清楚什么时候该用，现在清晰了，记录一下。</p>
+<p>其实总结一句就是：<strong>DOM监听事件处理程序中的代码，外部的回调函数（例如<code>setTimeout()</code>,<code>setInterval()</code>）中的代码等不在Angular执行上下文中的代码，如果有修改到Angular数据模型时，则必须由我们手动调用<code>$apply()</code>来获得视图层的更新。<code>$apply</code>方法将会调用一个digest循环来更新整个视图层。</strong></p>
+            
+                <p class="article-more-link">
+                    <a href="/2016/10/08/AngularJS什么时候用-apply/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/10/08/AngularJS什么时候用-apply/" class="ds-thread-count" data-thread-key="post-AngularJS什么时候用-apply"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/28/浏览器同源策略/">理解浏览器同源策略与跨域的解决方案</a></h1>
+
+
+        <div class="article-title-short">理</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/Javascript/">Javascript</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-28 09:09</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>开发中涉及到一些跨域问题，从而对同源策略有更深的理解，同源策略是保证Web浏览器安全中最基本的安全功能，无论是前端还是后端，如果对同源策略不了解很容易导致一些开发上的难题。</p>
+<h2 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h2><p>对Javascript来说，满足同源策略可以简单理解为下面的三项必须完全相同：</p>
+            
+                <p class="article-more-link">
+                    <a href="/2016/09/28/浏览器同源策略/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/28/浏览器同源策略/" class="ds-thread-count" data-thread-key="post-浏览器同源策略"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a></h1>
+
+
+        <div class="article-title-short">R</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-27 22:09</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（Sets），是不重复的并且无序的</li>
+</ul>
+            
+                <p class="article-more-link">
+                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" class="ds-thread-count" data-thread-key="post-redis使用笔记2"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
 <div class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
 </div>
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

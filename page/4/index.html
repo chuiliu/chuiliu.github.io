@@ -34,8 +34,9 @@
 
 </head>
 <body>
-    <!-- header -->
-    <header id="header">
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
 
     <div class="main-header-wrap">
         <!-- 菜单按钮 -->
@@ -92,7 +93,7 @@
 </header>
 
 
-    <nav id="mobile-nav">
+        <nav id="mobile-nav">
     
         <a href="/" class="mobile-nav-link">Home</a>
     
@@ -107,60 +108,65 @@
 </nav>
 
 
-    <!-- container -->
-    <div class="container">
-        
+        <!-- container -->
+        <div class="container">
+            
     <article class="article">
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/31/mysql使用笔记/">MySQL 使用笔记</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/19/Git生成SSH公钥/">Git 生成 SSH 公钥</a></h1>
 
 
-    <div class="article-title-short">M</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">G</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+        <a class="article-category-link" href="/categories/dev-tool/">开发工具</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-07-31 19:07</span>
+        <span class="text">2015-12-19 20:12</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
-<li>修改root密码<pre><code class="sql">set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;new password&#39;);
-</code></pre>
+            <h2 id="u5982_u4F55_u751F_u5B58SSH_u516C_u94A5"><a href="#u5982_u4F55_u751F_u5B58SSH_u516C_u94A5" class="headerlink" title="如何生存SSH公钥"></a>如何生存SSH公钥</h2><ol>
+<li><p>创建SSH Key<br>在用户目录下查看是否有<code>.ssh</code>文件夹，这个文件夹位置是用于保存公钥的。如果下面已经存在<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，则证明公钥已经生成，否则需要我们手动生成。</p>
+<pre><code># 创建SSH Key
+ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre><p>这个时候会看到<code>.ssh</code>下会生成私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>。</p>
 </li>
-</ul>
-<h4 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h4><ul>
-<li>创建用户<pre><code>CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;username&#39;;
-</code></pre></li>
-<li>授权<pre><code>GRANT all ON databasename.* TO &#39;username&#39;@&#39;localhost&#39;;
-</code></pre></li>
-</ul>
-<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><pre><code>select coalesce(sum(price), 0) as total group by type;
-</code></pre>
+<li><p>github配置<br>在github上的设置页面中配置SSH keys，Title命名任意，将id_rsa.pub中的内容全选粘贴至Key文本框中即可。<br>github上Key是可以配置多个的，假如需要在不同的计算机上推送，则需要配置不同的Key。</p>
+</li>
+<li><p>测试SSH Key是否配置成功</p>
+<pre><code> $ ssh -T git@github.com
+ Hi chuiliu! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>出现以上则说明一切配置都OK。</p>
+</li>
+</ol>
+
         
     </div>
 
@@ -168,7 +174,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
     </div>
 
 
@@ -189,7 +195,7 @@
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/07/31/mysql使用笔记/" class="ds-thread-count" data-thread-key="post-mysql使用笔记"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/19/Git生成SSH公钥/" class="ds-thread-count" data-thread-key="post-Git生成SSH公钥"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -202,45 +208,175 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/02/使用iconfont字体图标/">使用iconfont字体图标</a></h1>
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/16/about-hexo-2/">Hexo优化系列</a></h1>
 
 
-    <div class="article-title-short">使</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">H</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a>
+        <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-07-02 16:07</span>
+        <span class="text">2015-12-16 23:12</span>
     </div>
 
 
-    </div>
+        </div>
+    
 
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>最近在做移动web app项目，前端很多地方需要用到小图标，移动端不像PC端，图标的选择几乎不会去用到图片，因为要做不同屏幕的适配，一般更好的选择是使用字体图标，这样就可以通过CSS随意控制图标的大小和颜色了。项目用到的是<code>iconfont</code>，下面就介绍下如何使用 <a href="https://icomoon.io/app/#/select">icomoon图标制作工具</a> 来快速生成字体图标。</p>
-<p>首先到<a href="http://iconfont.cn/">http://iconfont.cn/</a>，选择到需要用到的图标。<br>通过搜索找一个微信图标：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160702/iconfont-1.png" alt=""></p>
+            <p>记下使用hexo来的一些使用经验和主题修改，针对的是默认的landscape主题。</p>
+<h2 id="u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3"><a href="#u5FFD_u7565_u76EE_u5F55_u6216_u6587_u4EF6_u7684_u6E32_u67D3" class="headerlink" title="忽略目录或文件的渲染"></a>忽略目录或文件的渲染</h2><p>我们通常会用一个REMEME.md文件来描述项目，或者我们想放上一些自定义demo展示页面，但是<code>source</code>目录下的文件默认都会在执行<code>hexo deploy</code>命令时被渲染，因此Hexo也提供了忽略个别文件的配置方法：</p>
+<ul>
+<li>在根目录下<code>_config.yml</code>文件中添加以下配置，代表不渲染<code>source</code>目录下的README.md文件：<pre><code>skip_render: README.md
+</code></pre></li>
+<li>如果想配置不渲染多个文件，则可以这样配置：<br>其中，<code>demo/**</code>代表不渲染<code>source/demo/</code>下的所有目录和文件<pre><code>skip_render:
+  - &#39;README.md&#39;
+  - &#39;demo/**&#39;
+</code></pre></li>
+<li>此外，配置中还可以使用正则来匹配：<pre><code>skip_render: demo/*.html
+</code></pre></li>
+</ul>
+<h2 id="u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD"><a href="#u6DFB_u52A0_u56DE_u9876_u90E8_u529F_u80FD" class="headerlink" title="添加回顶部功能"></a>添加回顶部功能</h2><ol>
+<li>在<code>themes/landscape/layout/_partial/</code> 下新建 <code>totop.ejs</code> ，代码如下：<pre><code class="html">&lt;!-- 回顶部 --&gt;
+&lt;div id=&quot;to-top&quot; style=&quot;position:fixed;bottom:30px;right:-50px;z-index:999;cursor:pointer;&quot;&gt;
+&lt;span style=&quot;color:#fff;background:#333;border-radius:3px;display:block;height:40px;width:40px;line-height:40px;text-align:center;&quot;&gt;TOP&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>在<code>themes/landscape/source/js/</code> 下新建<code>totop.js</code>，代码如下：<pre><code class="javascript">(function($) {
+ $(window).scroll(function(){
+     if ($(window).scrollTop() &gt; 200){
+         $(&quot;#to-top&quot;).stop().animate({right:&quot;5px&quot;});
+     }else{
+         $(&quot;#to-top&quot;).stop().animate({right:&quot;-50px&quot;});
+     }
+ });
+ $(&quot;#to-top&quot;).click(function(){
+     $(&#39;body,html&#39;).animate({
+         scrollTop:0
+     },300);
+     return false;
+ });
+})(jQuery);
+</code></pre>
+</li>
+<li>在<code>themes/landscape/layout/_partial/after_footer.ejs</code>最后添加如下代码：<pre><code>&lt;%- partial(&#39;totop&#39;) %&gt;
+&lt;%- js(&#39;js/totop&#39;) %&gt;
+</code></pre></li>
+</ol>
+<h2 id="u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6"><a href="#u6DFB_u52A0_u65B0_u6D6A_u5FAE_u535A_u7EC4_u4EF6" class="headerlink" title="添加新浪微博组件"></a>添加新浪微博组件</h2><ol>
+<li>在 <a href="http://open.weibo.com/widgets" target="_blank" rel="external">新浪开放平台</a> 选择需要添加的微博组件</li>
+<li>设置组件的样式，复制生成的代码</li>
+<li>在<code>theme/landscape/layout/_widget/</code>下新建<code>weibo.ejs</code> 文件，文件内容为上一步所复制的代码</li>
+<li><p>在<code>theme/landscape/_config.yml</code> 中添加如下代码：</p>
+<pre><code>widges:
+- weibo
+</code></pre></li>
+</ol>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/16/about-hexo-2/" class="ds-thread-count" data-thread-key="post-about-hexo-2"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo：为博客添加多说评论框</a></h1>
+
+
+        <div class="article-title-short">H</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2015-12-14 21:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/">Disqus</a>，为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/">多说</a>，我使用的是官方landscape主题，具体步骤如下:</p>
             
                 <p class="article-more-link">
-                    <a href="/2016/07/02/使用iconfont字体图标/#more">阅读全文</a>
+                    <a href="/2015/12/14/about-hexo-1/#more">阅读全文</a>
                 </p>
             
         
@@ -250,7 +386,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
 
@@ -271,7 +407,7 @@
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/07/02/使用iconfont字体图标/" class="ds-thread-count" data-thread-key="post-使用iconfont字体图标"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/14/about-hexo-1/" class="ds-thread-count" data-thread-key="post-about-hexo-1"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -284,266 +420,55 @@
 
     <!-- <i class="icon-article article-remark"></i> -->
 
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/06/14/浏览器兼容/">CSS 相关浏览器兼容问题 [1]</a></h1>
-
-
-    <div class="article-title-short">C</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-06-14 22:06</span>
-    </div>
-
-
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <h4 id="u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C"><a href="#u95EE_u98981_uFF1AIE7_u4E0B_uFF0C_u5982_u679C_u6D6E_u52A8_u5143_u7D20_u524D_u9762_u7684_u5144_u5F1F_u5143_u7D20_u4E2D_u5B58_u5728_u884C_u5185_u5143_u7D20_uFF0C_u6D6E_u52A8_u5143_u7D20_u4F1A_u6389_u5230_u4E0B_u4E00_u884C" class="headerlink" title="问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行"></a>问题1：IE7下，如果浮动元素前面的兄弟元素中存在行内元素，浮动元素会掉到下一行</h4><pre><code class="html">&lt;div class=&quot;container&quot;&gt;
-    &lt;span&gt;span&lt;/span&gt;
-    &lt;span&gt;span&lt;/span&gt;
-    &lt;div class=&quot;left&quot;&gt;左浮动的div&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;右浮动的div&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<p>chrome，firefox下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234454.png" alt=""><br>IE7下：<br><img src="http://o743aqnrb.bkt.clouddn.com/20160614/2016-06-14_234534.png" alt=""><br>解决：</p>
-<ol>
-<li>针对IE7为浮动元素设置负的margin-top值</li>
-<li>将浮动元素写到行内元素前面<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
- &lt;div class=&quot;left&quot;&gt;左浮动的div&lt;/div&gt;
- &lt;div class=&quot;right&quot;&gt;右浮动的div&lt;/div&gt;
- &lt;span&gt;span&lt;/span&gt;
- &lt;span&gt;span&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-</li>
-</ol>
-<h4 id="u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528"><a href="#u95EE_u98982_uFF1AIE6_u3001IE7_u4E0B_uFF0C_u7ED9_u5143_u7D20_u8BBE_u7F6Emin-width_u4E0D_u8D77_u4F5C_u7528" class="headerlink" title="问题2：IE6、IE7下，给元素设置min-width不起作用"></a>问题2：IE6、IE7下，给元素设置min-width不起作用</h4>
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器兼容/">浏览器兼容</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/06/14/浏览器兼容/" class="ds-thread-count" data-thread-key="post-浏览器兼容"></a> -->
-      <!--  -->
-    <!-- </footer> -->
 
     
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/05/16/remove-inline-block-space/">去除 inline-block 之间的空白间隔</a></h1>
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/12/markdown/">Markdown语法</a></h1>
 
 
-    <div class="article-title-short">去</div>
-    <!-- <div class="article-title-short">类</div> -->
+        <div class="article-title-short">M</div>
+        <!-- <div class="article-title-short">类</div> -->
 
-    <div class="article-date-category">
+        <div class="article-date-category">
 
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
+        <a class="article-category-link" href="/categories/others/">其它</a>
     </div>
 
 
 
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-05-16 10:05</span>
+        <span class="text">2015-12-12 15:12</span>
     </div>
 
 
-    </div>
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>当多个连续的inline-block元素水平方向排列时，各个元素之间会出现空白间隔，这是由于空白字符（空格或换行）引起的。</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;
-    &lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><pre><code class="css">#container {
-    background: #bbada0;
-    width: 215px;
-    padding: 10px;
-}
-#container .cell {
-    width: 50px;
-    height: 25px;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    background: #cdc1b4;
-    text-align: center;
-}
-</code></pre>
-<p>效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516125546.png" alt=""><br>有时候因为实际布局需要，或者为了避免不必要的影响，必须去除空白，下面总结了几种常用的解决方案：</p>
-<ul>
-<li>移除空白字符，全部写在同一行<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-  &lt;div class=&quot;cell&quot;&gt;cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;cell4&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-</li>
-<li>改变换行的位置<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
-  &lt;div class=&quot;cell&quot;&gt;
-  cell1&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell2&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell3&lt;/div&gt;&lt;div class=&quot;cell&quot;&gt;
-  cell4&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-</li>
-<li>设置父元素的font-size为0，再为每个inline-block对象设置font-size的值<pre><code class="css">#container {
-  background: #bbada0;
-  width: 215px;
-  padding: 10px;
-  font-size: 0;
-}
-</code></pre>
-最终效果是这样的:<br><img src="http://o743aqnrb.bkt.clouddn.com/20160516/QQ%E6%88%AA%E5%9B%BE20160516145701.png" alt=""></li>
-</ul>
-
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/05/16/remove-inline-block-space/" class="ds-thread-count" data-thread-key="post-remove-inline-block-space"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
+        </div>
     
 
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-    <!-- 文章标题 -->
-    <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/04/24/about-space-2/">空格的 ASCII 码</a></h1>
-
-
-    <div class="article-title-short">空</div>
-    <!-- <div class="article-title-short">类</div> -->
-
-    <div class="article-date-category">
-
-        <!-- 文章分类 -->
-        <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Java/">Java</a>
-    </div>
-
-
-
-        <!-- 日期 -->
-        <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-04-24 21:04</span>
-    </div>
-
-
-    </div>
-
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>今天在用爬虫抓取网页数据时，最终抓取得到的字符串是带空格的，很神奇的是这个时候用<code>java.lang.String.trim()</code>方法没有能把空格去掉。折腾了很久才发现是因为抓取的网页上表格数据中的每一个单元格后都带有<code>&amp;nbsp;</code>。</p>
-<p>最后发现，空格对应的ASCII竟然有两个，一个是最常见的 <strong>0x20(十进制32)</strong>，另一个是 <strong>0xA0(十进制160)</strong>，Java中String的<code>trim()</code>方法只能去掉ASCII码为32的空格，对<code>&amp;nbsp;</code>转换而成的空格是无效的。</p>
-<p>解决方法：</p>
-<pre><code class="java">String newStr = str.replaceAll(&quot;[\\s\\u00A0]+$&quot;, &quot;&quot;);
+            <h2 id="u6807_u9898"><a href="#u6807_u9898" class="headerlink" title="标题"></a>标题</h2><h6 id="u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF"><a href="#u5982_u679C_u4E00_u6BB5_u6587_u5B57_u88AB_u5B9A_u4E49_u4E3A_u6807_u9898_uFF0C_u53EA_u9700_u8981_u5728_u8FD9_u6BB5_u6587_u5B57_u524D_u52A0__23__u53F7_u5373_u53EF" class="headerlink" title="如果一段文字被定义为标题，只需要在这段文字前加 # 号即可"></a>如果一段文字被定义为标题，只需要在这段文字前加 # 号即可</h6><pre><code># 一级标题
+##  二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
 </code></pre>
-<p>附：<a href="http://www.litefeel.com/tools/ascii.php" target="_blank" rel="external">ASCII码表</a></p>
-
+            
+                <p class="article-more-link">
+                    <a href="/2015/12/12/markdown/#more">阅读全文</a>
+                </p>
+            
         
     </div>
 
@@ -551,7 +476,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
     </div>
 
 
@@ -572,7 +497,7 @@
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/04/24/about-space-2/" class="ds-thread-count" data-thread-key="post-about-space-2"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2015/12/12/markdown/" class="ds-thread-count" data-thread-key="post-markdown"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -582,10 +507,13 @@
 
 
 <div class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
 </div>
 
+        </div>
+        <div class="fix"></div>
     </div>
+
     <!-- footer -->
     <footer id="footer">
   <div class="outer">

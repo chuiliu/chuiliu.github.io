@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+
+    
+        
+    <meta name="keywords" content="CSS,前端">
+    
+
+
+    
+
+    <meta name="decription" content="实现footer在页面底部,突然发现自己写的hexo模板有点问题，当页面主体高度不够的时候，footer页脚也跟着往上移，不在整个页面的底部了，很不协调，看着也不舒服。于是问题就来了，如何解决。
+在footer使用负的margin-top思路：将页面主体部分的min-height设为100%，于是页">
+
+
+
+    
+
+
+	<title>lonica | 实现footer在页面底部</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
+    <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+
+    <div class="main-header-wrap">
+        <!-- 菜单按钮 -->
+        <i class="icon-menu"></i>
+        <!-- 头像 -->
+        <a href="/" class="avatar"></a>
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 副标题 -->
+        
+          <h2 class="subtitle-wrap">什么鬼</h2>
+        
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+    <!-- 搜索框 -->
+    <!-- <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
+    </div> -->
+
+    <div class="sub-header-wrap">
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+
+</header>
+
+
+        <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
+<article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/08/实现footer在页面底部/">实现footer在页面底部</a></h1>
+
+
+        <div class="article-title-short">实</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/CSS/">CSS</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-12-08 13:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>突然发现自己写的hexo模板有点问题，当页面主体高度不够的时候，footer页脚也跟着往上移，不在整个页面的底部了，很不协调，看着也不舒服。于是问题就来了，如何解决。</p>
+<h2 id="u5728footer_u4F7F_u7528_u8D1F_u7684margin-top"><a href="#u5728footer_u4F7F_u7528_u8D1F_u7684margin-top" class="headerlink" title="在footer使用负的margin-top"></a>在footer使用负的margin-top</h2><p>思路：将页面主体部分的<code>min-height</code>设为100%，于是页面就可以充满整个浏览器窗口了，footer就不会低于页面高度了，然后footer部分再使用负的<code>margin-top</code>来使footer往上移，这样就刚好置于页面底部。但这时候需要一个空的标签来保持主体部分距离底部的高度等于footer高度，防止文字覆盖在footer上面。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+         主体正文
+        &lt;div class=&quot;fix&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        底栏固定
+    &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/body&gt;
+</code></pre>
+<a id="more"></a>
+<pre><code class="css">html, body, div, footer {margin:  0;padding: 0;}
+html, body {
+    height: 100%;
+}
+.content {
+    min-height: 100%;
+}
+.fix {
+    height: 100px;
+}
+.footer {
+    margin-top: -100px;
+    height: 100px;
+    color: #fff;
+    background-color: #313131;
+}
+</code></pre>
+<p>缺点：多了个辅助用的空标签，有种hack的感觉</p>
+<h2 id="u5728_u9875_u9762_u4E3B_u4F53_u90E8_u5206_u4F7F_u7528_u8D1F_u7684margin-bottom"><a href="#u5728_u9875_u9762_u4E3B_u4F53_u90E8_u5206_u4F7F_u7528_u8D1F_u7684margin-bottom" class="headerlink" title="在页面主体部分使用负的margin-bottom"></a>在页面主体部分使用负的margin-bottom</h2><p>实现思路和上面的方法类似，html结构同上，缺点也是需要一个空标签。</p>
+<pre><code class="css">html, body {
+    height: 100%;
+}
+.content {
+    min-height: 100%;
+    margin-bottom: -100px;
+}
+.footer,
+.fix {
+    height: 100px;
+}
+</code></pre>
+<h2 id="footer_u7528_u7EDD_u5BF9_u5B9A_u4F4D"><a href="#footer_u7528_u7EDD_u5BF9_u5B9A_u4F4D" class="headerlink" title="footer用绝对定位"></a>footer用绝对定位</h2><p>思路：body的<code>min-height</code>设为100%，并相对定位，然后footer用绝对定位固定在底部，主体部分用与footer相等高度的<code>padding-bottom</code>来控制底部距离。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;页面主体&lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;底栏固定&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    position: relative;
+}
+.content {
+    padding-bottom: 100px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+</code></pre>
+<h2 id="u901A_u8FC7_u8BA1_u7B97_u5C5E_u6027_u6765_u8BA1_u7B97_u9875_u9762_u4E3B_u4F53_u9AD8_u5EA6"><a href="#u901A_u8FC7_u8BA1_u7B97_u5C5E_u6027_u6765_u8BA1_u7B97_u9875_u9762_u4E3B_u4F53_u9AD8_u5EA6" class="headerlink" title="通过计算属性来计算页面主体高度"></a>通过计算属性来计算页面主体高度</h2><p>看到有文章写用Javascript来解决，我感觉不太好，但用上同样的道理，css3的<code>calc()</code>也可以解决，虽然说兼容性差了点。<br>思路：footer高度固定，通过计算控制页面主体部分的高度，<code>1vh</code>等于视口高度的<code>1%</code></p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;页面主体&lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;页面底栏&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html, body {
+    height: 100%;
+}
+.content {
+    min-height: calc(100vh - 100px);
+}
+.footer {
+    height: 100px;
+}
+</code></pre>
+<p>缺点：兼容性差</p>
+<h2 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h2><p>在这篇文章 <a href="https://css-tricks.com/couple-takes-sticky-footer/" target="_blank" rel="external">Sticky Footer, Five Ways</a> 中看到还有两种比较新鲜的实现方式，采用<code>flex</code>和<code>CSS Grid</code>。</p>
+<p><code>flex</code>的方法是这样的，因为<code>flexbox</code>元素可以在容器中填充满，因此只要将<code>body</code>变成<code>flex</code>布局，然后控制<code>body</code>的<code>min-height</code>为100%就行了，页面主体部分是<code>flex</code>元素就会自动伸缩了。</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+    content
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code class="css">html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+}
+</code></pre>
+<p>CSS Grid比较新，个人还没了解过，就不细说了。CSS Grid最近很热的感觉，可能又将是以后的趋势，现在能够支持的浏览器很少。<br>CSS 真是越来越灵活了，解决方案也越来越多。</p>
+<p>看到<a href="https://css-tricks.com/couple-takes-sticky-footer/" target="_blank" rel="external">Sticky Footer, Five Ways</a> 这篇文章评论下大家还提出更多的解决方案。另外的方法还有<code>display:table</code>等，文章很不错，推荐阅读，感谢文章作者。</p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/12/08/实现footer在页面底部/" class="ds-thread-count" data-thread-key="post-实现footer在页面底部"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+        <!-- 上一篇，下一篇 -->
+        <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/06/程序员与画家/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">程序员与画家</div>
+    </a>
+  
+</nav>
+
+
+
+        <!-- 评论 -->
+        <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-实现footer在页面底部" data-title="实现footer在页面底部" data-url="http://chuiliu.github.io/2016/12/08/实现footer在页面底部/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+    
+
+</article>
+
+
+        </div>
+        <div class="fix"></div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- 回顶部 -->
+<!-- 回顶部 -->
+<div id="to-top">
+    <span>TOP</span>
+</div>
+
+
+
+    <!-- js -->
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
