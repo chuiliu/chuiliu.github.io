@@ -4,7 +4,7 @@
   <subtitle><![CDATA[什么鬼]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-12-31T05:55:54.203Z</updated>
+  <updated>2016-12-31T06:24:20.651Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/"/>
     <id>http://chuiliu.github.io/2016/12/31/canvas实现位图转像素画/</id>
     <published>2016-12-31T05:55:37.000Z</published>
-    <updated>2016-12-31T05:55:54.203Z</updated>
+    <updated>2016-12-31T06:24:20.651Z</updated>
     <content type="html"><![CDATA[<p>2016年快结束了，最后一天总得留下点什么。</p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/pk.gif" alt=""></p>
 <p>前段时间迷上<a href="http://localhost:4000/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/" target="_blank" rel="external">像素画</a>，折腾了好一段时间，后来思考了下，能不能用程序或者有什么图像处理软件能把一张图片直接转成像素风格？<br>于是先谷歌一下，在豆瓣发现了这个很棒的小站，<a href="https://site.douban.com/163509/" target="_blank" rel="external">教你画像素画</a>，其中有朋友分享一个PS处理的方法：<a href="https://site.douban.com/163509/widget/notes/8695193/note/317941543/" target="_blank" rel="external">位图快速转像素</a>，这个方法处理对比度强的图片效果是不错的，于是我按照同样的思路，尝试用<code>Canvas</code>来完成同样的效果，纯粹只是不想打开PS。</p>
 <p>看最终效果 or 不想折腾PS的 快戳这里：<a href="http://chuiliu.github.io/demo/pixel/">图像转换像素图</a></p>
 <h2 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h2><blockquote>
@@ -82,8 +82,8 @@ ctx.msImageSmoothingEnabled = false;
 ]]></content>
     <summary type="html">
     <![CDATA[<p>2016年快结束了，最后一天总得留下点什么。</p>
-<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
-<p]]>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/pk.gif" alt=""></p>
+<]]>
     </summary>
     
       <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
