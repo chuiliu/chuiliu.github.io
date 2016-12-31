@@ -119,6 +119,144 @@
     
         <!-- 文章标题 -->
         <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/31/canvas实现位图转像素画/">Canvas 实现位图转像素画</a></h1>
+
+
+        <div class="article-title-short">C</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/折腾/">折腾</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-12-31 13:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>2016年快结束了，最后一天总得留下点什么。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
+<p>前段时间迷上<a href="http://localhost:4000/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/" target="_blank" rel="external">像素画</a>，折腾了好一段时间，后来思考了下，能不能用程序或者有什么图像处理软件能把一张图片直接转成像素风格？<br>于是先谷歌一下，在豆瓣发现了这个很棒的小站，<a href="https://site.douban.com/163509/" target="_blank" rel="external">教你画像素画</a>，其中有朋友分享一个PS处理的方法：<a href="https://site.douban.com/163509/widget/notes/8695193/note/317941543/" target="_blank" rel="external">位图快速转像素</a>，这个方法处理对比度强的图片效果是不错的，于是我按照同样的思路，尝试用<code>Canvas</code>来完成同样的效果，纯粹只是不想打开PS。</p>
+<p>看最终效果 or 不想折腾PS的 快戳这里：<a href="http://chuiliu.github.io/demo/pixel/">图像转换像素图</a></p>
+<h2 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<ol>
+<li>将一张图片缩小到一定的百分比，比如25%，这时候截图，图片将丢失一些像素信息，对的就是要这种效果。</li>
+<li>使用PS的阈值功能，将此时的图片处理，在设置合适的阈值下，让图片达到最佳显示效果。</li>
+<li>最后将图片放大至看到像素点，就能看到我们要的像素化效果。</li>
+</ol>
+</blockquote>
+<p>那么，用<code>Canvas</code>怎么实现呢？</p>
+<p>首先应该理解阈值的概念，阈值可以理解为临界值，大于临界值呈现一种状态，小于临界值又呈现另一种状态。PS中阈值可以将图片变成黑白图像，阈值的范围是<code>0~255</code>，假设阈值是192，则PS会将亮度小于192的像素点转成白色，将亮度大于192的转成黑色。</p>
+<h2 id="getImageData"><a href="#getImageData" class="headerlink" title="getImageData"></a>getImageData</h2><p><code>Canvas</code>的<code>ImageData</code>对象可以得到图像的所有信息，<code>imageData.data</code>是一个保存着图片像素信息的数组，数组中每个值的范围是0~255，每四个值表示一个像素点的颜色信息，格式是这样的：<code>imageData.data = [像素点1的R, 像素点1的G, 像素点1的B, 像素点1的A, 像素点2的R, 像素点2的G, 像素点2的B, 像素点2的A, ... , 像素点n的A]</code>。</p>
+<pre><code>var pixel = ctx.getImageData(x, y, width, height);
+</code></pre><h2 id="putImageData"><a href="#putImageData" class="headerlink" title="putImageData"></a>putImageData</h2><p>对<code>imageData.data</code>数组做修改后，可以通过<code>putImageData</code>写入修改后的像素数据。</p>
+<pre><code>ctx.putImageData(imageData, x, y);
+</code></pre><h2 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h2><h3 id="u7F29_u5C0F_u56FE_u50CF"><a href="#u7F29_u5C0F_u56FE_u50CF" class="headerlink" title="缩小图像"></a>缩小图像</h3><pre><code>var scale = 0.25;
+ctx.drawImage(image, 0, 0, image.width * scale, image.height * scale);
+</code></pre><h3 id="u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406"><a href="#u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406" class="headerlink" title="灰度化并阈值处理"></a>灰度化并阈值处理</h3><p>为了实现最终效果，我这里是将图片的所有像素信息先灰度化，替代亮度信息，然后每个像素点的灰度值与设定的阈值相比较，大于阈值的显示为黑色，小于阈值的显示为白色。</p>
+<pre><code>// 灰度值的计算公式，由rgb值计算
+var gray = 0.299 * r + 0.587 * g + 0.114 * b;
+</code></pre><p>阈值处理的方法实现：</p>
+<pre><code class="javascript">/**
+ * [convert description]
+ * @param  {[type]} ctx       [description]
+ * @param  {[type]} imageData [description]
+ * @param  {[type]} threshold [阈值]
+ * @return {[type]}           [description]
+ */
+function convert(ctx, imageData, threshold) {
+    var data = imageData.data;
+    for (var i = 0; i &lt; data.length; i += 4) {
+        // 灰度计算公式
+        var gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 *data[i + 2];
+        var color = gray &gt;= threshold ? 255 : 0;
+        var alpha = data[i + 3];
+        data[i]     = color;                         // red
+        data[i + 1] = color;                         // green
+        data[i + 2] = color;                         // blue
+        data[i + 3] = alpha &gt;= threshold ? 255 : 0;  // alpha, 去掉png图透明
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+</code></pre>
+<h3 id="u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F"><a href="#u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F" class="headerlink" title="将图像还原大小"></a>将图像还原大小</h3><pre><code>ctx.drawImage(image, 0, 0, image.width / scale, image.height / scale);
+</code></pre><h3 id="u53CD_u952F_u9F7F_u5904_u7406"><a href="#u53CD_u952F_u9F7F_u5904_u7406" class="headerlink" title="反锯齿处理"></a>反锯齿处理</h3><p>小图经过放大默认是模糊的，将<code>imageSmoothingEnabled</code>置为<code>false</code>才能清晰显示像素点。</p>
+<pre><code>ctx.imageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+ctx.msImageSmoothingEnabled = false;
+</code></pre><!-- ![](http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/avatar.png) -->
+<p>完整的代码已经上传至 github（<a href="https://github.com/chuiliu/the_pixel_art" target="_blank" rel="external">https://github.com/chuiliu/the_pixel_art</a>）</p>
+<p>来，看效果（左图为原图）：</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_source.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_dest.png"><br><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-0.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-1.jpg"></p>
+<p>对比度强的不进行阈值处理也可以有不错的效果</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.png"></p>
+<p>最终效果还是可以，但是这个方法本身存在一定局限性，对于对比度不高的图片效果很差，几乎不适用。所以玩的时候是比较挑图片的。</p>
+<p>在线版仅支持高版本浏览器，欢迎试玩，<a href="http://chuiliu.github.io/demo/pixel/">快戳这里</a>。</p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/12/31/canvas实现位图转像素画/" class="ds-thread-count" data-thread-key="post-canvas实现位图转像素画"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/12/08/实现footer在页面底部/">实现footer在页面底部</a></h1>
 
 
@@ -248,9 +386,9 @@
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+            <p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>于是我尝试着点几下，来画个人类。<br>把几个小色块愉快地堆在一起，两个小人就出来了。</p>
 <p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
-<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
+<p>感觉开始画上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
             
                 <p class="article-more-link">
                     <a href="/2016/12/06/程序员与画家/#more">阅读全文</a>
@@ -894,95 +1032,6 @@
         </script>
         <!-- 多说公共JS代码 end -->
         <!-- <a href="http://chuiliu.github.io/2016/09/28/浏览器同源策略/" class="ds-thread-count" data-thread-key="post-浏览器同源策略"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
-    
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-
-    
-        <!-- 文章标题 -->
-        <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a></h1>
-
-
-        <div class="article-title-short">R</div>
-        <!-- <div class="article-title-short">类</div> -->
-
-        <div class="article-date-category">
-
-            <!-- 文章分类 -->
-            <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
-    </div>
-
-
-
-            <!-- 日期 -->
-            <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-09-27 22:09</span>
-    </div>
-
-
-        </div>
-    
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
-<ul>
-<li>二进制安全的字符串</li>
-<li>列表（Lists），按顺序插入的字符串元素的集合</li>
-<li>集合（Sets），是不重复的并且无序的</li>
-</ul>
-            
-                <p class="article-more-link">
-                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
-                </p>
-            
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" class="ds-thread-count" data-thread-key="post-redis使用笔记2"></a> -->
       <!--  -->
     <!-- </footer> -->
 

@@ -4,8 +4,61 @@
 
     
   <url>
+    <loc>http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/</loc>
+    <lastmod>2016-12-31T05:55:54.203Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas 实现位图转像素画</title>
+        <pubTime>2016-12-31T05:55:37.000Z</pubTime>
+        
+        <tag>Javascript</tag>
+         
+        <tag>canvas</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+             
+              <breadCrumb title="折腾" url="http://chuiliu.github.io/categories/fe/%E6%8A%98%E8%85%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-12-31T05:15:51.463Z</lastmod>
+    <data>
+        <display>
+        <title>如何快速搭建静态资源服务器</title>
+        <pubTime>2016-10-19T13:29:30.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>开发工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
-    <lastmod>2016-12-13T09:35:26.607Z</lastmod>
+    <lastmod>2016-12-14T06:34:58.219Z</lastmod>
     <data>
         <display>
         <title>程序员与画家</title>
@@ -77,7 +130,6 @@
     </data>
     </url>
 
-    
     
     
   <url>
@@ -175,28 +227,6 @@
            
              
               <breadCrumb title="Hexo" url="http://chuiliu.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2016-12-10T09:14:07.882Z</lastmod>
-    <data>
-        <display>
-        <title>如何快速搭建静态资源服务器</title>
-        <pubTime>2016-10-19T13:29:30.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-        <tag>开发工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://chuiliu.github.io/categories/fe/"/>
           
         </display>
     </data>
@@ -552,26 +582,6 @@
           
              
               <breadCrumb title="Javascript" url="http://chuiliu.github.io/categories/fe/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</loc>
-    <lastmod>2016-10-19T16:02:24.169Z</lastmod>
-    <data>
-        <display>
-        <title>Redis 启动失败</title>
-        <pubTime>2016-07-31T11:39:12.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://chuiliu.github.io/categories/Redis/"/>
           
         </display>
     </data>

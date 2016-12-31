@@ -166,12 +166,14 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 <p>使用gulp启动</p>
 <pre><code>npm install gulp browser-sync --save-dev
 </code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
-var browserSync = require(&#39;browser-sync&#39;).create();;
+var browserSync = require(&#39;browser-sync&#39;).create();
 
-gulp.task(&#39;browserSync&#39;, function() {
-    browserSync({
+gulp.task(&#39;browser-sync&#39;, function() {
+
+    browserSync.init({
+        files: [&#39;index.html&#39;, &#39;css/*.css&#39;, &#39;js/*.js&#39;],
         server: {
-            baseDir: &#39;dirName&#39;
+            baseDir: &#39;.&#39;
         }
     });
 });

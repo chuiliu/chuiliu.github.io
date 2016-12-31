@@ -2,8 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/</loc>
+    <lastmod>2016-12-31T05:55:54.203Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/project/index.html</loc>
+    <lastmod>2016-12-31T05:51:03.123Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-12-31T05:15:51.463Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/pixel/css/style.css</loc>
+    <lastmod>2016-12-31T05:13:59.312Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/pixel/index.html</loc>
+    <lastmod>2016-12-31T05:13:42.443Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/pixel/js/pixel.js</loc>
+    <lastmod>2016-12-31T05:11:05.674Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
-    <lastmod>2016-12-13T09:35:26.607Z</lastmod>
+    <lastmod>2016-12-14T06:34:58.219Z</lastmod>
   </url>
   
   <url>
@@ -19,11 +49,6 @@
   <url>
     <loc>http://chuiliu.github.io/about/index.html</loc>
     <lastmod>2016-12-11T07:10:22.931Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/project/index.html</loc>
-    <lastmod>2016-12-11T07:09:21.025Z</lastmod>
   </url>
   
   <url>
@@ -54,11 +79,6 @@
   <url>
     <loc>http://chuiliu.github.io/2015/12/14/about-hexo-1/</loc>
     <lastmod>2016-12-10T10:29:44.604Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2016-12-10T09:14:07.882Z</lastmod>
   </url>
   
   <url>
@@ -189,11 +209,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/04/06/browser-compatibility/</loc>
     <lastmod>2016-10-21T16:57:16.634Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</loc>
-    <lastmod>2016-10-19T16:02:24.169Z</lastmod>
   </url>
   
   <url>

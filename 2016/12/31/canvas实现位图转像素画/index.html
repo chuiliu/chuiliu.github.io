@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="xIlLyRrlepjTyt7Qzr2UIV0v4tcMM71qvd7-UzMutLY" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+
+    
+        
+    <meta name="keywords" content="Javascript,canvas,前端">
+    
+
+
+    
+
+    <meta name="decription" content="Canvas 实现位图转像素画,2016年快结束了，最后一天总得留下点什么。
+
+前段时间迷上像素画，折腾了好一段时间，后来思考了下，能不能用程序或者有什么图像处理软件能把一张图片直接转成像素风格？于是先谷歌一下，在豆瓣发现了这个很棒的小站，教你画像素画，其中有朋友分享一个PS处理的方法：位图快速转像">
+
+
+
+    
+
+
+	<title>lonica | Canvas 实现位图转像素画</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
+    <link rel="stylesheet" href="/css/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="/css/highlight/solarized-light.css" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+
+    <div class="main-header-wrap">
+        <!-- 菜单按钮 -->
+        <i class="icon-menu"></i>
+        <!-- 头像 -->
+        <a href="/" class="avatar"></a>
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 副标题 -->
+        
+          <h2 class="subtitle-wrap">什么鬼</h2>
+        
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+    <!-- 搜索框 -->
+    <!-- <div id="search-form-wrap">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chuiliu.github.io"></form>
+    </div> -->
+
+    <div class="sub-header-wrap">
+        <!-- 标题 -->
+        <h1 class="title-wrap"><a href="/" class="title">lonica</a></h1>
+        <!-- 导航栏 -->
+        <nav class="nav">
+          
+            <a class="nav-link" href="/">Home</a>
+          
+            <a class="nav-link" href="/archives">Archives</a>
+          
+            <a class="nav-link" href="/tags">Tags</a>
+          
+            <a class="nav-link" href="/project">W_</a>
+          
+            <a class="nav-link" href="/about">About</a>
+          
+        </nav>
+    </div>
+
+
+</header>
+
+
+        <nav id="mobile-nav">
+    
+        <a href="/" class="mobile-nav-link">Home</a>
+    
+        <a href="/archives" class="mobile-nav-link">Archives</a>
+    
+        <a href="/tags" class="mobile-nav-link">Tags</a>
+    
+        <a href="/project" class="mobile-nav-link">W_</a>
+    
+        <a href="/about" class="mobile-nav-link">About</a>
+    
+</nav>
+
+
+        <!-- container -->
+        <div class="container">
+            <!-- 文章 -->
+<article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/12/31/canvas实现位图转像素画/">Canvas 实现位图转像素画</a></h1>
+
+
+        <div class="article-title-short">C</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/fe/">前端</a> > <a class="article-category-link" href="/categories/fe/折腾/">折腾</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-12-31 13:12</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>2016年快结束了，最后一天总得留下点什么。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
+<p>前段时间迷上<a href="http://localhost:4000/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/" target="_blank" rel="external">像素画</a>，折腾了好一段时间，后来思考了下，能不能用程序或者有什么图像处理软件能把一张图片直接转成像素风格？<br>于是先谷歌一下，在豆瓣发现了这个很棒的小站，<a href="https://site.douban.com/163509/" target="_blank" rel="external">教你画像素画</a>，其中有朋友分享一个PS处理的方法：<a href="https://site.douban.com/163509/widget/notes/8695193/note/317941543/" target="_blank" rel="external">位图快速转像素</a>，这个方法处理对比度强的图片效果是不错的，于是我按照同样的思路，尝试用<code>Canvas</code>来完成同样的效果，纯粹只是不想打开PS。</p>
+<p>看最终效果 or 不想折腾PS的 快戳这里：<a href="http://chuiliu.github.io/demo/pixel/">图像转换像素图</a></p>
+<h2 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<ol>
+<li>将一张图片缩小到一定的百分比，比如25%，这时候截图，图片将丢失一些像素信息，对的就是要这种效果。</li>
+<li>使用PS的阈值功能，将此时的图片处理，在设置合适的阈值下，让图片达到最佳显示效果。</li>
+<li>最后将图片放大至看到像素点，就能看到我们要的像素化效果。</li>
+</ol>
+</blockquote>
+<p>那么，用<code>Canvas</code>怎么实现呢？</p>
+<p>首先应该理解阈值的概念，阈值可以理解为临界值，大于临界值呈现一种状态，小于临界值又呈现另一种状态。PS中阈值可以将图片变成黑白图像，阈值的范围是<code>0~255</code>，假设阈值是192，则PS会将亮度小于192的像素点转成白色，将亮度大于192的转成黑色。</p>
+<h2 id="getImageData"><a href="#getImageData" class="headerlink" title="getImageData"></a>getImageData</h2><p><code>Canvas</code>的<code>ImageData</code>对象可以得到图像的所有信息，<code>imageData.data</code>是一个保存着图片像素信息的数组，数组中每个值的范围是0~255，每四个值表示一个像素点的颜色信息，格式是这样的：<code>imageData.data = [像素点1的R, 像素点1的G, 像素点1的B, 像素点1的A, 像素点2的R, 像素点2的G, 像素点2的B, 像素点2的A, ... , 像素点n的A]</code>。</p>
+<pre><code>var pixel = ctx.getImageData(x, y, width, height);
+</code></pre><h2 id="putImageData"><a href="#putImageData" class="headerlink" title="putImageData"></a>putImageData</h2><p>对<code>imageData.data</code>数组做修改后，可以通过<code>putImageData</code>写入修改后的像素数据。</p>
+<pre><code>ctx.putImageData(imageData, x, y);
+</code></pre><h2 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h2><h3 id="u7F29_u5C0F_u56FE_u50CF"><a href="#u7F29_u5C0F_u56FE_u50CF" class="headerlink" title="缩小图像"></a>缩小图像</h3><pre><code>var scale = 0.25;
+ctx.drawImage(image, 0, 0, image.width * scale, image.height * scale);
+</code></pre><h3 id="u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406"><a href="#u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406" class="headerlink" title="灰度化并阈值处理"></a>灰度化并阈值处理</h3><p>为了实现最终效果，我这里是将图片的所有像素信息先灰度化，替代亮度信息，然后每个像素点的灰度值与设定的阈值相比较，大于阈值的显示为黑色，小于阈值的显示为白色。</p>
+<pre><code>// 灰度值的计算公式，由rgb值计算
+var gray = 0.299 * r + 0.587 * g + 0.114 * b;
+</code></pre><p>阈值处理的方法实现：</p>
+<pre><code class="javascript">/**
+ * [convert description]
+ * @param  {[type]} ctx       [description]
+ * @param  {[type]} imageData [description]
+ * @param  {[type]} threshold [阈值]
+ * @return {[type]}           [description]
+ */
+function convert(ctx, imageData, threshold) {
+    var data = imageData.data;
+    for (var i = 0; i &lt; data.length; i += 4) {
+        // 灰度计算公式
+        var gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 *data[i + 2];
+        var color = gray &gt;= threshold ? 255 : 0;
+        var alpha = data[i + 3];
+        data[i]     = color;                         // red
+        data[i + 1] = color;                         // green
+        data[i + 2] = color;                         // blue
+        data[i + 3] = alpha &gt;= threshold ? 255 : 0;  // alpha, 去掉png图透明
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+</code></pre>
+<h3 id="u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F"><a href="#u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F" class="headerlink" title="将图像还原大小"></a>将图像还原大小</h3><pre><code>ctx.drawImage(image, 0, 0, image.width / scale, image.height / scale);
+</code></pre><h3 id="u53CD_u952F_u9F7F_u5904_u7406"><a href="#u53CD_u952F_u9F7F_u5904_u7406" class="headerlink" title="反锯齿处理"></a>反锯齿处理</h3><p>小图经过放大默认是模糊的，将<code>imageSmoothingEnabled</code>置为<code>false</code>才能清晰显示像素点。</p>
+<pre><code>ctx.imageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+ctx.msImageSmoothingEnabled = false;
+</code></pre><!-- ![](http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/avatar.png) -->
+<p>完整的代码已经上传至 github（<a href="https://github.com/chuiliu/the_pixel_art" target="_blank" rel="external">https://github.com/chuiliu/the_pixel_art</a>）</p>
+<p>来，看效果（左图为原图）：</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_source.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_dest.png"><br><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-0.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-1.jpg"></p>
+<p>对比度强的不进行阈值处理也可以有不错的效果</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.png"></p>
+<p>最终效果还是可以，但是这个方法本身存在一定局限性，对于对比度不高的图片效果很差，几乎不适用。所以玩的时候是比较挑图片的。</p>
+<p>在线版仅支持高版本浏览器，欢迎试玩，<a href="http://chuiliu.github.io/demo/pixel/">快戳这里</a>。</p>
+
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/12/31/canvas实现位图转像素画/" class="ds-thread-count" data-thread-key="post-canvas实现位图转像素画"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+        <!-- 上一篇，下一篇 -->
+        <!-- 上一篇，下一篇 -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/08/实现footer在页面底部/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">实现footer在页面底部</div>
+    </a>
+  
+</nav>
+
+
+
+        <!-- 评论 -->
+        <!-- 文章的多说评论 -->
+
+  <section id="article-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-canvas实现位图转像素画" data-title="Canvas 实现位图转像素画" data-url="http://chuiliu.github.io/2016/12/31/canvas实现位图转像素画/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'salix'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+
+    
+
+</article>
+
+
+        </div>
+        <div class="fix"></div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 lonica<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- 回顶部 -->
+<!-- 回顶部 -->
+<div id="to-top">
+    <span>TOP</span>
+</div>
+
+
+
+    <!-- js -->
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
+    <!-- highlight.js -->
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -119,6 +119,95 @@
     
         <!-- 文章标题 -->
         <!-- 文章标题 -->
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/09/27/redis使用笔记2/">Redis 使用笔记（二）</a></h1>
+
+
+        <div class="article-title-short">R</div>
+        <!-- <div class="article-title-short">类</div> -->
+
+        <div class="article-date-category">
+
+            <!-- 文章分类 -->
+            <!-- 文章的分类部分 -->
+
+    <div class="article-category">
+        <!-- <i class="icon-category"></i> -->
+        <a class="article-category-link" href="/categories/Redis/">Redis</a>
+    </div>
+
+
+
+            <!-- 日期 -->
+            <!-- 文章的日期部分 -->
+
+    <div class="article-date">
+        <!-- <i class="icon-time"></i> -->
+        <span class="text">2016-09-27 22:09</span>
+    </div>
+
+
+        </div>
+    
+
+    <div class="article-body markdown-body um">
+        <!-- 文章内容 -->
+        
+            <p>Redis可以支持存储不同格式的数据，Redis是一个数据结构服务器，它不是简单的key-value存储，以下是可以作为存储的类型：</p>
+<ul>
+<li>二进制安全的字符串</li>
+<li>列表（Lists），按顺序插入的字符串元素的集合</li>
+<li>集合（Sets），是不重复的并且无序的</li>
+</ul>
+            
+                <p class="article-more-link">
+                    <a href="/2016/09/27/redis使用笔记2/#more">阅读全文</a>
+                </p>
+            
+        
+    </div>
+
+    <!-- 标签 -->
+    <!-- 文章的标签 -->
+
+    <div class="article-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+
+
+    <!-- 评论 -->
+    <!-- <footer class="article-footer"> -->
+      <!--  -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        // var duoshuoQuery = {short_name:'salix'};
+        //   (function() {
+        //     var ds = document.createElement('script');
+        //     ds.type = 'text/javascript';ds.async = true;
+        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        //     ds.charset = 'UTF-8';
+        //     (document.getElementsByTagName('head')[0]
+        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
+        //   })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+        <!-- <a href="http://chuiliu.github.io/2016/09/27/redis使用笔记2/" class="ds-thread-count" data-thread-key="post-redis使用笔记2"></a> -->
+      <!--  -->
+    <!-- </footer> -->
+
+    
+
+</article>
+
+
+    <article class="article">
+
+    <!-- <i class="icon-article article-remark"></i> -->
+
+
+    
+        <!-- 文章标题 -->
+        <!-- 文章标题 -->
 <h1 class="article-title-wrap"><a class="article-title" href="/2016/09/01/Maven添加外部依赖包/">Maven 添加本地依赖包</a></h1>
 
 
@@ -648,111 +737,6 @@ public class testConfigResource {
         </script>
         <!-- 多说公共JS代码 end -->
         <!-- <a href="http://chuiliu.github.io/2016/08/06/redis使用笔记1/" class="ds-thread-count" data-thread-key="post-redis使用笔记1"></a> -->
-      <!--  -->
-    <!-- </footer> -->
-
-    
-
-</article>
-
-
-    <article class="article">
-
-    <!-- <i class="icon-article article-remark"></i> -->
-
-
-    
-        <!-- 文章标题 -->
-        <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2016/07/31/redis启动失败/">Redis 启动失败</a></h1>
-
-
-        <div class="article-title-short">R</div>
-        <!-- <div class="article-title-short">类</div> -->
-
-        <div class="article-date-category">
-
-            <!-- 文章分类 -->
-            <!-- 文章的分类部分 -->
-
-    <div class="article-category">
-        <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Redis/">Redis</a>
-    </div>
-
-
-
-            <!-- 日期 -->
-            <!-- 文章的日期部分 -->
-
-    <div class="article-date">
-        <!-- <i class="icon-time"></i> -->
-        <span class="text">2016-07-31 19:07</span>
-    </div>
-
-
-        </div>
-    
-
-    <div class="article-body markdown-body um">
-        <!-- 文章内容 -->
-        
-            <p>安装redis之后一直启动失败，报错内容如下：</p>
-<blockquote>
-<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version of Redis allocates a memory mapped heap for sharing with<br>the forked process used for persistence operations. In order to share this<br>memory, Windows allocates from the system paging file a portion equal to the<br>size of the Redis heap. At this time there is insufficient contiguous free<br>space available in the system paging file for this operation (Windows error<br>0x5AF). To work around this you may either increase the size of the system<br>paging file, or decrease the size of the Redis heap with the –maxheap flag.<br>Sometimes a reboot will defragment the system paging file sufficiently for<br>this operation to complete successfully.</p>
-<p>Please see the documentation included with the binary distributions for more<br>details on the –maxheap flag.</p>
-<p>Redis can not continue. Exiting.</p>
-</blockquote>
-<p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<pre><code>redis-server --maxheap 1024000000
-</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
-                _._
-           _.-``__ &#39;&#39;-._
-      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
- (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
- |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
- |    `-._   `._    /     _.-&#39;    |     PID: 8296
-  `-._    `-._  `-./  _.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
-      `-._    `-.__.-&#39;    _.-&#39;
-          `-._        _.-&#39;
-              `-.__.-&#39;
-</code></pre>
-        
-    </div>
-
-    <!-- 标签 -->
-    <!-- 文章的标签 -->
-
-    <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-    </div>
-
-
-
-    <!-- 评论 -->
-    <!-- <footer class="article-footer"> -->
-      <!--  -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <script type="text/javascript">
-        // var duoshuoQuery = {short_name:'salix'};
-        //   (function() {
-        //     var ds = document.createElement('script');
-        //     ds.type = 'text/javascript';ds.async = true;
-        //     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        //     ds.charset = 'UTF-8';
-        //     (document.getElementsByTagName('head')[0]
-        //      || document.getElementsByTagName('body')[0]).appendChild(ds);
-        //   })();
-        </script>
-        <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2016/07/31/redis启动失败/" class="ds-thread-count" data-thread-key="post-redis启动失败"></a> -->
       <!--  -->
     <!-- </footer> -->
 

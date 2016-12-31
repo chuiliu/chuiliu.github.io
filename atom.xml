@@ -4,7 +4,7 @@
   <subtitle><![CDATA[什么鬼]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chuiliu.github.io/"/>
-  <updated>2016-12-10T15:38:13.411Z</updated>
+  <updated>2016-12-31T05:55:54.203Z</updated>
   <id>http://chuiliu.github.io/</id>
   
   <author>
@@ -13,6 +13,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Canvas 实现位图转像素画]]></title>
+    <link href="http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/"/>
+    <id>http://chuiliu.github.io/2016/12/31/canvas实现位图转像素画/</id>
+    <published>2016-12-31T05:55:37.000Z</published>
+    <updated>2016-12-31T05:55:54.203Z</updated>
+    <content type="html"><![CDATA[<p>2016年快结束了，最后一天总得留下点什么。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
+<p>前段时间迷上<a href="http://localhost:4000/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/" target="_blank" rel="external">像素画</a>，折腾了好一段时间，后来思考了下，能不能用程序或者有什么图像处理软件能把一张图片直接转成像素风格？<br>于是先谷歌一下，在豆瓣发现了这个很棒的小站，<a href="https://site.douban.com/163509/" target="_blank" rel="external">教你画像素画</a>，其中有朋友分享一个PS处理的方法：<a href="https://site.douban.com/163509/widget/notes/8695193/note/317941543/" target="_blank" rel="external">位图快速转像素</a>，这个方法处理对比度强的图片效果是不错的，于是我按照同样的思路，尝试用<code>Canvas</code>来完成同样的效果，纯粹只是不想打开PS。</p>
+<p>看最终效果 or 不想折腾PS的 快戳这里：<a href="http://chuiliu.github.io/demo/pixel/">图像转换像素图</a></p>
+<h2 id="u601D_u8DEF"><a href="#u601D_u8DEF" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<ol>
+<li>将一张图片缩小到一定的百分比，比如25%，这时候截图，图片将丢失一些像素信息，对的就是要这种效果。</li>
+<li>使用PS的阈值功能，将此时的图片处理，在设置合适的阈值下，让图片达到最佳显示效果。</li>
+<li>最后将图片放大至看到像素点，就能看到我们要的像素化效果。</li>
+</ol>
+</blockquote>
+<p>那么，用<code>Canvas</code>怎么实现呢？</p>
+<p>首先应该理解阈值的概念，阈值可以理解为临界值，大于临界值呈现一种状态，小于临界值又呈现另一种状态。PS中阈值可以将图片变成黑白图像，阈值的范围是<code>0~255</code>，假设阈值是192，则PS会将亮度小于192的像素点转成白色，将亮度大于192的转成黑色。</p>
+<h2 id="getImageData"><a href="#getImageData" class="headerlink" title="getImageData"></a>getImageData</h2><p><code>Canvas</code>的<code>ImageData</code>对象可以得到图像的所有信息，<code>imageData.data</code>是一个保存着图片像素信息的数组，数组中每个值的范围是0~255，每四个值表示一个像素点的颜色信息，格式是这样的：<code>imageData.data = [像素点1的R, 像素点1的G, 像素点1的B, 像素点1的A, 像素点2的R, 像素点2的G, 像素点2的B, 像素点2的A, ... , 像素点n的A]</code>。</p>
+<pre><code>var pixel = ctx.getImageData(x, y, width, height);
+</code></pre><h2 id="putImageData"><a href="#putImageData" class="headerlink" title="putImageData"></a>putImageData</h2><p>对<code>imageData.data</code>数组做修改后，可以通过<code>putImageData</code>写入修改后的像素数据。</p>
+<pre><code>ctx.putImageData(imageData, x, y);
+</code></pre><h2 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h2><h3 id="u7F29_u5C0F_u56FE_u50CF"><a href="#u7F29_u5C0F_u56FE_u50CF" class="headerlink" title="缩小图像"></a>缩小图像</h3><pre><code>var scale = 0.25;
+ctx.drawImage(image, 0, 0, image.width * scale, image.height * scale);
+</code></pre><h3 id="u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406"><a href="#u7070_u5EA6_u5316_u5E76_u9608_u503C_u5904_u7406" class="headerlink" title="灰度化并阈值处理"></a>灰度化并阈值处理</h3><p>为了实现最终效果，我这里是将图片的所有像素信息先灰度化，替代亮度信息，然后每个像素点的灰度值与设定的阈值相比较，大于阈值的显示为黑色，小于阈值的显示为白色。</p>
+<pre><code>// 灰度值的计算公式，由rgb值计算
+var gray = 0.299 * r + 0.587 * g + 0.114 * b;
+</code></pre><p>阈值处理的方法实现：</p>
+<pre><code class="javascript">/**
+ * [convert description]
+ * @param  {[type]} ctx       [description]
+ * @param  {[type]} imageData [description]
+ * @param  {[type]} threshold [阈值]
+ * @return {[type]}           [description]
+ */
+function convert(ctx, imageData, threshold) {
+    var data = imageData.data;
+    for (var i = 0; i &lt; data.length; i += 4) {
+        // 灰度计算公式
+        var gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 *data[i + 2];
+        var color = gray &gt;= threshold ? 255 : 0;
+        var alpha = data[i + 3];
+        data[i]     = color;                         // red
+        data[i + 1] = color;                         // green
+        data[i + 2] = color;                         // blue
+        data[i + 3] = alpha &gt;= threshold ? 255 : 0;  // alpha, 去掉png图透明
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+</code></pre>
+<h3 id="u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F"><a href="#u5C06_u56FE_u50CF_u8FD8_u539F_u5927_u5C0F" class="headerlink" title="将图像还原大小"></a>将图像还原大小</h3><pre><code>ctx.drawImage(image, 0, 0, image.width / scale, image.height / scale);
+</code></pre><h3 id="u53CD_u952F_u9F7F_u5904_u7406"><a href="#u53CD_u952F_u9F7F_u5904_u7406" class="headerlink" title="反锯齿处理"></a>反锯齿处理</h3><p>小图经过放大默认是模糊的，将<code>imageSmoothingEnabled</code>置为<code>false</code>才能清晰显示像素点。</p>
+<pre><code>ctx.imageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+ctx.msImageSmoothingEnabled = false;
+</code></pre><!-- ![](http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/avatar.png) -->
+<p>完整的代码已经上传至 github（<a href="https://github.com/chuiliu/the_pixel_art" target="_blank" rel="external">https://github.com/chuiliu/the_pixel_art</a>）</p>
+<p>来，看效果（左图为原图）：</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_source.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/we_are_bear_dest.png"><br><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-0.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/%E7%9A%AE%E5%8D%A1%E4%B8%98-1.jpg"></p>
+<p>对比度强的不进行阈值处理也可以有不错的效果</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.jpg"> <img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/tree.png"></p>
+<p>最终效果还是可以，但是这个方法本身存在一定局限性，对于对比度不高的图片效果很差，几乎不适用。所以玩的时候是比较挑图片的。</p>
+<p>在线版仅支持高版本浏览器，欢迎试玩，<a href="http://chuiliu.github.io/demo/pixel/">快戳这里</a>。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>2016年快结束了，最后一天总得留下点什么。</p>
+<p><img src="http://o743aqnrb.bkt.clouddn.com/canvas%E8%BD%AC%E5%83%8F%E7%B4%A0%E5%9B%BE/s.gif" alt=""></p>
+<p]]>
+    </summary>
+    
+      <category term="Javascript" scheme="http://chuiliu.github.io/tags/Javascript/"/>
+    
+      <category term="canvas" scheme="http://chuiliu.github.io/tags/canvas/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="前端" scheme="http://chuiliu.github.io/categories/fe/"/>
+    
+      <category term="折腾" scheme="http://chuiliu.github.io/categories/fe/%E6%8A%98%E8%85%BE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[实现footer在页面底部]]></title>
@@ -161,25 +245,26 @@ body {
     <link href="http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/"/>
     <id>http://chuiliu.github.io/2016/12/06/程序员与画家/</id>
     <published>2016-12-06T12:45:55.000Z</published>
-    <updated>2016-12-13T09:35:26.607Z</updated>
-    <content type="html"><![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+    <updated>2016-12-14T06:34:58.219Z</updated>
+    <content type="html"><![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>于是我尝试着点几下，来画个人类。<br>把几个小色块愉快地堆在一起，两个小人就出来了。</p>
 <p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
-<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
+<p>感觉开始画上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>
 <a id="more"></a>
 <p><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-red.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-blue.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-yellow.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-green.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-black.png"><img width="128" src="http://o743aqnrb.bkt.clouddn.com/angrybirdx192/angrybird-white.png"></p>
-<p>后来想了下，这么简单的点阵式，好像可以用代码来画出来，于是我顺便把这几只鸟从 dotpict 上画的每个点转成矩阵，再用canvas画下来。<br>于是效果就出来了。</p>
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="ZBxVgQ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="ZBxVgQ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/ZBxVgQ/" target="_blank" rel="external">ZBxVgQ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<p>后来想了下，这么简单的点阵式，好像可以用代码来画出来，于是我顺便把这几只鸟从 dotpict 上画的每个点转成矩阵，再用<code>canvas</code>画下来。<br>于是效果就出来了。</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="ZBxVgQ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="ZBxVgQ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/ZBxVgQ/" target="_blank" rel="external">ZBxVgQ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="vyRvJJ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="vyRvJJ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/vyRvJJ/" target="_blank" rel="external">vyRvJJ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="vyRvJJ" data-default-tab="js,result" data-user="lonica" data-embed-version="2" data-pen-title="vyRvJJ" class="codepen">See the Pen <a href="https://codepen.io/lonica/pen/vyRvJJ/" target="_blank" rel="external">vyRvJJ</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><!-- <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script> --><p></p>
+<p>后来发现，其实不用<code>canvas</code>那么麻烦，用CSS就可以了，<code>box-shadow</code>也可以实现同样的效果，通过x轴和y轴的位移，也可以画出同样的效果。</p>
+<p>于是我让在dotpict上画的小人动起来，用<code>step()</code>实现帧动画的效果。</p>
+<p></p><p data-height="565" data-theme-id="light" data-slug-hash="MbPBwN" data-default-tab="css,result" data-user="lonica" data-embed-version="2" data-pen-title="MbPBwN" class="codepen">See the Pen <a href="http://codepen.io/lonica/pen/MbPBwN/" target="_blank" rel="external">MbPBwN</a> by lonica (<a href="http://codepen.io/lonica" target="_blank" rel="external">@lonica</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><br><!-- <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script> --><p></p>
 <p>程序员还是要懂点艺术的。<br>画了株小仙人掌。<img src="http://o743aqnrb.bkt.clouddn.com/%E4%BB%99%E4%BA%BA%E6%8E%8C.png"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>尝试着点几下，来画个人类。<br>于是几个小色块愉快地在一起小人就出来了。</p>
+    <![CDATA[<p>最近又在折腾另一款绘图app，<a href="http://dotpicko.net/" target="_blank">dotpict</a>，瞬间中了像素风的毒，这 style 好赞。<br>于是我尝试着点几下，来画个人类。<br>把几个小色块愉快地堆在一起，两个小人就出来了。</p>
 <p><img width="192" height="192" src="http://o743aqnrb.bkt.clouddn.com/dotpictboy.png"><img src="http://o743aqnrb.bkt.clouddn.com/dotpictdotpict_20161208_161306.png"></p>
-<p>感觉开始上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>]]>
+<p>感觉开始画上瘾了。<br>于是我又在 dotpict 上一口气画了6只愤怒的小鸟，不停地点点点，过了一把瘾。<br>有点丑，喜欢绘画又不太会画，就只能长这个拙样子了。<br>最后一只好像被打了一拳的样子，怎都改不好。</p>]]>
     
     </summary>
     
@@ -305,7 +390,7 @@ display: box;
     <link href="http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://chuiliu.github.io/2016/10/19/如何快速搭建静态资源服务器/</id>
     <published>2016-10-19T13:29:30.000Z</published>
-    <updated>2016-12-10T09:14:07.882Z</updated>
+    <updated>2016-12-31T05:15:51.463Z</updated>
     <content type="html"><![CDATA[<p>前端开发中，经常遇到有些场景需要用到服务器环境，例如AngularJS中的路由，或者是模拟ajax获取数据等需求时，这个时候并不需要考虑到服务端逻辑，只是搭建简单的静态资源服务，因此解决方法有很多，下面介绍几种简单快捷的常用方式：</p>
 <h2 id="u4F7F_u7528browser-sync"><a href="#u4F7F_u7528browser-sync" class="headerlink" title="使用browser-sync"></a>使用browser-sync</h2><p><a href="https://www.browsersync.io/" target="_blank" rel="external">browser-sync</a>，非常棒的工具，最吸引人的是它的监控和同步功能，体验非常好，可以不用一直f5刷新浏览器即可实时看到修改了的变化。只要在同个局域网，还可以在手机上也同步看到变化，不需要手动刷新，非常适合移动端调试，很推荐使用。<br>安装：</p>
 <pre><code>npm install -g browser-sync
@@ -318,12 +403,14 @@ browser-sync start --server --files &quot;**/*.css, **/*.html&quot;
 <p>使用gulp启动</p>
 <pre><code>npm install gulp browser-sync --save-dev
 </code></pre><pre><code class="javascript">var gulp = require(&#39;gulp&#39;);
-var browserSync = require(&#39;browser-sync&#39;).create();;
+var browserSync = require(&#39;browser-sync&#39;).create();
 
-gulp.task(&#39;browserSync&#39;, function() {
-    browserSync({
+gulp.task(&#39;browser-sync&#39;, function() {
+
+    browserSync.init({
+        files: [&#39;index.html&#39;, &#39;css/*.css&#39;, &#39;js/*.js&#39;],
         server: {
-            baseDir: &#39;dirName&#39;
+            baseDir: &#39;.&#39;
         }
     });
 });
@@ -1098,51 +1185,6 @@ OK
 <pre><code>redis-server
 </code></pre>]]>
     
-    </summary>
-    
-      <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
-    
-      <category term="Redis" scheme="http://chuiliu.github.io/categories/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Redis 启动失败]]></title>
-    <link href="http://chuiliu.github.io/2016/07/31/redis%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"/>
-    <id>http://chuiliu.github.io/2016/07/31/redis启动失败/</id>
-    <published>2016-07-31T11:39:12.000Z</published>
-    <updated>2016-10-19T16:02:24.169Z</updated>
-    <content type="html"><![CDATA[<p>安装redis之后一直启动失败，报错内容如下：</p>
-<blockquote>
-<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version of Redis allocates a memory mapped heap for sharing with<br>the forked process used for persistence operations. In order to share this<br>memory, Windows allocates from the system paging file a portion equal to the<br>size of the Redis heap. At this time there is insufficient contiguous free<br>space available in the system paging file for this operation (Windows error<br>0x5AF). To work around this you may either increase the size of the system<br>paging file, or decrease the size of the Redis heap with the –maxheap flag.<br>Sometimes a reboot will defragment the system paging file sufficiently for<br>this operation to complete successfully.</p>
-<p>Please see the documentation included with the binary distributions for more<br>details on the –maxheap flag.</p>
-<p>Redis can not continue. Exiting.</p>
-</blockquote>
-<p>以上错误描述说减少<code>--maxheap</code>的值，因此解决方法：</p>
-<pre><code>redis-server --maxheap 1024000000
-</code></pre><pre><code>C:\Users\Administrator&gt;redis-server --maxheap 1024000000
-                _._
-           _.-``__ &#39;&#39;-._
-      _.-``    `.  `_.  &#39;&#39;-._           Redis 2.8.2402 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ &#39;&#39;-._
- (    &#39;      ,       .-`  | `,    )     Running in stand alone mode
- |`-._`-...-` __...-.``-._|&#39;` _.-&#39;|     Port: 6379
- |    `-._   `._    /     _.-&#39;    |     PID: 8296
-  `-._    `-._  `-./  _.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |           http://redis.io
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
- |`-._`-._    `-.__.-&#39;    _.-&#39;_.-&#39;|
- |    `-._`-._        _.-&#39;_.-&#39;    |
-  `-._    `-._`-.__.-&#39;_.-&#39;    _.-&#39;
-      `-._    `-.__.-&#39;    _.-&#39;
-          `-._        _.-&#39;
-              `-.__.-&#39;
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>安装redis之后一直启动失败，报错内容如下：</p>
-<blockquote>
-<p>C:\Users\Administrator&gt;redis-server<br>[8468] 31 Jul 18:55:29.453 #<br>The Windows version]]>
     </summary>
     
       <category term="Redis" scheme="http://chuiliu.github.io/tags/Redis/"/>
