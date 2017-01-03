@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chuiliu.github.io/demo/pixel/js/pixel.js</loc>
+    <lastmod>2017-01-03T15:42:18.583Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/pixel/css/style.css</loc>
+    <lastmod>2017-01-03T15:40:54.647Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/</loc>
-    <lastmod>2016-12-31T07:23:37.413Z</lastmod>
+    <lastmod>2017-01-03T15:34:29.978Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/demo/pixel/index.html</loc>
+    <lastmod>2017-01-03T15:16:44.116Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/02/28/mysql%E7%9A%84definer%E5%92%8Cinvoker/</loc>
+    <lastmod>2017-01-02T07:38:10.680Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-01-01T15:44:07.428Z</lastmod>
   </url>
   
   <url>
@@ -19,21 +44,6 @@
   <url>
     <loc>http://chuiliu.github.io/2016/10/19/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2016-12-31T05:15:51.463Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/pixel/css/style.css</loc>
-    <lastmod>2016-12-31T05:13:59.312Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/pixel/index.html</loc>
-    <lastmod>2016-12-31T05:13:42.443Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/demo/pixel/js/pixel.js</loc>
-    <lastmod>2016-12-31T05:11:05.674Z</lastmod>
   </url>
   
   <url>
@@ -184,11 +194,6 @@
   <url>
     <loc>http://chuiliu.github.io/demo/calendar/index.js</loc>
     <lastmod>2016-11-25T14:52:47.493Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-11-14T16:00:30.567Z</lastmod>
   </url>
   
   <url>

@@ -3,9 +3,11 @@
 
 
     
+    
+    
   <url>
     <loc>http://chuiliu.github.io/2016/12/31/canvas%E5%AE%9E%E7%8E%B0%E4%BD%8D%E5%9B%BE%E8%BD%AC%E5%83%8F%E7%B4%A0%E7%94%BB/</loc>
-    <lastmod>2016-12-31T07:23:37.413Z</lastmod>
+    <lastmod>2017-01-03T15:34:29.978Z</lastmod>
     <data>
         <display>
         <title>Canvas 实现位图转像素画</title>
@@ -24,6 +26,47 @@
           
              
               <breadCrumb title="折腾" url="http://chuiliu.github.io/categories/fe/%E6%8A%98%E8%85%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/02/28/mysql%E7%9A%84definer%E5%92%8Cinvoker/</loc>
+    <lastmod>2017-01-02T07:38:10.680Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL中的definer和invoker</title>
+        <pubTime>2016-02-28T15:57:15.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://chuiliu.github.io/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-01-01T15:44:07.428Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL 使用笔记</title>
+        <pubTime>2016-07-31T11:35:38.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://chuiliu.github.io/categories/MySQL/"/>
           
         </display>
     </data>
@@ -53,9 +96,6 @@
     </data>
     </url>
 
-    
-    
-    
     
   <url>
     <loc>http://chuiliu.github.io/2016/12/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8E%E7%94%BB%E5%AE%B6/</loc>
@@ -478,26 +518,6 @@
     
     
     
-    
-  <url>
-    <loc>http://chuiliu.github.io/2016/07/31/mysql%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-11-14T16:00:30.567Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL 使用笔记</title>
-        <pubTime>2016-07-31T11:35:38.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="http://chuiliu.github.io/categories/MySQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://chuiliu.github.io/2016/02/24/nodejs-querystring/</loc>

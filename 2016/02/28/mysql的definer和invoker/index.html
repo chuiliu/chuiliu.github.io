@@ -9,25 +9,21 @@
 
     
         
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="MySQL">
     
 
 
     
 
-    <meta name="decription" content="Hexo：为博客添加多说评论框,Hexo默认使用的评论框是国外比较流行的Disqus，为方便使用我们可以把评论框替换成国内比较流行的多说，我使用的是官方landscape主题，具体步骤如下:
-
-
-在多说官网注册账号
-选择我要安装创建站点
-在_config.yml中添加多说配置（二级域名就是创建站点时">
+    <meta name="decription" content="MySQL中的definer和invoker,今天将一份服务器上的sql脚本导入到本地做测试，一切配置完毕后发现程序跑不起来，经过调试后发现问题所在：数据库中所有的存储过程的definer是dev@%，所有视图都因为definer错误打不开。
+很明显错误原因是本地数据库没有dev这个用户，而存储过程">
 
 
 
     
 
 
-	<title>lonica | Hexo：为博客添加多说评论框</title>
+	<title>lonica | MySQL中的definer和invoker</title>
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/github-markdown.css" type="text/css">
@@ -125,10 +121,10 @@
     
         <!-- 文章标题 -->
         <!-- 文章标题 -->
-<h1 class="article-title-wrap"><a class="article-title" href="/2015/12/14/about-hexo-1/">Hexo：为博客添加多说评论框</a></h1>
+<h1 class="article-title-wrap"><a class="article-title" href="/2016/02/28/mysql的definer和invoker/">MySQL中的definer和invoker</a></h1>
 
 
-        <div class="article-title-short">H</div>
+        <div class="article-title-short">M</div>
         <!-- <div class="article-title-short">类</div> -->
 
         <div class="article-date-category">
@@ -138,7 +134,7 @@
 
     <div class="article-category">
         <!-- <i class="icon-category"></i> -->
-        <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
     </div>
 
 
@@ -148,7 +144,7 @@
 
     <div class="article-date">
         <!-- <i class="icon-time"></i> -->
-        <span class="text">2015-12-14 21:12</span>
+        <span class="text">2016-02-28 23:02</span>
     </div>
 
 
@@ -158,54 +154,28 @@
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <p>Hexo默认使用的评论框是国外比较流行的<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>，为方便使用我们可以把评论框替换成国内比较流行的<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>，我使用的是官方landscape主题，具体步骤如下:</p>
-<a id="more"></a>
-<ol>
-<li>在<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>官网注册账号</li>
-<li>选择<strong>我要安装</strong>创建站点</li>
-<li>在<code>_config.yml</code>中添加多说配置（二级域名就是创建站点时填写的<strong>多说域名</strong>）：<pre><code>duoshuo_shortname: 多说二级域名
-</code></pre></li>
-<li>修改<code>themes\landscape\layout\_partial\article.ejs</code><br>把<pre><code>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname){ %&gt;
-&lt;section id=&quot;comments&quot;&gt;
- &lt;div id=&quot;disqus_thread&quot;&gt;
-   &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
- &lt;/div&gt;
-&lt;/section&gt;
-&lt;% } %&gt;
-</code></pre>替换成<pre><code>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname){ %&gt;
-&lt;section id=&quot;comments&quot;&gt;
- &lt;!-- 多说评论框 start --&gt;
- &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;
- &lt;!-- 多说评论框 end --&gt;
- &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;
- &lt;script type=&quot;text/javascript&quot;&gt;
- var duoshuoQuery = {short_name:&#39;&lt;%= config.duoshuo_shortname %&gt;&#39;};
-   (function() {
-     var ds = document.createElement(&#39;script&#39;);
-     ds.type = &#39;text/javascript&#39;;ds.async = true;
-     ds.src = (document.location.protocol == &#39;https:&#39; ? &#39;https:&#39; : &#39;http:&#39;) + &#39;//static.duoshuo.com/embed.js&#39;;
-     ds.charset = &#39;UTF-8&#39;;
-     (document.getElementsByTagName(&#39;head&#39;)[0] 
-      || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(ds);
-   })();
-   &lt;/script&gt;
- &lt;!-- 多说公共JS代码 end --&gt;
-&lt;/section&gt;
-&lt;% } %&gt;
-</code></pre>把</li>
-</ol>
-<pre><code class="html">&lt;% if (item.comment &amp;&amp; config.disqus_shortname){ %&gt;  
-  &lt;div class=&quot;alignright&quot;&gt;  
-    &lt;a href=&quot;&lt;%- item.permalink %&gt;#disqus_thread&quot; class=&quot;comment-link&quot;&gt;Comments&lt;/a&gt;  
-  &lt;/div&gt;  
-&lt;% } %&gt;
+            <p>今天将一份服务器上的sql脚本导入到本地做测试，一切配置完毕后发现程序跑不起来，经过调试后发现问题所在：数据库中所有的存储过程的<code>definer</code>是<code>dev@%</code>，所有视图都因为<code>definer</code>错误打不开。</p>
+<p>很明显错误原因是本地数据库没有dev这个用户，而存储过程是需要用dev用户的权限来调用的，于是我创建一个相同名称的用户，授权对该数据库的所有操作权限，问题就解决了。</p>
+<p>那么，这里的definer是什么意思，与另一种定义方式invoker又有什么区别？</p>
+<h3 id="DEFINER_u4E0EINVOKER_u7684_u533A_u522B"><a href="#DEFINER_u4E0EINVOKER_u7684_u533A_u522B" class="headerlink" title="DEFINER与INVOKER的区别"></a>DEFINER与INVOKER的区别</h3><p>我们在创建存储过程的时候，需要定义存储过程的安全验证方式<code>SQL SECURITY</code>，可以设置为<code>DEFINER</code>或<code>INVOKER</code>，表示这个存储过程执行的时候，是使用谁的权限来执行的。DEFINER表示由DEFINER属性所指定的用户的权限来执行，INVOKER表示以调用这个存储过程的用户的权限来执行。</p>
+<h3 id="DEFINER"><a href="#DEFINER" class="headerlink" title="DEFINER"></a>DEFINER</h3><p>当定义为<code>DEFINER</code>时，必须数据库中存在DEFINER指定的用户，并且该用户拥有对应的操作权限，才能成功执行。与当前用户是否有权限无关。</p>
+<p>定义为DEFINER的存储过程：</p>
+<pre><code class="sql">CREATE DEFINER=`dev`@`%` PROCEDURE `p_user_login`(IN u_name VARCHAR(25), IN u_password VARCHAR(100))
+BEGIN
+
+  SELECT u.id, u.name, u.tid, u.status, u.is_report FROM v_user u WHERE u.name=u_name AND u.password=u_password AND u.status=1;
+
+END;
 </code></pre>
-<p> 替换成</p>
-<pre><code class="html">&lt;% if (item.comment &amp;&amp; config.duoshuo_shortname){ %&gt;  
-  &lt;div class=&quot;alignright&quot;&gt;  
-    &lt;a href=&quot;&lt;%- item.permalink %&gt;#disqus_thread&quot; class=&quot;comment-link&quot;&gt;Comments&lt;/a&gt;  
-  &lt;/div&gt;  
-&lt;% } %&gt;
+<h3 id="INVOKER"><a href="#INVOKER" class="headerlink" title="INVOKER"></a>INVOKER</h3><p>当定义为INVOKER时，只要执行者有执行权限，就可以成功执行。</p>
+<p>定义为INVOKER的存储过程：</p>
+<pre><code class="sql">CREATE DEFINER=`dev`@`%` PROCEDURE `p_user_login`(IN u_name VARCHAR(25), IN u_password VARCHAR(100))
+    SQL SECURITY INVOKER
+BEGIN
+
+  SELECT u.id, u.name, u.tid, u.status, u.is_report FROM v_user u WHERE u.name=u_name AND u.password=u_password AND u.status=1;
+
+END;
 </code></pre>
 
         
@@ -215,7 +185,7 @@
     <!-- 文章的标签 -->
 
     <div class="article-tags">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
     </div>
 
 
@@ -236,7 +206,7 @@
         //   })();
         </script>
         <!-- 多说公共JS代码 end -->
-        <!-- <a href="http://chuiliu.github.io/2015/12/14/about-hexo-1/" class="ds-thread-count" data-thread-key="post-about-hexo-1"></a> -->
+        <!-- <a href="http://chuiliu.github.io/2016/02/28/mysql的definer和invoker/" class="ds-thread-count" data-thread-key="post-mysql的definer和invoker"></a> -->
       <!--  -->
     <!-- </footer> -->
 
@@ -246,19 +216,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2015/12/16/about-hexo-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/03/Ubuntu-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          Hexo优化系列
+          Ubuntu修改root密码
         
       </div>
     </a>
   
   
-    <a href="/2015/12/12/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/02/24/nodejs-querystring/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Markdown语法</div>
+      <div class="article-nav-title">Node.js笔录：Query String</div>
     </a>
   
 </nav>
@@ -270,7 +240,7 @@
 
   <section id="article-comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-about-hexo-1" data-title="Hexo：为博客添加多说评论框" data-url="http://chuiliu.github.io/2015/12/14/about-hexo-1/"></div>
+    <div class="ds-thread" data-thread-key="post-mysql的definer和invoker" data-title="MySQL中的definer和invoker" data-url="http://chuiliu.github.io/2016/02/28/mysql的definer和invoker/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

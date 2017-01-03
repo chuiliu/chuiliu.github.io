@@ -786,18 +786,35 @@ public class testConfigResource {
     <div class="article-body markdown-body um">
         <!-- 文章内容 -->
         
-            <h4 id="MySQL_u4FEE_u6539_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u5BC6_u7801" class="headerlink" title="MySQL修改密码"></a>MySQL修改密码</h4><ul>
-<li>修改root密码<pre><code class="sql">set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;new password&#39;);
+            <h3 id="MySQL_u4FEE_u6539_u7528_u6237_u5BC6_u7801"><a href="#MySQL_u4FEE_u6539_u7528_u6237_u5BC6_u7801" class="headerlink" title="MySQL修改用户密码"></a>MySQL修改用户密码</h3><ul>
+<li>修改root密码</li>
+</ul>
+<pre><code class="sql">SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;new password&#39;);
 </code></pre>
-</li>
+<h3 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h3><ul>
+<li>创建用户</li>
 </ul>
-<h4 id="u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743"><a href="#u521B_u5EFA_u7528_u6237_u5E76_u6388_u6743" class="headerlink" title="创建用户并授权"></a>创建用户并授权</h4><ul>
-<li>创建用户<pre><code>CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;username&#39;;
-</code></pre></li>
-<li>授权<pre><code>GRANT all ON databasename.* TO &#39;username&#39;@&#39;localhost&#39;;
-</code></pre></li>
+<pre><code class="sql">-- 用户允许来自所有主机地址的登录
+CREATE USER username IDENTIFIED BY &#39;password&#39;;
+
+-- 限制只能在localhost登录
+CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+</code></pre>
+<ul>
+<li>授权</li>
 </ul>
-<h4 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h4><pre><code>select coalesce(sum(price), 0) as total group by type;
+<pre><code class="sql">GRANT All ON databasename.* TO &#39;username&#39;@&#39;localhost&#39;;
+
+-- 使用%表示来自任何地址的连接
+GRANT All ON databasename.* TO &#39;username&#39;@&#39;%&#39;;
+
+-- 授予允许来自所有主机地址，并且对所有数据库的操作权限
+GRANT All ON *.* TO &#39;username&#39;@&#39;%&#39;;
+
+-- 授予指定权限
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, GRANT ON *.* TO &#39;username&#39;@&#39;%&#39;;
+</code></pre>
+<h3 id="u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u4F7F_u7528sum_u65F6_u5982_u679C_u6CA1_u8BB0_u5F55_u4E0D_u8FD4_u56DEnull_uFF0C_u9700_u8981_u8FD4_u56DE0_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="使用sum时如果没记录不返回null，需要返回0的解决方法"></a>使用sum时如果没记录不返回null，需要返回0的解决方法</h3><pre><code>select coalesce(sum(price), 0) as total group by type;
 </code></pre>
         
     </div>
@@ -1326,7 +1343,7 @@ fetchData(url, downloadAll);
     <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 lonica<br>
+      &copy; 2017 lonica<br>
       Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
     </div>
   </div>
