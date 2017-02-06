@@ -11,6 +11,7 @@ a,button {outline: none}
 
 body {
     background-color: #fac3a1;
+    overflow: hidden;
 }
 
 #container {
